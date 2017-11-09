@@ -1,0 +1,31 @@
+pipeline {
+    agent {
+        node {
+            label 'pharos-dashboard'
+            customWorkspace '/home/max/pharos-tools/dashboard'
+        }
+    }
+    stages {
+        stage('Deploy') {
+            steps{
+                sh '''
+                    make down
+                    git pull
+                    docker-compose pull
+                    make build && make up
+                   '''
+            }
+        }
+        stage('Test') {
+            steps{
+                sh 'curl https://labs.opnfv.org'
+            }
+        }
+    }
+
+    post {
+        failure {
+            echo "Failed to connect to dashboard"
+        }
+    }
+}
