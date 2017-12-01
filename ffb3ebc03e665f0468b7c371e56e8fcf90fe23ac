@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a3d3df0_4bd324d6",
+        "filename": "dashboard/src/templates/base.html",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2017-12-01T19:36:44Z",
+      "side": 1,
+      "message": "Addressed here: https://gerrit.opnfv.org/gerrit/44595",
+      "range": {
+        "startLine": 18,
+        "startChar": 24,
+        "endLine": 18,
+        "endChar": 60
+      },
+      "revId": "ffb3ebc03e665f0468b7c371e56e8fcf90fe23ac",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
