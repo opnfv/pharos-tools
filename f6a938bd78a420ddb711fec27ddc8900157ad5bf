@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a3d3df0_d4898c27",
+        "filename": "dashboard/src/account/views.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2017-12-07T17:40:05Z",
+      "side": 1,
+      "message": "It would be cleaner to just have this be username rather than calling the same method two lines in a row",
+      "range": {
+        "startLine": 122,
+        "startChar": 26,
+        "endLine": 122,
+        "endChar": 45
+      },
+      "revId": "f6a938bd78a420ddb711fec27ddc8900157ad5bf",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
