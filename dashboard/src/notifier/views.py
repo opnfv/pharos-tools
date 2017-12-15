@@ -7,12 +7,4 @@
 # http://www.apache.org/licenses/LICENSE-2.0
 ##############################################################################
 
-
-from django.apps import AppConfig
-
-
-class NotificationConfig(AppConfig):
-    name = 'notification'
-
-    def ready(self):
-        import notification.signals #noqa
+from django.shortcuts import render

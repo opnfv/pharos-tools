@@ -7,11 +7,4 @@
 # http://www.apache.org/licenses/LICENSE-2.0
 ##############################################################################
 
-
-from django.conf import settings
-from django.contrib import admin
-
-from notification.models import BookingNotification
-
-if settings.DEBUG:
-    admin.site.register(BookingNotification)
+from django.test import TestCase
