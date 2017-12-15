@@ -7,5 +7,8 @@
 # http://www.apache.org/licenses/LICENSE-2.0
 ##############################################################################
 
+from django.contrib import admin
 
-default_app_config = 'notification.apps.NotificationConfig'
+from notifier.models import *
+
+admin.site.register(Notifier)

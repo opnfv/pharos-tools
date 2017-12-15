@@ -7,4 +7,8 @@
 # http://www.apache.org/licenses/LICENSE-2.0
 ##############################################################################
 
+from django.apps import AppConfig
 
+
+class NotifierConfig(AppConfig):
+    name = 'notifier'
