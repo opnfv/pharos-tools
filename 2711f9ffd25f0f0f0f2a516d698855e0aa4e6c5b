@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a3d3df0_ee5aea28",
+        "filename": "dashboard/src/notifier/dispatchers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2017-12-18T14:01:31Z",
+      "side": 1,
+      "message": "Do messages always have to be about specific resources? For example, I want to be able to send users vpn creds regardless of the resource",
+      "range": {
+        "startLine": 30,
+        "startChar": 12,
+        "endLine": 31,
+        "endChar": 34
+      },
+      "revId": "2711f9ffd25f0f0f0f2a516d698855e0aa4e6c5b",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_ce7606a4",
+        "filename": "dashboard/src/notifier/tests.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2017-12-18T14:01:31Z",
+      "side": 1,
+      "message": "What does this do? If this file doesn\u0027t actually do anything, there\u0027s no reason to commit it.",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 32
+      },
+      "revId": "2711f9ffd25f0f0f0f2a516d698855e0aa4e6c5b",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
