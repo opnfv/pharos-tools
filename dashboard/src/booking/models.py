@@ -13,6 +13,8 @@ from django.contrib.auth.models import User
 from django.db import models
 from jira import JIRA
 from jira import JIRAError
+from django.utils.crypto import get_random_string
+import hashlib
 
 from dashboard.models import Resource
 
@@ -34,6 +36,7 @@ class Scenario(models.Model):
 
 class Booking(models.Model):
     id = models.AutoField(primary_key=True)
+    changeid = models.TextField(default='initial', blank=True, null=True)
     user = models.ForeignKey(User, models.CASCADE)  # delete if user is deleted
     resource = models.ForeignKey(Resource, models.PROTECT)
     start = models.DateTimeField()
@@ -71,6 +74,10 @@ class Booking(models.Model):
         conflicting_dates = conflicting_dates.filter(start__lt=self.end)
         if conflicting_dates.count() > 0:
             raise ValueError('This booking overlaps with another booking')
+        if not self.changeid:
+            self.changeid = self.id
+        else:
+            self.changeid = hashlib.md5(self.changeid.encode() + get_random_string(length=32).encode()).hexdigest()
         return super(Booking, self).save(*args, **kwargs)
 
     def __str__(self):
