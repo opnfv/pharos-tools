@@ -19,7 +19,7 @@ class BookingSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Booking
-        fields = ('id', 'resource_id', 'start', 'end', 'installer_name', 'scenario_name', 'purpose')
+        fields = ('id', 'changeid', 'reset', 'resource_id', 'start', 'end', 'installer_name', 'scenario_name', 'purpose')
 
 
 class ServerSerializer(serializers.ModelSerializer):
