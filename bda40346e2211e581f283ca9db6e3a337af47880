@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a3d3df0_773faf87",
+        "filename": "laas-fog/pharoslaas/actions/fuel_horizon_nat.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-01-09T00:48:14Z",
+      "side": 1,
+      "message": "I will think a bit about this and maybe propose a slightly more dynamic approach.",
+      "range": {
+        "startLine": 18,
+        "startChar": 36,
+        "endLine": 18,
+        "endChar": 48
+      },
+      "revId": "bda40346e2211e581f283ca9db6e3a337af47880",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_d7b83b13",
+        "filename": "laas-fog/pharoslaas/actions/fuel_install.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-01-09T00:48:14Z",
+      "side": 1,
+      "message": "oops, maybe we should fix this in Fuel. TERM\u003dvt220 should work too, Jenkins uses that afaik.",
+      "range": {
+        "startLine": 20,
+        "startChar": 29,
+        "endLine": 20,
+        "endChar": 55
+      },
+      "revId": "bda40346e2211e581f283ca9db6e3a337af47880",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_173e238c",
+        "filename": "laas-fog/pharoslaas/actions/fuel_install.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-01-09T00:48:14Z",
+      "side": 1,
+      "message": "not needed, without virtual_pod1.yml deploy will only throw a warning.\nin the future, we will add proper virtual PDF support.",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 92
+      },
+      "revId": "bda40346e2211e581f283ca9db6e3a337af47880",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_f7bbbf0c",
+        "filename": "laas-fog/pharoslaas/actions/workflows/fuel_workflow.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-01-09T00:48:14Z",
+      "side": 1,
+      "message": "too much for virtual, too little for baremetal.\nA typical deploy takes:\n~30-35 minutes virtual x86;\n~2h30 minutes virtual AArch64 (it does a lot more);\n~2-3 hours baremetal x86;\n~4-5 hours baremetal AArch64;\nDeploys might take longer in case mirrors are down and retries are involved etc.",
+      "range": {
+        "startLine": 8,
+        "startChar": 21,
+        "endLine": 8,
+        "endChar": 25
+      },
+      "revId": "bda40346e2211e581f283ca9db6e3a337af47880",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
