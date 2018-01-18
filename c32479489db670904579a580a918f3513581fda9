@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a3d3df0_6bbcd6dc",
+        "filename": "dashboard/src/account/models.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-01-18T21:10:02Z",
+      "side": 0,
+      "message": "Removing the id doesn\u0027t cause problems anywhere else? Is this tested?",
+      "range": {
+        "startLine": 39,
+        "startChar": 3,
+        "endLine": 39,
+        "endChar": 43
+      },
+      "revId": "c32479489db670904579a580a918f3513581fda9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
