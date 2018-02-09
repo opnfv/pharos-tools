@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a3d3df0_a50ee1e2",
+        "filename": "dashboard/src/pharos_dashboard/settings.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-02-09T19:19:45Z",
+      "side": 1,
+      "message": "this will fail if DEBUG is not defined in env",
+      "range": {
+        "startLine": 8,
+        "startChar": 8,
+        "endLine": 8,
+        "endChar": 27
+      },
+      "revId": "87a087873998fbf637daf66518916feab98d84d3",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
