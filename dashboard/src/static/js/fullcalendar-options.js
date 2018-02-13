@@ -91,6 +91,7 @@ var calendarOptions = {
         }
     },
 
+
     eventDrop: function (event) {
         sendEventToForm(event);
     },

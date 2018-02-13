@@ -35,7 +35,6 @@ class BookingEditForm(forms.Form):
     scenario = forms.ModelChoiceField(queryset=Scenario.objects.all(), required=False)
     reset = forms.ChoiceField(choices = ((True, 'Yes'),(False, 'No')), label="Reset System", initial='False', required=True)
 
-
     def __init__(self, *args, **kwargs ):
         cloned_kwargs = {}
         cloned_kwargs['purpose'] = kwargs.pop('purpose')
