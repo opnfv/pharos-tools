@@ -19,10 +19,11 @@ from django.views.generic import FormView
 from django.views.generic import TemplateView
 from jira import JIRAError
 from django.shortcuts import redirect
+import json
 
 from account.jira_util import get_jira
 from booking.forms import BookingForm, BookingEditForm
-from booking.models import Booking
+from booking.models import Booking, Scenario, Installer, Opsys
 from dashboard.models import Resource
 
 def create_jira_ticket(user, booking):
@@ -54,7 +55,19 @@ class BookingFormView(FormView):
         title = 'Booking: ' + self.resource.name
         context = super(BookingFormView, self).get_context_data(**kwargs)
         context.update({'title': title, 'resource': self.resource})
-        #raise PermissionDenied('check')
+        installer_filter = {}
+        for os in Opsys.objects.all():
+            installer_filter[os.id] = []
+            for installer in os.sup_installers.all():
+                installer_filter[os.id].append(installer.id)
+
+        scenario_filter = {}
+        for installer in Installer.objects.all():
+            scenario_filter[installer.id] = []
+            for scenario in installer.sup_scenarios.all():
+                scenario_filter[installer.id].append(scenario.id)
+
+        context.update({'installer_filter': json.dumps(installer_filter), 'scenario_filter': json.dumps(scenario_filter)})
         return context
 
     def get_success_url(self):
@@ -108,6 +121,19 @@ class BookingEditFormView(FormView):
         title = 'Editing Booking on: ' + self.resource.name
         context = super(BookingEditFormView, self).get_context_data(**kwargs)
         context.update({'title': title, 'resource': self.resource})
+        installer_filter = {}
+        for os in Opsys.objects.all():
+            installer_filter[os.id] = []
+            for installer in os.sup_installers.all():
+                installer_filter[os.id].append(installer.id)
+
+        scenario_filter = {}
+        for installer in Installer.objects.all():
+            scenario_filter[installer.id] = []
+            for scenario in installer.sup_scenarios.all():
+                scenario_filter[installer.id].append(scenario.id)
+
+        context.update({'installer_filter': json.dumps(installer_filter), 'scenario_filter': json.dumps(scenario_filter)})
         return context
 
     def get_form_kwargs(self):
