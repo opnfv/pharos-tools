@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3f45e8_a2ef9daf",
+        "filename": "dashboard/src/booking/models.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-03-12T13:11:08Z",
+      "side": 1,
+      "message": "Why was this whole class moved?",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 30
+      },
+      "revId": "30a35deeeb40d8d21783bb927da337561cb2b38d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_82d1c1fd",
+        "filename": "dashboard/src/booking/views.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-03-12T13:11:08Z",
+      "side": 1,
+      "message": "Considering how often this code will have to be updated, can we move this logic into a generic method?",
+      "range": {
+        "startLine": 124,
+        "startChar": 0,
+        "endLine": 136,
+        "endChar": 122
+      },
+      "revId": "30a35deeeb40d8d21783bb927da337561cb2b38d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_c2ad898a",
+        "filename": "dashboard/src/templates/booking/booking_calendar.html",
+        "patchSetId": 1
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-03-12T13:11:08Z",
+      "side": 1,
+      "message": "what is the point of this if we have already hidden all the children?",
+      "range": {
+        "startLine": 146,
+        "startChar": 8,
+        "endLine": 150,
+        "endChar": 9
+      },
+      "revId": "30a35deeeb40d8d21783bb927da337561cb2b38d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_62c75546",
+        "filename": "dashboard/src/templates/booking/booking_calendar.html",
+        "patchSetId": 1
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-03-12T13:11:08Z",
+      "side": 1,
+      "message": "Can we change our data or algorithm to avoid this n^2 search? Maybe we could/create a map between installer name and id.",
+      "range": {
+        "startLine": 157,
+        "startChar": 8,
+        "endLine": 164,
+        "endChar": 9
+      },
+      "revId": "30a35deeeb40d8d21783bb927da337561cb2b38d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_c2c46942",
+        "filename": "dashboard/src/templates/booking/booking_calendar.html",
+        "patchSetId": 1
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-03-12T13:11:08Z",
+      "side": 1,
+      "message": "most of this can be refactored into a generic \"filter\" method. Consider that there will be more drop down menus added as time goes on",
+      "range": {
+        "startLine": 170,
+        "startChar": 8,
+        "endLine": 189,
+        "endChar": 5
+      },
+      "revId": "30a35deeeb40d8d21783bb927da337561cb2b38d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
