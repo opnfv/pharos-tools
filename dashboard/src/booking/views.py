@@ -19,11 +19,14 @@ from django.views.generic import FormView
 from django.views.generic import TemplateView
 from jira import JIRAError
 from django.shortcuts import redirect
+import pytz
+from datetime import datetime, timedelta
 
 from account.jira_util import get_jira
 from booking.forms import BookingForm, BookingEditForm
 from booking.models import Booking
 from dashboard.models import Resource
+from account.models import UserProfile
 
 def create_jira_ticket(user, booking):
     jira = get_jira(user)
@@ -113,8 +116,10 @@ class BookingEditFormView(FormView):
     def get_form_kwargs(self):
         kwargs = super(BookingEditFormView, self).get_form_kwargs()
         kwargs['purpose'] = self.original_booking.purpose
-        kwargs['start'] = self.original_booking.start
-        kwargs['end'] = self.original_booking.end
+        kwargs['start'] = self.original_booking.start.astimezone(pytz.timezone(UserProfile.objects.filter(
+            user=self.original_booking.user)[0].timezone))
+        kwargs['end'] = self.original_booking.end.astimezone(pytz.timezone(UserProfile.objects.filter(
+            user=self.original_booking.user)[0].timezone))
         try:
             kwargs['installer'] = self.original_booking.installer
         except AttributeError:
