@@ -85,6 +85,30 @@
       "revId": "567dfc83e35d140f5953936465e65a9b7195156f",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_1f916747",
+        "filename": "dashboard/src/templates/booking/booking_calendar.html",
+        "patchSetId": 1
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2018-03-26T18:56:27Z",
+      "side": 1,
+      "message": "The actual checks for if a user has any extensions left do happen server-side, the conditional here is used because modifying generally static content is semantically different from populating templating fields. Since displaying the fields isn\u0027t a state change operation (while accepting and saving a post request in this instance is) it seems safe to put this in js, and preferable as it\u0027s less clunky to use the same form and view and have a conditional modify it here where we have the necessary context than to try to inject modifications when rendering the view.\n\nI could do this server side, buy as far as I know that would require making the actual HTML templates a lot more general and having to move a lot of the html into different places in the python views (complicating future editing)",
+      "parentUuid": "5a3f45e8_f92adb7c",
+      "range": {
+        "startLine": 76,
+        "startChar": 36,
+        "endLine": 76,
+        "endChar": 59
+      },
+      "revId": "567dfc83e35d140f5953936465e65a9b7195156f",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
     }
   ]
 }
