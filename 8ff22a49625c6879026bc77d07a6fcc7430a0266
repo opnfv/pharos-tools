@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3f45e8_3f5f0374",
+        "filename": "dashboard/src/dashboard/tasks.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1451
+      },
+      "writtenOn": "2018-03-26T23:11:57Z",
+      "side": 1,
+      "message": "I\u0027m not seeing \u0027time\u0027 used here, and it looks like \u0027timedelta\u0027 is only being used from datetime.",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 11
+      },
+      "revId": "8ff22a49625c6879026bc77d07a6fcc7430a0266",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_9f557752",
+        "filename": "dashboard/src/dashboard/tasks.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1451
+      },
+      "writtenOn": "2018-03-26T23:11:57Z",
+      "side": 1,
+      "message": "Does this need a \u0027shared_task\u0027 decorator. Forgive my ignorance of Celery it that is not the case.",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 26,
+        "endChar": 22
+      },
+      "revId": "8ff22a49625c6879026bc77d07a6fcc7430a0266",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_5f5c8f7e",
+        "filename": "dashboard/src/dashboard/tasks.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1451
+      },
+      "writtenOn": "2018-03-26T23:11:57Z",
+      "side": 1,
+      "message": "You already have timedelta imported, I\u0027m not sure why this is fully quallified.",
+      "range": {
+        "startLine": 27,
+        "startChar": 18,
+        "endLine": 27,
+        "endChar": 36
+      },
+      "revId": "8ff22a49625c6879026bc77d07a6fcc7430a0266",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_7f506b5e",
+        "filename": "dashboard/src/dashboard/tasks.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1451
+      },
+      "writtenOn": "2018-03-26T23:11:57Z",
+      "side": 1,
+      "message": "This is odd. Why loop over all the bookings, if you\u0027ve already filtered some? Is there not a way to query using say a \u0027Q\u0027 object to more explicitly pull the list of expired bookings?\n\nhttps://docs.djangoproject.com/en/1.8/topics/db/queries/#complex-lookups-with-q",
+      "range": {
+        "startLine": 32,
+        "startChar": 4,
+        "endLine": 35,
+        "endChar": 45
+      },
+      "revId": "8ff22a49625c6879026bc77d07a6fcc7430a0266",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
