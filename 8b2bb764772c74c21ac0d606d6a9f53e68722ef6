@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3f45e8_1fc96726",
+        "filename": "dashboard/src/booking/views.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1451
+      },
+      "writtenOn": "2018-03-26T23:17:21Z",
+      "side": 1,
+      "message": "is pytz in requirements.txt already?",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 11
+      },
+      "revId": "8b2bb764772c74c21ac0d606d6a9f53e68722ef6",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
