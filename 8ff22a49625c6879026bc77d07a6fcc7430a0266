@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5a3f45e8_4249548a",
+        "filename": "dashboard/src/dashboard/tasks.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2018-03-27T18:44:14Z",
+      "side": 1,
+      "message": "That does look to be the case, I\u0027ll change it in the next patch set.",
+      "parentUuid": "5a3f45e8_3f5f0374",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 11
+      },
+      "revId": "8ff22a49625c6879026bc77d07a6fcc7430a0266",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3f45e8_9f557752",
         "filename": "dashboard/src/dashboard/tasks.py",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2018-03-26T23:11:57Z",
       "side": 1,
       "message": "Does this need a \u0027shared_task\u0027 decorator. Forgive my ignorance of Celery it that is not the case.",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 26,
+        "endChar": 22
+      },
+      "revId": "8ff22a49625c6879026bc77d07a6fcc7430a0266",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_024f4c93",
+        "filename": "dashboard/src/dashboard/tasks.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2018-03-27T18:44:14Z",
+      "side": 1,
+      "message": "Since this should only be a single instance of this class at any time, it shouldn\u0027t be necessary to add that decorator. If we do want to substantially abstract the cleanup process out we can do that.",
+      "parentUuid": "5a3f45e8_9f557752",
       "range": {
         "startLine": 26,
         "startChar": 0,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "5a3f45e8_6246107e",
+        "filename": "dashboard/src/dashboard/tasks.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2018-03-27T18:44:14Z",
+      "side": 1,
+      "message": "Whoops, me neither. Changing this in the next patch set.",
+      "parentUuid": "5a3f45e8_5f5c8f7e",
+      "range": {
+        "startLine": 27,
+        "startChar": 18,
+        "endLine": 27,
+        "endChar": 36
+      },
+      "revId": "8ff22a49625c6879026bc77d07a6fcc7430a0266",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3f45e8_7f506b5e",
         "filename": "dashboard/src/dashboard/tasks.py",
         "patchSetId": 2
@@ -82,6 +154,30 @@
       "writtenOn": "2018-03-26T23:11:57Z",
       "side": 1,
       "message": "This is odd. Why loop over all the bookings, if you\u0027ve already filtered some? Is there not a way to query using say a \u0027Q\u0027 object to more explicitly pull the list of expired bookings?\n\nhttps://docs.djangoproject.com/en/1.8/topics/db/queries/#complex-lookups-with-q",
+      "range": {
+        "startLine": 32,
+        "startChar": 4,
+        "endLine": 35,
+        "endChar": 45
+      },
+      "revId": "8ff22a49625c6879026bc77d07a6fcc7430a0266",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_a25f7840",
+        "filename": "dashboard/src/dashboard/tasks.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2018-03-27T18:44:14Z",
+      "side": 1,
+      "message": "Just realized I didn\u0027t change Booking.objects.all() to the filtered set I got before. Patch set 2 will reflect that change.",
+      "parentUuid": "5a3f45e8_7f506b5e",
       "range": {
         "startLine": 32,
         "startChar": 4,
