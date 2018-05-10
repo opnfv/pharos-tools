@@ -71,6 +71,7 @@
                             <div class='input-group' id='endtimeeditpicker'>
                                 {% bootstrap_field form.end addon_after='<span class="glyphicon glyphicon-calendar"></span>' %}
                             </div>
+<<<<<<< HEAD
                             </div>
                             <script type="text/javascript">
                                 if( {{ booking.ext_count }} <= 0 ){
@@ -84,7 +85,9 @@
                                     hidediv.parentNode.insertBefore(par,hidediv.nextSibling);
                                 }
                             </script>
+=======
                             {% bootstrap_field form.opsys %}
+>>>>>>> 7ad193da27da746a141de34d4f11ab1124031a3d
                             {% bootstrap_field form.purpose %}
                             {% bootstrap_field form.installer %}
                             {% bootstrap_field form.scenario %}
@@ -179,9 +182,8 @@
         var drop = document.getElementById(master);
         var opts = target_filter[drop.options[drop.selectedIndex].value];
         if (!opts) {
-            opts = {};
+            opts = [];
         }
-        var emptyMap = {}
 
         var map = Object.create(null);
         for (var i = 0; i < opts.length; i++) {
@@ -190,7 +192,7 @@
         }
 
         for (var i = 0; i < document.getElementById(target).childNodes.length; i++) {
-            if (document.getElementById(target).childNodes[i].value in opts && !(document.getElementById(target).childNodes[i].value in emptyMap) ) {
+            if (document.getElementById(target).childNodes[i].value in map) {
                 document.getElementById(target).childNodes[i].style.display = "inherit";
             }
         }
