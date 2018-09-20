@@ -1,0 +1,266 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a682502_0ff6a6d7",
+        "filename": "dashboard/src/account/models.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 1451
+      },
+      "writtenOn": "2018-09-20T22:53:00Z",
+      "side": 1,
+      "message": "\"\".join([string.ascii_letters, sting.digits])",
+      "range": {
+        "startLine": 140,
+        "startChar": 19,
+        "endLine": 140,
+        "endChar": 83
+      },
+      "revId": "d662e9dacf86b33dce7a515f29c641d9a5876ee9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_6f03dab8",
+        "filename": "dashboard/src/account/models.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 1451
+      },
+      "writtenOn": "2018-09-20T22:53:00Z",
+      "side": 1,
+      "message": "key \u003d \"\".join(random.sample(alphabet, 45))",
+      "range": {
+        "startLine": 141,
+        "startChar": 8,
+        "endLine": 144,
+        "endChar": 18
+      },
+      "revId": "d662e9dacf86b33dce7a515f29c641d9a5876ee9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_4f009eaa",
+        "filename": "dashboard/src/api/models.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1451
+      },
+      "writtenOn": "2018-09-20T22:53:00Z",
+      "side": 1,
+      "message": "yeah dog",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 23
+      },
+      "revId": "d662e9dacf86b33dce7a515f29c641d9a5876ee9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_8f3116a5",
+        "filename": "dashboard/src/api/models.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 1451
+      },
+      "writtenOn": "2018-09-20T22:53:00Z",
+      "side": 1,
+      "message": "whitespace",
+      "revId": "d662e9dacf86b33dce7a515f29c641d9a5876ee9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_af2cd24b",
+        "filename": "dashboard/src/api/models.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 1451
+      },
+      "writtenOn": "2018-09-20T22:53:00Z",
+      "side": 1,
+      "message": "whitespace",
+      "revId": "d662e9dacf86b33dce7a515f29c641d9a5876ee9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_ef26ca67",
+        "filename": "dashboard/src/api/models.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 1451
+      },
+      "writtenOn": "2018-09-20T22:53:00Z",
+      "side": 1,
+      "message": "whitespace",
+      "revId": "d662e9dacf86b33dce7a515f29c641d9a5876ee9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_cf2b0e2f",
+        "filename": "dashboard/src/api/models.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 501,
+      "author": {
+        "id": 1451
+      },
+      "writtenOn": "2018-09-20T22:53:00Z",
+      "side": 1,
+      "message": "whitespace",
+      "revId": "d662e9dacf86b33dce7a515f29c641d9a5876ee9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_2f20c248",
+        "filename": "dashboard/src/api/models.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 553,
+      "author": {
+        "id": 1451
+      },
+      "writtenOn": "2018-09-20T22:53:00Z",
+      "side": 1,
+      "message": "whitespace",
+      "revId": "d662e9dacf86b33dce7a515f29c641d9a5876ee9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_0f1d0610",
+        "filename": "dashboard/src/api/models.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 556,
+      "author": {
+        "id": 1451
+      },
+      "writtenOn": "2018-09-20T22:53:00Z",
+      "side": 1,
+      "message": "whitespace",
+      "revId": "d662e9dacf86b33dce7a515f29c641d9a5876ee9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_6f1aba18",
+        "filename": "dashboard/src/api/serializers/booking_serializer.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1451
+      },
+      "writtenOn": "2018-09-20T22:53:00Z",
+      "side": 1,
+      "message": "license?",
+      "revId": "d662e9dacf86b33dce7a515f29c641d9a5876ee9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_4f17feed",
+        "filename": "dashboard/src/api/serializers/old_serializers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1451
+      },
+      "writtenOn": "2018-09-20T22:53:00Z",
+      "side": 1,
+      "message": "remove the dead code",
+      "range": {
+        "startLine": 63,
+        "startChar": 0,
+        "endLine": 73,
+        "endChar": 23
+      },
+      "revId": "d662e9dacf86b33dce7a515f29c641d9a5876ee9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_afd33237",
+        "filename": "dashboard/src/api/serializers/old_serializers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1451
+      },
+      "writtenOn": "2018-09-20T22:53:00Z",
+      "side": 1,
+      "message": "more dead code",
+      "revId": "d662e9dacf86b33dce7a515f29c641d9a5876ee9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_8fd8f654",
+        "filename": "dashboard/src/api/serializers/old_serializers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1451
+      },
+      "writtenOn": "2018-09-20T22:53:00Z",
+      "side": 1,
+      "message": "and one more dead code",
+      "revId": "d662e9dacf86b33dce7a515f29c641d9a5876ee9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_efdd2a44",
+        "filename": "dashboard/src/api/tests/test_serializers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1451
+      },
+      "writtenOn": "2018-09-20T22:53:00Z",
+      "side": 1,
+      "message": "license?",
+      "revId": "d662e9dacf86b33dce7a515f29c641d9a5876ee9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
