@@ -1,0 +1,29 @@
+{% extends "workflow/viewport-element.html" %}
+{% load staticfiles %}
+
+{% load bootstrap3 %}
+
+{% block content %}
+
+<style>
+    #permission_form_div {
+        width: 100%;
+        padding: 5%;
+
+    }
+
+    
+</style>
+
+<div id="permission_form_div">
+    <form method="post" action="" class="form" id="permissionsselectorform">
+        {% csrf_token %}
+        {{ form|default:"<p>no form loaded</p>" }}
+        {% buttons %}
+
+        {% endbuttons %}
+    </form>
+
+</div>
+    
+{% endblock content %}

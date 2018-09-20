@@ -8,15 +8,18 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # NOTE: os.environ only returns strings, so making a comparison to
 # 'True' here will convert it to the correct Boolean value.
 DEBUG = os.environ['DEBUG'] == 'True'
+TESTING = os.environ['TEST'] == 'True'
 
 # Application definition
 
 INSTALLED_APPS = [
     'dashboard',
+    'resource_inventory',
     'booking',
     'account',
-    'jenkins',
     'notifier',
+    'workflow',
+    'api',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -51,6 +54,7 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
+                'dashboard.context_processors.debug',
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
@@ -58,6 +62,10 @@ TEMPLATES = [
             ],
         },
     },
+]
+
+TEMPLATE_CONTEXT_PROCESSORS = [
+    'dashboard.context_processors.debug',
 ]
 
 WSGI_APPLICATION = 'pharos_dashboard.wsgi.application'
@@ -128,13 +136,14 @@ DATABASES = {
     }
 }
 
+DJANGO_LOG_LEVEL=DEBUG
 
 # Rest API Settings
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
     ],
-    'DEFAULT_FILTER_BACKENDS': ('rest_framework.filters.DjangoFilterBackend',),
+    'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.FilterSet',),
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.TokenAuthentication',
@@ -174,14 +183,6 @@ BOOKING_EXP_TIME = os.environ['BOOKING_EXPIRE_TIME']
 BOOKING_MAX_NUM = os.environ['BOOKING_MAXIMUM_NUMBER']
 
 CELERYBEAT_SCHEDULE = {
-    'sync-jenkins': {
-        'task': 'jenkins.tasks.sync_jenkins',
-        'schedule': timedelta(minutes=5)
-    },
-    'send-booking-notifications': {
-        'task': 'notification.tasks.send_booking_notifications',
-        'schedule': timedelta(minutes=5)
-    },
     'clean-database': {
         'task': 'dashboard.tasks.database_cleanup',
         'schedule': timedelta(hours=24)
@@ -190,12 +191,15 @@ CELERYBEAT_SCHEDULE = {
         'task': 'dashboard.tasks.booking_cleanup',
         'schedule': timedelta(hours=24)
     },
+    'booking_poll': {
+        'task': 'dashboard.tasks.booking_poll',
+        'schedule': timedelta(seconds=10)
+    },
+    'conjure_notifiers': {
+    'task': 'dashboard.tasks.conjure_aggregate_notifiers',
+    'schedule': timedelta(seconds=10)
+    },
 }
-# Jenkins Settings
-ALL_SLAVES_URL = os.environ['JENKINS_URL'] + '/computer/api/json?tree=computer[displayName,offline,idle]'
-CI_SLAVES_URL = os.environ['JENKINS_URL'] + '/label/ci-pod/api/json?tree=nodes[nodeName,offline,idle]'
-ALL_JOBS_URL = os.environ['JENKINS_URL'] + '/api/json?tree=jobs[displayName,url,lastBuild[fullDisplayName,building,builtOn,timestamp,result]'
-GET_SLAVE_URL = os.environ['JENKINS_URL'] + '/computer/'
 
 # Notifier Settings
 EMAIL_HOST = os.environ['EMAIL_HOST']
@@ -204,3 +208,4 @@ EMAIL_HOST_USER = os.environ['EMAIL_HOST_USER']
 EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']
 EMAIL_USE_TLS=True
 DEFAULT_EMAIL_FROM = os.environ.get('DEFAULT_EMAIL_FROM', 'webmaster@localhost')
+SESSION_ENGINE="django.contrib.sessions.backends.signed_cookies"

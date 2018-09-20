@@ -10,7 +10,8 @@
 
 from django.contrib import admin
 
-from account.models import UserProfile, Lab
+from account.models import UserProfile, Lab, VlanManager
 
 admin.site.register(UserProfile)
 admin.site.register(Lab)
+admin.site.register(VlanManager)

@@ -12,14 +12,18 @@ from django.contrib.auth.decorators import login_required, user_passes_test
 from django.shortcuts import redirect
 from django.utils.decorators import method_decorator
 from django.views import View
+from django.http import Http404
+from django.http.response import JsonResponse
 from rest_framework import viewsets
 from rest_framework.authtoken.models import Token
+from django.views.decorators.csrf import csrf_exempt, csrf_protect
 
-from api.serializers import *
+from api.serializers.booking_serializer import *
+from api.serializers.old_serializers import NotifierSerializer, UserSerializer
 from account.models import UserProfile
 from booking.models import Booking
-from dashboard.models import Resource, Server, ResourceStatus
-
+from notifier.models import Notifier
+from api.models import *
 
 class BookingViewSet(viewsets.ModelViewSet):
     queryset = Booking.objects.all()
@@ -27,20 +31,6 @@ class BookingViewSet(viewsets.ModelViewSet):
     filter_fields = ('resource', 'id')
 
 
-class ServerViewSet(viewsets.ModelViewSet):
-    queryset = Server.objects.all()
-    serializer_class = ServerSerializer
-    filter_fields = ('resource', 'name')
-
-
-class ResourceViewSet(viewsets.ModelViewSet):
-    queryset = Resource.objects.all()
-    serializer_class = ResourceSerializer
-    filter_fields = ('name', 'id')
-
-class ResourceStatusViewSet(viewsets.ModelViewSet):
-    queryset = ResourceStatus.objects.all()
-    serializer_class = ResourceStatusSerializer
 
 class NotifierViewSet(viewsets.ModelViewSet):
     queryset = Notifier.objects.none()
@@ -59,3 +49,72 @@ class GenerateTokenView(View):
             token.delete()
             Token.objects.create(user=user)
         return redirect('account:settings')
+
+
+def lab_inventory(request, lab_name=""):
+    lab_token = request.META.get('HTTP_AUTH_TOKEN')
+    lab_manager = LabManagerTracker.get(lab_name, lab_token)
+    return JsonResponse(lab_manager.get_inventory(), safe=False)
+
+def lab_status(request, lab_name=""):
+    lab_token = request.META.get('HTTP_AUTH_TOKEN')
+    lab_manager = LabManagerTracker.get(lab_name, lab_token)
+    if request.method == "POST":
+        return JsonResponse(lab_manager.set_status(request.POST), safe=False)
+    return JsonResponse(lab_manager.get_status(), safe=False)
+
+def lab_profile(request, lab_name=""):
+    lab_token = request.META.get('HTTP_AUTH_TOKEN')
+    lab_manager = LabManagerTracker.get(lab_name, lab_token)
+    return JsonResponse(lab_manager.get_profile(), safe=False)
+
+
+@csrf_exempt
+def specific_task(request, lab_name="", job_id="", task_id=""):
+    lab_token = request.META.get('HTTP_AUTH_TOKEN')
+    lab_manager = LabManagerTracker.get(lab_name, lab_token)
+    
+    if request.method == "POST":
+        print("posted to task endpoint: "  + str(task_id) + " of job " + str(job_id) + " in lab " + str(lab_name))
+        task = get_task(task_id)
+        if 'status' in request.POST:
+            task.status = request.POST.get('status')
+        if 'message' in request.POST:
+            task.message = request.POST.get('message')
+        task.save()
+        print("task: " + str(task))
+        d = {}
+        d['task'] = task.config.get_delta()
+        m = {}
+        m['status'] = task.status
+        m['job'] = str(task.job)
+        m['message'] = task.message
+        d['meta'] = m
+        response = json.dumps(d)
+        return JsonResponse(d)
+    elif request.method == "GET":
+        print("gotten task at endpoint: " + str(task_id))
+        return JsonResponse(get_task(task_id).config.get_delta())
+
+
+def specific_job(request, lab_name="", job_id=""):
+    lab_token = request.META.get('HTTP_AUTH_TOKEN')
+    lab_manager = LabManagerTracker.get(lab_name, lab_token)
+    if request.method == "POST":
+        return JsonResponse(lab_manager.update_job(job_id, request.POST), safe=False)
+    return JsonResponse(lab_manager.get_job(job_id), safe=False)
+
+def new_jobs(request, lab_name=""):
+    lab_token = request.META.get('HTTP_AUTH_TOKEN')
+    lab_manager = LabManagerTracker.get(lab_name, lab_token)
+    return JsonResponse(lab_manager.get_new_jobs(), safe=False)
+
+def current_jobs(request, lab_name=""):
+    lab_token = request.META.get('HTTP_AUTH_TOKEN')
+    lab_manager = LabManagerTracker.get(lab_name, lab_token)
+    return JsonResponse(lab_manager.get_current_jobs(), safe=False)
+
+def done_jobs(request, lab_name=""):
+    lab_token = request.META.get('HTTP_AUTH_TOKEN')
+    lab_manager = LabManagerTracker.get(lab_name, lab_token)
+    return JsonResponse(lab_manager.get_done_jobs(), safe=False)
