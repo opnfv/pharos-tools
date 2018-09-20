@@ -1,7 +1,9 @@
 {% extends "base.html" %}
 {% load staticfiles %}
+{% load bootstrap3 %}
 
 {% block extrahead %}
+    {{ block.super }}
     <!-- DataTables CSS -->
     <link href="{% static "bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css" %}"
           rel="stylesheet">

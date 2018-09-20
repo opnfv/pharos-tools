@@ -64,3 +64,6 @@ target/
 
 # macos preview
 .DS_Store
+
+#IOL Internal
+**/.vscode/settings.json

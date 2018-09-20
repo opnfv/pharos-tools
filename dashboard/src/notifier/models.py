@@ -9,13 +9,24 @@
 
 from django.db import models
 from jira import JIRA, JIRAError
-from dashboard.models import Resource
 from booking.models import Booking
 from django.contrib.auth.models import User
 from account.models import UserProfile
 from django.contrib import messages
 from django.db.models.signals import pre_save
 from fernet_fields import EncryptedTextField
+from account.models import Lab
+
+class MetaBooking(models.Model):
+    id = models.AutoField(primary_key=True)
+    booking = models.OneToOneField(Booking, on_delete=models.CASCADE, related_name="metabooking")
+    ending_notified = models.BooleanField(default=False)
+    ended_notified = models.BooleanField(default=False)
+    created_notified = models.BooleanField(default=False)
+
+class LabMessage(models.Model):
+    lab = models.ForeignKey(Lab, on_delete=models.CASCADE)
+    msg = models.TextField() #django template should be put here
 
 class Notifier(models.Model):
     id = models.AutoField(primary_key=True)
@@ -32,6 +43,12 @@ class Notifier(models.Model):
 
     def __str__(self):
         return self.title
+
+    """
+    Implement for next PR: send Notifier by media agreed to by user
+    """
+    def send(self):
+        pass
 
     def getEmail(self):
         return self.user.email_addr

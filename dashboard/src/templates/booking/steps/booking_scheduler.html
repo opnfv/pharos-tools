@@ -1,0 +1,22 @@
+{% extends "workflow/viewport-element.html" %}
+{% load staticfiles %}
+
+{% load bootstrap3 %}
+
+
+
+{% block content %}
+{% csrf_token %}
+<style>
+    #form_div {
+        width: 100%;
+        padding: 5%;
+    }
+</style>
+<div id="form_div">
+{{ form|default:"<p>no form loaded</p>" }}
+{% buttons %}
+<button type="submit" style="display: none;" class="btn btn-success">Confirm</button>
+{% endbuttons %}
+</div>
+{% endblock content %}

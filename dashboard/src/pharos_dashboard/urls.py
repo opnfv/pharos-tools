@@ -30,14 +30,16 @@ from django.contrib import admin
 
 
 urlpatterns = [
+
+    url(r'^wf/', include('workflow.urls', namespace='workflow')),
     url(r'^', include('dashboard.urls', namespace='dashboard')),
     url(r'^booking/', include('booking.urls', namespace='booking')),
     url(r'^accounts/', include('account.urls', namespace='account')),
-
+    url(r'^resource/', include('resource_inventory.urls', namespace='resource')),
     url(r'^admin/', admin.site.urls),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-
-    url(r'^api/', include('api.urls'))
+    url(r'^api/', include('api.urls')),
+    url(r'^messages/', include('notifier.urls', namespace='notifier'))
 ]
 
 if settings.DEBUG is True:

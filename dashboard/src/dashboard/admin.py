@@ -10,11 +10,6 @@
 
 from django.contrib import admin
 
-from dashboard.models import *
 
 admin.site.site_header = "Pharos Dashboard Administration"
 admin.site.site_title = "Pharos Dashboard"
-
-admin.site.register(Resource)
-admin.site.register(Server)
-admin.site.register(ResourceStatus)

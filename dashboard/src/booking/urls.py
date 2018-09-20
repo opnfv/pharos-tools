@@ -27,12 +27,9 @@ from django.conf.urls import url
 
 from booking.views import *
 
+app_name = "booking"
 urlpatterns = [
-    url(r'^(?P<resource_id>[0-9]+)/$', BookingFormView.as_view(), name='create'),
-    url(r'^(?P<resource_id>[0-9]+)/edit/(?P<booking_id>[0-9]+)/$', BookingEditFormView.as_view(), name='edit'),
 
-    url(r'^(?P<resource_id>[0-9]+)/bookings_json/$', ResourceBookingsJSON.as_view(),
-        name='bookings_json'),
 
     url(r'^detail/$', BookingView.as_view(), name='detail_prefix'),
     url(r'^detail/(?P<booking_id>[0-9]+)/$', BookingView.as_view(), name='detail'),
@@ -42,5 +39,8 @@ urlpatterns = [
 
     url(r'^delete/(?P<booking_id>[0-9]+)/confirm/$', bookingDelete, name='delete_booking'),
 
-    url(r'^list/$', BookingListView.as_view(), name='list')
+    url(r'^list/$', BookingListView.as_view(), name='list'),
+    url(r'^stats/$', booking_stats_view, name='stats'),
+    url(r'^stats/json$', booking_stats_json, name='stats_json'),
+    url(r'^(?P<booking_id>[0-9]+)/$', booking_detail_view, name='booking_detail')
 ]

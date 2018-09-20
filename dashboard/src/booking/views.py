@@ -10,7 +10,7 @@
 from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.http import JsonResponse
+from django.http import JsonResponse, Http404
 from django.shortcuts import get_object_or_404
 from django.urls import reverse
 from django.utils import timezone
@@ -18,12 +18,16 @@ from django.views import View
 from django.views.generic import FormView
 from django.views.generic import TemplateView
 from jira import JIRAError
-from django.shortcuts import redirect
+from django.shortcuts import redirect, render
+import json
 
+from booking.models import Booking
 from account.jira_util import get_jira
 from booking.forms import BookingForm, BookingEditForm
-from booking.models import Booking
-from dashboard.models import Resource
+from resource_inventory.models import ResourceBundle
+from resource_inventory.resource_manager import ResourceManager
+from booking.models import Booking, Scenario, Installer, Opsys
+from booking.stats import StatisticsManager
 
 def create_jira_ticket(user, booking):
     jira = get_jira(user)
@@ -41,20 +45,36 @@ def create_jira_ticket(user, booking):
     booking.jira_issue_id = issue.id
     booking.save()
 
+def drop_filter(context):
+    installer_filter = {}
+    for os in Opsys.objects.all():
+        installer_filter[os.id] = []
+        for installer in os.sup_installers.all():
+            installer_filter[os.id].append(installer.id)
+
+    scenario_filter = {}
+    for installer in Installer.objects.all():
+        scenario_filter[installer.id] = []
+        for scenario in installer.sup_scenarios.all():
+            scenario_filter[installer.id].append(scenario.id)
+
+    context.update({'installer_filter': json.dumps(installer_filter), 'scenario_filter': json.dumps(scenario_filter)})
 
 class BookingFormView(FormView):
     template_name = "booking/booking_calendar.html"
     form_class = BookingForm
 
     def dispatch(self, request, *args, **kwargs):
-        self.resource = get_object_or_404(Resource, id=self.kwargs['resource_id'])
+        self.resource = get_object_or_404(ResourceBundle, id=self.kwargs['resource_id'])
         return super(BookingFormView, self).dispatch(request, *args, **kwargs)
 
     def get_context_data(self, **kwargs):
-        title = 'Booking: ' + self.resource.name
+        title = 'Booking: ' + str(self.resource.id)
         context = super(BookingFormView, self).get_context_data(**kwargs)
         context.update({'title': title, 'resource': self.resource})
-        #raise PermissionDenied('check')
+
+        drop_filter(context)
+
         return context
 
     def get_success_url(self):
@@ -75,10 +95,11 @@ class BookingFormView(FormView):
         booking = Booking(start=form.cleaned_data['start'],
                           end=form.cleaned_data['end'],
                           purpose=form.cleaned_data['purpose'],
-                          opsys=form.cleaned_data['opsys'],
                           installer=form.cleaned_data['installer'],
                           scenario=form.cleaned_data['scenario'],
-                          resource=self.resource, user=user)
+                          resource=self.resource,
+                          owner=user
+                          )
         try:
             booking.save()
         except ValueError as err:
@@ -105,7 +126,7 @@ class BookingEditFormView(FormView):
         return True
 
     def dispatch(self, request, *args, **kwargs):
-        self.resource = get_object_or_404(Resource, id=self.kwargs['resource_id'])
+        self.resource = get_object_or_404(ResourceBundle, id=self.kwargs['resource_id'])
         self.original_booking = get_object_or_404(Booking, id=self.kwargs['booking_id'])
         return super(BookingEditFormView, self).dispatch(request, *args, **kwargs)
 
@@ -113,6 +134,9 @@ class BookingEditFormView(FormView):
         title = 'Editing Booking on: ' + self.resource.name
         context = super(BookingEditFormView, self).get_context_data(**kwargs)
         context.update({'title': title, 'resource': self.resource, 'booking': self.original_booking})
+
+        drop_filter(context)
+
         return context
 
     def get_form_kwargs(self):
@@ -120,14 +144,6 @@ class BookingEditFormView(FormView):
         kwargs['purpose'] = self.original_booking.purpose
         kwargs['start'] = self.original_booking.start
         kwargs['end'] = self.original_booking.end
-        try:
-            kwargs['installer'] = self.original_booking.installer
-        except AttributeError:
-            pass
-        try:
-            kwargs['scenario'] = self.original_booking.scenario
-        except AttributeError:
-            pass
         return kwargs
 
     def get_success_url(self):
@@ -219,8 +235,48 @@ class BookingListView(TemplateView):
 
 class ResourceBookingsJSON(View):
     def get(self, request, *args, **kwargs):
-        resource = get_object_or_404(Resource, id=self.kwargs['resource_id'])
-        bookings = resource.booking_set.get_queryset().values('id', 'start', 'end', 'purpose',
-                                                              'jira_issue_status', 'opsys__name',
-                                                              'installer__name', 'scenario__name')
+        resource = get_object_or_404(ResourceBundle, id=self.kwargs['resource_id'])
+        bookings = resource.booking_set.get_queryset().values(
+            'id',
+            'start',
+            'end',
+            'purpose',
+            'jira_issue_status',
+            'config_bundle__name'
+        )
         return JsonResponse({'bookings': list(bookings)})
+
+def booking_detail_view(request, booking_id):
+    if request.user.is_authenticated:
+        user = request.user
+    else:
+        print("user not authenticated")
+        return render(request, "dashboard/login.html", {'title': 'Authentication Required'})
+
+    booking = get_object_or_404(Booking, id=booking_id)
+
+    if not booking.owner == user:
+        print("booking now owned by user")
+        return render(request, "dashboard/login.html", {'title': 'Authentication Required to View Page'})
+    else:
+        print("rendering detail now")
+        return render(request, "booking/booking_detail.html", {'title': 'Booking Details', 
+        'booking': booking, 
+        'pdf': ResourceManager().makePDF(booking.resource)})
+
+def booking_stats_view(request):
+    return render(
+            request,
+            "booking/stats.html",
+            context={
+                "data": StatisticsManager.getContinuousBookingTimeSeries(),
+                "title": "Booking Statistics"
+                }
+            )
+
+def booking_stats_json(request):
+    try:
+        span = int(request.GET.get("days", 14))
+    except:
+        span = 14
+    return JsonResponse(StatisticsManager.getContinuousBookingTimeSeries(span), safe=False)

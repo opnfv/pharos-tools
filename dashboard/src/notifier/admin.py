@@ -12,3 +12,5 @@ from django.contrib import admin
 from notifier.models import *
 
 admin.site.register(Notifier)
+admin.site.register(MetaBooking)
+admin.site.register(LabMessage)
