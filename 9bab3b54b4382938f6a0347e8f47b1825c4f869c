@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a682502_5348402d",
+        "filename": "dashboard/docker-compose.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-01T17:58:22Z",
+      "side": 1,
+      "message": "I assume docker-compose defaults to using the \u0027latest\u0027 tag when none is provided?",
+      "range": {
+        "startLine": 56,
+        "startChar": 15,
+        "endLine": 56,
+        "endChar": 23
+      },
+      "revId": "9bab3b54b4382938f6a0347e8f47b1825c4f869c",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
