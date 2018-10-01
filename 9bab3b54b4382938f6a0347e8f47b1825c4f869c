@@ -22,6 +22,30 @@
       "revId": "9bab3b54b4382938f6a0347e8f47b1825c4f869c",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_53920058",
+        "filename": "dashboard/docker-compose.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1451
+      },
+      "writtenOn": "2018-10-01T20:48:12Z",
+      "side": 1,
+      "message": "That is correct. And the Dockerfile was set to just \u0027FROM rabbitmq\u0027 which also used latest everytime it was built.",
+      "parentUuid": "5a682502_5348402d",
+      "range": {
+        "startLine": 56,
+        "startChar": 15,
+        "endLine": 56,
+        "endChar": 23
+      },
+      "revId": "9bab3b54b4382938f6a0347e8f47b1825c4f869c",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
     }
   ]
 }
