@@ -1,5 +1,6 @@
 ##############################################################################
 # Copyright (c) 2016 Max Breitenfeldt and others.
+# Copyright (c) 2018 Parker Berberian and others.
 #
 # All rights reserved. This program and the accompanying materials
 # are made available under the terms of the Apache License, Version 2.0
@@ -12,3 +13,4 @@
 
 psql -U postgres -c "CREATE USER $DB_USER PASSWORD '$DB_PASS'"
 psql -U postgres -c "CREATE DATABASE $DB_NAME OWNER $DB_USER"
+psql -U postgres -c "ALTER USER $DB_USER CREATEDB"
