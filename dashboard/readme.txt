@@ -15,9 +15,7 @@ Deployment:
 
 - clone the repository
 - complete the config.env.sample file and save it as config.env
-- install docker, docker-compose and bower
-- run 'bower install' in ./src/static/ to fetch javascript dependencies
-- run 'make build' to build the containers
+- install docker, docker-compose
 - run 'make data'
 - run 'make up' to run the dashboard
 
@@ -34,3 +32,11 @@ If there is migrations that need user input (like renaming a field), they need t
 Logs / Shell access:
 
 - there is some shortcuts in the makefile
+
+Development:
+
+- Install dependencies listed in 'Deployment'
+- install bower
+- run 'bower install' in ./src/static/ to fetch javascript dependencies
+- run 'make build'
+- run 'make dev-up'
