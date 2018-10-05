@@ -1,3 +1,4 @@
+#!/bin/bash -e
 ##############################################################################
 # Copyright (c) 2018 Trevor Bramwell and others.
 #
@@ -6,17 +7,6 @@
 # which accompanies this distribution, and is available at
 # http://www.apache.org/licenses/LICENSE-2.0
 ##############################################################################
-FROM python:3.5
-ENV PYTHONUNBUFFERED 1
-
-ADD requirements.txt /requirements.txt
-RUN pip install -r /requirements.txt
-
-ADD . /pharos_dashboard/
-ADD worker/init.sh /init.sh
-
-RUN useradd -ms /bin/bash celery
-USER celery
-
-WORKDIR /pharos_dashboard/src
-CMD ["/init.sh"]
+python manage.py migrate && \
+python manage.py collectstatic --no-input && \
+gunicorn pharos_dashboard.wsgi -b 0.0.0.0:8000
