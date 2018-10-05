@@ -14,8 +14,6 @@ from account.models import Lab
 from django.conf import settings
 from django.contrib.auth.models import User
 from django.db import models
-from jira import JIRA
-from jira import JIRAError
 import resource_inventory.resource_manager
 
 
@@ -52,8 +50,6 @@ class Booking(models.Model):
     start = models.DateTimeField()
     end = models.DateTimeField()
     reset = models.BooleanField(default=False)
-    jira_issue_id = models.IntegerField(null=True, blank=True)
-    jira_issue_status = models.CharField(max_length=50, blank=True)
     purpose = models.CharField(max_length=300, blank=False)
     ext_count = models.IntegerField(default=2)
     resource = models.ForeignKey(ResourceBundle, on_delete=models.SET_NULL, null=True) #need to decide behavior here on delete

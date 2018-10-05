@@ -6,8 +6,8 @@ django-crispy-forms==1.7.2
 django-filter==2.0.0
 django-registration==2.1.2
 djangorestframework==3.8.2
+django-cas-ng==3.5.10
 gunicorn==19.6.0
-jira==1.0.7
 jsonpickle==0.9.3
 oauth2==1.9.0.post1
 oauthlib==1.1.2

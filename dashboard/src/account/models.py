@@ -30,11 +30,6 @@ class UserProfile(models.Model):
     pgp_public_key = models.FileField(upload_to=upload_to, null=True, blank=True)
     email_addr = models.CharField(max_length=300, blank=False, default='email@mail.com')
     company = models.CharField(max_length=200, blank=False)
-
-    oauth_token = models.CharField(max_length=1024, blank=False)
-    oauth_secret = models.CharField(max_length=1024, blank=False)
-
-    jira_url = models.CharField(max_length=100, default='')
     full_name = models.CharField(max_length=100, default='')
     booking_privledge = models.BooleanField(default=False)
 

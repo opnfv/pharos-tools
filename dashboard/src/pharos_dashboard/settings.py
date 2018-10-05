@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.humanize',
+    'django_cas_ng',
     'bootstrap3',
     'crispy_forms',
     'rest_framework',
@@ -50,6 +51,11 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'account.middleware.TimezoneMiddleware',
+]
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'django_cas_ng.backends.CASBackend',
 ]
 
 ROOT_URLCONF = 'pharos_dashboard.urls'
@@ -159,22 +165,17 @@ REST_FRAMEWORK = {
 MEDIA_ROOT = '/media'
 STATIC_ROOT = '/static'
 
-# Jira Settings
-CREATE_JIRA_TICKET = False
+# CAS Settings
+CAS_SERVER_URL = os.environ['CAS_SERVER_URL']
+# Create users
+CAS_CREATE_USER = True
+# Don't grab username from the 'id' attribute, but from 'username'
+CAS_CREATE_USER_WITH_ID = False
+CAS_USERNAME_ATTRIBUTE = 'username'
+# We don't want to fully log out of the CAS server, just our application
+CAS_LOGOUT_COMPLETELY = False
+CAS_APPLY_ATTRIBUTES_TO_USER = True
 
-JIRA_URL = os.environ['JIRA_URL']
-
-JIRA_USER_NAME = os.environ['JIRA_USER_NAME']
-JIRA_USER_PASSWORD = os.environ['JIRA_USER_PASSWORD']
-
-OAUTH_CONSUMER_KEY = os.environ['OAUTH_CONSUMER_KEY']
-OAUTH_CONSUMER_SECRET = os.environ['OAUTH_CONSUMER_SECRET']
-
-OAUTH_REQUEST_TOKEN_URL = JIRA_URL + '/plugins/servlet/oauth/request-token'
-OAUTH_ACCESS_TOKEN_URL = JIRA_URL + '/plugins/servlet/oauth/access-token'
-OAUTH_AUTHORIZE_URL = JIRA_URL + '/plugins/servlet/oauth/authorize'
-
-OAUTH_CALLBACK_URL = os.environ['DASHBOARD_URL'] + '/accounts/authenticated'
 
 # Celery Settings
 CELERY_TIMEZONE = 'UTC'
@@ -198,6 +199,10 @@ CELERYBEAT_SCHEDULE = {
     'task': 'dashboard.tasks.conjure_aggregate_notifiers',
     'schedule': timedelta(seconds=30)
     },
+    'clear_old_sessions': {
+        'task': 'account.tasks.clear_old_sessions',
+        'schedule': timedelta(hours=12)
+    },
 }
 
 # Notifier Settings
@@ -207,4 +212,6 @@ EMAIL_HOST_USER = os.environ['EMAIL_HOST_USER']
 EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']
 EMAIL_USE_TLS=True
 DEFAULT_EMAIL_FROM = os.environ.get('DEFAULT_EMAIL_FROM', 'webmaster@localhost')
-SESSION_ENGINE="django.contrib.sessions.backends.signed_cookies"
+# TODO: Change this back to signed_cookies once supported by
+#       django_cas_ng
+SESSION_ENGINE="django.contrib.sessions.backends.db"
