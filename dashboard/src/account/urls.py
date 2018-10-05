@@ -24,13 +24,16 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url
+import cas.views
 
 from account.views import *
 
 urlpatterns = [
     url(r'^settings/', AccountSettingsView.as_view(), name='settings'),
-    url(r'^authenticated/$', JiraAuthenticatedView.as_view(), name='authenticated'),
-    url(r'^login/$', JiraLoginView.as_view(), name='login'),
-    url(r'^logout/$', JiraLogoutView.as_view(), name='logout'),
+    #url(r'^authenticated/$', JiraAuthenticatedView.as_view(), name='authenticated'),
+    #url(r'^login/$', JiraLoginView.as_view(), name='login'),
+    #url(r'^logout/$', JiraLogoutView.as_view(), name='logout'),
+    url(r'^login/$', cas.views.login, name='login'),
+    url(r'^logout/$', cas.views.logout, name='logout'),
     url(r'^users/$', UserListView.as_view(), name='users'),
 ]

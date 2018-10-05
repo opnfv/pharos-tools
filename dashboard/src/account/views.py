@@ -10,6 +10,7 @@
 
 import os
 import urllib
+import pytz
 
 import oauth2 as oauth
 from django.conf import settings
@@ -19,10 +20,12 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
 from django.urls import reverse
+from django.utils import timezone
 from django.utils.decorators import method_decorator
 from django.views.generic import RedirectView, TemplateView, UpdateView
 from jira import JIRA
 from rest_framework.authtoken.models import Token
+from xml.etree import ElementTree
 
 from account.forms import AccountSettingsForm
 from account.jira_util import SignatureMethod_RSA_SHA1
@@ -82,67 +85,58 @@ class JiraLogoutView(LoginRequiredMixin, RedirectView):
         logout(self.request)
         return '/'
 
+def CASAuthenticatedView(tree):
+    """See the Django CAS Middleware documentation on what this method
+    should contain:
+      https://github.com/kstateome/django-cas#cas-response-callbacks
+    """
+    ElementTree.register_namespace('cas', 'http://www.yale.edu/tp/cas')
+    ns = {'cas': 'http://www.yale.edu/tp/cas'}
+    # To list available attributes and print the ElementTree, uncomment the
+    # following line:
+    # ElementTree.dump(tree)
 
-class JiraAuthenticatedView(RedirectView):
-    def get_redirect_url(self, *args, **kwargs):
-        # Step 1. Use the request token in the session to build a new client.
-        consumer = oauth.Consumer(settings.OAUTH_CONSUMER_KEY, settings.OAUTH_CONSUMER_SECRET)
-        token = oauth.Token(self.request.session['request_token']['oauth_token'],
-                            self.request.session['request_token']['oauth_token_secret'])
-        client = oauth.Client(consumer, token)
-        client.set_signature_method(SignatureMethod_RSA_SHA1())
+    username = tree[0].find('cas:user', ns).text
+    url = '/'
+    try:
+        user = User.objects.get(username=username)
+    except User.DoesNotExist:
+        url = reverse('account:settings')
+        user = User.objects.create_user(username=username)
+        profile = UserProfile()
+        profile.user = user
+        profile.save()
 
-        # Step 2. Request the authorized access token from Jira.
-        try:
-            resp, content = client.request(settings.OAUTH_ACCESS_TOKEN_URL, "POST")
-        except Exception as e:
-            messages.add_message(self.request, messages.ERROR,
-                                 'Error: Connection to Jira failed. Please contact an Administrator')
-            return '/'
-        if resp['status'] != '200':
-            messages.add_message(self.request, messages.ERROR,
-                                 'Error: Connection to Jira failed. Please contact an Administrator')
-            return '/'
+    # Grab user attributes and assign them the the user and profile objects
+    attribs = tree[0].find('cas:attributes', ns)
+    email = attribs.find('cas:mail', ns).text
+    first_name = attribs.find('cas:profile_name_first', ns).text
+    last_name = attribs.find('cas:profile_name_last', ns).text
+    user_timezone = attribs.find('cas:timezone', ns).text
 
-        access_token = dict(urllib.parse.parse_qsl(content.decode()))
+    # TODO: Groups exist in Identity but not in the dashboard need to be
+    #   created and the user added to them
+    # groups = [group.text for group in attribs.findall('cas:group', ns)]
 
-        module_dir = os.path.dirname(__file__)  # get current directory
-        with open(module_dir + '/rsa.pem', 'r') as f:
-            key_cert = f.read()
+    # TODO: Determine if a superuser/admin group should/can be managed through
+    #   Django or through Identity groups
+    # if settings.CAS_SUPERUSER_GROUP in groups:
+    #     user.is_superuser = True
+    # else:
+    #     user.is_superuser = False
 
-        oauth_dict = {
-            'access_token': access_token['oauth_token'],
-            'access_token_secret': access_token['oauth_token_secret'],
-            'consumer_key': settings.OAUTH_CONSUMER_KEY,
-            'key_cert': key_cert
-        }
+    tz = pytz.timezone(user_timezone)
+    user.userprofile.timezone = tz
+    timezone.activate(tz)
+    user.userprofile.email_addr = email
+    user.first_name = first_name
+    user.last_name = last_name
+    user.userprofile.save()
+    user.save()
 
-        jira = JIRA(server=settings.JIRA_URL, oauth=oauth_dict)
-        username = jira.current_user()
-        email = jira.user(username).emailAddress
-        url = '/'
-        # Step 3. Lookup the user or create them if they don't exist.
-        try:
-            user = User.objects.get(username=username)
-        except User.DoesNotExist:
-            # Save our permanent token and secret for later.
-            user = User.objects.create_user(username=username,
-                                            password=access_token['oauth_token_secret'])
-            profile = UserProfile()
-            profile.user = user
-            profile.save()
-            user.userprofile.email_addr = email
-            url = reverse('account:settings')
-        user.userprofile.oauth_token = access_token['oauth_token']
-        user.userprofile.oauth_secret = access_token['oauth_token_secret']
-        user.userprofile.save()
-        user.set_password(access_token['oauth_token_secret'])
-        user.save()
-        user = authenticate(username=username, password=access_token['oauth_token_secret'])
-        login(self.request, user)
-        # redirect user to settings page to complete profile
-        return url
-
+    # Redirect user to settings page to complete profile if they're a new
+    # user, otherwise redirect to homepage
+    return url
 
 @method_decorator(login_required, name='dispatch')
 class UserListView(TemplateView):

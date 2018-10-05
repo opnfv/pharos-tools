@@ -5,6 +5,7 @@ django-bootstrap3==7.0.1
 django-crispy-forms==1.6.0
 django-filter==0.14.0
 django-registration==2.1.2
+django-cas-client==1.4.0
 djangorestframework==3.4.6
 gunicorn==19.6.0
 jira==1.0.7

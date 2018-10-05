@@ -7,7 +7,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: don't run with debug turned on in production!
 # NOTE: os.environ only returns strings, so making a comparison to
 # 'True' here will convert it to the correct Boolean value.
-DEBUG = os.environ['DEBUG'] == 'True'
+DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
 # Application definition
 
@@ -17,6 +17,7 @@ INSTALLED_APPS = [
     'account',
     'jenkins',
     'notifier',
+    'cas',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -37,8 +38,14 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'cas.middleware.CASMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'account.middleware.TimezoneMiddleware',
+]
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'cas.backends.CASBackend',
 ]
 
 ROOT_URLCONF = 'pharos_dashboard.urls'
@@ -107,7 +114,7 @@ STATICFILES_DIRS = [
 LOGIN_REDIRECT_URL = '/'
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ['SECRET_KEY']
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 BOOTSTRAP3 = {
     'set_placeholder': False,
@@ -120,11 +127,11 @@ ALLOWED_HOSTS = ['*']
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ['DB_NAME'],
-        'USER': os.environ['DB_USER'],
-        'PASSWORD': os.environ['DB_PASS'],
-        'HOST': os.environ['DB_SERVICE'],
-        'PORT': os.environ['DB_PORT']
+        'NAME': os.environ.get('DB_NAME'),
+        'USER': os.environ.get('DB_USER'),
+        'PASSWORD': os.environ.get('DB_PASS'),
+        'HOST': os.environ.get('DB_SERVICE'),
+        'PORT': os.environ.get('DB_PORT')
     }
 }
 
@@ -147,31 +154,45 @@ STATIC_ROOT = '/static'
 # Jira Settings
 CREATE_JIRA_TICKET = False
 
-JIRA_URL = os.environ['JIRA_URL']
+JIRA_URL = os.environ.get('JIRA_URL', '')
 
-JIRA_USER_NAME = os.environ['JIRA_USER_NAME']
-JIRA_USER_PASSWORD = os.environ['JIRA_USER_PASSWORD']
+JIRA_USER_NAME = os.environ.get('JIRA_USER_NAME')
+JIRA_USER_PASSWORD = os.environ.get('JIRA_USER_PASSWORD')
 
-OAUTH_CONSUMER_KEY = os.environ['OAUTH_CONSUMER_KEY']
-OAUTH_CONSUMER_SECRET = os.environ['OAUTH_CONSUMER_SECRET']
+OAUTH_CONSUMER_KEY = os.environ.get('OAUTH_CONSUMER_KEY')
+OAUTH_CONSUMER_SECRET = os.environ.get('OAUTH_CONSUMER_SECRET')
 
 OAUTH_REQUEST_TOKEN_URL = JIRA_URL + '/plugins/servlet/oauth/request-token'
 OAUTH_ACCESS_TOKEN_URL = JIRA_URL + '/plugins/servlet/oauth/access-token'
 OAUTH_AUTHORIZE_URL = JIRA_URL + '/plugins/servlet/oauth/authorize'
 
-OAUTH_CALLBACK_URL = os.environ['DASHBOARD_URL'] + '/accounts/authenticated'
+OAUTH_CALLBACK_URL = os.environ.get('DASHBOARD_URL', '') + '/accounts/authenticated'
+
+# CAS Settings
+CAS_SERVER_URL = os.environ.get('CAS_SERVER_URL', '')
+CAS_LOGOUT_COMPLETELY = False
+CAS_PROVIDE_URL_TO_LOGOUT = False
+# To store data from CAS (groups, etc) extract the information with the
+# callback functions defined below:
+CAS_RESPONSE_CALLBACKS = (
+    'account.views.CASAuthenticatedView',
+)
+# CAS_CUSTOM_FORBIDDEN = 'some.view.defined.anywhere'
+# CAS_FORCE_SSL_SERVICE_URL = True
+# Disable creation of user stub on first login
+# CAS_AUTO_CREATE_USER = False
 
 # Celery Settings
 CELERY_TIMEZONE = 'UTC'
 
 RABBITMQ_URL = 'rabbitmq'
-RABBITMQ_DEFAULT_USER = os.environ['RABBITMQ_DEFAULT_USER']
-RABBITMQ_DEFAULT_PASS = os.environ['RABBITMQ_DEFAULT_PASS']
+RABBITMQ_DEFAULT_USER = os.environ.get('RABBITMQ_DEFAULT_USER', '')
+RABBITMQ_DEFAULT_PASS = os.environ.get('RABBITMQ_DEFAULT_PASS', '')
 
 BROKER_URL = 'amqp://' + RABBITMQ_DEFAULT_USER + ':' + RABBITMQ_DEFAULT_PASS + '@rabbitmq:5672//'
 
-BOOKING_EXP_TIME = os.environ['BOOKING_EXPIRE_TIME']
-BOOKING_MAX_NUM = os.environ['BOOKING_MAXIMUM_NUMBER']
+BOOKING_EXP_TIME = os.environ.get('BOOKING_EXPIRE_TIME')
+BOOKING_MAX_NUM = os.environ.get('BOOKING_MAXIMUM_NUMBER')
 
 CELERYBEAT_SCHEDULE = {
     'sync-jenkins': {
@@ -192,15 +213,16 @@ CELERYBEAT_SCHEDULE = {
     },
 }
 # Jenkins Settings
-ALL_SLAVES_URL = os.environ['JENKINS_URL'] + '/computer/api/json?tree=computer[displayName,offline,idle]'
-CI_SLAVES_URL = os.environ['JENKINS_URL'] + '/label/ci-pod/api/json?tree=nodes[nodeName,offline,idle]'
-ALL_JOBS_URL = os.environ['JENKINS_URL'] + '/api/json?tree=jobs[displayName,url,lastBuild[fullDisplayName,building,builtOn,timestamp,result]'
-GET_SLAVE_URL = os.environ['JENKINS_URL'] + '/computer/'
+JENKINS_URL = os.environ.get('JENKINS_URL', '')
+ALL_SLAVES_URL = JENKINS_URL + '/computer/api/json?tree=computer[displayName,offline,idle]'
+CI_SLAVES_URL = JENKINS_URL + '/label/ci-pod/api/json?tree=nodes[nodeName,offline,idle]'
+ALL_JOBS_URL = JENKINS_URL + '/api/json?tree=jobs[displayName,url,lastBuild[fullDisplayName,building,builtOn,timestamp,result]'
+GET_SLAVE_URL = JENKINS_URL + '/computer/'
 
 # Notifier Settings
-EMAIL_HOST = os.environ['EMAIL_HOST']
-EMAIL_PORT = os.environ['EMAIL_PORT']
-EMAIL_HOST_USER = os.environ['EMAIL_HOST_USER']
-EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']
+EMAIL_HOST = os.environ.get('EMAIL_HOST')
+EMAIL_PORT = os.environ.get('EMAIL_PORT')
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 EMAIL_USE_TLS=True
 DEFAULT_EMAIL_FROM = os.environ.get('DEFAULT_EMAIL_FROM', 'webmaster@localhost')
