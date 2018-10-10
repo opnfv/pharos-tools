@@ -1,0 +1,45 @@
+{% load staticfiles %}
+<div class="card-container">
+<h3 class="msg_header">{{notification.title}}</h3>
+<p class="content"></p>
+<pre>
+{{notification.content|safe}}
+</pre>
+
+<p class="sender">Message from {{notification.sender}}</p>
+</div>
+
+<style media="screen">
+  .card-container {
+    box-shadow: 0 0 5px 2px #cccccc;
+    border: 1px solid #ffffff;
+    margin-top: 11px;
+  }
+  .card {
+    height: 50px;
+    margin: 0px;
+    position: relative;
+    border-bottom: 1px solid #cccccc;
+    padding: 0px;
+    width: 100%;
+    background-color: #ffffff;
+    z-index: 5;
+    /*border: 2px solid red;*/
+  }
+
+  body {
+    /*border: 1px dashed blue;*/
+  }
+
+  .msg_header {
+  }
+
+  .content {
+  }
+
+  .sender {
+    color: #636363;
+  }
+
+
+</style>
