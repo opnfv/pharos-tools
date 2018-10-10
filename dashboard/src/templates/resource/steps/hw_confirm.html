@@ -1,0 +1,16 @@
+{% extends "workflow/viewport-element.html" %}
+{% load staticfiles %}
+
+{% load bootstrap3 %}
+
+{% block content %}
+    
+<div>
+<p>confirm resource bundle</p>
+<p>{{info|default:"resource info"}}</p>
+</div>
+<form action="/wf/workflow/" method="post">
+    {% csrf_token %}
+    {{form|default:"<p> No Form Loaded</p>"}}
+</form>
+{% endblock content %}
