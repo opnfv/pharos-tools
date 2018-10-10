@@ -1,6 +1,5 @@
 {% extends "dashboard/table.html" %}
 {% load staticfiles %}
-{% load jenkins_filters %}
 
 {% block table %}
     <thead>
@@ -23,9 +22,6 @@
                 <a href={% url 'dashboard:resource' resource_id=pod.id %}>{{ pod.name }}</a>
             </td>
             <td>
-                <a target='_blank' href={{ pod.slave.url }}>{{ pod.slave.name }}</a>
-            </td>
-            <td>
                 {{ booking.user.username }}
             </td>
             <td>
@@ -36,9 +32,6 @@
             </td>
             <td>
                 {{ utilization }}
-            </td>
-            <td style="background-color:{{ pod.slave.status | jenkins_status_color }}">
-                {{ pod.slave.status }}
             </td>
             <td>
                 <a href="{% url 'booking:create' resource_id=pod.id %}" class="btn btn-primary">
@@ -59,7 +52,7 @@
     <script type="text/javascript">
         $(document).ready(function () {
             $('#table').DataTable({
-		scrollX: true,
+        scrollX: true,
                 columnDefs: [
                     {type: 'status', targets: 6}
                 ],

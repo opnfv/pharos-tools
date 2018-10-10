@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+    <div class="grid">
+        <p>Choose a Lab: </p>
+        {% for lab in labs %}
+
+        {% endfor %}
+        <p>-- OR --</p>
+        <p>Choose a Host Type:</p>
+        {% for host in hosts %}
+
+        {% endfor %}
+    </div>
+    {% endblock content %}
