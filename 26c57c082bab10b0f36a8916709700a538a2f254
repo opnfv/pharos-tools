@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a682502_6ab571ed",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1451
+      },
+      "writtenOn": "2018-10-10T20:43:52Z",
+      "side": 1,
+      "message": "There really isn\u0027t a good reason to keep this as a Google Doc (one major drawback being none of our contributors in China will have access to it).\n\nIf you want to copy what\u0027s there and create a page on the Wiki that would be fine, but this should really be in the commit message itself.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 96
+      },
+      "revId": "26c57c082bab10b0f36a8916709700a538a2f254",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_4aba35df",
+        "filename": "dashboard/data/UNH_IOL/hostlist.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1451
+      },
+      "writtenOn": "2018-10-10T20:43:52Z",
+      "side": 1,
+      "message": "Whitespace",
+      "range": {
+        "startLine": 3,
+        "startChar": 25,
+        "endLine": 3,
+        "endChar": 26
+      },
+      "revId": "26c57c082bab10b0f36a8916709700a538a2f254",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_aace6981",
+        "filename": "dashboard/requirements.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1451
+      },
+      "writtenOn": "2018-10-10T20:43:52Z",
+      "side": 1,
+      "message": "No version lock for pytz?",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 4
+      },
+      "revId": "26c57c082bab10b0f36a8916709700a538a2f254",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
