@@ -2,6 +2,1617 @@
   "comments": [
     {
       "key": {
+        "uuid": "5a682502_5082e84f",
+        "filename": "dashboard/src/account/views.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "user.collaborators does not exist (I believe). And collab_bookings needs to be a list (or queryset) of Booking objects, not users.",
+      "range": {
+        "startLine": 185,
+        "startChar": 0,
+        "endLine": 185,
+        "endChar": 60
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_b096dc92",
+        "filename": "dashboard/src/api/admin.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "I believe that this file is new, and not ever touched by Max",
+      "range": {
+        "startLine": 2,
+        "startChar": 2,
+        "endLine": 2,
+        "endChar": 49
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_9093e0a2",
+        "filename": "dashboard/src/api/models.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "Should be JobStatus.NEW",
+      "range": {
+        "startLine": 107,
+        "startChar": 42,
+        "endLine": 107,
+        "endChar": 43
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_d08d587d",
+        "filename": "dashboard/src/api/models.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "this field is not used and should be removed",
+      "range": {
+        "startLine": 182,
+        "startChar": 4,
+        "endLine": 182,
+        "endChar": 30
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_f0905497",
+        "filename": "dashboard/src/api/models.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "these can probably just be removed",
+      "range": {
+        "startLine": 210,
+        "startChar": 0,
+        "endLine": 217,
+        "endChar": 12
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_30eacc0f",
+        "filename": "dashboard/src/api/models.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "remove along with delta field",
+      "range": {
+        "startLine": 258,
+        "startChar": 0,
+        "endLine": 259,
+        "endChar": 25
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_10efd01f",
+        "filename": "dashboard/src/api/models.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 504,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "This won\u0027t clear the delta at all. If we want this to be a noop (I dont think we do), we should just `pass`",
+      "range": {
+        "startLine": 504,
+        "startChar": 0,
+        "endLine": 504,
+        "endChar": 47
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_70f444f2",
+        "filename": "dashboard/src/api/models.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 508,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "No prints",
+      "range": {
+        "startLine": 508,
+        "startChar": 0,
+        "endLine": 508,
+        "endChar": 38
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_50f948e8",
+        "filename": "dashboard/src/api/models.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 534,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "dead code",
+      "range": {
+        "startLine": 534,
+        "startChar": 0,
+        "endLine": 534,
+        "endChar": 60
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_b0dd3c73",
+        "filename": "dashboard/src/api/models.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 535,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "Should be JobStatus.NEW",
+      "range": {
+        "startLine": 535,
+        "startChar": 41,
+        "endLine": 535,
+        "endChar": 42
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_d0e4383d",
+        "filename": "dashboard/src/api/models.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 601,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "no prints",
+      "range": {
+        "startLine": 601,
+        "startChar": 0,
+        "endLine": 601,
+        "endChar": 40
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_10d6b04f",
+        "filename": "dashboard/src/api/models.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 632,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "no prints",
+      "range": {
+        "startLine": 632,
+        "startChar": 15,
+        "endLine": 632,
+        "endChar": 30
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_70cba4a5",
+        "filename": "dashboard/src/api/models.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 710,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "kinda weird. maybe we should just grab the first host outside of the loop?",
+      "range": {
+        "startLine": 705,
+        "startChar": 0,
+        "endLine": 710,
+        "endChar": 29
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_50d02850",
+        "filename": "dashboard/src/api/models.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 722,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "dead code",
+      "range": {
+        "startLine": 720,
+        "startChar": 0,
+        "endLine": 722,
+        "endChar": 12
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_90c12083",
+        "filename": "dashboard/src/api/serializers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "We may still want parts of this file if we want to keep parts of the old DRF api (for example, users and notifier)",
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_f0be94fe",
+        "filename": "dashboard/src/api/serializers/booking_serializer.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "This is not currently used (because we dont use drf). Do we want to keep this file and implement the plumbing it needs later?",
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_d0bb980c",
+        "filename": "dashboard/src/api/serializers/old_serializers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "Again, we probably want parts of this file if we reimplement drf. the rest of it should be removed.",
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_30380ca0",
+        "filename": "dashboard/src/api/views.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "no prints",
+      "range": {
+        "startLine": 75,
+        "startChar": 0,
+        "endLine": 75,
+        "endChar": 114
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_103d1090",
+        "filename": "dashboard/src/api/views.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "This logic belongs in the lab manager",
+      "range": {
+        "startLine": 77,
+        "startChar": 0,
+        "endLine": 81,
+        "endChar": 19
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_70428411",
+        "filename": "dashboard/src/api/views.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "no prints",
+      "range": {
+        "startLine": 82,
+        "startChar": 0,
+        "endLine": 82,
+        "endChar": 35
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_5047881f",
+        "filename": "dashboard/src/api/views.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "no prints",
+      "range": {
+        "startLine": 93,
+        "startChar": 8,
+        "endLine": 93,
+        "endChar": 13
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_b04b7c2a",
+        "filename": "dashboard/src/booking/forms.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "This is all unused. Should we remove?",
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_9048002f",
+        "filename": "dashboard/src/booking/models.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "dead and soon to be broken with switch away from jira",
+      "range": {
+        "startLine": 67,
+        "startChar": 4,
+        "endLine": 89,
+        "endChar": 74
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_1064f0b7",
+        "filename": "dashboard/src/booking/stats.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "this method is not used and can probably be removed",
+      "range": {
+        "startLine": 17,
+        "startChar": 8,
+        "endLine": 17,
+        "endChar": 28
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_b0f9bcca",
+        "filename": "dashboard/src/booking/tests/old_test_views.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "As these views are no longer used, these tests are useless",
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_103230a7",
+        "filename": "dashboard/src/booking/views.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "no more jira stuff",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 47,
+        "endChar": 18
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_d000b8ac",
+        "filename": "dashboard/src/booking/views.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "is this still used?",
+      "range": {
+        "startLine": 64,
+        "startChar": 0,
+        "endLine": 64,
+        "endChar": 32
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_302dac47",
+        "filename": "dashboard/src/booking/views.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "get rid of jira stuff",
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_f00334b6",
+        "filename": "dashboard/src/booking/views.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "is this still used?",
+      "range": {
+        "startLine": 122,
+        "startChar": 0,
+        "endLine": 122,
+        "endChar": 36
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_901da012",
+        "filename": "dashboard/src/dashboard/old_populate_db_iol.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "this file should be deleted",
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_d01718ec",
+        "filename": "dashboard/src/dashboard/populate_db.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "should be deleted",
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_10d99057",
+        "filename": "dashboard/src/dashboard/tasks.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "no prints",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 35
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_70de0441",
+        "filename": "dashboard/src/dashboard/tasks.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "no prints",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 58
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_50e30807",
+        "filename": "dashboard/src/dashboard/tasks.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "no prints",
+      "range": {
+        "startLine": 42,
+        "startChar": 0,
+        "endLine": 42,
+        "endChar": 57
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_d0eef8eb",
+        "filename": "dashboard/src/dashboard/tasks.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "we need to network.save() here, or make add_interface save() itself",
+      "range": {
+        "startLine": 64,
+        "startChar": 0,
+        "endLine": 64,
+        "endChar": 48
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_10c0704f",
+        "filename": "dashboard/src/dashboard/tests/old_test_models.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "this file is obsolete",
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_70b564ed",
+        "filename": "dashboard/src/dashboard/tests/old_test_views.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "obsolete",
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_50bae8de",
+        "filename": "dashboard/src/dashboard/views.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "confusing",
+      "range": {
+        "startLine": 74,
+        "startChar": 8,
+        "endLine": 74,
+        "endChar": 59
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_b0cedc81",
+        "filename": "dashboard/src/dashboard/views.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "this code is never used",
+      "range": {
+        "startLine": 98,
+        "startChar": 0,
+        "endLine": 123,
+        "endChar": 22
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_5088281f",
+        "filename": "dashboard/src/notifier/manager.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "in this whole method, you seem to confuse \u003c and \u003e. If end \u003c now, then the booking has not ended.",
+      "range": {
+        "startLine": 21,
+        "startChar": 8,
+        "endLine": 21,
+        "endChar": 12
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_f09fb45d",
+        "filename": "dashboard/src/notifier/manager.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "this will always be true because it is exactly the query used to collect bookings_old",
+      "range": {
+        "startLine": 27,
+        "startChar": 15,
+        "endLine": 27,
+        "endChar": 66
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_10a7d0be",
+        "filename": "dashboard/src/notifier/manager.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "noop",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 49
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_f076943d",
+        "filename": "dashboard/src/notifier/models.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "what does this accomplish?",
+      "range": {
+        "startLine": 42,
+        "startChar": 0,
+        "endLine": 42,
+        "endChar": 31
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_10951033",
+        "filename": "dashboard/src/notifier/views.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "no prints",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 34,
+        "endChar": 63
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_509f8852",
+        "filename": "dashboard/src/pharos_dashboard/settings.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "Should be put in config.env, or maybe inferred based on whether or not debug is set?",
+      "range": {
+        "startLine": 147,
+        "startChar": 0,
+        "endLine": 147,
+        "endChar": 22
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_b0a37c9d",
+        "filename": "dashboard/src/resource_inventory/admin.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "include in physical list?",
+      "range": {
+        "startLine": 31,
+        "startChar": 20,
+        "endLine": 31,
+        "endChar": 34
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_90a00092",
+        "filename": "dashboard/src/resource_inventory/models.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "I dont think this belongs here",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 5
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_f0adf489",
+        "filename": "dashboard/src/resource_inventory/models.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "this model is never used",
+      "range": {
+        "startLine": 172,
+        "startChar": 0,
+        "endLine": 181,
+        "endChar": 27
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_d0aa786f",
+        "filename": "dashboard/src/resource_inventory/models.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "I\u0027m not sure if there is a good default for installer. We could do something basic as a default for scenario (os-nosdn-nofeature-ha) but I think we should just make the user choose",
+      "range": {
+        "startLine": 244,
+        "startChar": 71,
+        "endLine": 245,
+        "endChar": 100
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_50b668da",
+        "filename": "dashboard/src/resource_inventory/models.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "Need to reconcile with Opsys. I think Image should have a reference to its Opsys, but maybe we can just remove Opsys and replace entirely with Image",
+      "range": {
+        "startLine": 259,
+        "startChar": 0,
+        "endLine": 259,
+        "endChar": 26
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_b0ca5c4d",
+        "filename": "dashboard/src/resource_inventory/models.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "nope",
+      "range": {
+        "startLine": 285,
+        "startChar": 0,
+        "endLine": 285,
+        "endChar": 18
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_90c76045",
+        "filename": "dashboard/src/resource_inventory/resource_manager.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "should be moved lower",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 34
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_d0d8b81f",
+        "filename": "dashboard/src/resource_inventory/resource_manager.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "duplicate of host.template_deleted()?",
+      "range": {
+        "startLine": 105,
+        "startChar": 0,
+        "endLine": 108,
+        "endChar": 19
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_3005ac7a",
+        "filename": "dashboard/src/templates/account/booking.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "This is pretty useless. I dont think we use it anywhere",
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_100a308a",
+        "filename": "dashboard/src/templates/account/configuration.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "can we delete this?",
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_70ff2468",
+        "filename": "dashboard/src/templates/account/resource.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "another stub",
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_5004a87a",
+        "filename": "dashboard/src/templates/base.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "whitespace",
+      "range": {
+        "startLine": 127,
+        "startChar": 103,
+        "endLine": 127,
+        "endChar": 104
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_1031905a",
+        "filename": "dashboard/src/templates/base.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "the if should be outside the \u003cli\u003e, so we dont create an empty item",
+      "range": {
+        "startLine": 144,
+        "startChar": 0,
+        "endLine": 144,
+        "endChar": 58
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_503b083a",
+        "filename": "dashboard/src/templates/booking/booking_calendar.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "is this used anymore?",
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_b03ffc24",
+        "filename": "dashboard/src/templates/booking/stats.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "no prints",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 22
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_903c8031",
+        "filename": "dashboard/src/templates/booking/stats.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "no prints",
+      "range": {
+        "startLine": 20,
+        "startChar": 12,
+        "endLine": 20,
+        "endChar": 15
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_f04974d1",
+        "filename": "dashboard/src/templates/booking/stats.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "dead code",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 62
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_3013ecb9",
+        "filename": "dashboard/src/templates/booking/steps/booking_meta.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "dead code",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 36
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_d046f8be",
+        "filename": "dashboard/src/templates/booking/steps/booking_meta.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "whitespace",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 26,
+        "endChar": 4
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_101870d2",
+        "filename": "dashboard/src/templates/booking/steps/booking_scheduler.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "This file appears to be unused",
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_9023e004",
+        "filename": "dashboard/src/templates/booking/steps/permissions_select.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "This appears unused",
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_700d6490",
+        "filename": "dashboard/src/templates/booking/steps/permissions_select.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "whitespace",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 4
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_5012e8b1",
+        "filename": "dashboard/src/templates/booking/steps/permissions_select.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "whitespace",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 4
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_d01d58bf",
+        "filename": "dashboard/src/templates/booking/steps/resource_select.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "all the whitespace",
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_107fd0e1",
+        "filename": "dashboard/src/templates/booking/steps/swconfig_select.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "all the whitespace",
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_307accf1",
+        "filename": "dashboard/src/templates/booking/steps/swconfig_select.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "dead code",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 36
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_708444d4",
+        "filename": "dashboard/src/templates/config_bundle/steps/config_software.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "whitespace",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 4
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_508948ea",
+        "filename": "dashboard/src/templates/config_bundle/steps/define_software.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "whitespace",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 4
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_b06d3c35",
+        "filename": "dashboard/src/templates/dashboard/dev_pods.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "do we still want this template?",
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_906ac018",
+        "filename": "dashboard/src/templates/dashboard/host_profile_detail.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "kinda a lot of blank lines",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 1
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a682502_b00c1c44",
         "filename": "dashboard/src/templates/dashboard/lab_detail.html",
         "patchSetId": 3
@@ -25,6 +1636,29 @@
     },
     {
       "key": {
+        "uuid": "5a682502_30612c3a",
+        "filename": "dashboard/src/templates/dashboard/lab_detail.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "whitespace",
+      "range": {
+        "startLine": 116,
+        "startChar": 0,
+        "endLine": 116,
+        "endChar": 8
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a682502_90092034",
         "filename": "dashboard/src/templates/dashboard/lab_detail.html",
         "patchSetId": 3
@@ -39,6 +1673,29 @@
       "range": {
         "startLine": 154,
         "startChar": 1,
+        "endLine": 154,
+        "endChar": 4
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_705ba487",
+        "filename": "dashboard/src/templates/dashboard/lab_detail.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "whitespace",
+      "range": {
+        "startLine": 154,
+        "startChar": 0,
         "endLine": 154,
         "endChar": 4
       },
@@ -71,6 +1728,29 @@
     },
     {
       "key": {
+        "uuid": "5a682502_50602832",
+        "filename": "dashboard/src/templates/dashboard/lab_list.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "whitespace",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 13
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a682502_b0253cc4",
         "filename": "dashboard/src/templates/dashboard/landing.html",
         "patchSetId": 3
@@ -94,6 +1774,52 @@
     },
     {
       "key": {
+        "uuid": "5a682502_b0541c55",
+        "filename": "dashboard/src/templates/dashboard/landing.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "whitespace",
+      "range": {
+        "startLine": 80,
+        "startChar": 0,
+        "endLine": 80,
+        "endChar": 8
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_90512065",
+        "filename": "dashboard/src/templates/dashboard/landing.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "no prints",
+      "range": {
+        "startLine": 88,
+        "startChar": 0,
+        "endLine": 90,
+        "endChar": 13
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a682502_905be053",
         "filename": "dashboard/src/templates/dashboard/multiple_select_filter_widget.html",
         "patchSetId": 3
@@ -109,6 +1835,75 @@
         "startLine": 80,
         "startChar": 71,
         "endLine": 80,
+        "endChar": 72
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_f04e94c0",
+        "filename": "dashboard/src/templates/dashboard/multiple_select_filter_widget.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "whitespace",
+      "range": {
+        "startLine": 80,
+        "startChar": 72,
+        "endLine": 81,
+        "endChar": 12
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_d04b98ae",
+        "filename": "dashboard/src/templates/dashboard/multiple_select_filter_widget.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "no prints / dead code",
+      "range": {
+        "startLine": 106,
+        "startChar": 0,
+        "endLine": 107,
+        "endChar": 39
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_30c80c22",
+        "filename": "dashboard/src/templates/dashboard/multiple_select_filter_widget.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "dead code",
+      "range": {
+        "startLine": 153,
+        "startChar": 0,
+        "endLine": 155,
         "endChar": 72
       },
       "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
@@ -163,6 +1958,144 @@
     },
     {
       "key": {
+        "uuid": "5a682502_70d284d3",
+        "filename": "dashboard/src/templates/dashboard/multiple_select_filter_widget.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "whitespace",
+      "range": {
+        "startLine": 185,
+        "startChar": 0,
+        "endLine": 187,
+        "endChar": 4
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_50d788c1",
+        "filename": "dashboard/src/templates/dashboard/multiple_select_filter_widget.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "dead code",
+      "range": {
+        "startLine": 216,
+        "startChar": 0,
+        "endLine": 216,
+        "endChar": 43
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_b0db7cec",
+        "filename": "dashboard/src/templates/dashboard/multiple_select_filter_widget.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "dead code",
+      "range": {
+        "startLine": 229,
+        "startChar": 6,
+        "endLine": 229,
+        "endChar": 10
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_90d800f1",
+        "filename": "dashboard/src/templates/dashboard/multiple_select_filter_widget.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "dead code",
+      "range": {
+        "startLine": 240,
+        "startChar": 0,
+        "endLine": 240,
+        "endChar": 43
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_70e9e47f",
+        "filename": "dashboard/src/templates/dashboard/multiple_select_filter_widget.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "dead code",
+      "range": {
+        "startLine": 285,
+        "startChar": 0,
+        "endLine": 285,
+        "endChar": 24
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_90ff6034",
+        "filename": "dashboard/src/templates/dashboard/multiple_select_filter_widget.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "no prints",
+      "range": {
+        "startLine": 306,
+        "startChar": 28,
+        "endLine": 306,
+        "endChar": 31
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a682502_3032cc10",
         "filename": "dashboard/src/templates/dashboard/multiple_select_filter_widget.html",
         "patchSetId": 3
@@ -209,6 +2142,52 @@
     },
     {
       "key": {
+        "uuid": "5a682502_d0f9d84e",
+        "filename": "dashboard/src/templates/dashboard/multiple_select_filter_widget.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 328,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "whitespace",
+      "range": {
+        "startLine": 325,
+        "startChar": 0,
+        "endLine": 328,
+        "endChar": 4
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_109b5019",
+        "filename": "dashboard/src/templates/dashboard/multiple_select_filter_widget.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 344,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "dead code",
+      "range": {
+        "startLine": 344,
+        "startChar": 0,
+        "endLine": 344,
+        "endChar": 177
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a682502_703c44e3",
         "filename": "dashboard/src/templates/dashboard/multiple_select_filter_widget.html",
         "patchSetId": 3
@@ -225,6 +2204,75 @@
         "startChar": 31,
         "endLine": 354,
         "endChar": 32
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_30964cf1",
+        "filename": "dashboard/src/templates/dashboard/multiple_select_filter_widget.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 354,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "whitespace",
+      "range": {
+        "startLine": 354,
+        "startChar": 31,
+        "endLine": 354,
+        "endChar": 32
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_908640b8",
+        "filename": "dashboard/src/templates/dashboard/multiple_select_filter_widget.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 414,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "no prints",
+      "range": {
+        "startLine": 414,
+        "startChar": 0,
+        "endLine": 414,
+        "endChar": 41
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_106990f9",
+        "filename": "dashboard/src/templates/dashboard/searchable_select_multiple.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "counter?",
+      "range": {
+        "startLine": 26,
+        "startChar": 13,
+        "endLine": 26,
+        "endChar": 27
       },
       "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
@@ -255,6 +2303,75 @@
     },
     {
       "key": {
+        "uuid": "5a682502_7045646f",
+        "filename": "dashboard/src/templates/dashboard/searchable_select_multiple.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "useless code",
+      "range": {
+        "startLine": 175,
+        "startChar": 0,
+        "endLine": 176,
+        "endChar": 23
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_b05edc43",
+        "filename": "dashboard/src/templates/dashboard/searchable_select_multiple.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "pls remove",
+      "range": {
+        "startLine": 212,
+        "startChar": 0,
+        "endLine": 213,
+        "endChar": 19
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_50414859",
+        "filename": "dashboard/src/templates/dashboard/searchable_select_multiple.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "dead print",
+      "range": {
+        "startLine": 245,
+        "startChar": 0,
+        "endLine": 245,
+        "endChar": 34
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a682502_304bec88",
         "filename": "dashboard/src/templates/dashboard/searchable_select_multiple.html",
         "patchSetId": 3
@@ -271,6 +2388,75 @@
         "startChar": 0,
         "endLine": 286,
         "endChar": 8
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_9022c0b7",
+        "filename": "dashboard/src/templates/dashboard/searchable_select_multiple.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 286,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "whitespace",
+      "range": {
+        "startLine": 286,
+        "startChar": 0,
+        "endLine": 286,
+        "endChar": 8
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_d02c38ae",
+        "filename": "dashboard/src/templates/dashboard/searchable_select_multiple.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "dead prints",
+      "range": {
+        "startLine": 306,
+        "startChar": 0,
+        "endLine": 307,
+        "endChar": 31
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_30192c89",
+        "filename": "dashboard/src/templates/dashboard/searchable_select_multiple.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 347,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "make added_items a set?",
+      "range": {
+        "startLine": 347,
+        "startChar": 15,
+        "endLine": 347,
+        "endChar": 26
       },
       "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
@@ -295,6 +2481,46 @@
         "endLine": 405,
         "endChar": 49
       },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_101eb070",
+        "filename": "dashboard/src/templates/dashboard/searchable_select_multiple.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 405,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "whitespace",
+      "range": {
+        "startLine": 405,
+        "startChar": 48,
+        "endLine": 405,
+        "endChar": 49
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_7013a466",
+        "filename": "dashboard/src/templates/dashboard/workflow.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "Pretty sure this file is useless and not used anywhere.\n\nAlso whitespace",
       "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
@@ -370,6 +2596,98 @@
     },
     {
       "key": {
+        "uuid": "5a682502_50182881",
+        "filename": "dashboard/src/templates/layout.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "but why",
+      "range": {
+        "startLine": 56,
+        "startChar": 0,
+        "endLine": 56,
+        "endChar": 17
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_f006941f",
+        "filename": "dashboard/src/templates/notifier/inbox.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "dead code",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 32
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_d003980d",
+        "filename": "dashboard/src/templates/notifier/inbox.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "no prints",
+      "range": {
+        "startLine": 79,
+        "startChar": 0,
+        "endLine": 79,
+        "endChar": 28
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_1b009100",
+        "filename": "dashboard/src/templates/notifier/inbox.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "dead code",
+      "range": {
+        "startLine": 95,
+        "startChar": 0,
+        "endLine": 95,
+        "endChar": 39
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a682502_507308e9",
         "filename": "dashboard/src/templates/notifier/inbox.html",
         "patchSetId": 3
@@ -386,6 +2704,29 @@
         "startChar": 0,
         "endLine": 97,
         "endChar": 3
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_fb04b516",
+        "filename": "dashboard/src/templates/notifier/notification.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "no dead code",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 32
       },
       "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
@@ -410,6 +2751,63 @@
         "endLine": 37,
         "endChar": 1
       },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_5b0a0922",
+        "filename": "dashboard/src/templates/resource/resource.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "do we need this?",
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_3b0f4d32",
+        "filename": "dashboard/src/templates/resource/steps/define_hardware.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "no prints",
+      "range": {
+        "startLine": 41,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 42
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_9b13015c",
+        "filename": "dashboard/src/templates/resource/steps/define_networks.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "I dont think this is used. And whitespace",
       "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
@@ -462,6 +2860,46 @@
     },
     {
       "key": {
+        "uuid": "5a682502_db1d7968",
+        "filename": "dashboard/src/templates/resource/steps/host_info.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "whitespace",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 4
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_1b27f1b7",
+        "filename": "dashboard/src/templates/resource/steps/hw_confirm.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "I dont think we use this",
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a682502_90ada034",
         "filename": "dashboard/src/templates/resource/steps/hw_confirm.html",
         "patchSetId": 3
@@ -479,6 +2917,23 @@
         "endLine": 7,
         "endChar": 3
       },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_fb2b1580",
+        "filename": "dashboard/src/templates/resource/steps/meta_info.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "unused",
       "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
@@ -531,6 +2986,29 @@
     },
     {
       "key": {
+        "uuid": "5a682502_5b21699e",
+        "filename": "dashboard/src/templates/resource/steps/pod_definition.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "dead code",
+      "range": {
+        "startLine": 48,
+        "startChar": 15,
+        "endLine": 48,
+        "endChar": 19
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a682502_10c230e9",
         "filename": "dashboard/src/templates/resource/steps/pod_definition.html",
         "patchSetId": 3
@@ -547,6 +3025,75 @@
         "startChar": 0,
         "endLine": 62,
         "endChar": 12
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_3b262db8",
+        "filename": "dashboard/src/templates/resource/steps/pod_definition.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "dead code",
+      "range": {
+        "startLine": 60,
+        "startChar": 0,
+        "endLine": 63,
+        "endChar": 10
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_9b3ae1cb",
+        "filename": "dashboard/src/templates/resource/steps/pod_definition.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "this is a debugging tool, should probably disable or wrap in an {% if DEBUG %}",
+      "range": {
+        "startLine": 65,
+        "startChar": 0,
+        "endLine": 68,
+        "endChar": 7
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_db3459e0",
+        "filename": "dashboard/src/templates/resource/steps/pod_definition.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "dead code",
+      "range": {
+        "startLine": 223,
+        "startChar": 0,
+        "endLine": 224,
+        "endChar": 40
       },
       "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
@@ -577,6 +3124,52 @@
     },
     {
       "key": {
+        "uuid": "5a682502_bb319dee",
+        "filename": "dashboard/src/templates/resource/steps/pod_definition.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "whitespace",
+      "range": {
+        "startLine": 230,
+        "startChar": 0,
+        "endLine": 230,
+        "endChar": 4
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_1b4ed16f",
+        "filename": "dashboard/src/templates/resource/steps/pod_definition.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "indent",
+      "range": {
+        "startLine": 308,
+        "startChar": 0,
+        "endLine": 308,
+        "endChar": 6
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a682502_30bdac69",
         "filename": "dashboard/src/templates/resource/steps/pod_definition.html",
         "patchSetId": 3
@@ -588,6 +3181,29 @@
       "writtenOn": "2018-10-12T18:25:29Z",
       "side": 1,
       "message": "w",
+      "range": {
+        "startLine": 363,
+        "startChar": 42,
+        "endLine": 363,
+        "endChar": 43
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_fb52f511",
+        "filename": "dashboard/src/templates/resource/steps/pod_definition.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 363,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "whitespace",
       "range": {
         "startLine": 363,
         "startChar": 42,
@@ -623,6 +3239,29 @@
     },
     {
       "key": {
+        "uuid": "5a682502_5b584932",
+        "filename": "dashboard/src/templates/resource/steps/pod_definition.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 425,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "whitespace",
+      "range": {
+        "startLine": 425,
+        "startChar": 0,
+        "endLine": 425,
+        "endChar": 8
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a682502_f09334f8",
         "filename": "dashboard/src/templates/resource/steps/pod_definition.html",
         "patchSetId": 3
@@ -639,6 +3278,98 @@
         "startChar": 0,
         "endLine": 437,
         "endChar": 4
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_9b41413c",
+        "filename": "dashboard/src/templates/resource/steps/pod_definition.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 437,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "whitespace",
+      "range": {
+        "startLine": 437,
+        "startChar": 0,
+        "endLine": 437,
+        "endChar": 4
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_7b3ee5b9",
+        "filename": "dashboard/src/templates/resource/steps/pod_definition.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 441,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "dead code",
+      "range": {
+        "startLine": 441,
+        "startChar": 0,
+        "endLine": 441,
+        "endChar": 64
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_db4bb957",
+        "filename": "dashboard/src/templates/resource/steps/pod_definition.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 456,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "dead",
+      "range": {
+        "startLine": 456,
+        "startChar": 0,
+        "endLine": 456,
+        "endChar": 31
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_bb487d5c",
+        "filename": "dashboard/src/templates/resource/steps/pod_definition.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 501,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "dead code",
+      "range": {
+        "startLine": 501,
+        "startChar": 0,
+        "endLine": 501,
+        "endChar": 33
       },
       "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
@@ -692,6 +3423,29 @@
     },
     {
       "key": {
+        "uuid": "5a682502_db6299d7",
+        "filename": "dashboard/src/templates/workflow/confirm.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "dead code",
+      "range": {
+        "startLine": 63,
+        "startChar": 0,
+        "endLine": 65,
+        "endChar": 24
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a682502_f0fcd440",
         "filename": "dashboard/src/templates/workflow/confirm.html",
         "patchSetId": 3
@@ -715,6 +3469,46 @@
     },
     {
       "key": {
+        "uuid": "5a682502_bb5fdd0d",
+        "filename": "dashboard/src/templates/workflow/confirm.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "whitespace",
+      "range": {
+        "startLine": 129,
+        "startChar": 0,
+        "endLine": 129,
+        "endChar": 2
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_1b9c11c0",
+        "filename": "dashboard/src/templates/workflow/resource_select.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "Doesn\u0027t appear to be used. Whitespace.",
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a682502_b0025c3c",
         "filename": "dashboard/src/templates/workflow/resource_select.html",
         "patchSetId": 3
@@ -732,6 +3526,23 @@
         "endLine": 31,
         "endChar": 8
       },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_fba035f6",
+        "filename": "dashboard/src/templates/workflow/sw_confirm.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "We don\u0027t use seperate confirm pages",
       "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
@@ -784,6 +3595,29 @@
     },
     {
       "key": {
+        "uuid": "5a682502_7bac25ee",
+        "filename": "dashboard/src/templates/workflow/viewport-base.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "whitespace",
+      "range": {
+        "startLine": 297,
+        "startChar": 0,
+        "endLine": 297,
+        "endChar": 12
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a682502_10f4f059",
         "filename": "dashboard/src/templates/workflow/viewport-base.html",
         "patchSetId": 3
@@ -807,6 +3641,52 @@
     },
     {
       "key": {
+        "uuid": "5a682502_dbb9f92f",
+        "filename": "dashboard/src/templates/workflow/viewport-base.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 425,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "whitespace",
+      "range": {
+        "startLine": 425,
+        "startChar": 0,
+        "endLine": 425,
+        "endChar": 12
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_bbb6bd3b",
+        "filename": "dashboard/src/templates/workflow/viewport-element.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "dead code",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 47
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a682502_f0e5f4a8",
         "filename": "dashboard/src/templates/workflow/viewport-element.html",
         "patchSetId": 3
@@ -818,6 +3698,29 @@
       "writtenOn": "2018-10-12T18:25:29Z",
       "side": 1,
       "message": "Whitespace",
+      "range": {
+        "startLine": 33,
+        "startChar": 21,
+        "endLine": 33,
+        "endChar": 24
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_5b7de96d",
+        "filename": "dashboard/src/templates/workflow/viewport-element.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "whitespace",
       "range": {
         "startLine": 33,
         "startChar": 21,
@@ -853,6 +3756,351 @@
     },
     {
       "key": {
+        "uuid": "5a682502_3b82ad4f",
+        "filename": "dashboard/src/templates/workflow/viewport-element.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "whitespace",
+      "range": {
+        "startLine": 72,
+        "startChar": 0,
+        "endLine": 72,
+        "endChar": 12
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_1bea510f",
+        "filename": "dashboard/src/workflow/booking_workflow.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "no prints",
+      "range": {
+        "startLine": 40,
+        "startChar": 0,
+        "endLine": 40,
+        "endChar": 44
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_fbee7521",
+        "filename": "dashboard/src/workflow/booking_workflow.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "dead code",
+      "range": {
+        "startLine": 55,
+        "startChar": 0,
+        "endLine": 55,
+        "endChar": 43
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_5bf4c9f1",
+        "filename": "dashboard/src/workflow/booking_workflow.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "no prints",
+      "range": {
+        "startLine": 66,
+        "startChar": 0,
+        "endLine": 66,
+        "endChar": 24
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_3bf90dea",
+        "filename": "dashboard/src/workflow/booking_workflow.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "dead code",
+      "range": {
+        "startLine": 80,
+        "startChar": 0,
+        "endLine": 80,
+        "endChar": 32
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_9bddc173",
+        "filename": "dashboard/src/workflow/booking_workflow.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "unreachable code",
+      "range": {
+        "startLine": 135,
+        "startChar": 0,
+        "endLine": 144,
+        "endChar": 22
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_7bda6579",
+        "filename": "dashboard/src/workflow/booking_workflow.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "no prints",
+      "range": {
+        "startLine": 290,
+        "startChar": 16,
+        "endLine": 290,
+        "endChar": 21
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_dbe7393f",
+        "filename": "dashboard/src/workflow/forms.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "no prints",
+      "range": {
+        "startLine": 78,
+        "startChar": 13,
+        "endLine": 78,
+        "endChar": 14
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_bbe4fd3b",
+        "filename": "dashboard/src/workflow/models.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "no prints",
+      "range": {
+        "startLine": 49,
+        "startChar": 38,
+        "endLine": 49,
+        "endChar": 39
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_1bd1b157",
+        "filename": "dashboard/src/workflow/models.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "no prints",
+      "range": {
+        "startLine": 195,
+        "startChar": 15,
+        "endLine": 195,
+        "endChar": 26
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_5bcb29a5",
+        "filename": "dashboard/src/workflow/models.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "get_public_vlan does not return a vlan_id",
+      "range": {
+        "startLine": 212,
+        "startChar": 0,
+        "endLine": 212,
+        "endChar": 69
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_3bd0ed4f",
+        "filename": "dashboard/src/workflow/resource_bundle_workflow.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "put these in the exceptions file?",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 8
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_9bc4a193",
+        "filename": "dashboard/src/workflow/resource_bundle_workflow.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "move to exceptions file?",
+      "range": {
+        "startLine": 132,
+        "startChar": 0,
+        "endLine": 136,
+        "endChar": 8
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_7bc1c57f",
+        "filename": "dashboard/src/workflow/resource_bundle_workflow.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "no prints",
+      "range": {
+        "startLine": 241,
+        "startChar": 0,
+        "endLine": 245,
+        "endChar": 47
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_bbbb5d0d",
+        "filename": "dashboard/src/workflow/resource_bundle_workflow.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 369,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "delete, will not implement",
+      "range": {
+        "startLine": 366,
+        "startChar": 0,
+        "endLine": 369,
+        "endChar": 15
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a682502_10cd1032",
         "filename": "dashboard/src/workflow/sw_bundle_workflow.py",
         "patchSetId": 3
@@ -870,6 +4118,23 @@
         "endLine": 21,
         "endChar": 52
       },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_fb3cb595",
+        "filename": "dashboard/test.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-10-12T18:32:32Z",
+      "side": 1,
+      "message": "license?",
       "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
