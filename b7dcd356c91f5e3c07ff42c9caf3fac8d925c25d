@@ -4124,6 +4124,30 @@
     },
     {
       "key": {
+        "uuid": "5a682502_1b38919f",
+        "filename": "dashboard/src/workflow/sw_bundle_workflow.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2018-10-14T20:10:52Z",
+      "side": 1,
+      "message": "I think it isn\u0027t really hacky anymore. I don\u0027t remember doing a specific refactor or modification of this part to address that todo, but we did heavily modify this file afterwards to the point that that comment probably doesn\u0027t still apply.",
+      "parentUuid": "5a682502_10cd1032",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 52
+      },
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a682502_fb3cb595",
         "filename": "dashboard/test.sh",
         "patchSetId": 3
@@ -4135,6 +4159,24 @@
       "writtenOn": "2018-10-12T18:32:32Z",
       "side": 1,
       "message": "license?",
+      "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_7679dc2e",
+        "filename": "dashboard/test.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2018-10-14T20:10:52Z",
+      "side": 1,
+      "message": "This file seems to have disappeared in the latest patch, and I forget if we decided to delete it or if it\u0027s missing in error",
+      "parentUuid": "5a682502_fb3cb595",
       "revId": "b7dcd356c91f5e3c07ff42c9caf3fac8d925c25d",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
