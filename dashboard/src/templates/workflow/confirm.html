@@ -61,9 +61,7 @@
     function delete_manager()
     {
         var form = $("#manager_delete_form");
-        console.log(form);
         var formData = form.serialize();
-        console.log(formData);
         var req = new XMLHttpRequest();
         req.open("POST", "/wf/workflow/finish/", false);
         req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -86,8 +84,6 @@
     var confirmed = {{bypassed|default:"false"}};
     if( confirmed )
     {
-        console.log("confirmed: ");
-        console.log(confirmed);
         delete_manager();
     }
 </script>

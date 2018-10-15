@@ -8,43 +8,23 @@
 # http://www.apache.org/licenses/LICENSE-2.0
 ##############################################################################
 
-from django.conf import settings
 from django.contrib import messages
-from django.contrib.auth.mixins import LoginRequiredMixin
-from django.http import JsonResponse, Http404
 from django.shortcuts import get_object_or_404
+from django.http import JsonResponse
 from django.urls import reverse
 from django.utils import timezone
 from django.views import View
 from django.views.generic import FormView
 from django.views.generic import TemplateView
-from jira import JIRAError
 from django.shortcuts import redirect, render
 import json
 
-from booking.models import Booking
-from account.jira_util import get_jira
 from booking.forms import BookingForm, BookingEditForm
 from resource_inventory.models import ResourceBundle
 from resource_inventory.resource_manager import ResourceManager
-from booking.models import Booking, Scenario, Installer, Opsys
+from booking.models import Booking, Installer, Opsys
 from booking.stats import StatisticsManager
 
-def create_jira_ticket(user, booking):
-    jira = get_jira(user)
-    issue_dict = {
-        'project': 'PHAROS',
-        'summary': str(booking.resource) + ': Access Request',
-        'description': booking.purpose,
-        'issuetype': {'name': 'Task'},
-        'components': [{'name': 'POD Access Request'}],
-        'assignee': {'name': booking.resource.owner.username}
-    }
-    issue = jira.create_issue(fields=issue_dict)
-    jira.add_attachment(issue, user.userprofile.pgp_public_key)
-    jira.add_attachment(issue, user.userprofile.ssh_public_key)
-    booking.jira_issue_id = issue.id
-    booking.save()
 
 def drop_filter(context):
     installer_filter = {}
@@ -60,6 +40,7 @@ def drop_filter(context):
             scenario_filter[installer.id].append(scenario.id)
 
     context.update({'installer_filter': json.dumps(installer_filter), 'scenario_filter': json.dumps(scenario_filter)})
+
 
 class BookingFormView(FormView):
     template_name = "booking/booking_calendar.html"
@@ -105,15 +86,6 @@ class BookingFormView(FormView):
             booking.save()
         except ValueError as err:
             messages.add_message(self.request, messages.ERROR, err)
-            return super(BookingFormView, self).form_invalid(form)
-        try:
-            if settings.CREATE_JIRA_TICKET:
-                create_jira_ticket(user, booking)
-        except JIRAError:
-            messages.add_message(self.request, messages.ERROR, 'Failed to create Jira Ticket. '
-                                                               'Please check your Jira '
-                                                               'permissions.')
-            booking.delete()
             return super(BookingFormView, self).form_invalid(form)
         messages.add_message(self.request, messages.SUCCESS, 'Booking saved')
         return super(BookingFormView, self).form_valid(form)
@@ -162,7 +134,7 @@ class BookingEditFormView(FormView):
                                  'You are not the owner of this booking.')
             return super(BookingEditFormView, self).form_invalid(form)
 
-        #Do Conflict Checks
+        # Do Conflict Checks
         if self.original_booking.end != form.cleaned_data['end']:
             if form.cleaned_data['end'] - self.original_booking.end > timezone.timedelta(days=7):
                 messages.add_message(self.request, messages.ERROR,
@@ -193,12 +165,11 @@ class BookingEditFormView(FormView):
             messages.add_message(self.request, messages.ERROR, err)
             return super(BookingEditFormView, self).form_invalid(form)
 
-        user = self.request.user
         return super(BookingEditFormView, self).form_valid(form)
+
 
 class BookingView(TemplateView):
     template_name = "booking/booking_detail.html"
-
 
     def get_context_data(self, **kwargs):
         booking = get_object_or_404(Booking, id=self.kwargs['booking_id'])
@@ -206,6 +177,7 @@ class BookingView(TemplateView):
         context = super(BookingView, self).get_context_data(**kwargs)
         context.update({'title': title, 'booking': booking})
         return context
+
 
 class BookingDeleteView(TemplateView):
     template_name = "booking/booking_delete.html"
@@ -217,11 +189,13 @@ class BookingDeleteView(TemplateView):
         context.update({'title': title, 'booking': booking})
         return context
 
+
 def bookingDelete(request, booking_id):
     booking = get_object_or_404(Booking, id=booking_id)
     booking.delete()
     messages.add_message(request, messages.SUCCESS, 'Booking deleted')
     return redirect('../../../../')
+
 
 class BookingListView(TemplateView):
     template_name = "booking/booking_list.html"
@@ -247,12 +221,12 @@ class ResourceBookingsJSON(View):
         )
         return JsonResponse({'bookings': list(bookings)})
 
+
 def booking_detail_view(request, booking_id):
     user = None
     if request.user.is_authenticated:
         user = request.user
     else:
-        print("user not authenticated")
         return render(request, "dashboard/login.html", {'title': 'Authentication Required'})
 
     booking = get_object_or_404(Booking, id=booking_id)
@@ -261,6 +235,7 @@ def booking_detail_view(request, booking_id):
         'booking': booking,
         'pdf': ResourceManager().makePDF(booking.resource),
         'user_id': user.id})
+
 
 def booking_stats_view(request):
     return render(
@@ -271,6 +246,7 @@ def booking_stats_view(request):
                 "title": "Booking Statistics"
                 }
             )
+
 
 def booking_stats_json(request):
     try:

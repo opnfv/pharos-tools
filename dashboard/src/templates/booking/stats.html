@@ -6,7 +6,6 @@
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 <script>
 function drawGraph(data, graph_id, graph_title){
-    console.log(data);
     var container = document.getElementById(graph_id);
     var plot_data = { x: data[0],
         y: data[1],
@@ -17,7 +16,6 @@ function drawGraph(data, graph_id, graph_title){
     var layout = {
         title: graph_title
     };
-    console.log(plot_data);
     Plotly.newPlot(container, [plot_data], layout);
 }
 function getData(){

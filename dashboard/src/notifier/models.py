@@ -8,14 +8,11 @@
 ##############################################################################
 
 from django.db import models
-from jira import JIRA, JIRAError
 from booking.models import Booking
-from django.contrib.auth.models import User
 from account.models import UserProfile
-from django.contrib import messages
-from django.db.models.signals import pre_save
 from fernet_fields import EncryptedTextField
 from account.models import Lab
+
 
 class MetaBooking(models.Model):
     id = models.AutoField(primary_key=True)
@@ -24,9 +21,11 @@ class MetaBooking(models.Model):
     ended_notified = models.BooleanField(default=False)
     created_notified = models.BooleanField(default=False)
 
+
 class LabMessage(models.Model):
     lab = models.ForeignKey(Lab, on_delete=models.CASCADE)
-    msg = models.TextField() #django template should be put here
+    msg = models.TextField()  # django template should be put here
+
 
 class Notifier(models.Model):
     id = models.AutoField(primary_key=True)
@@ -35,11 +34,9 @@ class Notifier(models.Model):
     user = models.ForeignKey(UserProfile, on_delete=models.CASCADE, null=True, blank=True)
     sender = models.CharField(max_length=240, default='unknown')
     message_type = models.CharField(max_length=240, default='email', choices=(
-        ('email','Email'),
+        ('email', 'Email'),
         ('webnotification', 'Web Notification')))
     msg_sent = ''
-
-    import notifier.dispatchers
 
     def __str__(self):
         return self.title
@@ -52,4 +49,3 @@ class Notifier(models.Model):
 
     def getEmail(self):
         return self.user.email_addr
-

@@ -34,13 +34,9 @@ def attempt_auth(request):
 def delete_session(request):
     try:
         manager = ManagerTracker.managers[request.session['manager_session']]
-        print("removing manager " + str(manager))
         del ManagerTracker.managers[request.session['manager_session']]
-        print("managers: " + str(ManagerTracker.managers))
-        print("manager: " + str(manager))
         return HttpResponse('')
     except KeyError:
-        print("no managers found to delete")
         return None
 
 def step_view(request):

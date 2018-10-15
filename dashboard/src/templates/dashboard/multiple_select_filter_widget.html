@@ -60,11 +60,12 @@
     background-color: #FFFFFF;
 }
 
- .grid-item-header
- {
-     font-weight: bold;
-     font-size: 20px;
-     margin-top: 10px;
+.grid-item-header
+{
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 10px;
+}
 
 </style>
 <input name="filter_field" id="filter_field" type="hidden"/>
@@ -77,8 +78,7 @@
     <div id="{{object_class}}" class="object_class_wrapper">
     {% for obj in object_list %}
     <div id="object_parent">
-        <div id="{{ obj.id|default:'not_provided' }}" class="grid-item"
-            >
+        <div id="{{ obj.id|default:'not_provided' }}" class="grid-item">
             <p class="grid-item-header">{{obj.name}}</p>
             <p class="grid-item-description">{{obj.description}}</p>
             <button type="button" class="btn btn-success grid-item-select-btn" onclick="processClick('{{obj.id}}', {% if obj.multiple %}true{% else %}false{% endif %});">{% if obj.multiple %}Add{% else %}Select{% endif %}</button>
@@ -105,7 +105,6 @@ var dropdown_count = 0;
 {% if selection_data %}
 make_selection({{selection_data|safe}});
 {% endif %}
-
 
 function make_selection( selection_data ){
     if(!initialized) {
@@ -178,7 +177,6 @@ function markAndSweep(root){
             disable(node);
         }
     }
-
 }
 
 function process(node) {
@@ -299,9 +297,7 @@ function checkunique(tocheck)
     tocheck.setCustomValidity("");
 }
 
-
 function add_item_prepopulate(node, prepopulate){
-
     inputs = [];
     var div = document.createElement("DIV");
     div.class = node['id'];
@@ -320,7 +316,7 @@ function add_item_prepopulate(node, prepopulate){
         input.title = "Only alphanumeric characters (a-z, A-Z, 0-9), underscore(_), and hyphen (-) are allowed"
         input.placeholder = form['placeholder'];
         inputs.push(input);
-        input.onchange = function() { console.log("update"); updateObjectResult(div); restrictchars(this); };
+        input.onchange = function() { updateObjectResult(div); restrictchars(this); };
         input.oninput = function() { restrictchars(this); };
         if(form['name'] in prepopulate){
             input.value = prepopulate[form['name']];

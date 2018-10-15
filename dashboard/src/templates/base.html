@@ -24,7 +24,6 @@
         }).done(function (data) {
             window.location.replace("/wf/");
         }).fail(function(jqxHR, textstatus) {
-            console.log(textstatus);
             alert("Something went wrong...");});
     }
        function continue_wf()
@@ -140,13 +139,13 @@
                                     class="fa fa-fw"></i>Hosts
                                 </a>
                         </li>
+                        {% if user.is_authenticated %}
                         <li>
-                            {% if user.is_authenticated %}
                             <a href="{% url 'account:users' %}"><i
                                     class="fa fa-fw"></i>User List
                             </a>
-                            {% endif %}
                         </li>
+                        {% endif %}
                         <li>
                             <a href="{% url 'booking:list' %}"><i
                                     class="fa fa-fw"></i>Booking List

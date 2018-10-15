@@ -9,7 +9,6 @@
 
 from booking.models import *
 from notifier.models import Notifier, MetaBooking, LabMessage
-from django.template.loader import render_to_string
 from django.utils import timezone
 from datetime import timedelta
 from django.template import Template, Context
@@ -25,7 +24,6 @@ class NotifyPeriodic(object):
         for booking in bookings_old:
             metabooking = booking.metabooking
             if booking.end <= timezone.now() + timedelta(hours=24):
-                metabooking = booking.metabooking
                 if not metabooking.ending_notified:
                     Notify().notify(Notify.TOCLEAN, booking)
                     metabooking.ending_notified = True
@@ -44,6 +42,7 @@ class NotifyPeriodic(object):
             metabooking.save()
 
             Notify().notify(Notify.CREATED, booking)
+
 
 class Notify(object):
 
@@ -75,7 +74,7 @@ class Notify(object):
         context["owner"] = booking.owner
         context["notify_type"] = notifier_type
         context["booking"] = booking
-        message = template.render(Context(context)) #render_to_string(template, context)
+        message = template.render(Context(context))
         notifier = Notifier()
         notifier.title = self.TITLES[notifier_type]
         notifier.content = message
@@ -89,7 +88,7 @@ class Notify(object):
 
         for user in booking.collaborators.all():
             context["collaborator"] = user
-            message = template.render(Context(context))  #render_to_string(template, context)
+            message = template.render(Context(context))
             notifier = Notifier()
             notifier.title = self.TITLES[notifier_type]
             notifier.content = message

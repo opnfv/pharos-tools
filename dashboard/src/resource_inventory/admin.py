@@ -20,12 +20,10 @@ generics = [GenericResourceBundle, GenericResource, GenericHost, GenericPod, Gen
 
 admin.site.register(generics)
 
-physical = [Host, Interface, Network, Vlan]
+physical = [Host, Interface, Network, Vlan, ResourceBundle]
 
 admin.site.register(physical)
 
 config = [Scenario, Installer, Opsys, ConfigBundle, OPNFVConfig, OPNFVRole, Image, HostConfiguration]
 
 admin.site.register(config)
-
-admin.site.register(ResourceBundle)

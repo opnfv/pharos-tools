@@ -72,17 +72,10 @@ class Define_Software(WorkflowStep):
         i=0;
         for host_data in hosts_initial:
             host = GenericHost.objects.get(pk=host_data['host_id'])
-            print("host: " + str(host))
             excluded_images = Image.objects.exclude(owner=user).exclude(public=True)
-            print("excluded: ")
-            print(excluded_images)
             excluded_images = excluded_images | Image.objects.exclude(host_type=host.profile)
-            print("excluded: ")
-            print(excluded_images)
             lab = self.repo_get(self.repo.SWCONF_SELECTED_GRB).lab
             excluded_images = excluded_images | Image.objects.exclude(from_lab=lab)
-            print("excluded: ")
-            print(excluded_images)
             filter_data["id_form-" + str(i) + "-image"] = []
             for image in excluded_images:
                 filter_data["id_form-" + str(i) + "-image"].append(image.name)
@@ -241,6 +234,5 @@ class Config_Software(WorkflowStep):
             self.repo_put(self.repo.CONFIRMATION, confirm)
 
         except Exception as e:
-            print(type(e))
-            print(e)
+            pass
         return self.render(request)

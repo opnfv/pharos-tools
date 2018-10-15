@@ -185,31 +185,31 @@ function restoreFromXml(xml, editor) {
 
     //Iterate over all children, and parse the networks to add them to the sidebar
     var root = currentGraph.getDefaultParent();
-        for( var i=0; i<root.getChildCount(); i++) {
-            var cell = root.getChildAt(i);
-            if(cell.getId().indexOf("network") > -1) {
-                var info = JSON.parse(cell.getValue());
-                var vlan_id = info['vlan_id'];
-                networks.add(vlan_id);
-                var name = info['name'];
-                network_names.add(name);
-                var styles = cell.getStyle().split(";");
-                var color = null;
-                for(var j=0; j< styles.length; j++){
-                    var kvp = styles[j].split('=');
-                    if(kvp[0] == "fillColor") {
-                        color = kvp[1];
-                        break;
-                    }
+    for( var i=0; i<root.getChildCount(); i++) {
+        var cell = root.getChildAt(i);
+        if(cell.getId().indexOf("network") > -1) {
+            var info = JSON.parse(cell.getValue());
+            var vlan_id = info['vlan_id'];
+            networks.add(vlan_id);
+            var name = info['name'];
+            network_names.add(name);
+            var styles = cell.getStyle().split(";");
+            var color = null;
+            for(var j=0; j< styles.length; j++){
+                var kvp = styles[j].split('=');
+                if(kvp[0] == "fillColor") {
+                    color = kvp[1];
+                    break;
                 }
-                if(info.public){
-                    vlan_id = "";
-                    has_public_net = true;
-                }
-                netCount++;
-                makeSidebarNetwork(name, vlan_id, color, cell.getId());
             }
+            if(info.public){
+                vlan_id = "";
+                has_public_net = true;
+            }
+            netCount++;
+            makeSidebarNetwork(name, vlan_id, color, cell.getId());
         }
+    }
 }
 
 function deleteCell(cellId) {
@@ -302,43 +302,43 @@ function encodeGraph(graph) {
 }
 
 function doGlobalConfig(graph) {
-//general graph stuff
-graph.setMultigraph(false);
+    //general graph stuff
+    graph.setMultigraph(false);
 
-//edge behavior
-graph.setConnectable(true);
-graph.setAllowDanglingEdges(false);
-mxEdgeHandler.prototype.snapToTerminals = true;
-mxConstants.MIN_HOTSPOT_SIZE = 16;
-mxConstants.DEFAULT_HOTSPOT = 1;
-//edge 'style' (still affects behavior greatly)
-style = graph.getStylesheet().getDefaultEdgeStyle();
-style[mxConstants.STYLE_EDGE] = mxConstants.EDGESTYLE_ELBOW;
-style[mxConstants.STYLE_ENDARROW] = mxConstants.NONE;
-style[mxConstants.STYLE_ROUNDED] = true;
-style[mxConstants.STYLE_FONTCOLOR] = 'black';
-style[mxConstants.STYLE_STROKECOLOR] = 'red';
+    //edge behavior
+    graph.setConnectable(true);
+    graph.setAllowDanglingEdges(false);
+    mxEdgeHandler.prototype.snapToTerminals = true;
+    mxConstants.MIN_HOTSPOT_SIZE = 16;
+    mxConstants.DEFAULT_HOTSPOT = 1;
+    //edge 'style' (still affects behavior greatly)
+    style = graph.getStylesheet().getDefaultEdgeStyle();
+    style[mxConstants.STYLE_EDGE] = mxConstants.EDGESTYLE_ELBOW;
+    style[mxConstants.STYLE_ENDARROW] = mxConstants.NONE;
+    style[mxConstants.STYLE_ROUNDED] = true;
+    style[mxConstants.STYLE_FONTCOLOR] = 'black';
+    style[mxConstants.STYLE_STROKECOLOR] = 'red';
 
-style[mxConstants.STYLE_LABEL_BACKGROUNDCOLOR] = '#FFFFFF';
-style[mxConstants.STYLE_STROKEWIDTH] = '3';
-style[mxConstants.STYLE_ROUNDED] = true;
-style[mxConstants.STYLE_EDGE] = mxEdgeStyle.EntityRelation;
+    style[mxConstants.STYLE_LABEL_BACKGROUNDCOLOR] = '#FFFFFF';
+    style[mxConstants.STYLE_STROKEWIDTH] = '3';
+    style[mxConstants.STYLE_ROUNDED] = true;
+    style[mxConstants.STYLE_EDGE] = mxEdgeStyle.EntityRelation;
 
-// TODO: Proper override
-graph.convertValueToString = function(cell) {
-    try{
-        //changes value for edges with xml value
-        if(cell.isEdge()) {
-            if(JSON.parse(cell.getValue())["tagged"]) {
-                return "tagged";
+    // TODO: Proper override
+    graph.convertValueToString = function(cell) {
+        try{
+            //changes value for edges with xml value
+            if(cell.isEdge()) {
+                if(JSON.parse(cell.getValue())["tagged"]) {
+                    return "tagged";
+                }
+                return "untagged";
+            } else{
+                    return JSON.parse(cell.getValue())['name'];
             }
-            return "untagged";
-        } else{
-                return JSON.parse(cell.getValue())['name'];
         }
-    }
-    catch(e){
-            return cell.getValue();
+        catch(e){
+                return cell.getValue();
         }
     };
 }
@@ -491,7 +491,6 @@ function makeMxNetwork(vlan_id, net_name) {
             'fillColor=black;opacity=0',
             true
         );
-        //port.setVisible(false);
     }
 
     var retVal = Object();
@@ -529,7 +528,6 @@ function updateHosts(removed) {
     var topdist = 100;
     for(var i=0; i<hosts.length; i++)
     {
-
         var host = hosts[i];
         if(!host.id.startsWith("host_"))
         {
@@ -540,7 +538,6 @@ function updateHosts(removed) {
         topdist = geometry.y + geometry.height;
         host.setGeometry(geometry);
     }
-
 }
 
 function makeSidebarNetwork(net_name, vlan_id, color, net_id){
@@ -643,12 +640,12 @@ function submitForm() {
     </form>
 
 <script>
-main(
+    main(
         document.getElementById('graphContainer'),
         document.getElementById('outlineContainer'),
         document.getElementById('toolbarContainer'),
         document.getElementById('sidebarContainer')
-)
+    )
 </script>
 {% endblock content %}
 {% block onleave %}

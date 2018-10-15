@@ -18,7 +18,7 @@ from xml.dom import minidom
 from workflow.models import WorkflowStep
 from workflow.forms import *
 from resource_inventory.models import *
-import dashboard.exceptions
+from dashboard.exceptions import *
 
 import logging
 logger = logging.getLogger(__name__)
@@ -139,19 +139,15 @@ class Define_Nets(WorkflowStep):
         # try to grab some vlans from lab
         models = self.repo_get(self.repo.GRESOURCE_BUNDLE_MODELS, {})
         if "bundle" not in models:
-            print("no bundle")
             return None
         lab = models['bundle'].lab
         if lab is None or lab.vlan_manager is None:
-            print("no lab")
             return None
         try:
             vlans = lab.vlan_manager.get_vlan(count=lab.vlan_manager.block_size)
             self.repo_put(self.repo.VLANS, vlans)
             return vlans
         except Exception as e:
-            print("no vlans")
-            print(e)
             return None
 
     def get_context(self):
@@ -200,7 +196,6 @@ class Define_Nets(WorkflowStep):
                 context['xml'] = False
 
         except Exception as e:
-            print(e)
             pass
         return context
 
@@ -218,9 +213,6 @@ class Define_Nets(WorkflowStep):
             # update model with xml
             self.metastep.set_valid("Networks applied successfully")
         except Exception as e:
-            print("exceptionn")
-            print(str(type(e)))
-            print(e)
             self.metastep.set_invalid("An error occurred when applying networks")
         return self.render(request)
 
@@ -257,7 +249,6 @@ class Define_Nets(WorkflowStep):
 
     # serialize and deserialize xml from mxGraph
     def parseXml(self, xmlString):
-        print("got xml:\n" + xmlString + "\n\n")
         parent_nets = {}  # map network ports to networks
         networks = {}  # maps net id to network object
         hosts = {}  # cotains id -> hosts, each containing interfaces, referencing networks
@@ -267,14 +258,10 @@ class Define_Nets(WorkflowStep):
         connections = []
         netids = {}
         untagged_ints = {}
-        print(root.childNodes)
         for cell in root.childNodes:
-            print(cell)
             cellId = cell.getAttribute('id')
-            print(cellId)
 
             if cell.getAttribute("edge"):
-                print("network connection")
                 #cell is a network connection
                 escaped_json_str = cell.getAttribute("value")
                 json_str = escaped_json_str.replace('&quot;', '"')
@@ -300,14 +287,11 @@ class Define_Nets(WorkflowStep):
                 interface['networks'].append({"network": network, "tagged": tagged})
 
             elif "network" in cellId:  # cell is a network
-                print("got network")
                 escaped_json_str = cell.getAttribute("value")
                 json_str = escaped_json_str.replace('&quot;', '"')
                 net_info = json.loads(json_str)
-                print(net_info)
                 nid = net_info['vlan_id']
                 public = net_info['public']
-                print(str(type(nid)))
                 try:
                     int_netid = int(nid)
                     assert public or int_netid > 1, "Net id is 1 or lower"
@@ -315,30 +299,25 @@ class Define_Nets(WorkflowStep):
                 except Exception as e:
                     raise InvalidVlanConfigurationException("VLAN ID is not an integer more than 1 and less than 4095")
                 if nid in netids:
-                    print("netexists, : " + str(netids))
                     raise NetworkExistsException("Non unique network id found")
                 else:
-                    print("in else")
+                    pass
                 network = {"name": net_info['name'], "vlan": net_info['vlan_id'], "public": public}
                 netids[net_info['vlan_id']] = True
                 networks[cellId] = network
 
             elif "host" in cellId:  # cell is a host/machine
                 #TODO gather host info
-                print("got host")
                 cell_json_str = cell.getAttribute("value")
                 cell_json = json.loads(cell_json_str)
                 host = {"interfaces": [], "name": cellId, "profile_name": cell_json['name']}
                 hosts[cellId] = host
 
             elif cell.hasAttribute("parent"):
-                print("got child")
                 parentId = cell.getAttribute('parent')
                 if "network" in parentId:
-                    print("of network")
                     parent_nets[cellId] = parentId
                 elif "host" in parentId:
-                    print("of host")
                     #TODO gather iface info
                     cell_json_str = cell.getAttribute("value")
                     cell_json = json.loads(cell_json_str)

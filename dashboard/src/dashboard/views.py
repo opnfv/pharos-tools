@@ -9,13 +9,9 @@
 ##############################################################################
 
 
-from datetime import timedelta
-from django.http import JsonResponse
 from django.shortcuts import get_object_or_404
-from django.utils import timezone
-from django.views import View
 from django.views.generic import TemplateView
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from django.http import HttpResponseRedirect
 
 from booking.models import Booking
@@ -25,11 +21,13 @@ from resource_inventory.models import *
 from workflow.views import *
 from workflow.workflow_manager import *
 
-def  lab_list_view(request):
+
+def lab_list_view(request):
     labs = Lab.objects.all()
-    context = {"labs":labs}
+    context = {"labs": labs}
 
     return render(request, "dashboard/lab_list.html", context)
+
 
 def lab_detail_view(request, lab_name):
     user = None
@@ -43,16 +41,16 @@ def lab_detail_view(request, lab_name):
         images = images | Image.objects.filter(from_lab=lab).filter(owner=user)
 
     return render(request, "dashboard/lab_detail.html",
-                  {'title':"Lab Overview",
+                  {'title': "Lab Overview",
                    'lab': lab,
                    'hostprofiles': lab.hostprofiles.all(),
                    'images': images})
 
+
 def host_profile_detail_view(request):
-    hosts = []
 
     return render(request, "dashboard/host_profile_detail.html",
-                   {'title':"Host Types",
+                   {'title': "Host Types",
                    })
 
 
@@ -68,14 +66,12 @@ def landing_view(request):
         except KeyError as e:
             pass
 
-
-
     if manager is not None:
         #no manager detected, don't display continue button
-        manager_detected = True;
+        manager_detected = True
 
     if request.method == 'GET':
-        return render(request, 'dashboard/landing.html', {'manager':manager_detected, 'title':"Welcome!"})
+        return render(request, 'dashboard/landing.html', {'manager': manager_detected, 'title': "Welcome!"})
 
     if request.method == 'POST':
         try:
@@ -88,17 +84,12 @@ def landing_view(request):
             request.session['manager_session'] = mgr_uuid
             return HttpResponseRedirect('/wf/')
 
-
-            #return wf
         except KeyError as e:
             pass
 
 
-
 class LandingView(TemplateView):
     template_name = "dashboard/landing.html"
-
-
 
     def get_context_data(self, **kwargs):
         context = super(LandingView, self).get_context_data(**kwargs)
@@ -121,4 +112,3 @@ class LandingView(TemplateView):
         context.update({'hosts': hosts})
 
         return context
-

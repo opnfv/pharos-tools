@@ -2,7 +2,6 @@
 {% block content %}
 <script>
 function edit_booking(pk){
-    console.log("editing booking " + pk);
     var csrf = $('input[name="csrfmiddlewaretoken"]').val();
     $.ajax({
         type: "POST",
@@ -13,9 +12,7 @@ function edit_booking(pk){
         }
     }).done(function(){
         window.location.replace("/wf/");
-    }).fail(function(){
-        console.log("Error editting booking");
-    })
+    }).fail(function(){})
 }
 </script>
 <h2>Bookings I Own</h2>

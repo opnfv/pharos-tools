@@ -22,9 +22,7 @@ from django.contrib.auth.models import User
 from django.urls import reverse
 from django.utils.decorators import method_decorator
 from django.views.generic import RedirectView, TemplateView, UpdateView
-from django.http import HttpResponse
 from django.shortcuts import render
-from django.template.loader import render_to_string
 from jira import JIRA
 from rest_framework.authtoken.models import Token
 

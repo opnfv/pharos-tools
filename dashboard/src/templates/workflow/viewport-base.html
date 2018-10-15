@@ -135,13 +135,8 @@
     {
         if( errors_exist(data) )
         {
-            console.log("Errors found in current step")
             var continueanyway = confirm("The current step has errors that will prevent it from saving. Continue anyway?");
-            if( continueanyway )
-            {
-                console.log("user opted to continue");
-            }
-            else
+            if( !continueanyway )
             {
                 return;
             }
@@ -206,10 +201,7 @@
 
     function update_page(data)
     {
-        console.log(step);
         context_data = data;
-        console.log("data: ");
-        console.log(data);
         update_breadcrumbs(data);
     }
 

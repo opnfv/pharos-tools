@@ -34,7 +34,6 @@ var selected_host = null;
 var initial = {{chosen|default:'null'}};
 
 function select(booking_id, host_name){
-    console.log("selecting " + booking_id + "_" + host_name);
     var input = document.getElementById("hidden_json_input");
     input.value = JSON.stringify({"booking": booking_id, "name": host_name});
     // clear out and highlist host
@@ -47,7 +46,6 @@ function select(booking_id, host_name){
 
 function draw_bookings(){
     var booking_hosts = {{booking_hosts|safe}};
-    console.log("drawing for " + booking_hosts);
     var bookings = [];
     var container = document.getElementById("host_select_container");
     for(var booking_id in booking_hosts){
@@ -78,8 +76,6 @@ function draw_bookings(){
         bookings.push(booking);
         container.appendChild(booking);
     }
-    console.log("built this:");
-    console.log(bookings);
 }
 draw_bookings();
 if(initial){
@@ -91,7 +87,6 @@ if(initial){
 {% block onleave %}
 var ajaxForm = $("#host_select_form");
 var formData = ajaxForm.serialize();
-console.log(formData);
 req = new XMLHttpRequest();
 req.open("POST", "/wf/workflow/", false);
 req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");

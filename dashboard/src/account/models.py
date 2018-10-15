@@ -130,9 +130,6 @@ class VlanManager(models.Model):
 
         vlans = set(vlans)
 
-        print("trying to reserve vlans ")
-        print(vlans)
-
         for vlan in vlans:
             if my_vlans[vlan] is 0:
                 raise ValueError("vlan " + str(vlan) + " is not available")

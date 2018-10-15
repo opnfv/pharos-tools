@@ -12,9 +12,7 @@ function edit_resource(pk){
             }
         }).done(function(){
             window.location.replace("/wf/");
-        }).fail(function(){
-          console.log("Error editting booking");
-      });
+        }).fail(function(){});
 }
 </script>
     {% for resource in resources %}

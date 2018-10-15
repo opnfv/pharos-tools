@@ -9,10 +9,8 @@
 ##############################################################################
 
 
-from datetime import timedelta
 from celery import shared_task
 from django.utils import timezone
-from django.conf import settings
 from django.db.models import Q
 from booking.models import Booking
 from notifier.manager import *
@@ -20,16 +18,16 @@ from notifier.models import *
 from api.models import *
 from resource_inventory.resource_manager import ResourceManager
 
+
 @shared_task
 def conjure_aggregate_notifiers():
-    print("creating notifications")
     NotifyPeriodic.task()
+
 
 @shared_task
 def booking_poll():
     def cleanup_hardware(qs):
         for hostrelation in qs:
-            print("cleaning hwconf: " + str(hostrelation))
             config = hostrelation.config
             config.clear_delta()
             config.set_power("off")
@@ -39,14 +37,12 @@ def booking_poll():
 
     def cleanup_network(qs):
         for hostrelation in qs:
-            print("cleaning hconf: " + str(hostrelation))
             network = hostrelation.config
             network.interfaces.clear()
             host = hostrelation.host
             network.clear_delta()
             vlans = []
             for interface in host.interfaces.all():
-                print("cleaning interface " + str(interface))
                 for vlan in interface.config:
                     if vlan.public:
                         try:
@@ -62,6 +58,7 @@ def booking_poll():
 
                 interface.config.clear()
                 network.add_interface(interface)
+                network.save()
             hostrelation.status=JobStatus.NEW
             hostrelation.save()
 
@@ -80,19 +77,14 @@ def booking_poll():
 
     cleanup_set = Booking.objects.filter(end__lte=timezone.now()).filter(job__complete=False)
 
-    print("cleanup_set: " + str(cleanup_set))
-
     for booking in cleanup_set:
-        print("cleaning " + str(booking))
         if not booking.job.complete:
-            print("Booking job not complete, so modifying job")
             job = booking.job
             cleanup_software(SoftwareRelation.objects.filter(job=job))
             cleanup_hardware(HostHardwareRelation.objects.filter(job=job))
             cleanup_network(HostNetworkRelation.objects.filter(job=job))
             cleanup_access(AccessRelation.objects.filter(job=job))
             job.complete = True
-            print("Job modification complete")
             job.save()
 
 

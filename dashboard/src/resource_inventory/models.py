@@ -11,17 +11,13 @@ from django.contrib.auth.models import User
 from django.db import models
 from django.core.validators import RegexValidator
 
-from datetime import timedelta
+import re
 
 from account.models import Lab
 
 
-## profile of resources hosted by labs
-
+# profile of resources hosted by labs
 class HostProfile(models.Model):
-    HOST_TYPES = (
-        (0, 'server'),
-    )
     id = models.AutoField(primary_key=True)
     host_type = models.PositiveSmallIntegerField(default=0)
     name = models.CharField(max_length=200, unique=True)
@@ -103,7 +99,7 @@ class RamProfile(models.Model):
 
 ##Networking -- located here due to import order requirements
 class Network(models.Model):
-    id = models.AutoField(primary_key = True)
+    id = models.AutoField(primary_key=True)
     vlan_id = models.IntegerField()
     name = models.CharField(max_length=100)
 
@@ -120,8 +116,7 @@ class Vlan(models.Model):
         return str(self.vlan_id) + ("_T" if self.tagged else "")
 
 
-## Generic resource templates
-
+# Generic resource templates
 class GenericResourceBundle(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=300, unique=True)
@@ -140,8 +135,8 @@ class GenericResourceBundle(models.Model):
     def __str__(self):
         return self.name
 
+
 class GenericResource(models.Model):
-    #id = models.AutoField(primary_key=True)
     bundle = models.ForeignKey(GenericResourceBundle, related_name='generic_resources', on_delete=models.DO_NOTHING)
     hostname_validchars = RegexValidator(regex='(?=^.{1,253}$)(?=(^([A-Za-z0-9\-\_]{1,62}\.)*[A-Za-z0-9\-\_]{1,63}$))', message="Enter a valid hostname. Full domain name may be 1-253 characters, each hostname 1-63 characters (including suffixed dot), and valid characters for hostnames are A-Z, a-z, 0-9, hyphen (-), and underscore (_)")
     name = models.CharField(max_length=200, validators=[hostname_validchars])
@@ -154,13 +149,13 @@ class GenericResource(models.Model):
 
     def validate(self):
         validname = re.compile('(?=^.{1,253}$)(?=(^([A-Za-z0-9\-\_]{1,62}\.)*[A-Za-z0-9\-\_]{1,63}$))')
-        if not pattern.match(self.name):
+        if not validname.match(self.name):
             return "Enter a valid hostname. Full domain name may be 1-253 characters, each hostname 1-63 characters (including suffixed dot), and valid characters for hostnames are A-Z, a-z, 0-9, hyphen (-), and underscore (_)"
         else:
             return None
 
 
-#Host template
+# Host template
 class GenericHost(models.Model):
     id = models.AutoField(primary_key=True)
     profile = models.ForeignKey(HostProfile, on_delete=models.DO_NOTHING)
@@ -169,20 +164,8 @@ class GenericHost(models.Model):
     def __str__(self):
         return self.resource.name
 
-class GenericPod(GenericResource):
-    hosts = models.ManyToManyField(GenericHost)
-    networks = models.ManyToManyField(Network)
 
-    def getHosts(self):
-        return_hosts = []
-        for genericResource in self.generic_resources:
-            return_hosts += genericResource.getHosts
-
-        return return_hosts
-
-
-## Physical, actual resources
-
+# Physical, actual resources
 class ResourceBundle(models.Model):
     id = models.AutoField(primary_key=True)
     template = models.ForeignKey(GenericResourceBundle, on_delete=models.DO_NOTHING)
@@ -191,9 +174,7 @@ class ResourceBundle(models.Model):
         return "instance of " + str(self.template)
 
 
-
-## Networking
-
+# Networking
 
 
 class GenericInterface(models.Model):
@@ -241,8 +222,8 @@ class ConfigBundle(models.Model):
 
 class OPNFVConfig(models.Model):
     id = models.AutoField(primary_key=True)
-    installer = models.ForeignKey(Installer, on_delete=models.CASCADE) #consider setting default here?
-    scenario = models.ForeignKey(Scenario, on_delete=models.CASCADE) #consider setting default here?
+    installer = models.ForeignKey(Installer, on_delete=models.CASCADE)
+    scenario = models.ForeignKey(Scenario, on_delete=models.CASCADE)
     bundle = models.ForeignKey(ConfigBundle, related_name="opnfv_config", on_delete=models.CASCADE)
 
     def __str__(self):
@@ -282,12 +263,12 @@ class HostConfiguration(models.Model):
     image = models.ForeignKey(Image, on_delete=models.PROTECT)
     bundle = models.ForeignKey(ConfigBundle, related_name="hostConfigurations", null=True, on_delete=models.CASCADE)
     opnfvRole = models.ForeignKey(OPNFVRole, on_delete=models.PROTECT) #need protocol for phasing out a role if we are going to allow that to happen
-    # other stuff?
 
     def __str__(self):
         return "config with " + str(self.host) + " and image " + str(self.image)
 
-#Concrete host, actual machine in a lab
+
+# Concrete host, actual machine in a lab
 class Host(models.Model):
     id = models.AutoField(primary_key=True)
     template = models.ForeignKey(GenericHost, on_delete=models.SET_NULL, null=True)
@@ -302,17 +283,9 @@ class Host(models.Model):
     vendor = models.CharField(max_length=100, default="unknown")
     model = models.CharField(max_length=150, default="unknown")
 
-    """
-    use this to free host on deletion of related template objects
-    """
-    def template_deleted(self):
-        self.booked = False
-        self.template = None
-        self.bundle = None
-        self.save()
-
     def __str__(self):
         return self.name
+
 
 class Interface(models.Model):
     id = models.AutoField(primary_key=True)

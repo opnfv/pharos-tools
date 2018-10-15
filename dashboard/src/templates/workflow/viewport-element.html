@@ -21,12 +21,8 @@
                 var render_correct = {{ render_correct|default:"false" }};
                 var title = "{{ step_title|default:"Workflow Step" }}";
                 var description = "{{ description|default:"Contact the admins, because this field should have something else filled in here" }}";
-                //alert("in viewport element: " + active_step)
                 if(render_correct){
-                parent.update_context();
-                }
-                else{
-                    console.log("error when rendering inner page");
+                    parent.update_context();
                 }
                 parent.update_description(title, description);
             </script>

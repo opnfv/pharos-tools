@@ -29,7 +29,6 @@ def sync_jira_accounts():
         user.email = user_dict['emailAddress']
         user.userprofile.url = user_dict['self']
         user.userprofile.full_name = user_dict['displayName']
-        print(user_dict)
 
         user.userprofile.save()
         user.save()

@@ -29,9 +29,6 @@ def NotificationView(request, notification_id):
 
     notification = Notifier.objects.get(id=notification_id)
     if not notification.user.user.username == user.username:
-        print(str(notification.user))
-        print(str(user))
-        print(str(user.username == notification.user.username))
         return render(request, "dashboard/login.html", {'title': 'Access Denied'})
 
     return render(request, "notifier/notification.html", {'notification': notification})

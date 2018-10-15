@@ -59,7 +59,6 @@
     <script>
 function filter_images(){
     var filter_data = {{filter_data|safe}};
-    console.log(filter_data);
     for(var key in filter_data){
         var dropdown = document.getElementById(key);
         var to_remove = filter_data[key];

@@ -17,11 +17,13 @@ import uuid
 from resource_inventory.models import *
 from booking.models import Booking
 
+
 class JobStatus(object):
     NEW = 0
     CURRENT = 100
     DONE = 200
     ERROR = 300
+
 
 class LabManagerTracker(object):
 
@@ -104,7 +106,7 @@ class LabManager(object):
     def update_job(self, jobid, data):
         {}
 
-    def serialize_jobs(self, jobs, status=0):
+    def serialize_jobs(self, jobs, status=JobStatus.NEW):
         job_ser = []
         for job in jobs:
             jsonized_job = job.get_delta(status)
@@ -124,7 +126,7 @@ class LabManager(object):
             for iface in host.interfaces.all():
                 eth = {}
                 eth['mac'] = iface.mac_address
-                eth['busaddr']  = iface.bus_address
+                eth['busaddr'] = iface.bus_address
                 eth['name'] = iface.name
                 eth['switchport'] = {"switch_name": iface.switch_name, "port_name": iface.port_name}
                 h['interfaces'].append(eth)
@@ -171,15 +173,12 @@ class LabManager(object):
         return profile_ser
 
 
-
-
 class Job(models.Model):
     """
     This is the class that is serialized and put into the api
     """
     booking = models.OneToOneField(Booking, on_delete=models.CASCADE, null=True)
     status = models.IntegerField(default=JobStatus.NEW)
-    delta = models.TextField()
     complete = models.BooleanField(default=False)
 
     def to_dict(self):
@@ -187,34 +186,25 @@ class Job(models.Model):
         j = {}
         j['id'] = self.id
         for relation in AccessRelation.objects.filter(job=self):
-            if not 'access' in d:
+            if 'access' not in d:
                 d['access'] = {}
             d['access'][relation.task_id] = relation.config.to_dict()
         for relation in SoftwareRelation.objects.filter(job=self):
-            if not 'software' in d:
+            if 'software' not in d:
                 d['software'] = {}
             d['software'][relation.task_id] = relation.config.to_dict()
         for relation in HostHardwareRelation.objects.filter(job=self):
-            if not 'hardware' in d:
+            if 'hardware' not in d:
                 d['hardware'] = {}
             d['hardware'][relation.task_id] = relation.config.to_dict()
         for relation in HostNetworkRelation.objects.filter(job=self):
-            if not 'network' in d:
+            if 'network' not in d:
                 d['network'] = {}
             d['network'][relation.task_id] = relation.config.to_dict()
 
         j['payload'] = d
 
         return j
-
-    def get_new(self):
-        pass
-
-    def get_in_progress(self):
-        pass
-
-    def get_done(self):
-        pass
 
     def get_tasklist(self, status="all"):
         tasklist = []
@@ -232,31 +222,28 @@ class Job(models.Model):
         j = {}
         j['id'] = self.id
         for relation in AccessRelation.objects.filter(job=self).filter(status=status):
-            if not 'access' in d:
+            if 'access' not in d:
                 d['access'] = {}
             d['access'][relation.task_id] = relation.config.get_delta()
         for relation in SoftwareRelation.objects.filter(job=self).filter(status=status):
-            if not 'software' in d:
+            if 'software' not in d:
                 d['software'] = {}
             d['software'][relation.task_id] = relation.config.get_delta()
         for relation in HostHardwareRelation.objects.filter(job=self).filter(status=status):
-            if not 'hardware' in d:
+            if 'hardware' not in d:
                 d['hardware'] = {}
             d['hardware'][relation.task_id] = relation.config.get_delta()
         for relation in HostNetworkRelation.objects.filter(job=self).filter(status=status):
-            if not 'network' in d:
+            if 'network' not in d:
                 d['network'] = {}
             d['network'][relation.task_id] = relation.config.get_delta()
 
         j['payload'] = d
-
         return j
 
     def to_json(self):
         return json.dumps(self.to_dict())
 
-    def clear_delta(self):
-        self.delta = '{}'
 
 class TaskConfig(models.Model):
     def to_dict(self):
@@ -446,7 +433,6 @@ class HardwareConfig(TaskConfig):
         d["lab_token"] = self.hosthardwarerelation.lab_token
         self.delta = json.dumps(d)
 
-
     def set_image(self, image):
         self.image = image
         d = json.loads(self.delta)
@@ -470,6 +456,7 @@ class HardwareConfig(TaskConfig):
         d = json.loads(self.delta)
         d['ipmi_create'] = ipmi_create
         self.delta = json.dumps(d)
+
 
 class NetworkConfig(TaskConfig):
     """
@@ -501,11 +488,9 @@ class NetworkConfig(TaskConfig):
         return d
 
     def clear_delta(self):
-        self.delta = json.dumps(self.to_dict())
-        self.save()
+        pass
 
     def add_interface(self, interface):
-        print("add interface called!")
         self.interfaces.add(interface)
         d = json.loads(self.delta)
         hid = self.hostnetworkrelation.host.labid
@@ -515,7 +500,7 @@ class NetworkConfig(TaskConfig):
         for vlan in interface.config.all():
             d[hid][interface.mac_address].append({"vlan_id": vlan.vlan_id, "tagged": vlan.tagged})
         self.delta = json.dumps(d)
-        print("add interface completed")
+
 
 def get_task(task_id):
     for taskclass in [AccessRelation, SoftwareRelation, HostHardwareRelation, HostNetworkRelation]:
@@ -527,12 +512,13 @@ def get_task(task_id):
     from django.core.exceptions import ObjectDoesNotExist
     raise ObjectDoesNotExist("Could not find matching TaskRelation instance")
 
+
 def get_task_uuid():
     return str(uuid.uuid4())
 
+
 class TaskRelation(models.Model):
-    #status = models.CharField(max_length=20, default="new")
-    status = models.IntegerField(default=0)
+    status = models.IntegerField(default=JobStatus.NEW)
     job = models.ForeignKey(Job, on_delete=models.CASCADE)
     config = models.OneToOneField(TaskConfig, on_delete=models.CASCADE)
     task_id = models.CharField(default=get_task_uuid, max_length=37)
@@ -549,6 +535,7 @@ class TaskRelation(models.Model):
     class Meta:
         abstract = True
 
+
 class AccessRelation(TaskRelation):
     config = models.OneToOneField(AccessConfig, on_delete=models.CASCADE)
 
@@ -559,6 +546,7 @@ class AccessRelation(TaskRelation):
         self.config.delete()
         return super(self.__class__, self).delete(*args, **kwargs)
 
+
 class SoftwareRelation(TaskRelation):
     config = models.OneToOneField(SoftwareConfig, on_delete=models.CASCADE)
 
@@ -568,6 +556,7 @@ class SoftwareRelation(TaskRelation):
     def delete(self, *args, **kwargs):
         self.config.delete()
         return super(self.__class__, self).delete(*args, **kwargs)
+
 
 class HostHardwareRelation(TaskRelation):
     host = models.ForeignKey(Host, on_delete=models.CASCADE)
@@ -583,6 +572,7 @@ class HostHardwareRelation(TaskRelation):
         self.config.delete()
         return super(self.__class__, self).delete(*args, **kwargs)
 
+
 class HostNetworkRelation(TaskRelation):
     host = models.ForeignKey(Host, on_delete=models.CASCADE)
     config = models.OneToOneField(NetworkConfig, on_delete=models.CASCADE)
@@ -594,12 +584,12 @@ class HostNetworkRelation(TaskRelation):
         self.config.delete()
         return super(self.__class__, self).delete(*args, **kwargs)
 
+
 class JobFactory(object):
 
     @classmethod
     def makeCompleteJob(cls, booking):
-        print("makeCompleteJob called!")
-        hosts=Host.objects.filter(bundle=booking.resource)
+        hosts = Host.objects.filter(bundle=booking.resource)
         job = None
         try:
             job = Job.objects.get(booking=booking)
@@ -629,7 +619,6 @@ class JobFactory(object):
                 revoke=False,
                 job=job
                 )
-        print("makeCompleteJob returns!")
 
     @classmethod
     def makeHardwareConfigs(cls, hosts=[], job=Job()):
@@ -674,7 +663,6 @@ class JobFactory(object):
 
     @classmethod
     def makeNetworkConfigs(cls, hosts=[], job=Job()):
-        print("makeNetworkConfigs called!")
         for host in hosts:
             network_config = None
             try:
@@ -693,21 +681,25 @@ class JobFactory(object):
             for interface in host.interfaces.all():
                 network_config.add_interface(interface)
             network_config.save()
-        print("makeNetworkConfigs returns")
-
 
     @classmethod
     def makeSoftware(cls, hosts=[], job=Job()):
-        try:
-            init = False
+        def init_config(host):
             opnfv_config = OpnfvApiConfig()
+            if host is not None:
+                opnfv = host.config.bundle.opnfv_config.first()
+                opnfv_config.installer = opnfv.installer.name
+                opnfv_config.scenario = opnfv.scenario.name
+            opnfv_config.save()
+            return opnfv_config
+
+        try:
+            host = None
+            if len(hosts) > 0:
+                host = hosts[0]
+            opnfv_config = init_config(host)
+
             for host in hosts:
-                if not init:
-                    opnfv = host.config.bundle.opnfv_config.first()
-                    opnfv_config.installer = opnfv.installer.name
-                    opnfv_config.scenario = opnfv.scenario.name
-                    opnfv_config.save()
-                    init=True
                 opnfv_config.roles.add(host)
             software_config = SoftwareConfig.objects.create(opnfv=opnfv_config)
             software_config.save()
@@ -718,5 +710,4 @@ class JobFactory(object):
             return None
 
     def makeAccess(cls, user, access_type, revoke):
-        print("attempted to make access")
         pass

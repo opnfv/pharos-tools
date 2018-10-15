@@ -64,7 +64,6 @@ function filter(){
 {% block onleave %}
 var ajaxForm = $("#software_config_form");
 var formData = ajaxForm.serialize();
-console.log(formData);
 req = new XMLHttpRequest();
 req.open("POST", "/wf/workflow/", false);
 req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");

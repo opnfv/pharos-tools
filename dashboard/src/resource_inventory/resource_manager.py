@@ -9,13 +9,10 @@
 
 
 from django.core.exceptions import *
-from dashboard.exceptions import *
 from django.template.loader import render_to_string
 
-import traceback
-import json
-
 import booking
+from dashboard.exceptions import *
 from resource_inventory.models import *
 
 class ResourceManager:
@@ -89,17 +86,17 @@ class ResourceManager:
 
     #private interface
     def acquireHost(self, genericHost, labName):
-         host_full_set = Host.objects.filter(lab__name__exact=labName, profile=genericHost.profile)
-         if not host_full_set.first():
-             raise ResourceExistenceException("No matching servers found")
-         host_set = host_full_set.filter(booked=False)
-         if not host_set.first():
-             raise ResourceAvailabilityException("No unbooked hosts match requested hosts")
-         host = host_set.first()
-         host.booked = True
-         host.template = genericHost
-         host.save()
-         return host
+        host_full_set = Host.objects.filter(lab__name__exact=labName, profile=genericHost.profile)
+        if not host_full_set.first():
+            raise ResourceExistenceException("No matching servers found")
+        host_set = host_full_set.filter(booked=False)
+        if not host_set.first():
+            raise ResourceAvailabilityException("No unbooked hosts match requested hosts")
+        host = host_set.first()
+        host.booked = True
+        host.template = genericHost
+        host.save()
+        return host
 
     def releaseHost(self, host):
         host.template = None
@@ -111,8 +108,6 @@ class ResourceManager:
         for host in hosts:
             self.releaseHost(host)
 
-
-
     def makePDF(self, resource):
         """
         fills the pod descriptor file template with info about the resource
@@ -122,7 +117,6 @@ class ResourceManager:
         info['details'] = self.get_pdf_details(resource)
         info['jumphost'] = self.get_pdf_jumphost(resource)
         info['nodes'] = self.get_pdf_nodes(resource)
-        print(json.dumps(info, indent=2))
 
         return render_to_string(template, context=info)
 
@@ -142,7 +136,7 @@ class ResourceManager:
             owner = booking_owner.username
             email = booking_owner.userprofile.email_addr
         except Exception as e:
-            print(e)
+            pass
 
         details['owner'] = owner
         details['email'] = email

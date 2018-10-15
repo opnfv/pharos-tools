@@ -18,9 +18,6 @@ from jira import JIRA
 from jira import JIRAError
 import resource_inventory.resource_manager
 
-from django.utils.crypto import get_random_string
-import hashlib
-
 
 class Scenario(models.Model):
     id = models.AutoField(primary_key=True)
@@ -28,6 +25,7 @@ class Scenario(models.Model):
 
     def __str__(self):
         return self.name
+
 
 class Installer(models.Model):
     id = models.AutoField(primary_key=True)
@@ -37,6 +35,7 @@ class Installer(models.Model):
     def __str__(self):
         return self.name
 
+
 class Opsys(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=100)
@@ -44,6 +43,7 @@ class Opsys(models.Model):
 
     def __str__(self):
         return self.name
+
 
 class Booking(models.Model):
     id = models.AutoField(primary_key=True)
@@ -63,15 +63,6 @@ class Booking(models.Model):
 
     class Meta:
         db_table = 'booking'
-
-    def get_jira_issue(self):
-        try:
-            jira = JIRA(server=settings.JIRA_URL,
-                        basic_auth=(settings.JIRA_USER_NAME, settings.JIRA_USER_PASSWORD))
-            issue = jira.issue(self.jira_issue_id)
-            return issue
-        except JIRAError:
-            return None
 
     def save(self, *args, **kwargs):
         """

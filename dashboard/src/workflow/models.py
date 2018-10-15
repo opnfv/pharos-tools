@@ -201,7 +201,10 @@ class Confirmation_Step(WorkflowStep):
                             vlan.vlan_id = vlan_manager.get_vlan()
                             vlan.save()
                     else:
-                        vlan.vlan_id = vlan_manager.get_public_vlan()
+                        if not vlan_manager.public_vlan_is_available(vlan.vlan_id):
+                            pub_vlan = vlan_manager.get_public_vlan()
+                            vlan.vlan_id = pub_vlan.vlan
+                            vlan.save()
 
 
 class Workflow():

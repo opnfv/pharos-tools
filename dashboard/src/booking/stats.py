@@ -14,31 +14,6 @@ import pytz
 class StatisticsManager(object):
 
     @staticmethod
-    def getBookingTimeSeries(span=28):
-        """
-        Will return a 2-D array of x and y data points.
-        e.g. [["x1", "x2", "x3"],["y1", "y2", "y3]]
-        x values will be dates in string
-        y values are the integer number of bookings active at some point in the given date
-        span is the number of days to plot. The last x value will always be the current day
-        """
-        x = []
-        y = []
-        rstart = datetime.datetime.combine(datetime.date.today(), datetime.time.min)
-        rend = datetime.datetime.combine(datetime.date.today(), datetime.time.max)
-        delta = datetime.timedelta(days=1)
-        for i in range(span):
-            count = Booking.objects.filter(start__lt=rend, end__gt=rstart).count()
-            x.append(str(rstart))  # TODO: deal with all that strftime crap
-            y.append(count)
-            rstart -= delta
-            rend -= delta
-        x.reverse()
-        y.reverse()
-        return [x, y]
-
-
-    @staticmethod
     def getContinuousBookingTimeSeries(span=28):
         """
         Will return a dictionary of names and 2-D array of x and y data points.

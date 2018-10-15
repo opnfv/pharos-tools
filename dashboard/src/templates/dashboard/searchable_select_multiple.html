@@ -23,7 +23,7 @@
     <div id="added_list">
 
     </div>
-    <div id="added_couonter" style="text-align: center; margin: 10px;"><p id="added_number" style="display: inline;">0</p><p style="display: inline;">/
+    <div id="added_counter" style="text-align: center; margin: 10px;"><p id="added_number" style="display: inline;">0</p><p style="display: inline;">/
         {% if selectable_limit > -1 %} {{ selectable_limit }} {% else %} &infin; {% endif %}added</p></div>
     <style>
         #user_field {
@@ -111,10 +111,6 @@
 
     var added_items = [];
 
-
-
-
-
     var added_template = {{ added_list|default:"{}" }};
 
     if( default_entry )
@@ -125,7 +121,6 @@
         var entry_p = document.getElementById("default_text");
         entry_p.innerText = default_entry;
     }
-
 
     init();
 
@@ -162,8 +157,6 @@
             search(items[initial[0]]["small_name"]);
             document.getElementById("user_field").value = items[initial[0]]["small_name"];
         }
-
-
     }
 
     function build_all_tries(dict)
@@ -190,7 +183,6 @@
             if( !inner_trie[str.charAt(0)] )
             {
                 new_trie = {};
-
                 inner_trie[str.charAt(0)] = new_trie;
             }
             else
@@ -400,7 +392,6 @@
                 + ')" class="btn-remove btn">edit</button>';
             {% endif %}
                 list_html += '</div>';
-
         }
 
         added_list.innerHTML = list_html;
