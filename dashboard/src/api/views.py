@@ -21,10 +21,9 @@ from django.views.decorators.csrf import csrf_exempt
 import json
 
 from api.serializers.booking_serializer import *
-from api.serializers.old_serializers import NotifierSerializer, UserSerializer
+from api.serializers.old_serializers import UserSerializer
 from account.models import UserProfile
 from booking.models import Booking
-from notifier.models import Notifier
 from api.models import *
 
 
@@ -32,11 +31,6 @@ class BookingViewSet(viewsets.ModelViewSet):
     queryset = Booking.objects.all()
     serializer_class = BookingSerializer
     filter_fields = ('resource', 'id')
-
-
-class NotifierViewSet(viewsets.ModelViewSet):
-    queryset = Notifier.objects.none()
-    serializer_class = NotifierSerializer
 
 
 class UserViewSet(viewsets.ModelViewSet):
