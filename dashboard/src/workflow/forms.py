@@ -189,7 +189,6 @@ class BookingMetaForm(forms.Form):
             default_user = kwargs.pop("default_user")
         else:
             default_user = "you"
-        self.default_user = default_user
         if "chosen_users" in kwargs:
             chosen_users = kwargs.pop("chosen_users")
         elif data and "users" in data:
@@ -213,7 +212,7 @@ class BookingMetaForm(forms.Form):
         """
         try:
             users = {}
-            d_qset = UserProfile.objects.select_related('user').all().exclude(user__username=self.default_user);
+            d_qset = UserProfile.objects.select_related('user').all();
             for userprofile in d_qset:
                 user = {
                     'id':userprofile.user.id,
@@ -238,6 +237,7 @@ class BookingMetaForm(forms.Form):
             'selectable_limit': -1,
             'name': "users",
             'placeholder': "username",
+            'default_entry': default_user,
             'initial': chosen_users,
             'edit': False
         }

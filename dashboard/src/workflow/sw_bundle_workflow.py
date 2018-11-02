@@ -10,6 +10,8 @@
 
 from django.forms import formset_factory, modelformset_factory
 
+import json
+
 from workflow.models import WorkflowStep
 from workflow.forms import SoftwareConfigurationForm, HostSoftwareDefinitionForm
 from workflow.booking_workflow import Resource_Select
@@ -18,7 +20,6 @@ from resource_inventory.models import *
 
 #resource selection step is reused from Booking workflow
 
-#TODO: change this: too hacky, just for presentation
 
 class SWConf_Resource_Select(Resource_Select):
     def __init__(self, *args, **kwargs):
@@ -34,6 +35,7 @@ class SWConf_Resource_Select(Resource_Select):
         return created_grb
 
     def post_render(self, request):
+        self.log.debug("at:34 SWConf_Resource_Select.post_render invoked")
         response = super(SWConf_Resource_Select, self).post_render(request)
         models = self.repo_get(self.repo.CONFIG_MODELS, {})
         bundle = models.get("bundle", ConfigBundle(owner=self.repo_get(self.repo.SESSION_USER)))
@@ -104,12 +106,14 @@ class Define_Software(WorkflowStep):
             context["formset"] = formset
             context["filter_data"] = filter_data
         else:
+            self.logger.info("Define_Software.get_context called with a null GRB. Setting step invalid")
             context["error"] = "Please select a resource first"
             self.metastep.set_invalid("Step requires information that is not yet provided by previous step")
 
         return context
 
     def post_render(self, request):
+        self.log.debug("Define_Software is post_rendering")
         models = self.repo_get(self.repo.CONFIG_MODELS, {})
         if "bundle" not in models:
             models['bundle'] = ConfigBundle(owner=self.repo_get(self.repo.SESSION_USER))
@@ -195,6 +199,8 @@ class Config_Software(WorkflowStep):
         context["form"] = SoftwareConfigurationForm(initial=initial)
         context['supported'] = supported
 
+        self.log.debug("Config_Software calculated context %s", json.dumps(context, indent=2))
+
         return context
 
     def post_render(self, request):
@@ -228,11 +234,12 @@ class Config_Software(WorkflowStep):
                 confirm['configuration']['description'] = form.cleaned_data['description']
                 self.metastep.set_valid("Complete")
             else:
+                self.log.info("Config software form is invalid")
                 self.metastep.set_invalid("Please correct the errors shown below")
 
             self.repo_put(self.repo.CONFIG_MODELS, models)
             self.repo_put(self.repo.CONFIRMATION, confirm)
 
-        except Exception as e:
-            pass
+        except Exception:
+            self.log.exception("Caught in Config_Software.post_render")
         return self.render(request)

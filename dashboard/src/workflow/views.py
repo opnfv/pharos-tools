@@ -11,12 +11,16 @@
 from django.http import HttpResponse, HttpRequest, HttpResponseGone
 from django.urls import reverse
 from django.shortcuts import render, redirect
+from workflow.forms import *
+from workflow.workflow_manager import *
+from django.utils import timezone
 from django import forms
 
 import uuid
 
 from workflow.forms import *
 from workflow.workflow_manager import *
+from pharos_dashboard import settings
 
 import logging
 logger = logging.getLogger(__name__)
@@ -44,8 +48,13 @@ def step_view(request):
     if not manager:
         #no manager found, redirect to "lost" page
         return no_workflow(request)
+
     if request.GET.get('step') is not None:
         manager.goto(int(request.GET.get('step')))
+        manager.repository.logger().info("User requested step change to: %s", request.GET.get('step'))
+    else:
+        manager.repository.logger().debug("Requested step is None")
+
     return manager.render(request)
 
 def manager_view(request):
@@ -61,15 +70,17 @@ def manager_view(request):
 
     if request.method == 'POST':
         if request.POST.get('add') is not None:
-            logger.debug("add found")
             target_id = None
             if 'target' in request.POST:
                 target_id=int(request.POST.get('target'))
+            manager.repository.logger().info("adding workflow type %s", str(target_id))
             manager.add_workflow(workflow_type=int(request.POST.get('add')), target_id=target_id)
         elif request.POST.get('edit') is not None and request.POST.get('edit_id') is not None:
-            logger.debug("edit found")
-            manager.add_workflow(workflow_type=request.POST.get('edit'), edit_object=int(request.POST.get('edit_id')))
+            edit_id=int(request.POST.get('edit_id'))
+            manager.repository.logger().info("adding edit workflow type %d", edit_id)
+            manager.add_workflow(workflow_type=request.POST.get('edit'), edit_object=edit_id)
         elif request.POST.get('cancel') is not None:
+            manager.repository.logger().info("cancelling workflow")
             mgr = ManagerTracker.managers[request.session['manager_session']]
             del ManagerTracker.managers[request.session['manager_session']]
             del mgr
@@ -91,15 +102,35 @@ def viewport_view(request):
 
 def create_session(wf_type, request):
     wf = int(wf_type)
-    smgr = SessionManager(request=request)
-    smgr.add_workflow(workflow_type=wf, target_id=request.POST.get("target"))
     manager_uuid = uuid.uuid4().hex
+    smgr = SessionManager(request=request)
+    smgr.set_logger(create_session_logger(smgr, manager_uuid))
+    smgr.add_workflow(workflow_type=wf, target_id=request.POST.get("target"))
     ManagerTracker.getInstance().managers[manager_uuid] = smgr
 
     return manager_uuid
 
-def no_workflow(request):
+def create_session_logger(sessionmanager, session_id):
+    repo = sessionmanager.repository
 
+    handler = logging.FileHandler(str(timezone.now()) + "_sid-" + session_id + "_u-" + str(repo.get(repo.SESSION_USER, "unknown", 0)))
+    log_level = logging.INFO
+    if settings.DEBUG:
+        log_level = logging.DEBUG
+    handler.setLevel(log_level)
+    formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s  = %(message)s')
+    handler.setFormatter(formatter)
+    logger = logging.getLogger(session_id)
+    logger.addHandler(handler)
+    logger.setLevel(log_level)
+
+    logger.info("Session log for user %s with session id %s",
+            str(repo.get(repo.SESSION_USER, "(unknown)", 0)),
+            str(session_id)
+            )
+    return logger
+
+def no_workflow(request):
     logger.debug("There is no active workflow")
 
     return render(request, 'workflow/no_workflow.html', {'title': "Not Found"})
