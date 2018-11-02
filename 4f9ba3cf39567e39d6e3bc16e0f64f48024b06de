@@ -1,0 +1,182 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a682502_1ff21d6f",
+        "filename": "dashboard/src/workflow/booking_workflow.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-11-02T16:17:30Z",
+      "side": 1,
+      "message": "Not a method",
+      "range": {
+        "startLine": 42,
+        "startChar": 13,
+        "endLine": 42,
+        "endChar": 18
+      },
+      "revId": "4f9ba3cf39567e39d6e3bc16e0f64f48024b06de",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_7fe9917f",
+        "filename": "dashboard/src/workflow/booking_workflow.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-11-02T16:17:30Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 113,
+        "startChar": 56,
+        "endLine": 113,
+        "endChar": 64
+      },
+      "revId": "4f9ba3cf39567e39d6e3bc16e0f64f48024b06de",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_5fec958f",
+        "filename": "dashboard/src/workflow/booking_workflow.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-11-02T16:17:30Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 159,
+        "startChar": 21,
+        "endLine": 159,
+        "endChar": 26
+      },
+      "revId": "4f9ba3cf39567e39d6e3bc16e0f64f48024b06de",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_bf02093c",
+        "filename": "dashboard/src/workflow/booking_workflow.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-11-02T16:17:30Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 200,
+        "startChar": 26,
+        "endLine": 200,
+        "endChar": 36
+      },
+      "revId": "4f9ba3cf39567e39d6e3bc16e0f64f48024b06de",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_9ffd8d3e",
+        "filename": "dashboard/src/workflow/forms.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-11-02T16:17:30Z",
+      "side": 1,
+      "message": "This file should not be in this commit",
+      "revId": "4f9ba3cf39567e39d6e3bc16e0f64f48024b06de",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_fffc8140",
+        "filename": "dashboard/src/workflow/models.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-11-02T16:17:30Z",
+      "side": 1,
+      "message": "self.logger is a method",
+      "range": {
+        "startLine": 271,
+        "startChar": 0,
+        "endLine": 297,
+        "endChar": 29
+      },
+      "revId": "4f9ba3cf39567e39d6e3bc16e0f64f48024b06de",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_dff70558",
+        "filename": "dashboard/src/workflow/sw_bundle_workflow.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-11-02T16:17:30Z",
+      "side": 1,
+      "message": "dont include this",
+      "range": {
+        "startLine": 38,
+        "startChar": 24,
+        "endLine": 38,
+        "endChar": 29
+      },
+      "revId": "4f9ba3cf39567e39d6e3bc16e0f64f48024b06de",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_3f96f9f0",
+        "filename": "dashboard/src/workflow/sw_bundle_workflow.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-11-02T16:17:30Z",
+      "side": 1,
+      "message": "self.log",
+      "range": {
+        "startLine": 109,
+        "startChar": 17,
+        "endLine": 109,
+        "endChar": 23
+      },
+      "revId": "4f9ba3cf39567e39d6e3bc16e0f64f48024b06de",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
