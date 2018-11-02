@@ -18,7 +18,6 @@ from resource_inventory.models import *
 
 #resource selection step is reused from Booking workflow
 
-#TODO: change this: too hacky, just for presentation
 
 class SWConf_Resource_Select(Resource_Select):
     def __init__(self, *args, **kwargs):
@@ -34,6 +33,7 @@ class SWConf_Resource_Select(Resource_Select):
         return created_grb
 
     def post_render(self, request):
+        self.log.debug("SWConf_Resource_Select.post_render invoked")
         response = super(SWConf_Resource_Select, self).post_render(request)
         models = self.repo_get(self.repo.CONFIG_MODELS, {})
         bundle = models.get("bundle", ConfigBundle(owner=self.repo_get(self.repo.SESSION_USER)))
@@ -71,7 +71,16 @@ class Define_Software(WorkflowStep):
         user = self.repo_get(self.repo.SESSION_USER)
         i=0;
         for host_data in hosts_initial:
-            host = GenericHost.objects.get(pk=host_data['host_id'])
+            host = None
+            self.log.debug("Calculating filter data for host %s", str(host_data))
+            try:
+                host = GenericHost.objects.get(pk=host_data['host_id'])
+            except:
+                self.log.debug("Host not found (model has probably not been saved")
+                for given_host in hostlist:
+                    if given_host.resource.name == host_data['host_name']:
+                        host = given_host
+                        self.log.debug("Found host in the given hostlist")
             excluded_images = Image.objects.exclude(owner=user).exclude(public=True)
             excluded_images = excluded_images | Image.objects.exclude(host_type=host.profile)
             lab = self.repo_get(self.repo.SWCONF_SELECTED_GRB).lab
@@ -104,12 +113,14 @@ class Define_Software(WorkflowStep):
             context["formset"] = formset
             context["filter_data"] = filter_data
         else:
+            self.log.info("Define_Software.get_context called with a null GRB. Setting step invalid")
             context["error"] = "Please select a resource first"
             self.metastep.set_invalid("Step requires information that is not yet provided by previous step")
 
         return context
 
     def post_render(self, request):
+        self.log.debug("Define_Software is post_rendering")
         models = self.repo_get(self.repo.CONFIG_MODELS, {})
         if "bundle" not in models:
             models['bundle'] = ConfigBundle(owner=self.repo_get(self.repo.SESSION_USER))
@@ -195,6 +206,8 @@ class Config_Software(WorkflowStep):
         context["form"] = SoftwareConfigurationForm(initial=initial)
         context['supported'] = supported
 
+        self.log.debug("Config_Software calculated context %s", str(context))
+
         return context
 
     def post_render(self, request):
@@ -228,11 +241,12 @@ class Config_Software(WorkflowStep):
                 confirm['configuration']['description'] = form.cleaned_data['description']
                 self.metastep.set_valid("Complete")
             else:
+                self.log.info("Config software form is invalid")
                 self.metastep.set_invalid("Please correct the errors shown below")
 
             self.repo_put(self.repo.CONFIG_MODELS, models)
             self.repo_put(self.repo.CONFIRMATION, confirm)
 
-        except Exception as e:
-            pass
+        except Exception:
+            self.log.exception("Caught in Config_Software.post_render")
         return self.render(request)

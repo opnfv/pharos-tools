@@ -144,6 +144,39 @@ DATABASES = {
     }
 }
 
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'debugFile': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': 'pharos_debug.log',
+        },
+        'errorFile': {
+            'level': 'ERROR',
+            'class': 'logging.FileHandler',
+            'filename': 'pharos_errors.log',
+        },
+        'errorStream': {
+            'level': 'ERROR',
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        'debug': {
+            'handlers': ['debugFile'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+        'errors': {
+            'handlers': ['errorFile', 'errorStream'],
+            'level': 'ERROR',
+            'propagate': True,
+        },
+    },
+}
+
 # Rest API Settings
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
