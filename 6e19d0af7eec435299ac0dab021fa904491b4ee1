@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a682502_ffaac117",
+        "filename": "dashboard/src/pharos_dashboard/settings.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 1451
+      },
+      "writtenOn": "2018-11-02T16:45:06Z",
+      "side": 1,
+      "message": "Instead of using dictConfig for logging, I would suggest using fileConfig. \n\n\u003e LOGGING \u003d \u0027logging.ini\u0027\n\u003e LOGGING_CONFIG \u003d logging.config.fileConfig\n\nI haven\u0027t done this before, but it would allow us to override/change logging without having to modify and replace settings.py\n\n\u003e docker .. -v $PWD/logging.ini:/pharos_dashboard/logging.ini\n\nThough from what I read here https://www.caktusgroup.com/blog/2015/01/27/Django-Logging-Configuration-logging_config-default-settings-logger/, and from what I can see from the log code https://github.com/django/django/blob/master/django/utils/log.py, I don\u0027t think there is a way to use fileConfig _without_ disabling existing loggers.",
+      "range": {
+        "startLine": 147,
+        "startChar": 0,
+        "endLine": 147,
+        "endChar": 11
+      },
+      "revId": "6e19d0af7eec435299ac0dab021fa904491b4ee1",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
