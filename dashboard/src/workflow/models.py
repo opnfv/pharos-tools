@@ -82,6 +82,10 @@ class WorkflowStep(object):
     def __init__(self, id, repo=None):
         self.repo = repo
         self.id = id
+        try:
+            self.log = repo.logger()
+        except:
+            pass
 
     def get_context(self):
         context = {}
@@ -237,6 +241,7 @@ class Repository():
     SNAPSHOT_NAME = "the name of the snapshot"
     SNAPSHOT_DESC = "description of the snapshot"
     BOOKING_INFO_FILE = "the INFO.yaml file for this user's booking"
+    SESSION_LOGGER = "logger tied to this session"
 
     def get(self, key, default, id):
         self.add_get_history(key, id)
@@ -260,23 +265,31 @@ class Repository():
 
     def make_models(self):
         if self.SNAPSHOT_MODELS in self.el:
+            self.logger().info("Creating snapshot models")
             errors = self.make_snapshot()
             if errors:
+                self.logger().error("Failed Creating models: %s", errors)
                 return errors
         # if GRB WF, create it
         if self.GRESOURCE_BUNDLE_MODELS in self.el:
+            self.logger().info("Creating Resource models")
             errors = self.make_generic_resource_bundle()
             if errors:
+                self.logger().error("Failed Creating models: %s", errors)
                 return errors
 
         if self.CONFIG_MODELS in self.el:
+            self.logger().info("Creating Config models")
             errors = self.make_software_config_bundle()
             if errors:
+                self.logger().error("Failed Creating models: %s", errors)
                 return errors
 
         if self.BOOKING_MODELS in self.el:
+            self.logger().info("Creating Booking models")
             errors = self.make_booking()
             if errors:
+                self.logger().error("Failed Creating models: %s", errors)
                 return errors
             # create notification
             booking = self.el[self.BOOKING_MODELS]['booking']
@@ -486,11 +499,20 @@ class Repository():
                         vlans.append(vlan.vlan_id)
 
         try:
+            self.logger().info(
+                "Reserving vlans %s and public vlan %s",
+                str(vlans),
+                str(public_vlan.vlan_id)
+            )
             vlan_manager.reserve_vlans(vlans)
             vlan_manager.reserve_public_vlan(public_vlan.vlan_id)
             return True
         except Exception:
+            self.logger().exception("Failed reserving vlans")
             return False
+
+    def logger(self):
+        return self.el[self.SESSION_LOGGER]
 
     def __init__(self):
         self.el = {}

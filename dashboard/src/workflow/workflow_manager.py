@@ -22,9 +22,6 @@ from resource_inventory.models import (
     OPNFVConfig
 )
 
-import logging
-logger = logging.getLogger(__name__)
-
 
 class SessionManager():
 
@@ -49,7 +46,17 @@ class SessionManager():
         self.step_meta = [metaconfirm]
         self.relation_depth = 0
 
+    def set_logger(self, logger):
+        self.repository.put(self.repository.SESSION_LOGGER, logger, 0)
+        for step in self.steps:
+            step.log = logger
+
     def add_workflow(self, workflow_type=None, target_id=None, **kwargs):
+        self.repository.logger().info(
+            "Adding workflow of type %s with prefill target %s",
+            str(workflow_type),
+            str(target_id)
+        )
         if target_id is not None:
             self.prefill_repo(target_id, workflow_type)
         factory_steps, meta_info = self.factory.conjure(workflow_type=workflow_type, repo=self.repository)
@@ -109,7 +116,7 @@ class SessionManager():
             responsejson['children'] = children
             return JsonResponse(responsejson, safe=False)
         except Exception:
-            pass
+            self.repository.logger().exception("Caught in SessionManager.status")
 
     def render(self, request, **kwargs):
         # filter out when a step needs to handle post/form data

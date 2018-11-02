@@ -39,9 +39,6 @@ from dashboard.exceptions import (
     ResourceAvailabilityException
 )
 
-import logging
-logger = logging.getLogger(__name__)
-
 
 class Define_Hardware(WorkflowStep):
 
@@ -68,14 +65,17 @@ class Define_Hardware(WorkflowStep):
             selection_data=selection_data
         )
         context['form'] = form
+        self.log.debug("Define Hardware Context: %s", str(context))
         return context
 
     def render(self, request):
+        self.log.debug("Define_Hardware step rendering")
         self.context = self.get_context()
         return render(request, self.template, self.context)
 
     def update_models(self, data):
         data = json.loads(data['filter_field'])
+        self.log.debug("Define_Hardware.update_models with data: %s", str(data))
         models = self.repo_get(self.repo.GRESOURCE_BUNDLE_MODELS, {})
         models['hosts'] = []  # This will always clear existing data when this step changes
         models['interfaces'] = {}
@@ -112,9 +112,11 @@ class Define_Hardware(WorkflowStep):
                 break  # if somehow we get two 'true' labs, we only use one
 
         # return to repo
+        self.log.debug("Adding to repo: %s", str(models))
         self.repo_put(self.repo.GRESOURCE_BUNDLE_MODELS, models)
 
     def update_confirmation(self):
+        self.log.debug("Define_Hardware is updating confirmation message")
         confirm = self.repo_get(self.repo.CONFIRMATION, {})
         if "resource" not in confirm:
             confirm['resource'] = {}
@@ -136,8 +138,10 @@ class Define_Hardware(WorkflowStep):
                 self.metastep.set_valid("Step Completed")
             else:
                 self.metastep.set_invalid("Please complete the fields highlighted in red to continue")
+                self.log.info("Define Hardware form invalid with data: %s", str(request.POST))
                 pass
         except Exception as e:
+            self.log.exception("Caught exception, setting step invalid")
             self.metastep.set_invalid(str(e))
         self.context = self.get_context()
         return render(request, self.template, self.context)
@@ -166,10 +170,10 @@ class Define_Nets(WorkflowStep):
             self.repo_put(self.repo.VLANS, vlans)
             return vlans
         except Exception:
+            self.log.exception("Define Nets caught exception")
             return None
 
     def get_context(self):
-        # TODO: render *primarily* on hosts in repo models
         context = super(Define_Nets, self).get_context()
         context['form'] = NetworkDefinitionForm()
         try:
@@ -217,8 +221,8 @@ class Define_Nets(WorkflowStep):
                 context['xml'] = False
 
         except Exception:
-            pass
-
+            self.log.exception("Caught in Define_Nets.get_context")
+        self.log.debug("Final context: %s", str(context))
         return context
 
     def post_render(self, request):
@@ -231,12 +235,15 @@ class Define_Nets(WorkflowStep):
             self.repo_put(self.repo.GRB_LAST_HOSTLIST, hostlist)
         try:
             xmlData = request.POST.get("xml")
+            self.log.debug("Got xml: %s" + str(xmlData))
             self.updateModels(xmlData)
             # update model with xml
             self.metastep.set_valid("Networks applied successfully")
         except ResourceAvailabilityException:
+            self.log.exception("Public Network not available - setting step invalid")
             self.metastep.set_invalid("Public network not availble")
         except Exception:
+            self.log.exception("Exception from updating models - setting step invalid")
             self.metastep.set_invalid("An error occurred when applying networks")
         return self.render(request)
 
@@ -271,6 +278,7 @@ class Define_Nets(WorkflowStep):
                     vlan = Vlan(vlan_id=vlan_id, tagged=network['tagged'], public=is_public)
                     models['vlans'][existing_host.resource.name][iface['profile_name']].append(vlan)
         bundle.xml = xmlData
+        self.log.debug("Define Nets finished updating models")
         self.repo_put(self.repo.GRESOURCE_BUNDLE_MODELS, models)
 
     # serialize and deserialize xml from mxGraph
@@ -349,6 +357,10 @@ class Define_Nets(WorkflowStep):
                     iface = {"name": cellId, "networks": [], "profile_name": cell_json['name']}
                     hosts[parentId]['interfaces'].append(cellId)
                     interfaces[cellId] = iface
+
+        self.log.debug("Parsed from xml:")
+        self.log.debug("hosts: %s", str(hosts))
+        self.log.debug("interfaces: %s", str(interfaces))
         return hosts, interfaces
 
 
@@ -367,6 +379,7 @@ class Resource_Meta_Info(WorkflowStep):
             name = bundle.name
             desc = bundle.description
         context['form'] = ResourceMetaForm(initial={"bundle_name": name, "bundle_description": desc})
+        self.log.debug("Resource_Meta_Info context: %s", str(context))
         return context
 
     def post_render(self, request):
@@ -391,10 +404,10 @@ class Resource_Meta_Info(WorkflowStep):
             confirm_info["description"] = tmp
             self.repo_put(self.repo.CONFIRMATION, confirm)
             self.metastep.set_valid("Step Completed")
-
+            self.log.debug("Resource_Meta_Info post_render models: %s", str(models))
         else:
+            self.log.info("Resource_Meta_Info form invalid - setting step invalid")
             self.metastep.set_invalid("Please correct the fields highlighted in red to continue")
-            pass
         return self.render(request)
 
 
@@ -448,5 +461,5 @@ class Host_Meta_Info(WorkflowStep):
             confirm['resource']['hosts'] = confirm_hosts
             self.repo_put(self.repo.CONFIRMATION, confirm)
         else:
-            pass
+            self.log.info("Host_Meta_Info not valid with data: %s", str(request.POST))
         return self.render(request)

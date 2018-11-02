@@ -35,6 +35,7 @@ services:
         volumes:
             - pharos-static:/static
             - pharos-media:/media
+            - pharos-log:/var/log/pharos-dashboard
         expose:
             - "8000"
 
@@ -63,5 +64,6 @@ services:
 volumes:
     pharos-media:
     pharos-static:
+    pharos-log:
     pharos-data:
         external: true
