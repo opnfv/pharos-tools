@@ -37,18 +37,22 @@ class Resource_Select(WorkflowStep):
         return None
 
     def get_context(self):
+        self.log.debug("Resource Selection calculating context")
         context = super(Resource_Select, self).get_context()
         default = []
         chosen_bundle = None
         default_bundle = self.get_default_entry()
         if default_bundle:
+            self.log.debug("Resource_Select got a default bundle: %s", str(default_bundle))
             context['disabled'] = True
             chosen_bundle = default_bundle
             if chosen_bundle.id:
                 default.append(chosen_bundle.id)
             else:
+                self.log.debug("default bundle is the repo bundle")
                 default.append("repo bundle")
         else:
+            self.log.info("no default bundle found, getting budle with key %s", self.repo_key)
             chosen_bundle = self.repo_get(self.repo_key, False)
             if chosen_bundle:
                 if chosen_bundle.id:
@@ -67,6 +71,7 @@ class Resource_Select(WorkflowStep):
                 bundle=bundle,
                 edit=edit
                 )
+        self.log.debug("Returning context: %s", json.dumps(context, indent=2))
         return context
 
     def  post_render(self, request):
@@ -86,11 +91,13 @@ class Resource_Select(WorkflowStep):
                 gresource_bundle = GenericResourceBundle.objects.get(id=selected_id)
             except ValueError:
                 # we want the bundle in the repo
+                self.log.debug("Selected ID is not an int, using repo bundle")
                 gresource_bundle = self.repo_get(self.repo.GRESOURCE_BUNDLE_MODELS,{}).get("bundle", GenericResourceBundle())
             self.repo_put(
                     self.repo_key,
                     gresource_bundle
                     )
+            self.log.debug("Using resource bundle %s", str(gresource_bundle))
             confirm = self.repo_get(self.repo.CONFIRMATION)
             if self.confirm_key not in confirm:
                 confirm[self.confirm_key] = {}
@@ -98,11 +105,14 @@ class Resource_Select(WorkflowStep):
             self.repo_put(self.repo.CONFIRMATION, confirm)
             messages.add_message(request, messages.SUCCESS, 'Form Validated Successfully', fail_silently=True)
             self.metastep.set_valid("Step Completed")
+            self.log.debug("Resource Select form validated")
             return render(request, self.template, context)
         else:
+            self.log.info("Resource Select form did not validate. Setting step invalid")
             messages.add_message(request, messages.ERROR, "Form Didn't Validate", fail_silently=True)
             self.metastep.set_invalid("Please complete the fields highlighted in red to continue")
             return render(request, self.template, context)
+
 
 class Booking_Resource_Select(Resource_Select):
 
@@ -142,8 +152,12 @@ class Booking_Resource_Select(Resource_Select):
             except:
                 booking.resource = ResourceBundle(template=resource)
         models['booking'] = booking
+        self.log.debug(
+                "Booking Resource select post_render calculated models: %s",
+                json.dumps(models))
         self.repo_put(self.repo.BOOKING_MODELS, models)
         return response
+
 
 class SWConfig_Select(WorkflowStep):
     template = 'booking/steps/swconfig_select.html'
@@ -154,7 +168,6 @@ class SWConfig_Select(WorkflowStep):
     def post_render(self, request):
         form = SWConfigSelectorForm(request.POST)
         if form.is_valid():
-
             bundle_json = form.cleaned_data['software_bundle']
             bundle_json = bundle_json[2:-2]  # Stupid django string bug
             if not bundle_json:
@@ -166,6 +179,7 @@ class SWConfig_Select(WorkflowStep):
                 id = int(bundle_json[0]['id'])
                 bundle = ConfigBundle.objects.get(id=id)
             except ValueError:
+                self.log.info("ConfigBundle selection ID is not an int. Using repo config bundle")
                 bundle = self.repo_get(self.repo.CONFIG_MODELS).get("bundle")
 
             models = self.repo_get(self.repo.BOOKING_MODELS, {})
@@ -181,6 +195,7 @@ class SWConfig_Select(WorkflowStep):
             self.metastep.set_valid("Step Completed")
             messages.add_message(request, messages.SUCCESS, 'Form Validated Successfully', fail_silently=True)
         else:
+            self.log.info("SWConfig_Select form not valid. Setting step invalid")
             self.metastep.set_invalid("Please select or create a valid config")
             messages.add_message(request, messages.ERROR, "Form Didn't Validate", fail_silently=True)
 
@@ -198,7 +213,9 @@ class SWConfig_Select(WorkflowStep):
             chosen_bundle = booking.config_bundle
             default.append(chosen_bundle.id)
             bundle=chosen_bundle
+            self.log.debug("SW_Config_Select context using previously selected bundle")
         except:
+            self.log.info("SW_Config_Select context no selected bundle, trying to find repo bundle")
             if created_bundle:
                 default.append("repo bundle")
                 bundle = created_bundle
@@ -207,6 +224,7 @@ class SWConfig_Select(WorkflowStep):
         grb = self.repo_get(self.repo.BOOKING_SELECTED_GRB)
         context['form'] = SWConfigSelectorForm(chosen_software=default, bundle=bundle, edit=edit, resource=grb)
         return context
+
 
 class Booking_Meta(WorkflowStep):
     template = 'booking/steps/booking_meta.html'
@@ -255,6 +273,7 @@ class Booking_Meta(WorkflowStep):
 
         if form.is_valid():
             models = self.repo_get(self.repo.BOOKING_MODELS, {})
+            self.log.debug("Booking_Meta post render with valid data %s", json.dumps(form.cleaned_data, indent=2))
             if "booking" not in models:
                 models['booking'] = Booking()
             models['collaborators'] = []
@@ -288,6 +307,7 @@ class Booking_Meta(WorkflowStep):
             messages.add_message(request, messages.SUCCESS, 'Form Validated', fail_silently=True)
             self.metastep.set_valid("Step Completed")
         else:
+            self.log.info("Booking meta form did not validate. Setting step invalid")
             messages.add_message(request, messages.ERROR, "Form didn't validate", fail_silently=True)
             self.metastep.set_invalid("Please complete the fields highlighted in red to continue")
             context['form'] = form  # TODO: store this form
