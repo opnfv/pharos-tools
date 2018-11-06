@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a682502_b7450d72",
+        "filename": "dashboard/src/templates/notifier/email_ended.txt",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2018-11-06T18:50:40Z",
+      "side": 1,
+      "message": "ws",
+      "revId": "7c8114399f6d909a0daa19b57b92b2dcc648398f",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_9748d188",
+        "filename": "dashboard/src/templates/notifier/email_fulfilled.txt",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2018-11-06T18:50:40Z",
+      "side": 1,
+      "message": "Should we use completed or deployed here? We use \"completed\" interchangeably with \"ended, to be cleaned\" elsewhere, so this might not be the correct word choice.",
+      "revId": "7c8114399f6d909a0daa19b57b92b2dcc648398f",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_f75e6544",
+        "filename": "dashboard/src/templates/notifier/inbox.html",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2018-11-06T18:50:40Z",
+      "side": 1,
+      "message": "Should we look at adding a \"no messages selected\" message for when it hasn\u0027t loaded, or is just not having any visible element OK here?",
+      "revId": "7c8114399f6d909a0daa19b57b92b2dcc648398f",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
