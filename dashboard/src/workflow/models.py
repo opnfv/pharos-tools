@@ -458,6 +458,9 @@ class Repository():
         for collaborator in collaborators:
             booking.collaborators.add(collaborator)
 
+        booking.pdf = ResourceManager().makePDF(booking.resource)
+        booking.save()
+
         try:
             JobFactory.makeCompleteJob(booking)
         except Exception as e:
