@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a622d24_f1ab5187",
+        "filename": "dashboard/tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-12-10T18:45:47Z",
+      "side": 1,
+      "message": "We also want to ignore src/manage.py, or else:\n\nsrc/manage.py:25:13: F401 \u0027django\u0027 imported but unused",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 6
+      },
+      "revId": "9bedb613db6c8e28eb996c0e5eb827c754141aca",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
