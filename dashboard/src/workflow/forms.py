@@ -41,12 +41,15 @@ class SearchableSelectMultipleWidget(widgets.SelectMultiple):
         self.default_entry = attrs.get("default_entry", "")
         self.edit = attrs.get("edit", False)
         self.wf_type = attrs.get("wf_type")
+        self.incompatible = attrs.get("incompatible", "false")
 
         super(SearchableSelectMultipleWidget, self).__init__(attrs)
 
     def render(self, name, value, attrs=None, renderer=None):
 
         context = self.get_context(attrs)
+        print("ssmw context:")
+        print(context)
         return mark_safe(render_to_string(self.template_name, context))
 
     def get_context(self, attrs):
@@ -61,7 +64,8 @@ class SearchableSelectMultipleWidget(widgets.SelectMultiple):
             'initial': self.initial,
             'default_entry': self.default_entry,
             'edit': self.edit,
-            'wf_type': self.wf_type
+            'wf_type': self.wf_type,
+            'incompatible': self.incompatible
         }
 
 
@@ -101,13 +105,6 @@ class ResourceSelectorForm(forms.Form):
             displayable['id'] = res.id
             resources[res.id] = displayable
 
-            if bundle:
-                displayable = {}
-                displayable['small_name'] = bundle.name
-                displayable['expanded_name'] = "Current bundle"
-                displayable['string'] = bundle.description
-                displayable['id'] = "repo bundle"
-                resources["repo bundle"] = displayable
         attrs = {
             'set': resources,
             'show_from_noentry': "true",
@@ -159,13 +156,15 @@ class SWConfigSelectorForm(forms.Form):
             displayable['id'] = config.id
             configs[config.id] = displayable
 
-        if bundle:
+        incompatible_choice = "false"
+        if bundle and bundle.id not in configs:
             displayable = {}
             displayable['small_name'] = bundle.name
-            displayable['expanded_name'] = "Current configuration"
+            displayable['expanded_name'] = bundle.owner.username
             displayable['string'] = bundle.description
-            displayable['id'] = "repo bundle"
-            configs['repo bundle'] = displayable
+            displayable['id'] = bundle.id
+            configs[bundle.id] = displayable
+            incompatible_choice = "true"
 
         attrs = {
             'set': configs,
@@ -177,8 +176,11 @@ class SWConfigSelectorForm(forms.Form):
             'placeholder': "config",
             'initial': chosen,
             'edit': edit,
-            'wf_type': 2
+            'wf_type': 2,
+            'incompatible': incompatible_choice
         }
+        import json
+        print(json.dumps(attrs, indent = 2))
         return attrs
 
 
