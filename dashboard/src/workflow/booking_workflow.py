@@ -112,22 +112,11 @@ class Booking_Resource_Select(Resource_Select):
 
     def __init__(self, *args, **kwargs):
         super(Booking_Resource_Select, self).__init__(*args, **kwargs)
-        self.repo_key = self.repo.BOOKING_SELECTED_GRB
+        self.repo_key = self.repo.SELECTED_GRESOURCE_BUNDLE
         self.confirm_key = "booking"
 
     def get_default_entry(self):
-        default = self.repo_get(self.repo.GRESOURCE_BUNDLE_MODELS, {}).get("bundle")
-        mine = self.repo_get(self.repo_key)
-        if mine:
-            return None
-        try:
-            config_bundle = self.repo_get(self.repo.BOOKING_MODELS)['booking'].config_bundle
-            if default:
-                return default  # select created grb, even if preselected config bundle
-            return config_bundle.bundle
-        except:
-            pass
-        return default
+        return None
 
     def get_context(self):
         context = super(Booking_Resource_Select, self).get_context()
@@ -171,7 +160,7 @@ class SWConfig_Select(WorkflowStep):
                 id = int(bundle_json[0]['id'])
                 bundle = ConfigBundle.objects.get(id=id)
             except ValueError:
-                bundle = self.repo_get(self.repo.CONFIG_MODELS).get("bundle")
+                bundle = self.repo_get(self.repo.SELECTED_CONFIG_BUNDLE)
 
             models = self.repo_get(self.repo.BOOKING_MODELS, {})
             if "booking" not in models:
@@ -196,7 +185,7 @@ class SWConfig_Select(WorkflowStep):
         default = []
         bundle = None
         chosen_bundle = None
-        created_bundle = self.repo_get(self.repo.CONFIG_MODELS, {}).get("bundle", False)
+        created_bundle = self.repo_get(self.repo.SELECTED_CONFIG_BUNDLE)
         booking = self.repo_get(self.repo.BOOKING_MODELS, {}).get("booking", False)
         try:
             chosen_bundle = booking.config_bundle
@@ -204,11 +193,11 @@ class SWConfig_Select(WorkflowStep):
             bundle = chosen_bundle
         except:
             if created_bundle:
-                default.append("repo bundle")
+                default.append(created_bundle.id)
                 bundle = created_bundle
-                context['disabled'] = True
+            else:
         edit = self.repo_get(self.repo.EDIT, False)
-        grb = self.repo_get(self.repo.BOOKING_SELECTED_GRB)
+        grb = self.repo_get(self.repo.SELECTED_GRESOURCE_BUNDLE)
         context['form'] = SWConfigSelectorForm(chosen_software=default, bundle=bundle, edit=edit, resource=grb)
         return context
 

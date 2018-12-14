@@ -101,13 +101,6 @@ class ResourceSelectorForm(forms.Form):
             displayable['id'] = res.id
             resources[res.id] = displayable
 
-            if bundle:
-                displayable = {}
-                displayable['small_name'] = bundle.name
-                displayable['expanded_name'] = "Current bundle"
-                displayable['string'] = bundle.description
-                displayable['id'] = "repo bundle"
-                resources["repo bundle"] = displayable
         attrs = {
             'set': resources,
             'show_from_noentry': "true",
@@ -158,14 +151,6 @@ class SWConfigSelectorForm(forms.Form):
             displayable['string'] = config.description
             displayable['id'] = config.id
             configs[config.id] = displayable
-
-        if bundle:
-            displayable = {}
-            displayable['small_name'] = bundle.name
-            displayable['expanded_name'] = "Current configuration"
-            displayable['string'] = bundle.description
-            displayable['id'] = "repo bundle"
-            configs['repo bundle'] = displayable
 
         attrs = {
             'set': configs,
