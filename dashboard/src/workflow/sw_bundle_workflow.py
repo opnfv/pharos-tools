@@ -24,9 +24,6 @@ class SWConf_Resource_Select(Resource_Select):
         self.confirm_key = "configuration"
 
     def get_default_entry(self):
-        booking_grb = self.repo_get(self.repo.BOOKING_SELECTED_GRB)
-        if booking_grb:
-            return booking_grb
         created_grb = self.repo_get(self.repo.GRESOURCE_BUNDLE_MODELS, {}).get("bundle", None)
         return created_grb
 

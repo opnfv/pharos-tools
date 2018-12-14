@@ -116,18 +116,7 @@ class Booking_Resource_Select(Resource_Select):
         self.confirm_key = "booking"
 
     def get_default_entry(self):
-        default = self.repo_get(self.repo.GRESOURCE_BUNDLE_MODELS, {}).get("bundle")
-        mine = self.repo_get(self.repo_key)
-        if mine:
-            return None
-        try:
-            config_bundle = self.repo_get(self.repo.BOOKING_MODELS)['booking'].config_bundle
-            if default:
-                return default  # select created grb, even if preselected config bundle
-            return config_bundle.bundle
-        except:
-            pass
-        return default
+        return None
 
     def get_context(self):
         context = super(Booking_Resource_Select, self).get_context()
@@ -157,6 +146,7 @@ class SWConfig_Select(WorkflowStep):
     short_title = "pod config"
 
     def post_render(self, request):
+        print("post render swconfig called")
         form = SWConfigSelectorForm(request.POST)
         if form.is_valid():
 
