@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a622d24_93881d24",
+        "filename": "dashboard/src/workflow/sw_bundle_workflow.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2018-12-17T16:31:12Z",
+      "side": 0,
+      "message": "why get rid of this? In a Booking \"root\" wf, a child SW workflow should prepopulate with the Booking\u0027s selected resource",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 30
+      },
+      "revId": "74923100444ad669f63293466880ac59b05f5585",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
