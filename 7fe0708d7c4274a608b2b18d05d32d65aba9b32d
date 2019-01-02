@@ -1,0 +1,257 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a622d24_2cde0340",
+        "filename": "dashboard/src/templates/workflow/confirm.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-01-02T21:21:57Z",
+      "side": 1,
+      "message": "whitespace",
+      "range": {
+        "startLine": 69,
+        "startChar": 73,
+        "endLine": 69,
+        "endChar": 74
+      },
+      "revId": "7fe0708d7c4274a608b2b18d05d32d65aba9b32d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_0ce34708",
+        "filename": "dashboard/src/templates/workflow/viewport-base.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-01-02T21:21:57Z",
+      "side": 1,
+      "message": "unused variable",
+      "range": {
+        "startLine": 316,
+        "startChar": 0,
+        "endLine": 316,
+        "endChar": 88
+      },
+      "revId": "7fe0708d7c4274a608b2b18d05d32d65aba9b32d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_6ce75b13",
+        "filename": "dashboard/src/templates/workflow/viewport-base.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-01-02T21:21:57Z",
+      "side": 1,
+      "message": "better error handling",
+      "range": {
+        "startLine": 318,
+        "startChar": 15,
+        "endLine": 318,
+        "endChar": 56
+      },
+      "revId": "7fe0708d7c4274a608b2b18d05d32d65aba9b32d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_4ce41f0d",
+        "filename": "dashboard/src/workflow/booking_workflow.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-01-02T21:21:57Z",
+      "side": 1,
+      "message": "redundant",
+      "range": {
+        "startLine": 39,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 28
+      },
+      "revId": "7fe0708d7c4274a608b2b18d05d32d65aba9b32d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_acf173cf",
+        "filename": "dashboard/src/workflow/booking_workflow.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-01-02T21:21:57Z",
+      "side": 1,
+      "message": "redundant",
+      "range": {
+        "startLine": 46,
+        "startChar": 0,
+        "endLine": 47,
+        "endChar": 34
+      },
+      "revId": "7fe0708d7c4274a608b2b18d05d32d65aba9b32d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_8cee37eb",
+        "filename": "dashboard/src/workflow/booking_workflow.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-01-02T21:21:57Z",
+      "side": 1,
+      "message": "needs error message",
+      "range": {
+        "startLine": 154,
+        "startChar": 41,
+        "endLine": 154,
+        "endChar": 43
+      },
+      "revId": "7fe0708d7c4274a608b2b18d05d32d65aba9b32d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_ecba4be0",
+        "filename": "dashboard/src/workflow/forms.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-01-02T21:21:57Z",
+      "side": 1,
+      "message": "no prints",
+      "range": {
+        "startLine": 51,
+        "startChar": 0,
+        "endLine": 52,
+        "endChar": 22
+      },
+      "revId": "7fe0708d7c4274a608b2b18d05d32d65aba9b32d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_ccbf8fcf",
+        "filename": "dashboard/src/workflow/forms.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-01-02T21:21:57Z",
+      "side": 1,
+      "message": "remove",
+      "range": {
+        "startLine": 182,
+        "startChar": 0,
+        "endLine": 183,
+        "endChar": 44
+      },
+      "revId": "7fe0708d7c4274a608b2b18d05d32d65aba9b32d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_2cb563ee",
+        "filename": "dashboard/src/workflow/models.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-01-02T21:21:57Z",
+      "side": 1,
+      "message": "dead code",
+      "range": {
+        "startLine": 169,
+        "startChar": 0,
+        "endLine": 169,
+        "endChar": 67
+      },
+      "revId": "7fe0708d7c4274a608b2b18d05d32d65aba9b32d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_0cba27de",
+        "filename": "dashboard/src/workflow/workflow_manager.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-01-02T21:21:57Z",
+      "side": 1,
+      "message": "no semicolons in python",
+      "range": {
+        "startLine": 44,
+        "startChar": 27,
+        "endLine": 44,
+        "endChar": 28
+      },
+      "revId": "7fe0708d7c4274a608b2b18d05d32d65aba9b32d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_6cce3b85",
+        "filename": "dashboard/src/workflow/workflow_manager.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-01-02T21:21:57Z",
+      "side": 1,
+      "message": "no prints",
+      "range": {
+        "startLine": 74,
+        "startChar": 0,
+        "endLine": 74,
+        "endChar": 20
+      },
+      "revId": "7fe0708d7c4274a608b2b18d05d32d65aba9b32d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
