@@ -1,0 +1,234 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a622d24_ec052bc3",
+        "filename": "dashboard/src/templates/workflow/confirm.html",
+        "patchSetId": 2
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-01-02T18:41:22Z",
+      "side": 1,
+      "message": "whitespace",
+      "range": {
+        "startLine": 69,
+        "startChar": 73,
+        "endLine": 69,
+        "endChar": 74
+      },
+      "revId": "16b41f4999261af10c4bc8f2ddc2c6bdc39390f9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_cc0aefd1",
+        "filename": "dashboard/src/templates/workflow/exit_redirect.html",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-01-02T18:41:22Z",
+      "side": 1,
+      "message": "needs open tag",
+      "range": {
+        "startLine": 5,
+        "startChar": 2,
+        "endLine": 5,
+        "endChar": 6
+      },
+      "revId": "16b41f4999261af10c4bc8f2ddc2c6bdc39390f9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_2c10c300",
+        "filename": "dashboard/src/templates/workflow/viewport-base.html",
+        "patchSetId": 2
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-01-02T18:41:22Z",
+      "side": 1,
+      "message": "remove",
+      "range": {
+        "startLine": 104,
+        "startChar": 0,
+        "endLine": 106,
+        "endChar": 42
+      },
+      "revId": "16b41f4999261af10c4bc8f2ddc2c6bdc39390f9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_0c1507f1",
+        "filename": "dashboard/src/templates/workflow/viewport-base.html",
+        "patchSetId": 2
+      },
+      "lineNbr": 343,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-01-02T18:41:22Z",
+      "side": 1,
+      "message": "whitespace",
+      "range": {
+        "startLine": 343,
+        "startChar": 0,
+        "endLine": 343,
+        "endChar": 8
+      },
+      "revId": "16b41f4999261af10c4bc8f2ddc2c6bdc39390f9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_8c00f7ab",
+        "filename": "dashboard/src/workflow/booking_workflow.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-01-02T18:41:22Z",
+      "side": 1,
+      "message": "clean",
+      "range": {
+        "startLine": 118,
+        "startChar": 8,
+        "endLine": 118,
+        "endChar": 25
+      },
+      "revId": "16b41f4999261af10c4bc8f2ddc2c6bdc39390f9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_4cf6dfd8",
+        "filename": "dashboard/src/workflow/booking_workflow.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-01-02T18:41:22Z",
+      "side": 1,
+      "message": "empty else",
+      "range": {
+        "startLine": 198,
+        "startChar": 16,
+        "endLine": 198,
+        "endChar": 17
+      },
+      "revId": "16b41f4999261af10c4bc8f2ddc2c6bdc39390f9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_ec2c0b4d",
+        "filename": "dashboard/src/workflow/models.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-01-02T18:41:22Z",
+      "side": 1,
+      "message": "whitespace",
+      "range": {
+        "startLine": 243,
+        "startChar": 61,
+        "endLine": 243,
+        "endChar": 62
+      },
+      "revId": "16b41f4999261af10c4bc8f2ddc2c6bdc39390f9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_cc314fa4",
+        "filename": "dashboard/src/workflow/sw_bundle_workflow.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-01-02T18:41:22Z",
+      "side": 1,
+      "message": "dead code",
+      "range": {
+        "startLine": 26,
+        "startChar": 2,
+        "endLine": 30,
+        "endChar": 27
+      },
+      "revId": "16b41f4999261af10c4bc8f2ddc2c6bdc39390f9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_2c272366",
+        "filename": "dashboard/src/workflow/views.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-01-02T18:41:22Z",
+      "side": 1,
+      "message": "whitespace",
+      "range": {
+        "startLine": 43,
+        "startChar": 0,
+        "endLine": 43,
+        "endChar": 4
+      },
+      "revId": "16b41f4999261af10c4bc8f2ddc2c6bdc39390f9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_0c2ce746",
+        "filename": "dashboard/src/workflow/workflow_manager.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-01-02T18:41:22Z",
+      "side": 1,
+      "message": "whitespace",
+      "range": {
+        "startLine": 56,
+        "startChar": 0,
+        "endLine": 56,
+        "endChar": 8
+      },
+      "revId": "16b41f4999261af10c4bc8f2ddc2c6bdc39390f9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
