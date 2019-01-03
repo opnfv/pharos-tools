@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a622d24_6c259bc1",
+        "filename": "dashboard/src/templates/resource/steps/pod_definition.html",
+        "patchSetId": 1
+      },
+      "lineNbr": 661,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-01-03T18:18:55Z",
+      "side": 1,
+      "message": "dead code",
+      "range": {
+        "startLine": 661,
+        "startChar": 0,
+        "endLine": 661,
+        "endChar": 79
+      },
+      "revId": "4595ba59faf725e2ad465593c919b25a6f7911b7",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
