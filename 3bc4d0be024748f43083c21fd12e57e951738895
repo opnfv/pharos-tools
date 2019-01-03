@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a622d24_a02b3781",
+        "filename": "dashboard/src/templates/account/booking_list.html",
+        "patchSetId": 2
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-01-03T19:58:06Z",
+      "side": 1,
+      "message": "you might want to try a difftool rather than manually doing it in vim",
+      "range": {
+        "startLine": 47,
+        "startChar": 0,
+        "endLine": 53,
+        "endChar": 49
+      },
+      "revId": "3bc4d0be024748f43083c21fd12e57e951738895",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
