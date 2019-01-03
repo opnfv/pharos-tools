@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a622d24_4cd89fef",
+        "filename": "dashboard/src/workflow/booking_workflow.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-01-03T15:28:34Z",
+      "side": 1,
+      "message": "should be self.render, context is not defined here",
+      "range": {
+        "startLine": 67,
+        "startChar": 16,
+        "endLine": 67,
+        "endChar": 62
+      },
+      "revId": "6fc4b87f08885418e8c67cd925f7494c1039ee1e",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
