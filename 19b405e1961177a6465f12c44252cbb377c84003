@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a622d24_6c0c7b43",
+        "filename": "dashboard/src/templates/base.html",
+        "patchSetId": 1
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-01-03T19:23:35Z",
+      "side": 1,
+      "message": "These end up having really weird styling if btn-primary is used, so should be left as just plain btn drop_btn",
+      "range": {
+        "startLine": 132,
+        "startChar": 36,
+        "endLine": 135,
+        "endChar": 120
+      },
+      "revId": "19b405e1961177a6465f12c44252cbb377c84003",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_c0ff5300",
+        "filename": "dashboard/src/templates/workflow/viewport-base.html",
+        "patchSetId": 1
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-01-03T19:23:35Z",
+      "side": 1,
+      "message": "these may look odd if we use btn-primary, as they\u0027ll stand out a lot more than they do currently",
+      "range": {
+        "startLine": 95,
+        "startChar": 0,
+        "endLine": 96,
+        "endChar": 93
+      },
+      "revId": "19b405e1961177a6465f12c44252cbb377c84003",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
