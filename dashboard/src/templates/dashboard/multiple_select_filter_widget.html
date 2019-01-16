@@ -372,12 +372,19 @@ function updateResult(nodeId){
     if(!initialized){
         init();
     }
+     console.log(result);
     if(!items[nodeId]['multiple']){
         var node = document.getElementById(nodeId);
         var value = {}
         value[nodeId] = node.parentNode.getElementsByTagName("input")[0].value;
+        console.log("parentNode: ");
+        console.log(node.parentNode.parentNode);
+        console.log("nodeID");
+        console.log(nodeId);
+        result[node.parentNode.parentNode.id] = {};
         result[node.parentNode.parentNode.id][nodeId] = value;
     }
+     console.log(result);
 }
 
 function updateObjectResult(parentElem){
