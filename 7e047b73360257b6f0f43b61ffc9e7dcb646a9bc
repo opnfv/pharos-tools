@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a622d24_5d0afd21",
+        "filename": "dashboard/src/.vscode/settings.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-01-17T22:26:46Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "1a622d24_123234a7",
+      "revId": "7e047b73360257b6f0f43b61ffc9e7dcb646a9bc",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a622d24_522cac47",
         "filename": "dashboard/src/booking/forms.py",
         "patchSetId": 1
@@ -111,6 +129,30 @@
     },
     {
       "key": {
+        "uuid": "1a622d24_1237d400",
+        "filename": "dashboard/src/booking/quick_deployer.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-01-17T22:26:46Z",
+      "side": 1,
+      "message": "removed",
+      "parentUuid": "1a622d24_f21a1816",
+      "range": {
+        "startLine": 65,
+        "startChar": 4,
+        "endLine": 65,
+        "endChar": 8
+      },
+      "revId": "7e047b73360257b6f0f43b61ffc9e7dcb646a9bc",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a622d24_d2171cec",
         "filename": "dashboard/src/booking/quick_deployer.py",
         "patchSetId": 1
@@ -122,6 +164,30 @@
       "writtenOn": "2019-01-17T17:42:26Z",
       "side": 1,
       "message": "should not be necessary with the filter widget fix",
+      "range": {
+        "startLine": 80,
+        "startChar": 0,
+        "endLine": 84,
+        "endChar": 17
+      },
+      "revId": "7e047b73360257b6f0f43b61ffc9e7dcb646a9bc",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_723c48e3",
+        "filename": "dashboard/src/booking/quick_deployer.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-01-17T22:26:46Z",
+      "side": 1,
+      "message": "refactored",
+      "parentUuid": "1a622d24_d2171cec",
       "range": {
         "startLine": 80,
         "startChar": 0,
@@ -157,6 +223,30 @@
     },
     {
       "key": {
+        "uuid": "1a622d24_52414c59",
+        "filename": "dashboard/src/booking/quick_deployer.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-01-17T22:26:46Z",
+      "side": 1,
+      "message": "removed",
+      "parentUuid": "1a622d24_32d4901f",
+      "range": {
+        "startLine": 111,
+        "startChar": 0,
+        "endLine": 111,
+        "endChar": 4
+      },
+      "revId": "7e047b73360257b6f0f43b61ffc9e7dcb646a9bc",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a622d24_12d99457",
         "filename": "dashboard/src/booking/quick_deployer.py",
         "patchSetId": 1
@@ -168,6 +258,30 @@
       "writtenOn": "2019-01-17T17:42:26Z",
       "side": 1,
       "message": "also check that working\u003dTrue",
+      "range": {
+        "startLine": 113,
+        "startChar": 60,
+        "endLine": 113,
+        "endChar": 80
+      },
+      "revId": "7e047b73360257b6f0f43b61ffc9e7dcb646a9bc",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_b22540c4",
+        "filename": "dashboard/src/booking/quick_deployer.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-01-17T22:26:46Z",
+      "side": 1,
+      "message": "fixed",
+      "parentUuid": "1a622d24_12d99457",
       "range": {
         "startLine": 113,
         "startChar": 60,
@@ -203,6 +317,30 @@
     },
     {
       "key": {
+        "uuid": "1a622d24_9222c4b7",
+        "filename": "dashboard/src/booking/quick_deployer.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-01-17T22:26:46Z",
+      "side": 1,
+      "message": "fixed",
+      "parentUuid": "1a622d24_72de0841",
+      "range": {
+        "startLine": 129,
+        "startChar": 38,
+        "endLine": 129,
+        "endChar": 60
+      },
+      "revId": "7e047b73360257b6f0f43b61ffc9e7dcb646a9bc",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a622d24_52e30c07",
         "filename": "dashboard/src/booking/quick_deployer.py",
         "patchSetId": 1
@@ -214,6 +352,30 @@
       "writtenOn": "2019-01-17T17:42:26Z",
       "side": 1,
       "message": "unused",
+      "range": {
+        "startLine": 141,
+        "startChar": 23,
+        "endLine": 141,
+        "endChar": 26
+      },
+      "revId": "7e047b73360257b6f0f43b61ffc9e7dcb646a9bc",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_f22fb89f",
+        "filename": "dashboard/src/booking/quick_deployer.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-01-17T22:26:46Z",
+      "side": 1,
+      "message": "removed",
+      "parentUuid": "1a622d24_52e30c07",
       "range": {
         "startLine": 141,
         "startChar": 23,
@@ -249,6 +411,30 @@
     },
     {
       "key": {
+        "uuid": "1a622d24_d22c3cae",
+        "filename": "dashboard/src/booking/quick_deployer.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-01-17T22:26:46Z",
+      "side": 1,
+      "message": "changed",
+      "parentUuid": "1a622d24_b2e70012",
+      "range": {
+        "startLine": 172,
+        "startChar": 7,
+        "endLine": 173,
+        "endChar": 32
+      },
+      "revId": "7e047b73360257b6f0f43b61ffc9e7dcb646a9bc",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a622d24_92e4840e",
         "filename": "dashboard/src/booking/quick_deployer.py",
         "patchSetId": 1
@@ -260,6 +446,30 @@
       "writtenOn": "2019-01-17T17:42:26Z",
       "side": 1,
       "message": "w",
+      "range": {
+        "startLine": 182,
+        "startChar": 0,
+        "endLine": 182,
+        "endChar": 4
+      },
+      "revId": "7e047b73360257b6f0f43b61ffc9e7dcb646a9bc",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_32193089",
+        "filename": "dashboard/src/booking/quick_deployer.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-01-17T22:26:46Z",
+      "side": 1,
+      "message": "removed",
+      "parentUuid": "1a622d24_92e4840e",
       "range": {
         "startLine": 182,
         "startChar": 0,
@@ -295,6 +505,30 @@
     },
     {
       "key": {
+        "uuid": "1a622d24_121eb470",
+        "filename": "dashboard/src/booking/quick_deployer.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-01-17T22:26:46Z",
+      "side": 1,
+      "message": "changed",
+      "parentUuid": "1a622d24_f2f178ce",
+      "range": {
+        "startLine": 183,
+        "startChar": 0,
+        "endLine": 184,
+        "endChar": 15
+      },
+      "revId": "7e047b73360257b6f0f43b61ffc9e7dcb646a9bc",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a622d24_d2eefceb",
         "filename": "dashboard/src/booking/quick_deployer.py",
         "patchSetId": 1
@@ -306,6 +540,30 @@
       "writtenOn": "2019-01-17T17:42:26Z",
       "side": 1,
       "message": "unused",
+      "range": {
+        "startLine": 192,
+        "startChar": 42,
+        "endLine": 192,
+        "endChar": 45
+      },
+      "revId": "7e047b73360257b6f0f43b61ffc9e7dcb646a9bc",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_b20c2044",
+        "filename": "dashboard/src/booking/quick_deployer.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-01-17T22:26:46Z",
+      "side": 1,
+      "message": "removed",
+      "parentUuid": "1a622d24_d2eefceb",
       "range": {
         "startLine": 192,
         "startChar": 42,
@@ -341,6 +599,30 @@
     },
     {
       "key": {
+        "uuid": "1a622d24_52182c81",
+        "filename": "dashboard/src/booking/quick_deployer.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-01-17T22:26:46Z",
+      "side": 1,
+      "message": "removed",
+      "parentUuid": "1a622d24_32bbf0e6",
+      "range": {
+        "startLine": 194,
+        "startChar": 36,
+        "endLine": 194,
+        "endChar": 41
+      },
+      "revId": "7e047b73360257b6f0f43b61ffc9e7dcb646a9bc",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a622d24_12c0744f",
         "filename": "dashboard/src/booking/quick_deployer.py",
         "patchSetId": 1
@@ -352,6 +634,30 @@
       "writtenOn": "2019-01-17T17:42:26Z",
       "side": 1,
       "message": "why tho",
+      "range": {
+        "startLine": 213,
+        "startChar": 0,
+        "endLine": 213,
+        "endChar": 15
+      },
+      "revId": "7e047b73360257b6f0f43b61ffc9e7dcb646a9bc",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_7213a866",
+        "filename": "dashboard/src/booking/quick_deployer.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-01-17T22:26:46Z",
+      "side": 1,
+      "message": "no reason",
+      "parentUuid": "1a622d24_12c0744f",
       "range": {
         "startLine": 213,
         "startChar": 0,
@@ -387,6 +693,30 @@
     },
     {
       "key": {
+        "uuid": "1a622d24_3232d010",
+        "filename": "dashboard/src/booking/views.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-01-17T22:26:46Z",
+      "side": 1,
+      "message": "refactored",
+      "parentUuid": "1a622d24_72b568ed",
+      "range": {
+        "startLine": 20,
+        "startChar": 38,
+        "endLine": 20,
+        "endChar": 39
+      },
+      "revId": "7e047b73360257b6f0f43b61ffc9e7dcb646a9bc",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a622d24_52baecde",
         "filename": "dashboard/src/booking/views.py",
         "patchSetId": 1
@@ -398,6 +728,30 @@
       "writtenOn": "2019-01-17T17:42:26Z",
       "side": 1,
       "message": "if this function doesn\u0027t return a view, it should probably go somewhere else",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 51,
+        "endChar": 10
+      },
+      "revId": "7e047b73360257b6f0f43b61ffc9e7dcb646a9bc",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_f2585858",
+        "filename": "dashboard/src/booking/views.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-01-17T22:26:46Z",
+      "side": 1,
+      "message": "moved",
+      "parentUuid": "1a622d24_52baecde",
       "range": {
         "startLine": 29,
         "startChar": 0,
@@ -433,6 +787,30 @@
     },
     {
       "key": {
+        "uuid": "1a622d24_d2555c1e",
+        "filename": "dashboard/src/booking/views.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-01-17T22:26:46Z",
+      "side": 1,
+      "message": "consolidated",
+      "parentUuid": "1a622d24_f2c85876",
+      "range": {
+        "startLine": 97,
+        "startChar": 0,
+        "endLine": 99,
+        "endChar": 34
+      },
+      "revId": "7e047b73360257b6f0f43b61ffc9e7dcb646a9bc",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a622d24_d2c55c5c",
         "filename": "dashboard/src/dashboard/tasks.py",
         "patchSetId": 1
@@ -444,6 +822,24 @@
       "writtenOn": "2019-01-17T17:42:26Z",
       "side": 1,
       "message": "dont touch this file",
+      "revId": "7e047b73360257b6f0f43b61ffc9e7dcb646a9bc",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_925be453",
+        "filename": "dashboard/src/dashboard/tasks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-01-17T22:26:46Z",
+      "side": 1,
+      "message": "whoops, reverted",
+      "parentUuid": "1a622d24_d2c55c5c",
       "revId": "7e047b73360257b6f0f43b61ffc9e7dcb646a9bc",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
@@ -473,6 +869,30 @@
     },
     {
       "key": {
+        "uuid": "1a622d24_b25ee043",
+        "filename": "dashboard/src/resource_inventory/resource_manager.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-01-17T22:26:46Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "1a622d24_32a2d0ae",
+      "range": {
+        "startLine": 37,
+        "startChar": 54,
+        "endLine": 37,
+        "endChar": 66
+      },
+      "revId": "7e047b73360257b6f0f43b61ffc9e7dcb646a9bc",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a622d24_12a7d4be",
         "filename": "dashboard/src/templates/booking/quick_deploy.html",
         "patchSetId": 1
@@ -490,6 +910,24 @@
     },
     {
       "key": {
+        "uuid": "1a622d24_324bf088",
+        "filename": "dashboard/src/templates/booking/quick_deploy.html",
+        "patchSetId": 1
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-01-17T22:26:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a622d24_12a7d4be",
+      "revId": "7e047b73360257b6f0f43b61ffc9e7dcb646a9bc",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a622d24_72ac48a1",
         "filename": "dashboard/src/templates/booking/quick_deploy.html",
         "patchSetId": 1
@@ -501,6 +939,30 @@
       "writtenOn": "2019-01-17T17:42:26Z",
       "side": 1,
       "message": "useless",
+      "range": {
+        "startLine": 87,
+        "startChar": 8,
+        "endLine": 87,
+        "endChar": 14
+      },
+      "revId": "7e047b73360257b6f0f43b61ffc9e7dcb646a9bc",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_7245686f",
+        "filename": "dashboard/src/templates/booking/quick_deploy.html",
+        "patchSetId": 1
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-01-17T22:26:46Z",
+      "side": 1,
+      "message": "removed",
+      "parentUuid": "1a622d24_72ac48a1",
       "range": {
         "startLine": 87,
         "startChar": 8,
@@ -536,6 +998,30 @@
     },
     {
       "key": {
+        "uuid": "1a622d24_12507431",
+        "filename": "dashboard/src/templates/booking/quick_deploy.html",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-01-17T22:26:46Z",
+      "side": 1,
+      "message": "no reason, removed in patch",
+      "parentUuid": "1a622d24_b2954042",
+      "range": {
+        "startLine": 89,
+        "startChar": 0,
+        "endLine": 90,
+        "endChar": 31
+      },
+      "revId": "7e047b73360257b6f0f43b61ffc9e7dcb646a9bc",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a622d24_d29c3c6c",
         "filename": "dashboard/src/templates/booking/quick_deploy.html",
         "patchSetId": 1
@@ -547,6 +1033,30 @@
       "writtenOn": "2019-01-17T17:42:26Z",
       "side": 1,
       "message": "w",
+      "range": {
+        "startLine": 204,
+        "startChar": 0,
+        "endLine": 204,
+        "endChar": 4
+      },
+      "revId": "7e047b73360257b6f0f43b61ffc9e7dcb646a9bc",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_524aec80",
+        "filename": "dashboard/src/templates/booking/quick_deploy.html",
+        "patchSetId": 1
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-01-17T22:26:46Z",
+      "side": 1,
+      "message": "removed",
+      "parentUuid": "1a622d24_d29c3c6c",
       "range": {
         "startLine": 204,
         "startChar": 0,
@@ -582,6 +1092,30 @@
     },
     {
       "key": {
+        "uuid": "1a622d24_f2817890",
+        "filename": "dashboard/src/workflow/forms.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 363,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-01-17T22:26:46Z",
+      "side": 1,
+      "message": "I\u0027m not sure, what does this field do?",
+      "parentUuid": "1a622d24_92792432",
+      "range": {
+        "startLine": 363,
+        "startChar": 34,
+        "endLine": 363,
+        "endChar": 35
+      },
+      "revId": "7e047b73360257b6f0f43b61ffc9e7dcb646a9bc",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a622d24_d2739c4b",
         "filename": "dashboard/src/workflow/resource_bundle_workflow.py",
         "patchSetId": 1
@@ -593,6 +1127,30 @@
       "writtenOn": "2019-01-17T17:42:26Z",
       "side": 1,
       "message": "no prints - remove this file from the commit",
+      "range": {
+        "startLine": 71,
+        "startChar": 0,
+        "endLine": 73,
+        "endChar": 29
+      },
+      "revId": "7e047b73360257b6f0f43b61ffc9e7dcb646a9bc",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_d27efcad",
+        "filename": "dashboard/src/workflow/resource_bundle_workflow.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-01-17T22:26:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a622d24_d2739c4b",
       "range": {
         "startLine": 71,
         "startChar": 0,
