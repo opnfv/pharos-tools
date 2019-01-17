@@ -4,8 +4,8 @@ The booking you requested of the OPNFV Lab as a Service has finished deploying a
 
 The lab that fulfilled your booking request has sent you the following messages:
     {% for message in messages %}
-        {% message.title %}
-        {% message.content %}
+        {{ message.title }}
+        {{ message.content }}
         --------------------
     {% endfor %}
 

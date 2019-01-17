@@ -74,6 +74,7 @@ def specific_task(request, lab_name="", job_id="", task_id=""):
     LabManagerTracker.get(lab_name, lab_token)  # Authorize caller, but we dont need the result
 
     if request.method == "POST":
+        print(request.POST)
         task = get_task(task_id)
         if 'status' in request.POST:
             task.status = request.POST.get('status')
