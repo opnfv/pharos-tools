@@ -68,6 +68,9 @@ class Define_Hardware(WorkflowStep):
             selection_data=selection_data
         )
         context['form'] = form
+        print("define hardware context:")
+        print(context)
+        print(selection_data)
         return context
 
     def render(self, request):

@@ -265,6 +265,7 @@ class Image(models.Model):
     # may need to change host_type.on_delete to models.SET() once images are transferrable between compatible host types
     host_type = models.ForeignKey(HostProfile, on_delete=models.CASCADE)
     description = models.TextField()
+    os = models.ForeignKey(Opsys, null=True, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name

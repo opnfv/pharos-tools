@@ -17,7 +17,7 @@ from dashboard.exceptions import (
     ResourceProvisioningException,
     ModelValidationException,
 )
-from resource_inventory.models import Host, HostConfiguration, ResourceBundle
+from resource_inventory.models import Host, HostConfiguration, ResourceBundle, HostProfile
 
 
 class ResourceManager:
@@ -32,6 +32,11 @@ class ResourceManager:
         if ResourceManager.instance is None:
             ResourceManager.instance = ResourceManager()
         return ResourceManager.instance
+
+    def getAvailableHostTypes(self, lab):
+        hostset = Host.objects.filter(lab=lab).filter(booked=False)
+        hostprofileset = HostProfile.objects.filter(host__in=hostset, labs=lab)
+        return set(hostprofileset)
 
     # public interface
     def deleteResourceBundle(self, resourceBundle):

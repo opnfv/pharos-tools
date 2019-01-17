@@ -16,30 +16,30 @@ from django.db import models
 import resource_inventory.resource_manager
 
 
-class Scenario(models.Model):
-    id = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=300)
-
-    def __str__(self):
-        return self.name
-
-
-class Installer(models.Model):
-    id = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=30)
-    sup_scenarios = models.ManyToManyField(Scenario, blank=True)
-
-    def __str__(self):
-        return self.name
-
-
-class Opsys(models.Model):
-    id = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=100)
-    sup_installers = models.ManyToManyField(Installer, blank=True)
-
-    def __str__(self):
-        return self.name
+#class Scenario(models.Model):
+#    id = models.AutoField(primary_key=True)
+#    name = models.CharField(max_length=300)
+#
+#    def __str__(self):
+#        return self.name
+#
+#
+#class Installer(models.Model):
+#    id = models.AutoField(primary_key=True)
+#    name = models.CharField(max_length=30)
+#    sup_scenarios = models.ManyToManyField(Scenario, blank=True)
+#
+#    def __str__(self):
+#        return self.name
+#
+#
+#class Opsys(models.Model):
+#    id = models.AutoField(primary_key=True)
+#    name = models.CharField(max_length=100)
+#    sup_installers = models.ManyToManyField(Installer, blank=True)
+#
+#    def __str__(self):
+#        return self.name
 
 
 class Booking(models.Model):
