@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a622d24_7d6539e0",
+        "filename": "dashboard/src/templates/notifier/email_fulfilled.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-01-18T03:56:28Z",
+      "side": 1,
+      "message": "make sure this doesn\u0027t overlap with the django messages framework, as it could make this view a bit weird if the user had a message delivered at the same time they arrived on this page",
+      "range": {
+        "startLine": 7,
+        "startChar": 7,
+        "endLine": 7,
+        "endChar": 27
+      },
+      "revId": "6b8ea727ae7204f58f36bd37231309924b134e84",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_dd628dd7",
+        "filename": "dashboard/src/templates/snapshot_workflow/steps/meta.html",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-01-18T03:56:28Z",
+      "side": 1,
+      "message": "might make more sense for this to be just an inline style",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 1
+      },
+      "revId": "6b8ea727ae7204f58f36bd37231309924b134e84",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_bd5fd10d",
+        "filename": "dashboard/src/templates/snapshot_workflow/steps/select_host.html",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-01-18T03:56:28Z",
+      "side": 1,
+      "message": "I\u0027m not quite understanding why border-color and border weight are being used with a none-style border here",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 20
+      },
+      "revId": "6b8ea727ae7204f58f36bd37231309924b134e84",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_9daf75e3",
+        "filename": "dashboard/src/templates/snapshot_workflow/steps/select_host.html",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-01-18T03:56:28Z",
+      "side": 1,
+      "message": "is the user automatically able to click anything when they hover over this element? If not, showing the pointer cursor could send conflicting signals",
+      "range": {
+        "startLine": 29,
+        "startChar": 7,
+        "endLine": 29,
+        "endChar": 24
+      },
+      "revId": "6b8ea727ae7204f58f36bd37231309924b134e84",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
