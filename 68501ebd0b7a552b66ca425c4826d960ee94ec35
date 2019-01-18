@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a622d24_fd7e69e3",
+        "filename": "dashboard/src/booking/forms.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-01-18T16:26:21Z",
+      "side": 1,
+      "message": "min and value should be one. There is no reason to allow a user to create a zero length booking.",
+      "range": {
+        "startLine": 64,
+        "startChar": 19,
+        "endLine": 64,
+        "endChar": 31
+      },
+      "revId": "68501ebd0b7a552b66ca425c4826d960ee94ec35",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
