@@ -14,6 +14,7 @@ import urllib
 
 import oauth2 as oauth
 from django.conf import settings
+from django.utils import timezone
 from django.contrib import messages
 from django.contrib.auth import logout, authenticate, login
 from django.contrib.auth.decorators import login_required
@@ -198,7 +199,7 @@ def account_booking_view(request):
     if not request.user.is_authenticated:
         return render(request, "dashboard/login.html", {'title': 'Authentication Required'})
     template = "account/booking_list.html"
-    bookings = list(Booking.objects.filter(owner=request.user).order_by("-start"))
+    bookings = list(Booking.objects.filter(owner=request.user, end__gt=timezone.now()).order_by("-start"))
     collab_bookings = list(request.user.collaborators.all().order_by("-start"))
     context = {"title": "My Bookings", "bookings": bookings, "collab_bookings": collab_bookings}
     return render(request, template, context=context)
