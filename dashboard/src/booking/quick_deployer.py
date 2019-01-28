@@ -33,6 +33,7 @@ from resource_inventory.models import (
     OPNFVConfig
 )
 from resource_inventory.resource_manager import ResourceManager
+from notifier.manager import NotificationHandler
 from booking.models import Booking
 from dashboard.exceptions import (
     InvalidHostnameException,
@@ -124,7 +125,7 @@ def create_from_form(form, request):
         raise InvalidHostnameException("Hostname must comply to RFC 952 and all extensions to it until this point")
     # check that image os is compatible with installer
     if installer in image.os.sup_installers.all():
-        #if installer not here, we can omit that and not check for scenario
+        # if installer not here, we can omit that and not check for scenario
         if not scenario:
             raise IncompatibleScenarioForInstaller("An OPNFV Installer needs a scenario to be chosen to work properly")
         if scenario not in installer.sup_scenarios.all():
@@ -137,10 +138,8 @@ def create_from_form(form, request):
         raise ImageOwnershipInvalid("You are not the owner of the chosen private image")
 
     # check if host type is available
-    #ResourceManager.getInstance().acquireHost(ghost, lab.name)
     available_host_types = ResourceManager.getInstance().getAvailableHostTypes(lab)
     if not profile in available_host_types:
-        # TODO: handle deleting generic resource in this instance along with grb
         raise HostNotAvailable("Could not book selected host due to changed availability. Try again later")
 
     # check if any hosts with profile at lab are still available
@@ -195,7 +194,8 @@ def create_from_form(form, request):
 
     # construct generic interfaces
     for interface_profile in profile.interfaceprofile.all():
-        generic_interface = GenericInterface.objects.create(profile=interface_profile, host=ghost)
+        generic_interface = GenericInterface.objects.create(
+                profile=interface_profile, host=ghost)
         generic_interface.save()
     ghost.save()
 
@@ -203,7 +203,8 @@ def create_from_form(form, request):
     publicnetwork = lab.vlan_manager.get_public_vlan()
     publicvlan = publicnetwork.vlan
     if not publicnetwork:
-        raise NoRemainingPublicNetwork("No public networks were available for your pod")
+        raise NoRemainingPublicNetwork(
+                "No public networks were available for your pod")
     lab.vlan_manager.reserve_public_vlan(publicvlan)
 
     vlan = Vlan.objects.create(vlan_id=publicvlan, tagged=False, public=True)
@@ -213,11 +214,14 @@ def create_from_form(form, request):
 
     # generate resource bundle
     try:
-        resource_bundle = ResourceManager.getInstance().convertResourceBundle(grbundle, config=cbundle)
+        resource_bundle = ResourceManager.getInstance().convertResourceBundle(
+                grbundle, config=cbundle)
     except ResourceAvailabilityException:
-        raise ResourceAvailabilityException("Requested resources not available")
+        raise ResourceAvailabilityException(
+                "Requested resources not available")
     except ModelValidationException:
-        raise ModelValidationException("Encountered error while saving grbundle")
+        raise ModelValidationException(
+                "Encountered error while saving grbundle")
 
     # generate booking
     booking = Booking()
@@ -234,9 +238,8 @@ def create_from_form(form, request):
     print("users field:")
     print(users_field)
     print(type(users_field))
-    #users_field = json.loads(users_field)
     users_field = users_field[2:-2]
-    if users_field: #may be empty after split, if no collaborators entered
+    if users_field:
         users_field = json.loads(users_field)
         for collaborator in users_field:
             user = User.objects.get(id=collaborator['id'])
@@ -245,6 +248,7 @@ def create_from_form(form, request):
 
     # generate job
     JobFactory.makeCompleteJob(booking)
+    NotificationHandler.notify_new_booking(booking)
 
 
 def drop_filter(user):
