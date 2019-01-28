@@ -40,8 +40,13 @@ class ResourceManager:
 
     # public interface
     def deleteResourceBundle(self, resourceBundle):
+        print("Delete Resource Bundle with ")
+        print(resourceBundle)
         for host in Host.objects.filter(bundle=resourceBundle):
+            print("Cleaning Host ")
+            print(host)
             self.releaseHost(host)
+        print("Deleting Bundle")
         resourceBundle.delete()
 
     def convertResourceBundle(self, genericResourceBundle, lab=None, config=None):
@@ -109,10 +114,15 @@ class ResourceManager:
         return host
 
     def releaseHost(self, host):
+        print("Releaseing Host ")
+        print(host)
         host.template = None
         host.bundle = None
         host.booked = False
+        print("saving")
         host.save()
+        print("done")
+        print(host)
 
     def fail_acquire(self, hosts):
         for host in hosts:

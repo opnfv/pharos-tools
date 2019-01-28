@@ -105,5 +105,9 @@ def free_hosts():
         job__complete=True,
         resource__isnull=False
     )
+    print("Got Bookings: ")
+    print(bookings)
     for booking in bookings:
+        print("Cleaning Booking ")
+        print(booking)
         ResourceManager.getInstance().deleteResourceBundle(booking.resource)
