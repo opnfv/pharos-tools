@@ -33,6 +33,7 @@ from resource_inventory.models import (
     OPNFVConfig
 )
 from resource_inventory.resource_manager import ResourceManager
+from notifier.manager import NotificationHandler
 from booking.models import Booking
 from dashboard.exceptions import (
     InvalidHostnameException,
@@ -137,7 +138,6 @@ def create_from_form(form, request):
         raise ImageOwnershipInvalid("You are not the owner of the chosen private image")
 
     # check if host type is available
-    # ResourceManager.getInstance().acquireHost(ghost, lab.name)
     available_host_types = ResourceManager.getInstance().getAvailableHostTypes(lab)
     if profile not in available_host_types:
         # TODO: handle deleting generic resource in this instance along with grb
@@ -195,7 +195,8 @@ def create_from_form(form, request):
 
     # construct generic interfaces
     for interface_profile in profile.interfaceprofile.all():
-        generic_interface = GenericInterface.objects.create(profile=interface_profile, host=ghost)
+        generic_interface = GenericInterface.objects.create(
+                profile=interface_profile, host=ghost)
         generic_interface.save()
     ghost.save()
 
@@ -203,7 +204,8 @@ def create_from_form(form, request):
     publicnetwork = lab.vlan_manager.get_public_vlan()
     publicvlan = publicnetwork.vlan
     if not publicnetwork:
-        raise NoRemainingPublicNetwork("No public networks were available for your pod")
+        raise NoRemainingPublicNetwork(
+                "No public networks were available for your pod")
     lab.vlan_manager.reserve_public_vlan(publicvlan)
 
     vlan = Vlan.objects.create(vlan_id=publicvlan, tagged=False, public=True)
@@ -213,11 +215,14 @@ def create_from_form(form, request):
 
     # generate resource bundle
     try:
-        resource_bundle = ResourceManager.getInstance().convertResourceBundle(grbundle, config=cbundle)
+        resource_bundle = ResourceManager.getInstance().convertResourceBundle(
+                grbundle, config=cbundle)
     except ResourceAvailabilityException:
-        raise ResourceAvailabilityException("Requested resources not available")
+        raise ResourceAvailabilityException(
+                "Requested resources not available")
     except ModelValidationException:
-        raise ModelValidationException("Encountered error while saving grbundle")
+        raise ModelValidationException(
+                "Encountered error while saving grbundle")
 
     # generate booking
     booking = Booking()
@@ -231,8 +236,16 @@ def create_from_form(form, request):
     booking.pdf = ResourceManager().makePDF(booking.resource)
     booking.config_bundle = cbundle
     booking.save()
+<<<<<<< HEAD
     users_field = users_field[2:-2]
     if users_field:  # may be empty after split, if no collaborators entered
+=======
+    print("users field:")
+    print(users_field)
+    print(type(users_field))
+    users_field = users_field[2:-2]
+    if users_field:
+>>>>>>> Update Inbox Featureset
         users_field = json.loads(users_field)
         for collaborator in users_field:
             user = User.objects.get(id=collaborator['id'])
@@ -241,6 +254,7 @@ def create_from_form(form, request):
 
     # generate job
     JobFactory.makeCompleteJob(booking)
+    NotificationHandler.notify_new_booking(booking)
 
 
 def drop_filter(user):
