@@ -1,0 +1,239 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a622d24_179fb953",
+        "filename": "dashboard/src/notifier/views.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-01-30T18:46:57Z",
+      "side": 1,
+      "message": "These views are functions, please dont give them capitalized names",
+      "revId": "9de071d84ba11babc738959774d135c370ccad9d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_1788591e",
+        "filename": "dashboard/src/notifier/views.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-01-30T18:46:57Z",
+      "side": 1,
+      "message": "seems like youre doing extra work. You could have one queryset, e.g:\nNotification.objects.filter(recipients\u003duser.userprofile).order_by(\"-id\")\n\nand then, in your context dict, have unread be qs.exclude(read_by...) and read be qs.filter(...)\n\nI\u0027m unsure if that would save a db query, but it definitely looks nicer",
+      "range": {
+        "startLine": 24,
+        "startChar": 20,
+        "endLine": 25,
+        "endChar": 149
+      },
+      "revId": "9de071d84ba11babc738959774d135c370ccad9d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_77a38d9e",
+        "filename": "dashboard/src/notifier/views.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-01-30T18:46:57Z",
+      "side": 1,
+      "message": "should be get_object_or_404, dont trust that the request is correct",
+      "range": {
+        "startLine": 37,
+        "startChar": 19,
+        "endLine": 37,
+        "endChar": 38
+      },
+      "revId": "9de071d84ba11babc738959774d135c370ccad9d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_f78f9d21",
+        "filename": "dashboard/src/notifier/views.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-01-30T18:46:57Z",
+      "side": 1,
+      "message": "no prints",
+      "range": {
+        "startLine": 47,
+        "startChar": 12,
+        "endLine": 47,
+        "endChar": 19
+      },
+      "revId": "9de071d84ba11babc738959774d135c370ccad9d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_d7942139",
+        "filename": "dashboard/src/notifier/views.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-01-30T18:46:57Z",
+      "side": 1,
+      "message": "no prints",
+      "range": {
+        "startLine": 57,
+        "startChar": 11,
+        "endLine": 57,
+        "endChar": 28
+      },
+      "revId": "9de071d84ba11babc738959774d135c370ccad9d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_57c77145",
+        "filename": "dashboard/src/notifier/views.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-01-30T18:46:57Z",
+      "side": 1,
+      "message": "Theres no sense in doing this if it is a POST request because it will just be ignored",
+      "range": {
+        "startLine": 59,
+        "startChar": 12,
+        "endLine": 60,
+        "endChar": 77
+      },
+      "revId": "9de071d84ba11babc738959774d135c370ccad9d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_b7ad258b",
+        "filename": "dashboard/src/templates/notifier/inbox.html",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-01-30T18:46:57Z",
+      "side": 1,
+      "message": "inconsistent mixing of tabs and spaces",
+      "revId": "9de071d84ba11babc738959774d135c370ccad9d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_57a01190",
+        "filename": "dashboard/src/templates/notifier/inbox.html",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-01-30T18:46:57Z",
+      "side": 1,
+      "message": "dead code",
+      "range": {
+        "startLine": 27,
+        "startChar": 26,
+        "endLine": 27,
+        "endChar": 29
+      },
+      "revId": "9de071d84ba11babc738959774d135c370ccad9d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_37b115e2",
+        "filename": "dashboard/src/templates/notifier/inbox.html",
+        "patchSetId": 1
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-01-30T18:46:57Z",
+      "side": 1,
+      "message": "this function isnt defined anywhere",
+      "range": {
+        "startLine": 79,
+        "startChar": 94,
+        "endLine": 79,
+        "endChar": 109
+      },
+      "revId": "9de071d84ba11babc738959774d135c370ccad9d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_f7b67ddb",
+        "filename": "dashboard/src/templates/notifier/notification.html",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-01-30T18:46:57Z",
+      "side": 1,
+      "message": "inconsistent mixing of tabs and spaces",
+      "revId": "9de071d84ba11babc738959774d135c370ccad9d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_d7bb81c2",
+        "filename": "dashboard/src/templates/notifier/notification.html",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-01-30T18:46:57Z",
+      "side": 1,
+      "message": "no prints",
+      "range": {
+        "startLine": 9,
+        "startChar": 2,
+        "endLine": 9,
+        "endChar": 25
+      },
+      "revId": "9de071d84ba11babc738959774d135c370ccad9d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
