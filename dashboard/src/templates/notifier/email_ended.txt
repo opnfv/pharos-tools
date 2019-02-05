@@ -1,6 +1,11 @@
 {{user_name|default:"Developer"}},
 
-The booking you requested of the OPNFV Lab as a Service has ended.
+{% if owner %}
+The booking you requested from the OPNFV Lab as a Service has ended.
+{% else %}
+The booking you collaborated on at the OPNFV Lab as a Service has ended.
+{% endif %}
+
 
 booking information:
     start: {{booking.start}}
