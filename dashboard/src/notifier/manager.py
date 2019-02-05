@@ -7,10 +7,11 @@
 # http://www.apache.org/licenses/LICENSE-2.0
 ##############################################################################
 import os
-from notifier.models import Notification
+from notifier.models import Notification, Emailed
 
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
+from django.utils import timezone
 
 
 class NotificationHandler(object):
@@ -118,7 +119,7 @@ class NotificationHandler(object):
                 "Your Booking has Expired",
                 message,
                 os.environ.get("DEFAULT_FROM_EMAIL", "opnfv@pharos-dashboard"),
-                user.userprofile.email_addr,
+                [user.userprofile.email_addr],
                 fail_silently=False
             )
 
@@ -129,5 +130,16 @@ class NotificationHandler(object):
         currently only checks if the job is now done so I can send an email,
         may add more functionality later
         """
+        if task.job is None or task.job.booking is None:
+            return
         if task.job.is_fulfilled():
-            cls.email_job_fulfilled(task.job)
+            if task.job.booking.end < timezone.now():
+                if Emailed.objects.filter(end_booking=task.job.booking).exists():
+                    return
+                Emailed.objects.create(end_booking=task.job.booking)
+                cls.email_booking_over(task.job.booking)
+            if task.job.booking.end > timezone.now() and task.job.booking.start < timezone.now():
+                if Emailed.objects.filter(begin_booking=task.job.booking).exists():
+                    return
+                Emailed.objects.create(begin_booking=task.job.booking)
+                cls.email_job_fulfilled(task.job)
