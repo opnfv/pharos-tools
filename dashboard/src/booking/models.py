@@ -13,6 +13,7 @@ from resource_inventory.models import ResourceBundle, ConfigBundle
 from account.models import Lab
 from django.contrib.auth.models import User
 from django.db import models
+from datetime import timedelta
 import resource_inventory.resource_manager
 
 
@@ -50,6 +51,8 @@ class Booking(models.Model):
         conflicting_dates = conflicting_dates.filter(start__lt=self.end)
         if conflicting_dates.count() > 0:
             raise ValueError('This booking overlaps with another booking')
+        if self.start + timedelta(days=21) < self.end:
+            raise ValueError('This booking is longer than what is allowed')
         return super(Booking, self).save(*args, **kwargs)
 
     def delete(self, *args, **kwargs):
