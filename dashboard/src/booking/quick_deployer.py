@@ -230,13 +230,14 @@ def create_from_form(form, request):
     booking.resource = resource_bundle
     booking.pdf = ResourceManager().makePDF(booking.resource)
     booking.config_bundle = cbundle
+    print("saving booking")
     booking.save()
     print("users field:")
     print(users_field)
     print(type(users_field))
-    #users_field = json.loads(users_field)
+    # users_field = json.loads(users_field)
     users_field = users_field[2:-2]
-    if users_field: #may be empty after split, if no collaborators entered
+    if users_field:  # may be empty after split, if no collaborators entered
         users_field = json.loads(users_field)
         for collaborator in users_field:
             user = User.objects.get(id=collaborator['id'])

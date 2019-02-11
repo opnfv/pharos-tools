@@ -34,7 +34,9 @@ def quick_create_clear_fields(request):
 
 
 def quick_create(request):
+    print("quick create view called")
     if not request.user.is_authenticated:
+        print("user isn't authenticated")
         return login(request)
 
     if request.method == 'GET':
@@ -51,17 +53,20 @@ def quick_create(request):
 
         context.update(drop_filter(request.user))
 
+        print("returning view from get")
         return render(request, 'booking/quick_deploy.html', context)
     if request.method == 'POST':
         form = QuickBookingForm(request.POST, user=request.user)
         context = {}
         context['lab_profile_map'] = {}
         context['form'] = form
+        print("post called")
 
         if form.is_valid():
             try:
                 create_from_form(form, request)
             except Exception as e:
+                print("form was valid but create excepted: " + str(e))
                 messages.error(request, "Whoops, looks like an error occurred. "
                                         "Let the admins know that you got the following message: " + str(e))
                 return render(request, 'workflow/exit_redirect.html', context)
@@ -70,6 +75,7 @@ def quick_create(request):
                                       "Check Account->My Bookings for the status of your new booking")
             return render(request, 'workflow/exit_redirect.html', context)
         else:
+            print("form didn't validate")
             messages.error(request, "Looks like the form didn't validate. Check that you entered everything correctly")
             return render(request, 'booking/quick_deploy.html', context)
 
