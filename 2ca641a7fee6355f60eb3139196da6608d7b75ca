@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a622d24_4447b74b",
+        "filename": "dashboard/src/dashboard/testing_utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-02-19T17:15:42Z",
+      "side": 1,
+      "message": "whitespace",
+      "range": {
+        "startLine": 304,
+        "startChar": 0,
+        "endLine": 304,
+        "endChar": 4
+      },
+      "revId": "2ca641a7fee6355f60eb3139196da6608d7b75ca",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_a475eb99",
+        "filename": "dashboard/test.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-02-19T17:15:42Z",
+      "side": 1,
+      "message": "whitespace",
+      "range": {
+        "startLine": 16,
+        "startChar": 42,
+        "endLine": 16,
+        "endChar": 43
+      },
+      "revId": "2ca641a7fee6355f60eb3139196da6608d7b75ca",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
