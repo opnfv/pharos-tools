@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da01753e_b140c036",
+        "filename": "dashboard/src/booking/quick_deployer.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-02-20T16:25:12Z",
+      "side": 1,
+      "message": "useless return",
+      "range": {
+        "startLine": 123,
+        "startChar": 4,
+        "endLine": 123,
+        "endChar": 15
+      },
+      "revId": "ef6f71a2b3457cd87210405ad94077081cf6b989",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_913dbcbe",
+        "filename": "dashboard/src/booking/quick_deployer.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-02-20T16:25:12Z",
+      "side": 1,
+      "message": "whitespace",
+      "range": {
+        "startLine": 141,
+        "startChar": 0,
+        "endLine": 141,
+        "endChar": 4
+      },
+      "revId": "ef6f71a2b3457cd87210405ad94077081cf6b989",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_f14a4854",
+        "filename": "dashboard/src/booking/quick_deployer.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-02-20T16:25:12Z",
+      "side": 1,
+      "message": "whitespace",
+      "range": {
+        "startLine": 179,
+        "startChar": 0,
+        "endLine": 179,
+        "endChar": 4
+      },
+      "revId": "ef6f71a2b3457cd87210405ad94077081cf6b989",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_d147444a",
+        "filename": "dashboard/src/booking/quick_deployer.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-02-20T16:25:12Z",
+      "side": 1,
+      "message": "whitespace",
+      "range": {
+        "startLine": 189,
+        "startChar": 0,
+        "endLine": 189,
+        "endChar": 4
+      },
+      "revId": "ef6f71a2b3457cd87210405ad94077081cf6b989",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
