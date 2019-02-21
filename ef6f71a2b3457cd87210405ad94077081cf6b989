@@ -91,6 +91,29 @@
       "revId": "ef6f71a2b3457cd87210405ad94077081cf6b989",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_34ff9e03",
+        "filename": "dashboard/src/booking/quick_deployer.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-02-21T19:02:28Z",
+      "side": 1,
+      "message": "need to check publicnetwork.vlan as a sanity check, this seems to be the cause of a bug  encountered recently",
+      "range": {
+        "startLine": 257,
+        "startChar": 0,
+        "endLine": 258,
+        "endChar": 88
+      },
+      "revId": "ef6f71a2b3457cd87210405ad94077081cf6b989",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
     }
   ]
 }
