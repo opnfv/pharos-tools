@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da01753e_9a1cb115",
+        "filename": "dashboard/src/resource_inventory/pdf_templater.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-02-26T17:08:51Z",
+      "side": 1,
+      "message": "maybe store in local var",
+      "range": {
+        "startLine": 121,
+        "startChar": 20,
+        "endLine": 124,
+        "endChar": 48
+      },
+      "revId": "f0e36e6271b7aee29a3c53e54055410717fff281",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_fa197d23",
+        "filename": "dashboard/src/resource_inventory/pdf_templater.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-02-26T17:08:51Z",
+      "side": 1,
+      "message": "no prints",
+      "range": {
+        "startLine": 154,
+        "startChar": 0,
+        "endLine": 155,
+        "endChar": 29
+      },
+      "revId": "f0e36e6271b7aee29a3c53e54055410717fff281",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
