@@ -1,0 +1,475 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da01753e_9aacb137",
+        "filename": "dashboard/src/booking/quick_deployer.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-02-27T15:58:48Z",
+      "side": 1,
+      "message": "should be .exists(). Its faster and the semantics match better",
+      "range": {
+        "startLine": 121,
+        "startChar": 19,
+        "endLine": 121,
+        "endChar": 24
+      },
+      "revId": "dc75fc091fa2de91eb0ea9c1b0b1ed8b6f0f15c2",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_faa97d25",
+        "filename": "dashboard/src/booking/quick_deployer.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-02-27T15:58:48Z",
+      "side": 1,
+      "message": "whitespace",
+      "range": {
+        "startLine": 142,
+        "startChar": 2,
+        "endLine": 142,
+        "endChar": 3
+      },
+      "revId": "dc75fc091fa2de91eb0ea9c1b0b1ed8b6f0f15c2",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_1a68c1f4",
+        "filename": "dashboard/src/booking/quick_deployer.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-02-27T15:58:48Z",
+      "side": 1,
+      "message": "ws",
+      "range": {
+        "startLine": 180,
+        "startChar": 0,
+        "endLine": 180,
+        "endChar": 4
+      },
+      "revId": "dc75fc091fa2de91eb0ea9c1b0b1ed8b6f0f15c2",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_5a7249e6",
+        "filename": "dashboard/src/booking/quick_deployer.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-02-27T15:58:48Z",
+      "side": 1,
+      "message": "ws",
+      "range": {
+        "startLine": 190,
+        "startChar": 0,
+        "endLine": 190,
+        "endChar": 4
+      },
+      "revId": "dc75fc091fa2de91eb0ea9c1b0b1ed8b6f0f15c2",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_fa805d8d",
+        "filename": "dashboard/src/booking/quick_deployer.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-02-27T15:58:48Z",
+      "side": 1,
+      "message": "pretty meaningless to re-raise same exceptions if youre not doing any e.g. cleanup",
+      "range": {
+        "startLine": 197,
+        "startChar": 0,
+        "endLine": 200,
+        "endChar": 81
+      },
+      "revId": "dc75fc091fa2de91eb0ea9c1b0b1ed8b6f0f15c2",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_3a4ae583",
+        "filename": "dashboard/src/booking/quick_deployer.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-02-27T15:58:48Z",
+      "side": 1,
+      "message": "I think this can all go in a separate check_invariants method that just accepts the cleaned_data dict",
+      "range": {
+        "startLine": 220,
+        "startChar": 0,
+        "endLine": 231,
+        "endChar": 88
+      },
+      "revId": "dc75fc091fa2de91eb0ea9c1b0b1ed8b6f0f15c2",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_7a446d74",
+        "filename": "dashboard/src/booking/quick_deployer.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-02-27T15:58:48Z",
+      "side": 1,
+      "message": "I think this should be a part of the method that creates the generic host",
+      "range": {
+        "startLine": 249,
+        "startChar": 0,
+        "endLine": 252,
+        "endChar": 32
+      },
+      "revId": "dc75fc091fa2de91eb0ea9c1b0b1ed8b6f0f15c2",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_1a4f2194",
+        "filename": "dashboard/src/booking/quick_deployer.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-02-27T15:58:48Z",
+      "side": 1,
+      "message": "dead code",
+      "range": {
+        "startLine": 253,
+        "startChar": 0,
+        "endLine": 253,
+        "endChar": 18
+      },
+      "revId": "dc75fc091fa2de91eb0ea9c1b0b1ed8b6f0f15c2",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_5a49a98a",
+        "filename": "dashboard/src/booking/quick_deployer.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-02-27T15:58:48Z",
+      "side": 1,
+      "message": "this check needs to happen before you try to access network.vlan on the line above",
+      "range": {
+        "startLine": 258,
+        "startChar": 0,
+        "endLine": 258,
+        "endChar": 25
+      },
+      "revId": "dc75fc091fa2de91eb0ea9c1b0b1ed8b6f0f15c2",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_9a2151b7",
+        "filename": "dashboard/src/booking/tests/test_quick_booking.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-02-27T15:58:48Z",
+      "side": 1,
+      "message": "I think there is a big need to abstract some of this out. Each of these test cases could be 3-4 lines, where they get the standard payload, change a value, and assert about its failure. Personally I would make a super class that does all the work, and make each test case its own subclass. So each test method would literally be:\n\nself.payload[\u0027key\u0027] \u003d \"wrongvalue\"\nresp \u003d self.client.post(self.url, payload)\nself.assertBookingFailsWith(resp, \"This error message\")",
+      "revId": "dc75fc091fa2de91eb0ea9c1b0b1ed8b6f0f15c2",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_ba5d354b",
+        "filename": "dashboard/src/booking/tests/test_quick_booking.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-02-27T15:58:48Z",
+      "side": 1,
+      "message": "no prints",
+      "range": {
+        "startLine": 50,
+        "startChar": 18,
+        "endLine": 50,
+        "endChar": 21
+      },
+      "revId": "dc75fc091fa2de91eb0ea9c1b0b1ed8b6f0f15c2",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_9a5af14e",
+        "filename": "dashboard/src/booking/tests/test_quick_booking.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-02-27T15:58:48Z",
+      "side": 1,
+      "message": "no prints",
+      "range": {
+        "startLine": 55,
+        "startChar": 0,
+        "endLine": 55,
+        "endChar": 57
+      },
+      "revId": "dc75fc091fa2de91eb0ea9c1b0b1ed8b6f0f15c2",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_fa57bd24",
+        "filename": "dashboard/src/booking/tests/test_quick_booking.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-02-27T15:58:48Z",
+      "side": 1,
+      "message": "This should be kept somewhere else and modified by the individual test cases as necessary. This is a pretty big duplication",
+      "range": {
+        "startLine": 94,
+        "startChar": 55,
+        "endLine": 107,
+        "endChar": 10
+      },
+      "revId": "dc75fc091fa2de91eb0ea9c1b0b1ed8b6f0f15c2",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_da547923",
+        "filename": "dashboard/src/booking/tests/test_quick_booking.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-02-27T15:58:48Z",
+      "side": 1,
+      "message": "add an assert that there is a relevant error message",
+      "range": {
+        "startLine": 109,
+        "startChar": 47,
+        "endLine": 109,
+        "endChar": 50
+      },
+      "revId": "dc75fc091fa2de91eb0ea9c1b0b1ed8b6f0f15c2",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_3a31450c",
+        "filename": "dashboard/src/booking/tests/test_quick_booking.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-02-27T15:58:48Z",
+      "side": 1,
+      "message": "whitespace",
+      "range": {
+        "startLine": 110,
+        "startChar": 0,
+        "endLine": 110,
+        "endChar": 4
+      },
+      "revId": "dc75fc091fa2de91eb0ea9c1b0b1ed8b6f0f15c2",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_1a360104",
+        "filename": "dashboard/src/booking/tests/test_quick_booking.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-02-27T15:58:48Z",
+      "side": 1,
+      "message": "check error message",
+      "range": {
+        "startLine": 127,
+        "startChar": 47,
+        "endLine": 127,
+        "endChar": 50
+      },
+      "revId": "dc75fc091fa2de91eb0ea9c1b0b1ed8b6f0f15c2",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_7a3bcdeb",
+        "filename": "dashboard/src/booking/tests/test_quick_booking.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-02-27T15:58:48Z",
+      "side": 1,
+      "message": "check error message",
+      "range": {
+        "startLine": 145,
+        "startChar": 47,
+        "endLine": 145,
+        "endChar": 50
+      },
+      "revId": "dc75fc091fa2de91eb0ea9c1b0b1ed8b6f0f15c2",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_fa2e9da4",
+        "filename": "dashboard/src/booking/views.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-02-27T15:58:48Z",
+      "side": 1,
+      "message": "remove file from commit, you only added prints",
+      "revId": "dc75fc091fa2de91eb0ea9c1b0b1ed8b6f0f15c2",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_da2bd992",
+        "filename": "dashboard/src/dashboard/testing_utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-02-27T15:58:48Z",
+      "side": 1,
+      "message": "whitespace",
+      "range": {
+        "startLine": 43,
+        "startChar": 0,
+        "endLine": 43,
+        "endChar": 8
+      },
+      "revId": "dc75fc091fa2de91eb0ea9c1b0b1ed8b6f0f15c2",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_3a182584",
+        "filename": "dashboard/src/dashboard/testing_utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-02-27T15:58:48Z",
+      "side": 1,
+      "message": "json.dumps() ?",
+      "range": {
+        "startLine": 80,
+        "startChar": 0,
+        "endLine": 80,
+        "endChar": 74
+      },
+      "revId": "dc75fc091fa2de91eb0ea9c1b0b1ed8b6f0f15c2",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_7a12ad63",
+        "filename": "dashboard/test.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-02-27T15:58:48Z",
+      "side": 1,
+      "message": "whitespace",
+      "range": {
+        "startLine": 16,
+        "startChar": 42,
+        "endLine": 16,
+        "endChar": 43
+      },
+      "revId": "dc75fc091fa2de91eb0ea9c1b0b1ed8b6f0f15c2",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
