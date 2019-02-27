@@ -114,6 +114,30 @@
       "revId": "ef6f71a2b3457cd87210405ad94077081cf6b989",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_34a15eaa",
+        "filename": "dashboard/src/booking/quick_deployer.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-02-27T15:58:48Z",
+      "side": 1,
+      "message": "No, we need to check the return of get_public_vlan() *before* we use it to see if we have run out of public nets.",
+      "parentUuid": "da01753e_34ff9e03",
+      "range": {
+        "startLine": 257,
+        "startChar": 0,
+        "endLine": 258,
+        "endChar": 88
+      },
+      "revId": "ef6f71a2b3457cd87210405ad94077081cf6b989",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
     }
   ]
 }
