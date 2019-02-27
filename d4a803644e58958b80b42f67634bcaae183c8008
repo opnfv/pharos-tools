@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da01753e_e58c3e82",
+        "filename": "dashboard/src/booking/quick_deployer.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-02-27T18:56:21Z",
+      "side": 1,
+      "message": "still whitespace",
+      "range": {
+        "startLine": 180,
+        "startChar": 0,
+        "endLine": 180,
+        "endChar": 4
+      },
+      "revId": "d4a803644e58958b80b42f67634bcaae183c8008",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_45e9ca19",
+        "filename": "dashboard/src/booking/quick_deployer.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-02-27T18:56:21Z",
+      "side": 1,
+      "message": "middle click paste?",
+      "range": {
+        "startLine": 277,
+        "startChar": 0,
+        "endLine": 278,
+        "endChar": 88
+      },
+      "revId": "d4a803644e58958b80b42f67634bcaae183c8008",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_85f3b209",
+        "filename": "dashboard/src/booking/tests/test_quick_booking.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-02-27T18:56:21Z",
+      "side": 1,
+      "message": "can probably go into another private method",
+      "range": {
+        "startLine": 53,
+        "startChar": 0,
+        "endLine": 64,
+        "endChar": 52
+      },
+      "revId": "d4a803644e58958b80b42f67634bcaae183c8008",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
