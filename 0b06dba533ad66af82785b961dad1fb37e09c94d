@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da01753e_c55dba4a",
+        "filename": "dashboard/src/templates/account/booking_list.html",
+        "patchSetId": 4
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-02-28T22:15:13Z",
+      "side": 1,
+      "message": "there\u0027s a bootstrap builtin that we use elsewhere that may be a better fit for this, but if this works there isn\u0027t really a technical issue other than uniformity.",
+      "range": {
+        "startLine": 50,
+        "startChar": 0,
+        "endLine": 52,
+        "endChar": 9
+      },
+      "revId": "0b06dba533ad66af82785b961dad1fb37e09c94d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_a55a364e",
+        "filename": "dashboard/src/templates/account/booking_list.html",
+        "patchSetId": 4
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-02-28T22:15:13Z",
+      "side": 1,
+      "message": "I\u0027d be worried with this implementation (as it doesn\u0027t have an absolute state supplied as an argument) about this function being called before the DOM is fully built as element visibility could get out of sync. A toggle with a boolean state variable for the whole set would probably be slightly more reliable.",
+      "range": {
+        "startLine": 90,
+        "startChar": 0,
+        "endLine": 97,
+        "endChar": 5
+      },
+      "revId": "0b06dba533ad66af82785b961dad1fb37e09c94d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
