@@ -22,6 +22,30 @@
       "revId": "af39912eac15dc1b915edb15bb6a320092f328da",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_c0f808c7",
+        "filename": "dashboard/src/notifier/models.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-03-01T18:19:15Z",
+      "side": 1,
+      "message": "I would like to separate the API models from the notification subsystem so we can change how we notify people without changing the API models constantly",
+      "parentUuid": "da01753e_e5543e23",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 7
+      },
+      "revId": "af39912eac15dc1b915edb15bb6a320092f328da",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
     }
   ]
 }
