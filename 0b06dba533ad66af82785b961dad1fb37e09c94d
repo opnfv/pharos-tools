@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "da01753e_000330b9",
+        "filename": "dashboard/src/templates/account/booking_list.html",
+        "patchSetId": 4
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-03-01T16:15:07Z",
+      "side": 1,
+      "message": "Which part, the \u003ci\u003e caret or the toggle display? I just copied the \u003ci\u003e caret tag from your html on the side menu drop down. I would be happy to use a bootstrap thing.",
+      "parentUuid": "da01753e_c55dba4a",
+      "range": {
+        "startLine": 50,
+        "startChar": 0,
+        "endLine": 52,
+        "endChar": 9
+      },
+      "revId": "0b06dba533ad66af82785b961dad1fb37e09c94d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da01753e_a55a364e",
         "filename": "dashboard/src/templates/account/booking_list.html",
         "patchSetId": 4
@@ -36,6 +60,30 @@
       "writtenOn": "2019-02-28T22:15:13Z",
       "side": 1,
       "message": "I\u0027d be worried with this implementation (as it doesn\u0027t have an absolute state supplied as an argument) about this function being called before the DOM is fully built as element visibility could get out of sync. A toggle with a boolean state variable for the whole set would probably be slightly more reliable.",
+      "range": {
+        "startLine": 90,
+        "startChar": 0,
+        "endLine": 97,
+        "endChar": 5
+      },
+      "revId": "0b06dba533ad66af82785b961dad1fb37e09c94d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_e0ff0ca9",
+        "filename": "dashboard/src/templates/account/booking_list.html",
+        "patchSetId": 4
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-03-01T16:15:07Z",
+      "side": 1,
+      "message": "I\u0027m not sure I understand your concern. I am toggling based on the current display attribute of the element. Can you elaborate about what you mean by a boolean state variable for the set and why its more reliable?",
+      "parentUuid": "da01753e_a55a364e",
       "range": {
         "startLine": 90,
         "startChar": 0,
