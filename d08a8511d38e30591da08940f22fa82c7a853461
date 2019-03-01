@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da01753e_203114a3",
+        "filename": "dashboard/src/booking/models.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-03-01T16:19:42Z",
+      "side": 1,
+      "message": "This is the second or third place we have hardcoded this value. I would recommend removing this file from this commit. We should abstract out some ADMIN_RULES class and use that everywhere.",
+      "range": {
+        "startLine": 54,
+        "startChar": 0,
+        "endLine": 55,
+        "endChar": 75
+      },
+      "revId": "d08a8511d38e30591da08940f22fa82c7a853461",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
