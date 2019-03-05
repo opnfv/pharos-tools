@@ -45,6 +45,128 @@ class BookingContextData(object):
         self.pubnet = instantiate_publicnet(10, self.lab)
 
 
+"""
+Info for instantiate_booking() function:
+[topology] argument structure:
+    the [topology] argument should describe the structure of the pod
+    the top level should be a dictionary, with each key being a hostname
+    each value in the top level should be a dictionary with two keys:
+        "type" should map to a host profile instance
+        "nets" should map to a list of interfaces each with a list of
+            dictionaries each defining a network in the format
+            { "name": "netname", "tagged": True|False, "public": True|False }
+            each network is defined if a matching name is not found
+
+    sample argument structure:
+        topology={
+            "host1": {
+                      "type": HPE_X86,
+                      "nets": [
+                                0: [
+                                        0: { "name": "public", "tagged": True, "public": True },
+                                        1: { "name": "private", "tagged": False, "public": False },
+                                   ]
+                                1: []
+                            ]
+                  }
+        }
+"""
+
+
+def instantiate_booking(owner,
+                        start,
+                        end,
+                        booking_identifier,
+                        lab=Lab.objects.first(),
+                        purpose="purposetext",
+                        project="projecttext",
+                        collaborators=[],
+                        topology={}):
+    grb = instantiate_grb(topology, owner, lab, booking_identifier)
+
+
+def instantiate_cb(grb,
+                   owner,
+                   booking_identifier,
+                   roles={},
+                   name="",
+                   description=""):
+
+
+def instantiate_grb(topology,
+                    owner,
+                    lab,
+                    booking_identifier):
+
+    grb = GenericResourceBundle(owner=owner, lab=lab)
+    grb.name = str(booking_identifier) + "_grb"
+    grb.description = "grb geerated by intantiate_grb() method"
+    grb.save()
+
+    networks = {}
+    generichosts = []
+
+    for hostname in topology.keys():
+        info = topology[hostname]
+        host_profile = info["type"]
+
+        # need to construct host from hostname and type
+        gresource = instantiate_gresource(grb, hostname)
+        ghost = instantiate_ghost(gresource, host_profile)
+
+        gresource.save()
+        ghost.save()
+
+        # set up networks
+        nets = info["nets"]
+        for interface_index, interface_profile in enumerate(host_profile.interfaceprofile.all()):
+            generic_interface = GenericInterface()
+            generic_interface.host = ghost
+            generic_interface.profile = interface_profile
+
+            netconfig = nets[interface_index]
+            for network_index, network_info in enumerate(netconfig):
+                network_name = network_info["name"]
+                network = None
+                if network_name in networks:
+                    network = networks[network_name]
+                else:
+                    network = Network()
+                    network.name = network_name
+                    network.vlan_id = lab.vlan_manager.get_vlan()
+                    network.save()
+                    networks[network_name] = network
+
+                vlan = Vlan()
+                vlan.vlan_id = network.vlan_id
+                vlan.public = network_info["public"]
+                vlan.tagged = network_info["tagged"]
+                vlan.save()
+
+    return grb
+
+
+def instantiate_gresource(bundle, hostname):
+    if not re.match(r"(?=^.{1,253}$)(^([A-Za-z0-9-_]{1,62}\.)*[A-Za-z0-9-_]{1,63})$", hostname):
+        raise InvalidHostnameException("Hostname must comply to RFC 952 and all extensions to it until this point")
+    gresource = GenericResource(bundle=bundle, name=hostname)
+    gresource.save()
+
+    return gresource
+
+
+def instantiate_ghost(generic_resource, host_profile):
+    ghost = GenericHost()
+    ghost.resource = generic_resource
+    ghost.profile = host_profile
+    ghost.save()
+
+    return ghost
+
+
+def instantiate_gresource(grb, hostname)
+
+
 def instantiate_user(is_superuser,
                      username="testuser",
                      password="testpassword",
