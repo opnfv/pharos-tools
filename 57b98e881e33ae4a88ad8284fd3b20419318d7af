@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da01753e_2b1d7574",
+        "filename": "dashboard/src/api/tests/unit_test_views.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-03-06T17:18:45Z",
+      "side": 1,
+      "message": "This looks pretty identical to the setup method of the booking tests. Maybe there should be some object that encompasses all this that can be created in a utils function",
+      "range": {
+        "startLine": 43,
+        "startChar": 0,
+        "endLine": 63,
+        "endChar": 29
+      },
+      "revId": "57b98e881e33ae4a88ad8284fd3b20419318d7af",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
