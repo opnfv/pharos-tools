@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da01753e_46ff1002",
+        "filename": "dashboard/src/api/tests/unit_test_views.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-03-06T19:16:34Z",
+      "side": 1,
+      "message": "if all you want is a map to lists, put the empty lists directly in the map. Its a lot of extra verbosity for nothing",
+      "range": {
+        "startLine": 99,
+        "startChar": 2,
+        "endLine": 110,
+        "endChar": 44
+      },
+      "revId": "d61d22d453f543806d412b6e6852a269a4b86259",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
