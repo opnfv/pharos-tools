@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da01753e_faffb8a8",
+        "filename": "dashboard/src/api/tests/test_views_unittest.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-03-08T17:06:48Z",
+      "side": 1,
+      "message": "context will not be true for all access tasks. VPN tasks don\u0027t require it, for example",
+      "range": {
+        "startLine": 100,
+        "startChar": 5,
+        "endLine": 100,
+        "endChar": 39
+      },
+      "revId": "165ca52c2a19a3f242860b21bf9d2bb001ef348e",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_5a2c044b",
+        "filename": "dashboard/src/api/tests/test_views_unittest.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-03-08T17:06:48Z",
+      "side": 1,
+      "message": "You\u0027re trying to be way too clever. Testing should be very straightforward and easy to follow. \n\nEach relation / config model should be a new test case so that we can clearly see what passes and what fails.\n\nDon\u0027t mess around with passing around callables and types and all that. Just create a booking, verify one kind of config, and move on to the next test case.",
+      "range": {
+        "startLine": 182,
+        "startChar": 0,
+        "endLine": 201,
+        "endChar": 55
+      },
+      "revId": "165ca52c2a19a3f242860b21bf9d2bb001ef348e",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
