@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da01753e_9d82e6fe",
+        "filename": "dashboard/src/dashboard/testing_utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-03-12T12:39:40Z",
+      "side": 1,
+      "message": "I think the generic resource can be dealt with entirely inside the generic host method because you dont need it anywhere else",
+      "range": {
+        "startLine": 114,
+        "startChar": 0,
+        "endLine": 114,
+        "endChar": 56
+      },
+      "revId": "99a0464fa68bed83e44735f8ee176d2b31333bc6",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_7d874210",
+        "filename": "dashboard/src/dashboard/testing_utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-03-12T12:39:40Z",
+      "side": 1,
+      "message": "if the network is public, you should use vlan_manager.get_public_vlan()\n\nYou also need to remember to reserve the vlans",
+      "range": {
+        "startLine": 142,
+        "startChar": 1,
+        "endLine": 142,
+        "endChar": 52
+      },
+      "revId": "99a0464fa68bed83e44735f8ee176d2b31333bc6",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
