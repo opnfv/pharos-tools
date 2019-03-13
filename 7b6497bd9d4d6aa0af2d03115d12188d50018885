@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da01753e_1077fd03",
+        "filename": "dashboard/src/api/tests/test_views_unittest.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-03-13T21:02:20Z",
+      "side": 1,
+      "message": "does this need to happen before every test?",
+      "range": {
+        "startLine": 83,
+        "startChar": 0,
+        "endLine": 84,
+        "endChar": 70
+      },
+      "revId": "7b6497bd9d4d6aa0af2d03115d12188d50018885",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_f0735913",
+        "filename": "dashboard/src/api/tests/test_views_unittest.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-03-13T21:02:20Z",
+      "side": 1,
+      "message": "context is not always required",
+      "range": {
+        "startLine": 117,
+        "startChar": 0,
+        "endLine": 117,
+        "endChar": 39
+      },
+      "revId": "7b6497bd9d4d6aa0af2d03115d12188d50018885",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_50606535",
+        "filename": "dashboard/src/api/tests/test_views_unittest.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-03-13T21:02:20Z",
+      "side": 1,
+      "message": "filter by job, or use list comprehension from the relations",
+      "range": {
+        "startLine": 219,
+        "startChar": 46,
+        "endLine": 219,
+        "endChar": 49
+      },
+      "revId": "7b6497bd9d4d6aa0af2d03115d12188d50018885",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_3065e145",
+        "filename": "dashboard/src/dashboard/testing_utils.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-03-13T21:02:20Z",
+      "side": 1,
+      "message": "redundant",
+      "range": {
+        "startLine": 199,
+        "startChar": 46,
+        "endLine": 199,
+        "endChar": 53
+      },
+      "revId": "7b6497bd9d4d6aa0af2d03115d12188d50018885",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
