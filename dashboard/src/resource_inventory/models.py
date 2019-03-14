@@ -115,11 +115,17 @@ class Network(models.Model):
         return self.name
 
 
+class Bridge(models.Model):
+    id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=512, default="")
+
+
 class Vlan(models.Model):
     id = models.AutoField(primary_key=True)
     vlan_id = models.IntegerField()
     tagged = models.BooleanField()
     public = models.BooleanField(default=False)
+    bridge = models.ForeignKey(Bridge, null=True)
 
     def __str__(self):
         return str(self.vlan_id) + ("_T" if self.tagged else "")
