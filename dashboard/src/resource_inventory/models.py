@@ -16,6 +16,15 @@ import re
 from account.models import Lab
 
 
+class Network(models.Model):
+    id = models.AutoField(primary_key=True)
+    vlan_id = models.IntegerField()
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
+
+
 # profile of resources hosted by labs
 class HostProfile(models.Model):
     id = models.AutoField(primary_key=True)
@@ -105,14 +114,12 @@ class RamProfile(models.Model):
         return str(self.amount) + "G for " + str(self.host)
 
 
-# Networking -- located here due to import order requirements
-class Network(models.Model):
-    id = models.AutoField(primary_key=True)
-    vlan_id = models.IntegerField()
+class NetworkRole(models.Model):
     name = models.CharField(max_length=100)
+    network = models.ForeignKey(Network)
 
     def __str__(self):
-        return self.name
+        return self.name + " role on network " + self.network
 
 
 class Vlan(models.Model):
@@ -240,6 +247,7 @@ class OPNFVConfig(models.Model):
     installer = models.ForeignKey(Installer, on_delete=models.CASCADE)
     scenario = models.ForeignKey(Scenario, on_delete=models.CASCADE)
     bundle = models.ForeignKey(ConfigBundle, related_name="opnfv_config", on_delete=models.CASCADE)
+    networks = models.ManyToManyField(NetworkRole, on_delete=models.DO_NOTHING)
 
     def __str__(self):
         return "OPNFV job with " + str(self.installer) + " and " + str(self.scenario)
