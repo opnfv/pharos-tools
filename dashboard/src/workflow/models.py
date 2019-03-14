@@ -453,6 +453,11 @@ class Repository():
             except Exception as e:
                 return "GRB, saving hosts generated exception: " + str(e) + " CODE:0x0005"
 
+            if 'networks' in models:
+                for net in models['networks']:
+                    net.bundle = bundle
+                    net.save()
+
             if 'interfaces' in models:
                 for interface_set in models['interfaces'].values():
                     for interface in interface_set:
@@ -464,20 +469,20 @@ class Repository():
             else:
                 return "GRB, no interface set provided. CODE:0x001a"
 
-            if 'vlans' in models:
-                for resource_name, mapping in models['vlans'].items():
-                    for profile_name, vlan_set in mapping.items():
+            if 'connections' in models:
+                for resource_name, mapping in models['connections'].items():
+                    for profile_name, connection_set in mapping.items():
                         interface = GenericInterface.objects.get(
                             profile__name=profile_name,
                             host__resource__name=resource_name,
                             host__resource__bundle=models['bundle']
                         )
-                        for vlan in vlan_set:
+                        for connection in connection_set:
                             try:
-                                vlan.save()
-                                interface.vlans.add(vlan)
+                                connection.save()
+                                interface.connections.add(connection)
                             except Exception as e:
-                                return "GRB, saving vlan " + str(vlan) + " failed. Exception: " + str(e) + ". CODE:0x0017"
+                                return "GRB, saving vlan " + str(connection) + " failed. Exception: " + str(e) + ". CODE:0x0017"
             else:
                 return "GRB, no vlan set provided. CODE:0x0018"
 

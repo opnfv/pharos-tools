@@ -25,11 +25,12 @@ from workflow.forms import (
 )
 from resource_inventory.models import (
     GenericResourceBundle,
-    Vlan,
     GenericInterface,
     GenericHost,
     GenericResource,
-    HostProfile
+    HostProfile,
+    Network,
+    NetworkConnection
 )
 from dashboard.exceptions import (
     InvalidVlanConfigurationException,
@@ -239,15 +240,15 @@ class Define_Nets(WorkflowStep):
             self.metastep.set_valid("Networks applied successfully")
         except ResourceAvailabilityException:
             self.metastep.set_invalid("Public network not availble")
-        except Exception:
-            self.metastep.set_invalid("An error occurred when applying networks")
+        except Exception as e:
+            self.metastep.set_invalid("An error occurred when applying networks: " + str(e))
         return self.render(request)
 
     def updateModels(self, xmlData):
         models = self.repo_get(self.repo.GRESOURCE_BUNDLE_MODELS, {})
-        models["vlans"] = {}
+        models["connections"] = {}
+        models['networks'] = []
         given_hosts, interfaces = self.parseXml(xmlData)
-        vlan_manager = models['bundle'].lab.vlan_manager
         existing_host_list = models.get("hosts", [])
         existing_hosts = {}  # maps id to host
         for host in existing_host_list:
@@ -260,19 +261,19 @@ class Define_Nets(WorkflowStep):
 
             for ifaceId in given_host['interfaces']:
                 iface = interfaces[ifaceId]
-                if existing_host.resource.name not in models['vlans']:
-                    models['vlans'][existing_host.resource.name] = {}
-                models['vlans'][existing_host.resource.name][iface['profile_name']] = []
+                if existing_host.resource.name not in models['connections']:
+                    models['connections'][existing_host.resource.name] = {}
+                models['connections'][existing_host.resource.name][iface['profile_name']] = []
                 for network in iface['networks']:
-                    vlan_id = network['network']['vlan']
-                    is_public = network['network']['public']
-                    if is_public:
-                        public_net = vlan_manager.get_public_vlan()
-                        if public_net is None:
-                            raise ResourceAvailabilityException("No public networks available")
-                        vlan_id = vlan_manager.get_public_vlan().vlan
-                    vlan = Vlan(vlan_id=vlan_id, tagged=network['tagged'], public=is_public)
-                    models['vlans'][existing_host.resource.name][iface['profile_name']].append(vlan)
+                    # this is wrong. This creates too many Networks, and we need to associate Network and Connection in models somehow
+                    net = Network()
+                    net.bundle = bundle
+                    net.name = network['network']['name']
+                    # vlan_id = network['network']['vlan']
+                    net.is_public = network['network']['public']
+                    models['networks'].append(net)
+                    connection = NetworkConnection(vlan_is_tagged=network['tagged'], network=net)
+                    models['connections'][existing_host.resource.name][iface['profile_name']].append(connection)
         bundle.xml = xmlData
         self.repo_put(self.repo.GRESOURCE_BUNDLE_MODELS, models)
 
@@ -305,13 +306,15 @@ class Define_Nets(WorkflowStep):
                     if tgt in untagged_ints and not tagged:
                         raise InvalidVlanConfigurationException("More than one untagged vlan on an interface")
                     interface = interfaces[tgt]
-                    untagged_ints[tgt] = True
+                    if not tagged:
+                        untagged_ints[tgt] = True
                 else:
                     network = networks[parent_nets[tgt]]
                     if src in untagged_ints and not tagged:
                         raise InvalidVlanConfigurationException("More than one untagged vlan on an interface")
                     interface = interfaces[src]
-                    untagged_ints[src] = True
+                    if not tagged:
+                        untagged_ints[src] = True
                 interface['networks'].append({"network": network, "tagged": tagged})
 
             elif "network" in cellId:  # cell is a network
