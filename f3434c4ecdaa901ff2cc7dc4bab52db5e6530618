@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da01753e_d36c5f39",
+        "filename": "dashboard/src/booking/quick_deployer.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-03-15T14:48:38Z",
+      "side": 1,
+      "message": "should not be there",
+      "range": {
+        "startLine": 240,
+        "startChar": 24,
+        "endLine": 240,
+        "endChar": 31
+      },
+      "revId": "f3434c4ecdaa901ff2cc7dc4bab52db5e6530618",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_13770704",
+        "filename": "dashboard/src/resource_inventory/resource_manager.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-03-15T14:48:38Z",
+      "side": 1,
+      "message": "assumes net names are unique within a GRB, which they should be",
+      "range": {
+        "startLine": 83,
+        "startChar": 25,
+        "endLine": 83,
+        "endChar": 37
+      },
+      "revId": "f3434c4ecdaa901ff2cc7dc4bab52db5e6530618",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_f3736313",
+        "filename": "dashboard/src/resource_inventory/resource_manager.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-03-15T14:48:38Z",
+      "side": 1,
+      "message": "whitespace",
+      "range": {
+        "startLine": 163,
+        "startChar": 64,
+        "endLine": 163,
+        "endChar": 65
+      },
+      "revId": "f3434c4ecdaa901ff2cc7dc4bab52db5e6530618",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
