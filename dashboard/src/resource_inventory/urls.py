@@ -25,10 +25,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url
-from resource_inventory.views import HostView
+from resource_inventory.views import HostView, host_detail_view
 
 
 app_name = "resource"
 urlpatterns = [
-    url(r'^hosts$', HostView.as_view(), name='hosts')
+    url(r'^hosts$', HostView.as_view(), name='hosts'),
+    url(r'^hosts/(?P<host_id>.+)/$', host_detail_view, name='host_detail'),
 ]
