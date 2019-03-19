@@ -8,6 +8,7 @@
         <th>Profile</th>
         <th>Booked</th>
         <th>Working</th>
+        <th>Host Info</th>
     </tr>
     </thead>
     <tbody>
@@ -24,6 +25,9 @@
             </td>
             <td>
                 {{ host.working }}
+            </td>
+            <td>
+                <a href="hosts/{{ host.id }}" class="btn btn-primary">Details</a>
             </td>
         </tr>
     {% endfor %}
