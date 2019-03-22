@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da01753e_9f2bf52f",
+        "filename": "dashboard/src/dashboard/actions.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-03-22T16:06:34Z",
+      "side": 1,
+      "message": "should be a set",
+      "range": {
+        "startLine": 20,
+        "startChar": 4,
+        "endLine": 20,
+        "endChar": 9
+      },
+      "revId": "51f28e6e80242a4fd941aae5bf921ba99f1234f4",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_3f1ac917",
+        "filename": "dashboard/src/dashboard/actions.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-03-22T16:06:34Z",
+      "side": 1,
+      "message": "should iterate over Hob.objects.filter() - hosts",
+      "range": {
+        "startLine": 24,
+        "startChar": 4,
+        "endLine": 24,
+        "endChar": 15
+      },
+      "revId": "51f28e6e80242a4fd941aae5bf921ba99f1234f4",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_ff1fa107",
+        "filename": "dashboard/src/dashboard/actions.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-03-22T16:06:34Z",
+      "side": 1,
+      "message": "should filter on booked\u003dTrue",
+      "range": {
+        "startLine": 24,
+        "startChar": 29,
+        "endLine": 24,
+        "endChar": 32
+      },
+      "revId": "51f28e6e80242a4fd941aae5bf921ba99f1234f4",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
