@@ -28,3 +28,5 @@ action:
         host: "{{ trigger.host }}"
         scenario: "{{ trigger.scenario }}"
         booking: "{{ trigger.booking }}"
+        os: "{{ trigger.os }}"
+        ipmi: True

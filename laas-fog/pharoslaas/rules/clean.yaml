@@ -26,3 +26,5 @@ action:
     parameters:
         host: "{{ trigger.host }}"
         key: "{{trigger.key}}"
+        user: "{{trigger.user}}"
+        keys: "{{trigger.extra_keys}}"

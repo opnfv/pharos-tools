@@ -8,11 +8,21 @@ vpn:
     server: "myvpn.ldap.server.org"
     authentication:
         pass: "password"
-        user: "cn=root,o=opnfv,dc=iol,dc=unh,dc=edu"
+        user: "cn=root,o=opnfv,dc=edu"
     directory:
-        root: "o=opnfv,dc=iol,dc=unh,dc=edu"
+        root: "o=opnfv,dc=edu"
         user: "ou=People"
     user:
         objects:
             - top
             - inetOrgPerson
+
+bot:
+    address: "http://my-bot.com/endpoint"
+    endpoints:
+        notification: "/notification"
+        failure: "/failure"
+
+dashboard:
+    address: "https://labs.lfnetworking.org"
+    lab_name: "MY_LAB"

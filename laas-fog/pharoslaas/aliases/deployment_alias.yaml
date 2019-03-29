@@ -1,0 +1,10 @@
+---
+name: deployment_alias
+pack: pharoslaas
+action_ref: "pharoslaas.deployment_workflow"
+description: "aliases to run deployments"
+formats:
+    - "deploy {{host}}"
+    - "deploy {{host}} with {{os}}"
+    - "deploy {{host}} for booking {{booking}}"
+    - "deploy {{host}} with {{os}} for booking {{booking}}"

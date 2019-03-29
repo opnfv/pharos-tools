@@ -1,4 +1,20 @@
 ---
+##############################################################################
+# Copyright 2018 Parker Berberian and Others                                 #
+#                                                                            #
+# Licensed under the Apache License, Version 2.0 (the License);              #
+# you may not use this file except in compliance with the License.           #
+# You may obtain a copy of the License at                                    #
+#                                                                            #
+#    http://www.apache.org/licenses/LICENSE-2.0                              #
+#                                                                            #
+# Unless required by applicable law or agreed to in writing, software        #
+# distributed under the License is distributed on an AS IS BASIS,            #
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.   #
+# See the License for the specific language governing permissions and        #
+# limitations under the License.                                             #
+##############################################################################
+
 version: '2.0'
 pharoslaas.deployment_workflow:
     description: The master workflow to provision, install, deploy hosts
@@ -8,40 +24,50 @@ pharoslaas.deployment_workflow:
         - scenario
         - os
         - booking
+        - ipmi
+        - retry_count
     tasks:
-        image_host:
-            action: pharoslaas.fog_imageWorkflow host=<% $.host %> os=<% $.os %>
+        provision:
+            action: pharoslaas.provision_workflow host=<% $.host %> os=<% $.os %> ipmi=<% $.ipmi %> powercmd='on'
             on-success:
                 - install_fuel: <% $.installer = 'Fuel' %>
                 - install_joid: <% $.installer = 'Joid' %>
                 - install_apex: <% $.installer = 'Apex' %>
                 - install_compass: <% $.installer = 'Compass' %>
-                - change_password: <% not $.installer in list('Fuel','Joid','Apex','Compass') %>
+                - post_deploy: <% not $.installer in list('Fuel','Joid','Apex','Compass') %>
+            on-error:
+                - retry_loop
+
+        retry_loop:
+            action: pharoslaas.retry_loop iteration=<% $.retry_count %>
+            publish: 
+                retry_count: <% task(retry_loop).result.stdout %>
+            on-success:
+                - provision
 
         install_fuel:
             action: pharoslaas.fuel_workflow host=<% $.host %> scenario=<% $.scenario %>
             on-success:
-                - change_password
+                - post_deploy
 
         install_joid:
             action: pharoslaas.joid_workflow host=<% $.host %> scenario=<% $.scenario %>
             on-success:
-                - change_password
+                - post_deploy
 
         install_apex:
             action: pharoslaas.apex_workflow host=<% $.host %> scenario=<% $.scenario %>
             on-success:
-                - change_password
+                - post_deploy
 
         install_compass:
             action: pharoslaas.compass_workflow host=<% $.host %> scenario=<% $.scenario %>
             on-success:
-                - change_password
+                - post_deploy
 
-        change_password:
-            action: pharoslaas.password_workflow host=<% $.host %>
-            on-success:
-                - make_vpn_user
+        post_deploy:
+            action: pharoslaas.post_deployment_workflow host=<% $.host %> booking=<% $.booking %>
+            on-success: send_email
 
-        make_vpn_user:
-            action: pharoslaas.vpn_make_user booking=<% $.booking %>
+        send_email:
+            action: pharoslaas.email_begun booking_id=<% $.booking %> host=<% $.host %> ssh_keys=<% $.ssh_keys %>

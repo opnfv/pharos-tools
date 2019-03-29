@@ -1,7 +1,0 @@
----
-chain:
-    -
-        name: "apex_install"
-        ref: "pharoslaas.apex_install"
-        parameters:
-            hosts: "{{host}}"

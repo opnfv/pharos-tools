@@ -1,0 +1,12 @@
+---
+name: on_new_booking_trigger
+pack: pharoslaas
+description: "dispatched when a new  booking is discovered"
+enabled: true
+trigger:
+    type: pharoslaas.new_booking_trigger
+action:
+    ref: pharoslaas.email_recieved
+    parameters:
+        host: "{{ trigger.host }}"
+        booking_id: "{{ trigger.booking_id }}"

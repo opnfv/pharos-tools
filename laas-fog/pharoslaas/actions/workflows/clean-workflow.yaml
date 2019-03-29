@@ -1,10 +1,28 @@
 ---
+##############################################################################
+# Copyright 2018 Parker Berberian and Others                                 #
+#                                                                            #
+# Licensed under the Apache License, Version 2.0 (the License);              #
+# you may not use this file except in compliance with the License.           #
+# You may obtain a copy of the License at                                    #
+#                                                                            #
+#    http://www.apache.org/licenses/LICENSE-2.0                              #
+#                                                                            #
+# Unless required by applicable law or agreed to in writing, software        #
+# distributed under the License is distributed on an AS IS BASIS,            #
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.   #
+# See the License for the specific language governing permissions and        #
+# limitations under the License.                                             #
+##############################################################################
+
 chain:
     -
-        name: "image"
-        ref: "pharoslaas.fog_imageWorkflow"
+        name: "shutdown"
+        ref: "pharoslaas.restart_workflow"
         parameters:
             host: "{{host}}"
+            ipmi: true
+            cmd: "off"
         on-success: "delete_vpn_user"
 
     -
@@ -12,5 +30,27 @@ chain:
         ref: "pharoslaas.vpn_delete_user"
         parameters:
             key: "{{key}}"
+            keys: "{{keys}}"
+        on-success: "delete_password"
+    -
+        name: "delete_password"
+        ref: "pharoslaas.delete_password"
+        parameters:
+            host: "{{host}}"
+        on-success: "change_ipmi"
 
-default: "image"
+    -
+        name: "change_ipmi"
+        ref: "pharoslaas.set_ipmi_account_workflow"
+        parameters:
+            host: "{{host}}"
+        on-success: "send_email"
+
+    -
+        name: "send_email"
+        ref: "pharoslaas.email_end"
+        parameters:
+            host: "{{host}}"
+            user_id: "{{user}}"
+
+default: "shutdown"
