@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da01753e_396ca19c",
+        "filename": "laas-fog/README",
+        "patchSetId": 1
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-03-29T16:05:54Z",
+      "side": 1,
+      "message": "whitespace",
+      "range": {
+        "startLine": 94,
+        "startChar": 63,
+        "endLine": 94,
+        "endChar": 64
+      },
+      "revId": "706c202b3a33b71f3ed7f27596166679b6b1bb6e",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
