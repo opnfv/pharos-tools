@@ -89,6 +89,9 @@ class OPNFVRoleDNE(Exception):
 class NoRemainingPublicNetwork(Exception):
     pass
 
+class BookingPermissionException(Exception):
+    pass
+
 
 def parse_host_field(host_field_contents):
     host_json = json.loads(host_field_contents)
@@ -245,6 +248,10 @@ def create_from_form(form, request):
     data['lab'] = lab
     data['host_profile'] = host_profile
     check_invariants(request, **data)
+
+    # check booking privileges
+    if Booking.objects.filter(owner=request.user, end__gt=timezone.now()).count() >= 3:
+        raise BookingPermissionException("You do not have permission to have more than 3 bookings at a time.")
 
     check_available_matching_host(lab, host_profile)  # requires cleanup if failure after this point
 
