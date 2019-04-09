@@ -32,7 +32,8 @@ from resource_inventory.models import (
     OPNFVConfig,
     Network,
     NetworkConnection,
-    NetworkRole
+    NetworkRole,
+    HostOPNFVConfig,
 )
 from resource_inventory.resource_manager import ResourceManager
 from resource_inventory.pdf_templater import PDFTemplater
@@ -192,9 +193,22 @@ def generate_hostconfig(generic_host, image, config_bundle):
 
     hconf.opnfvRole = opnfvrole
     hconf.bundle = config_bundle
+    hconf.is_head_node = True
     hconf.save()
 
     return hconf
+
+
+def generate_hostopnfv(hostconfig):
+    config = HostOPNFVConfig()
+    role = OPNFVRole()
+    role.name = "Jumphost"
+    role.description = "Single server jumphost role"
+    role.save()
+    config.role = role
+    config.config = hostconfig
+    config.save()
+    return config
 
 
 def generate_resource_bundle(generic_resource_bundle, config_bundle):  # warning: requires cleanup
@@ -284,7 +298,8 @@ def create_from_form(form, request):
     if installer:
         generate_opnfvconfig(scenario, installer, cbundle)
 
-    generate_hostconfig(ghost, image, cbundle)
+    hconf = generate_hostconfig(ghost, image, cbundle)
+    generate_hostopnfv(hconf)
 
     # construct generic interfaces
     for interface_profile in host_profile.interfaceprofile.all():
