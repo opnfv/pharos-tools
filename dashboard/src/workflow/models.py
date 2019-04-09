@@ -313,6 +313,7 @@ class Repository():
     SWCONF_HOSTS = "swconf_hosts"
     BOOKING_MODELS = "booking models"
     CONFIG_MODELS = "configuration bundle models"
+    OPNFV_MODELS = "opnfv configuration models"
     SESSION_USER = "session owner user account"
     VALIDATED_MODEL_GRB = "valid grb config model instance in db"
     VALIDATED_MODEL_CONFIG = "valid config model instance in db"
