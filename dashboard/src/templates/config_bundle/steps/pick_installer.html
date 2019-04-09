@@ -1,0 +1,21 @@
+{% extends "workflow/viewport-element.html" %}
+{% load staticfiles %}
+
+{% load bootstrap3 %}
+
+{% block content %}
+
+// pick installer
+<form action="/wf/workflow/" method="POST" id="installer_config_form" class="form">
+	{% csrf_token %}
+	<p>Choose your installer:</p>
+	{{form.installer}}
+	<p>Choose your scenario:</p>
+	{{form.scenario}}
+</form>
+
+{% endblock content %}
+
+{% block onleave %}
+alert("submission not implemented");
+{% endblock %}

@@ -22,7 +22,8 @@ from resource_inventory.models import (
     OPNFVRole,
     Image,
     Installer,
-    Scenario
+    Scenario,
+    Network,
 )
 
 
@@ -475,3 +476,21 @@ class ConfirmationForm(forms.Form):
             (False, "Cancel")
         )
     )
+
+
+class OPNFVSelectionForm(forms.Form):
+    installer = forms.ModelChoiceField(queryset=Installer.objects.all(), required=True)
+    scenario = forms.CharField()
+
+
+class OPNFVNetworkRoleForm(forms.Form):
+    role = forms.CharField(max_length=200, disabled=True, required=False)
+    network = forms.ModelChoiceField(queryset=Network.objects.none())
+
+
+class OPNFVHostRoleForm(forms.Form):
+    fields = ["host_name", "role"]
+
+    host_name = forms.CharField(max_length=200, disabled=True, required=False)
+    role = forms.ModelChoiceField(queryset=OPNFVRole.objects.all())
+
