@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da01753e_7e872a62",
+        "filename": "dashboard/src/resource_inventory/models.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-04-09T19:02:17Z",
+      "side": 1,
+      "message": "Don\u0027t we need a matching NetworkRoleProfile related to an OPNFVConfig?\n\nI feel as though we need a way of knowing what roles are expected from the user, even if we allow them to create and add their own roles",
+      "range": {
+        "startLine": 231,
+        "startChar": 0,
+        "endLine": 233,
+        "endChar": 66
+      },
+      "revId": "fbe2a1b71d90a67a02bb2ab51dc254c724b87a52",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
