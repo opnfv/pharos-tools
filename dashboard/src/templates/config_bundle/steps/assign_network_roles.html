@@ -1,0 +1,20 @@
+{% extends "config_bundle/steps/table_formset.html" %}
+
+{% block table %}
+<thead>
+    <tr>
+        <th>Role</th>
+        <th>Network</th>
+    </tr>
+</thead>
+<tbody>
+    {% for form in formset %}
+    <tr>
+        <td>{{form.role}}</td>
+        <td>{{form.network}}</td>
+    </tr>
+    {% endfor %}
+</tbody>
+
+{{formset.management_form}}
+{% endblock table %}

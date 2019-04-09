@@ -259,6 +259,7 @@ class Repository():
     CONFIRMATION = "confirmation"
     SELECTED_GRESOURCE_BUNDLE = "selected generic bundle pk"
     SELECTED_CONFIG_BUNDLE = "selected config bundle pk"
+    SELECTED_OPNFV_CONFIG = "selected opnfv deployment config"
     GRESOURCE_BUNDLE_MODELS = "generic_resource_bundle_models"
     GRESOURCE_BUNDLE_INFO = "generic_resource_bundle_info"
     BOOKING = "booking"
@@ -268,6 +269,7 @@ class Repository():
     SWCONF_HOSTS = "swconf_hosts"
     BOOKING_MODELS = "booking models"
     CONFIG_MODELS = "configuration bundle models"
+    OPNFV_MODELS = "opnfv configuration models"
     SESSION_USER = "session owner user account"
     VALIDATED_MODEL_GRB = "valid grb config model instance in db"
     VALIDATED_MODEL_CONFIG = "valid config model instance in db"
@@ -338,6 +340,14 @@ class Repository():
                 self.el[self.HAS_RESULT] = True
                 self.el[self.RESULT_KEY] = self.SELECTED_CONFIG_BUNDLE
                 return
+
+        if self.OPNFV_MODELS in self.el:
+            errors = self.make_opnfv_config()
+            if errors:
+                return errors
+            else:
+                self.el[self.HAS_RESULT] = True
+                self.el[self.RESULT_KEY] = self.SELECTED_OPNFV_CONFIG
 
         if self.BOOKING_MODELS in self.el:
             errors = self.make_booking()
