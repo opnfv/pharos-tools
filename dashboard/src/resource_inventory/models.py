@@ -297,10 +297,14 @@ class HostConfiguration(models.Model):
     host = models.ForeignKey(GenericHost, related_name="configuration", on_delete=models.CASCADE)
     image = models.ForeignKey(Image, on_delete=models.PROTECT)
     bundle = models.ForeignKey(ConfigBundle, related_name="hostConfigurations", null=True, on_delete=models.CASCADE)
-    opnfvRole = models.ForeignKey(OPNFVRole, on_delete=models.SET(get_sentinal_opnfv_role))
 
     def __str__(self):
         return "config with " + str(self.host) + " and image " + str(self.image)
+
+
+class HostOPNFVConfig(models.Model):
+    role = models.ForeignKey(OPNFVRole, related_name="host_opnfv_configs", on_delete=models.CASCADE)
+    config = models.OneToOneField(HostConfiguration, related_name="host_opnfv_config", on_delete=models.CASCADE)
 
 
 class RemoteInfo(models.Model):
