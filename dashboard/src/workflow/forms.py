@@ -475,3 +475,18 @@ class ConfirmationForm(forms.Form):
             (False, "Cancel")
         )
     )
+
+
+class OPNFVSelectionForm(forms.Form):
+    installer = forms.ModelChoiceField(queryset=Installer.objects.all(), required=True)
+    scenario = forms.CharField()
+
+
+class OPNFVNetworkRoleForm(forms.Form):
+    # TODO
+    pass
+
+
+class OPNFVHostRoleForm(forms.FOrm):
+    # TODO
+    pass
