@@ -191,7 +191,7 @@ class ResourceBundle(models.Model):
         return "instance of " + str(self.template)
 
     def get_host(self, role="Jumphost"):
-        return Host.objects.filter(bundle=self, config__opnfvRole__name=role).first()
+        return Host.objects.filter(bundle=self, config__is_head_node=True).first()  # should only ever be one, but it is not an invariant in the models
 
 
 class GenericInterface(models.Model):
@@ -297,10 +297,15 @@ class HostConfiguration(models.Model):
     host = models.ForeignKey(GenericHost, related_name="configuration", on_delete=models.CASCADE)
     image = models.ForeignKey(Image, on_delete=models.PROTECT)
     bundle = models.ForeignKey(ConfigBundle, related_name="hostConfigurations", null=True, on_delete=models.CASCADE)
-    opnfvRole = models.ForeignKey(OPNFVRole, on_delete=models.SET(get_sentinal_opnfv_role))
+    is_head_node = models.BooleanField(default=False)
 
     def __str__(self):
         return "config with " + str(self.host) + " and image " + str(self.image)
+
+
+class HostOPNFVConfig(models.Model):
+    role = models.ForeignKey(OPNFVRole, related_name="host_opnfv_configs", on_delete=models.CASCADE)
+    config = models.OneToOneField(HostConfiguration, related_name="host_opnfv_config", on_delete=models.CASCADE)
 
 
 class RemoteInfo(models.Model):
