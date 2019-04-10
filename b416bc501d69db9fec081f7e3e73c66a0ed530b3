@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da01753e_9e63ee19",
+        "filename": "dashboard/src/resource_inventory/models.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-04-10T18:43:53Z",
+      "side": 1,
+      "message": "delete dead code",
+      "range": {
+        "startLine": 196,
+        "startChar": 0,
+        "endLine": 196,
+        "endChar": 42
+      },
+      "revId": "b416bc501d69db9fec081f7e3e73c66a0ed530b3",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_de6d7606",
+        "filename": "dashboard/src/templates/resource/steps/pod_definition.html",
+        "patchSetId": 9
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-04-10T18:43:53Z",
+      "side": 1,
+      "message": "delete this",
+      "range": {
+        "startLine": 271,
+        "startChar": 10,
+        "endLine": 271,
+        "endChar": 30
+      },
+      "revId": "b416bc501d69db9fec081f7e3e73c66a0ed530b3",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_be7232e3",
+        "filename": "dashboard/src/workflow/resource_bundle_workflow.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 360,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-04-10T18:43:53Z",
+      "side": 1,
+      "message": "this can probably be abstracted out into some simpler methods. The whole xml parsing bit might become its own class in another file.",
+      "range": {
+        "startLine": 336,
+        "startChar": 0,
+        "endLine": 360,
+        "endChar": 38
+      },
+      "revId": "b416bc501d69db9fec081f7e3e73c66a0ed530b3",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
