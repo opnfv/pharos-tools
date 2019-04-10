@@ -22,7 +22,6 @@ from resource_inventory.models import Image, Installer, Scenario
 class QuickBookingForm(forms.Form):
     purpose = forms.CharField(max_length=1000)
     project = forms.CharField(max_length=400)
-    image = forms.ModelChoiceField(queryset=Image.objects.all())
     hostname = forms.CharField(max_length=400)
 
     installer = forms.ModelChoiceField(queryset=Installer.objects.all(), required=False)
@@ -40,13 +39,9 @@ class QuickBookingForm(forms.Form):
         elif data and "users" in data:
             chosen_users = data.getlist("users")
 
-        if user:
-            self.image = forms.ModelChoiceField(queryset=Image.objects.filter(
-                Q(public=True) | Q(owner=user)), required=False)
-        else:
-            self.image = forms.ModelChoiceField(queryset=Image.objects.all(), required=False)
-
         super(QuickBookingForm, self).__init__(data=data, **kwargs)
+
+        self.fields["image"] = forms.ModelChoiceField(queryset=Image.objects.difference(Image.objects.filter(public=False).difference(Image.objects.filter(owner=user))))
 
         self.fields['users'] = forms.CharField(
             widget=SearchableSelectMultipleWidget(

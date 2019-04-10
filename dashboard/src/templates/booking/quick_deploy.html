@@ -119,6 +119,7 @@
         for( var i = 0; i < drop.childNodes.length; i++ )
         {
             drop.childNodes[i].disabled = true; // closest we can get on safari to hiding it outright
+            drop.childNodes[i].style = "visibility: hidden;";
         }
 
 
