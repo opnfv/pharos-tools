@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da01753e_41e247a0",
+        "filename": "dashboard/src/resource_inventory/idf_templater.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-04-12T19:28:01Z",
+      "side": 1,
+      "message": "Could probably just \"simplify\" it like so:\n\nreturn {\n \u0027interface\u0027: ...,\n \u0027vlan\u0027: ...,\n ...\n}\n\n... And same goes for the rest of this file.",
+      "range": {
+        "startLine": 66,
+        "startChar": 8,
+        "endLine": 66,
+        "endChar": 19
+      },
+      "revId": "a190cc2d083535188ee074572bb1ae68a1467357",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_81f38f72",
+        "filename": "dashboard/src/resource_inventory/pdf_templater.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-04-12T19:28:01Z",
+      "side": 1,
+      "message": "Same here",
+      "range": {
+        "startLine": 163,
+        "startChar": 7,
+        "endLine": 163,
+        "endChar": 13
+      },
+      "revId": "a190cc2d083535188ee074572bb1ae68a1467357",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
