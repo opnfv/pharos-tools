@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da01753e_a1bcd36d",
+        "filename": "dashboard/src/api/models.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-04-12T20:01:26Z",
+      "side": 1,
+      "message": "Remove debug prints",
+      "range": {
+        "startLine": 69,
+        "startChar": 8,
+        "endLine": 69,
+        "endChar": 30
+      },
+      "revId": "92e43894920e35aaa465f1c59e0d8bcb01c6f1e0",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_81c1cfe6",
+        "filename": "dashboard/src/api/models.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-04-12T20:01:26Z",
+      "side": 1,
+      "message": "Same here. (Use the logger if this should be caught)",
+      "range": {
+        "startLine": 80,
+        "startChar": 11,
+        "endLine": 80,
+        "endChar": 19
+      },
+      "revId": "92e43894920e35aaa465f1c59e0d8bcb01c6f1e0",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_e1b6db89",
+        "filename": "dashboard/src/api/views.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-04-12T20:01:26Z",
+      "side": 1,
+      "message": "Again",
+      "range": {
+        "startLine": 80,
+        "startChar": 7,
+        "endLine": 80,
+        "endChar": 16
+      },
+      "revId": "92e43894920e35aaa465f1c59e0d8bcb01c6f1e0",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
