@@ -119,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "da01753e_01867fb9",
+        "filename": "dashboard/src/templates/resource/steps/pod_definition.html",
+        "patchSetId": 10
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-04-12T19:56:54Z",
+      "side": 1,
+      "message": "Ahh right. I forgot that an object\u0027s fields are references in Javascript.",
+      "parentUuid": "da01753e_41f9a74c",
+      "range": {
+        "startLine": 293,
+        "startChar": 4,
+        "endLine": 293,
+        "endChar": 13
+      },
+      "revId": "39d0a6ef323dedf4b1d81ac26d4ee084feb20b56",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da01753e_a1c7b311",
         "filename": "dashboard/src/templates/resource/steps/pod_definition.html",
         "patchSetId": 10
