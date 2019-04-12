@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "da01753e_61fcab3f",
+        "filename": "dashboard/src/resource_inventory/models.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-04-12T19:44:11Z",
+      "side": 1,
+      "message": "yes",
+      "parentUuid": "da01753e_614e6bc3",
+      "range": {
+        "startLine": 196,
+        "startChar": 4,
+        "endLine": 196,
+        "endChar": 42
+      },
+      "revId": "39d0a6ef323dedf4b1d81ac26d4ee084feb20b56",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da01753e_414b67b0",
         "filename": "dashboard/src/templates/resource/steps/pod_definition.html",
         "patchSetId": 10
@@ -59,6 +83,30 @@
       "writtenOn": "2019-04-12T19:18:52Z",
       "side": 1,
       "message": "I don\u0027t see this variable being used anywhere.",
+      "range": {
+        "startLine": 293,
+        "startChar": 4,
+        "endLine": 293,
+        "endChar": 13
+      },
+      "revId": "39d0a6ef323dedf4b1d81ac26d4ee084feb20b56",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_41f9a74c",
+        "filename": "dashboard/src/templates/resource/steps/pod_definition.html",
+        "patchSetId": 10
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-04-12T19:44:11Z",
+      "side": 1,
+      "message": "Its being manipulated on the next line.",
+      "parentUuid": "da01753e_414b67b0",
       "range": {
         "startLine": 293,
         "startChar": 4,
@@ -94,6 +142,30 @@
     },
     {
       "key": {
+        "uuid": "da01753e_a195f3e5",
+        "filename": "dashboard/src/templates/resource/steps/pod_definition.html",
+        "patchSetId": 10
+      },
+      "lineNbr": 567,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-04-12T19:44:11Z",
+      "side": 1,
+      "message": "you are correct",
+      "parentUuid": "da01753e_a1c7b311",
+      "range": {
+        "startLine": 567,
+        "startChar": 6,
+        "endLine": 567,
+        "endChar": 40
+      },
+      "revId": "39d0a6ef323dedf4b1d81ac26d4ee084feb20b56",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da01753e_81cc2f37",
         "filename": "dashboard/src/workflow/models.py",
         "patchSetId": 10
@@ -105,6 +177,30 @@
       "writtenOn": "2019-04-12T19:18:52Z",
       "side": 1,
       "message": "noop?",
+      "range": {
+        "startLine": 435,
+        "startChar": 31,
+        "endLine": 435,
+        "endChar": 71
+      },
+      "revId": "39d0a6ef323dedf4b1d81ac26d4ee084feb20b56",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_819a6f12",
+        "filename": "dashboard/src/workflow/models.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 435,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-04-12T19:44:11Z",
+      "side": 1,
+      "message": "You would think so. We have to do this in a few places because when connection.network was initially set, the Network object was unsaved. It has been saved since, and we have to set the attribute again for the Django hooks to run and save the foreign key information",
+      "parentUuid": "da01753e_81cc2f37",
       "range": {
         "startLine": 435,
         "startChar": 31,
