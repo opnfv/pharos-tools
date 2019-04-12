@@ -25,6 +25,8 @@ from resource_inventory.models import (
     Interface,
     RemoteInfo
 )
+from resource_inventory.idf_templater import IDFTemplater
+from resource_inventory.pdf_templater import PDFTemplater
 
 
 class JobStatus(object):
@@ -64,6 +66,8 @@ class LabManager(object):
 
     def update_host_remote_info(self, data, host_id):
         host = get_object_or_404(Host, labid=host_id, lab=self.lab)
+        print("updating host")
+        print(host)
         info = {}
         try:
             info['address'] = data['address']
@@ -73,6 +77,8 @@ class LabManager(object):
             info['type'] = data['type']
             info['versions'] = json.dumps(data['versions'])
         except Exception as e:
+            print("error!")
+            print(e)
             return {"error": "invalid arguement: " + str(e)}
         remote_info = host.remote_management
         if "default" in remote_info.mac_address:
@@ -86,7 +92,14 @@ class LabManager(object):
         remote_info.save()
         host.remote_management = remote_info
         host.save()
+        booking = Booking.objects.get(resource=host.bundle)
+        self.update_xdf(booking)
         return {"status": "success"}
+
+    def update_xdf(self, booking):
+        booking.pdf = PDFTemplater.makePDF(booking.resource)
+        booking.idf = IDFTemplater().makeIDF(booking)
+        booking.save()
 
     def get_profile(self):
         prof = {}
