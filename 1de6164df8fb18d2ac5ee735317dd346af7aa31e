@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da01753e_17e7e113",
+        "filename": "dashboard/src/templates/base.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-04-15T18:32:10Z",
+      "side": 1,
+      "message": "should be spaces",
+      "range": {
+        "startLine": 137,
+        "startChar": 0,
+        "endLine": 137,
+        "endChar": 2
+      },
+      "revId": "1de6164df8fb18d2ac5ee735317dd346af7aa31e",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
