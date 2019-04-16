@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cf50abe4_81d78e68",
+        "filename": "dashboard/src/templates/config_bundle/steps/pick_installer.html",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-04-16T17:14:59Z",
+      "side": 1,
+      "message": "based on other files, this should be spaces",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 1
+      },
+      "revId": "3b0b6598184d04774125e0233ebf33342f9dab79",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
