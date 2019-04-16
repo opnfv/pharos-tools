@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff18a06b_e0ddf71f",
+        "filename": "dashboard/src/booking/quick_deployer.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-04-16T16:45:47Z",
+      "side": 1,
+      "message": "This should also respect the booking_previledge override like you do in the workflow",
+      "range": {
+        "startLine": 254,
+        "startChar": 7,
+        "endLine": 254,
+        "endChar": 87
+      },
+      "revId": "befc62b991cc43d2d68f01e673cb261b29f6f4a5",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
