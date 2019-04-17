@@ -12,6 +12,7 @@ from django.contrib.auth.models import User
 from django.db import models
 from django.core.exceptions import PermissionDenied
 from django.shortcuts import get_object_or_404
+from django.urls import reverse
 
 import json
 import uuid
@@ -96,6 +97,14 @@ class LabManager(object):
         booking.pdf = PDFTemplater.makePDF(booking.resource)
         booking.idf = IDFTemplater().makeIDF(booking)
         booking.save()
+
+    def get_pdf(self, booking_id):
+        booking = get_object_or_404(Booking, pk=booking_id, lab=self.lab)
+        return booking.pdf
+
+    def get_idf(self, booking_id):
+        booking = get_object_or_404(Booking, pk=booking_id, lab=self.lab)
+        return booking.idf
 
     def get_profile(self):
         prof = {}
@@ -355,6 +364,9 @@ class OpnfvApiConfig(models.Model):
     installer = models.CharField(max_length=200)
     scenario = models.CharField(max_length=300)
     roles = models.ManyToManyField(Host)
+    # pdf and idf are url endpoints, not the actual file
+    pdf = models.CharField(max_length=100)
+    idf = models.CharField(max_length=100)
     delta = models.TextField()
 
     def to_dict(self):
@@ -363,6 +375,10 @@ class OpnfvApiConfig(models.Model):
             d['installer'] = self.installer
         if self.scenario:
             d['scenario'] = self.scenario
+        if self.pdf:
+            d['pdf'] = self.pdf
+        if self.idf:
+            d['idf'] = self.idf
 
         hosts = self.roles.all()
         if hosts.exists():
@@ -386,6 +402,16 @@ class OpnfvApiConfig(models.Model):
         d = json.loads(self.delta)
         d['scenario'] = scenario
         self.delta = json.dumps(d)
+
+    def set_xdf(self, booking, update_delta=True):
+        kwargs = {'lab_name': booking.lab.name, 'booking_id': booking.id}
+        self.pdf = reverse('get-pdf', kwargs=kwargs)
+        self.idf = reverse('get-idf', kwargs=kwargs)
+        if update_delta:
+            d = json.loads(self.delta)
+            d['pdf'] = self.pdf
+            d['idf'] = self.idf
+            self.delta = json.dumps(d)
 
     def add_role(self, host):
         self.roles.add(host)
@@ -915,6 +941,7 @@ class JobFactory(object):
                 opnfv = host.config.bundle.opnfv_config.first()
                 opnfv_config.installer = opnfv.installer.name
                 opnfv_config.scenario = opnfv.scenario.name
+            opnfv_config.set_xdf(job.booking, False)
             opnfv_config.save()
             return opnfv_config
 
@@ -926,6 +953,7 @@ class JobFactory(object):
 
             for host in hosts:
                 opnfv_config.roles.add(host)
+
             software_config = SoftwareConfig.objects.create(opnfv=opnfv_config)
             software_config.save()
             software_relation = SoftwareRelation.objects.create(job=job, config=software_config)
