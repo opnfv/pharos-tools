@@ -1,0 +1,343 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8ee892e8_a3fe9444",
+        "filename": "dashboard/src/resource_inventory/models.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-04-19T13:48:23Z",
+      "side": 1,
+      "message": "dead code",
+      "range": {
+        "startLine": 194,
+        "startChar": 29,
+        "endLine": 194,
+        "endChar": 30
+      },
+      "revId": "f971a1f000dd1b87af60b8a6f34b2e0923545e98",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1bd29b58_806c7aa5",
+        "filename": "dashboard/src/templates/base.html",
+        "patchSetId": 6
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-04-19T13:48:23Z",
+      "side": 1,
+      "message": "\"Configure OPNFV\" might be a better way of describing it",
+      "range": {
+        "startLine": 137,
+        "startChar": 82,
+        "endLine": 137,
+        "endChar": 104
+      },
+      "revId": "f971a1f000dd1b87af60b8a6f34b2e0923545e98",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f5f3c0e8_051a0cb0",
+        "filename": "dashboard/src/templates/config_bundle/steps/assign_host_roles.html",
+        "patchSetId": 6
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-04-19T13:48:23Z",
+      "side": 1,
+      "message": "Is this for assigning roles? Why both Role and Image?",
+      "range": {
+        "startLine": 33,
+        "startChar": 40,
+        "endLine": 34,
+        "endChar": 54
+      },
+      "revId": "f971a1f000dd1b87af60b8a6f34b2e0923545e98",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1c9e3172_1e22bbee",
+        "filename": "dashboard/src/templates/config_bundle/steps/pick_installer.html",
+        "patchSetId": 6
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-04-19T13:48:23Z",
+      "side": 1,
+      "message": "expand tabs",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 29
+      },
+      "revId": "f971a1f000dd1b87af60b8a6f34b2e0923545e98",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e3494c7_01c3e710",
+        "filename": "dashboard/src/workflow/opnfv_workflow.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-04-19T13:48:23Z",
+      "side": 1,
+      "message": "dead code",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 55
+      },
+      "revId": "f971a1f000dd1b87af60b8a6f34b2e0923545e98",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3122bebc_97cbefcc",
+        "filename": "dashboard/src/workflow/opnfv_workflow.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-04-19T13:48:23Z",
+      "side": 1,
+      "message": "This selects a config, not a resource",
+      "range": {
+        "startLine": 44,
+        "startChar": 6,
+        "endLine": 44,
+        "endChar": 27
+      },
+      "revId": "f971a1f000dd1b87af60b8a6f34b2e0923545e98",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "32d7d5bd_79857383",
+        "filename": "dashboard/src/workflow/opnfv_workflow.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-04-19T13:48:23Z",
+      "side": 1,
+      "message": "This line doesn\u0027t do anything",
+      "range": {
+        "startLine": 63,
+        "startChar": 12,
+        "endLine": 63,
+        "endChar": 18
+      },
+      "revId": "f971a1f000dd1b87af60b8a6f34b2e0923545e98",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "88fea48d_2cbf3065",
+        "filename": "dashboard/src/workflow/opnfv_workflow.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-04-19T13:48:23Z",
+      "side": 1,
+      "message": "Is this intentional? The confirmation message is not modified.",
+      "range": {
+        "startLine": 71,
+        "startChar": 1,
+        "endLine": 72,
+        "endChar": 58
+      },
+      "revId": "f971a1f000dd1b87af60b8a6f34b2e0923545e98",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6fd6d6ad_55925ad5",
+        "filename": "dashboard/src/workflow/opnfv_workflow.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-04-19T13:48:23Z",
+      "side": 1,
+      "message": "this line does nothing",
+      "range": {
+        "startLine": 84,
+        "startChar": 3,
+        "endLine": 84,
+        "endChar": 28
+      },
+      "revId": "f971a1f000dd1b87af60b8a6f34b2e0923545e98",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "65c8cfa6_86c82fc8",
+        "filename": "dashboard/src/workflow/opnfv_workflow.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-04-19T13:48:23Z",
+      "side": 1,
+      "message": "invalid python?",
+      "range": {
+        "startLine": 107,
+        "startChar": 6,
+        "endLine": 107,
+        "endChar": 41
+      },
+      "revId": "f971a1f000dd1b87af60b8a6f34b2e0923545e98",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b7ee0ff6_d9e4f4fb",
+        "filename": "dashboard/src/workflow/opnfv_workflow.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-04-19T13:48:23Z",
+      "side": 1,
+      "message": "Why instantiate None models here but set \"unrenderable\" flag above in get_context?",
+      "range": {
+        "startLine": 121,
+        "startChar": 0,
+        "endLine": 125,
+        "endChar": 44
+      },
+      "revId": "f971a1f000dd1b87af60b8a6f34b2e0923545e98",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8bf07f53_03c09fff",
+        "filename": "dashboard/src/workflow/opnfv_workflow.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-04-19T13:48:23Z",
+      "side": 1,
+      "message": "If we want to mark failures this way, which I think is fine, we should do it in a uniform way. I think it would be cleaner to have a single \"error\" flag, not all sorts of \"unreachable\" and \"unrenderable\" flags.",
+      "range": {
+        "startLine": 159,
+        "startChar": 25,
+        "endLine": 159,
+        "endChar": 44
+      },
+      "revId": "f971a1f000dd1b87af60b8a6f34b2e0923545e98",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bff4c1c7_4cfd7e7d",
+        "filename": "dashboard/src/workflow/opnfv_workflow.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-04-19T13:48:23Z",
+      "side": 1,
+      "message": "We probably could factor out a super class. The only difference is the attributes that are being assigned to the hosts (Image / HeadNode vs Role)",
+      "range": {
+        "startLine": 168,
+        "startChar": 46,
+        "endLine": 168,
+        "endChar": 113
+      },
+      "revId": "f971a1f000dd1b87af60b8a6f34b2e0923545e98",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b3bb72b7_ea2e8283",
+        "filename": "dashboard/src/workflow/opnfv_workflow.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-04-19T13:48:23Z",
+      "side": 1,
+      "message": "dead code",
+      "range": {
+        "startLine": 192,
+        "startChar": 0,
+        "endLine": 192,
+        "endChar": 54
+      },
+      "revId": "f971a1f000dd1b87af60b8a6f34b2e0923545e98",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b53a3a8c_15d106ed",
+        "filename": "dashboard/tags",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-04-19T13:48:23Z",
+      "side": 1,
+      "message": "delete this file?",
+      "revId": "f971a1f000dd1b87af60b8a6f34b2e0923545e98",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
