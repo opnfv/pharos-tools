@@ -163,6 +163,30 @@
     },
     {
       "key": {
+        "uuid": "5531a21e_6da967d4",
+        "filename": "dashboard/src/workflow/opnfv_workflow.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-04-23T18:13:18Z",
+      "side": 1,
+      "message": "this was left over from before I put the validity structure in; I just removed it.",
+      "parentUuid": "7ede450d_f85a7f1b",
+      "range": {
+        "startLine": 201,
+        "startChar": 12,
+        "endLine": 203,
+        "endChar": 53
+      },
+      "revId": "6ac747beed265a215a9ee9431e99d77c7973c592",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "71275660_b30af4d8",
         "filename": "dashboard/src/workflow/opnfv_workflow.py",
         "patchSetId": 7
@@ -186,6 +210,30 @@
     },
     {
       "key": {
+        "uuid": "92b3c249_e45e84b2",
+        "filename": "dashboard/src/workflow/opnfv_workflow.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-04-23T18:13:18Z",
+      "side": 1,
+      "message": "very odd, the version I have on the dev node doesn\u0027t match up with the file here on gerrit for these lines. A single definition doesn\u0027t quite work as a default role can only be assigned for ones it has already been chosen for. The current version has an extra if statement depending on existing_assignments as an extra function parameter.",
+      "parentUuid": "71275660_b30af4d8",
+      "range": {
+        "startLine": 224,
+        "startChar": 16,
+        "endLine": 225,
+        "endChar": 55
+      },
+      "revId": "6ac747beed265a215a9ee9431e99d77c7973c592",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "80b2d01f_c4ed61af",
         "filename": "dashboard/src/workflow/opnfv_workflow.py",
         "patchSetId": 7
@@ -197,6 +245,30 @@
       "writtenOn": "2019-04-23T15:02:30Z",
       "side": 1,
       "message": "I don\u0027t think this code will ever be run here. You are not going to see an under-construction grb and generic host models in the repo when in the opnfv workflow",
+      "range": {
+        "startLine": 248,
+        "startChar": 5,
+        "endLine": 249,
+        "endChar": 28
+      },
+      "revId": "6ac747beed265a215a9ee9431e99d77c7973c592",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "20c80669_55040e98",
+        "filename": "dashboard/src/workflow/opnfv_workflow.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-04-23T18:13:18Z",
+      "side": 1,
+      "message": "good point, this function likely won\u0027t get used anyway as we have access to a complete configbundle that has all the information we need.",
+      "parentUuid": "80b2d01f_c4ed61af",
       "range": {
         "startLine": 248,
         "startChar": 5,
@@ -243,6 +315,24 @@
       "writtenOn": "2019-04-23T15:02:30Z",
       "side": 1,
       "message": "please delete this file",
+      "revId": "6ac747beed265a215a9ee9431e99d77c7973c592",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "01745c93_5e8fcbf4",
+        "filename": "dashboard/tags",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-04-23T18:13:18Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "10006bf6_64adbd13",
       "revId": "6ac747beed265a215a9ee9431e99d77c7973c592",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
