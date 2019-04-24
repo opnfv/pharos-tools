@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9873002c_bd657ec8",
+        "filename": "dashboard/src/templates/config_bundle/steps/assign_host_roles.html",
+        "patchSetId": 8
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-04-24T14:21:48Z",
+      "side": 1,
+      "message": "tabs. You should configure vim to expand tabs.",
+      "range": {
+        "startLine": 40,
+        "startChar": 0,
+        "endLine": 40,
+        "endChar": 21
+      },
+      "revId": "1702048771e20176b5c9c6021ee548c84157f9fe",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
