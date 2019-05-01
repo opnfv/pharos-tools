@@ -22,6 +22,30 @@
       "revId": "d26781393ba3827b698e89573ace06ace4240f95",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ce17c0df_34b83fac",
+        "filename": "dashboard/src/templates/config_bundle/steps/config_software.html",
+        "patchSetId": 13
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-05-01T18:29:13Z",
+      "side": 0,
+      "message": "We will add it back if it is ever needed. However,\n1) the filtering should be done on the backend\n2) all the \"basic\" scenarios are supported by every installer. We may not add support for scenarios which are not ubiquitous",
+      "parentUuid": "a195248a_e14334bd",
+      "range": {
+        "startLine": 38,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 59
+      },
+      "revId": "d26781393ba3827b698e89573ace06ace4240f95",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
     }
   ]
 }
