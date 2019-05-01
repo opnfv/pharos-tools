@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "42973b05_a8c31f38",
+        "filename": "dashboard/src/resource_inventory/models.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-05-01T01:04:17Z",
+      "side": 1,
+      "message": "we probably need some \"selected deployment\" intermediary object so we don\u0027t have to load the Booking model with a nullable field for every type of deploy (opnfv, onap, etc)",
+      "revId": "af24490c37b29918b28280efd456b93c45762d26",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "971ef5f2_015994aa",
+        "filename": "dashboard/src/templates/config_bundle/steps/assign_host_roles.html",
+        "patchSetId": 13
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-05-01T01:04:17Z",
+      "side": 1,
+      "message": "should we force users to select a role for every host on the frontend or should they be allowed to omit hosts?",
+      "revId": "af24490c37b29918b28280efd456b93c45762d26",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fd799b18_4f10f16a",
+        "filename": "dashboard/src/templates/config_bundle/steps/assign_network_roles.html",
+        "patchSetId": 13
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-05-01T01:04:17Z",
+      "side": 1,
+      "message": "Is there ever a legitimate case where a role wouldn\u0027t be filled (and if not should we encode that on the front end?)",
+      "revId": "af24490c37b29918b28280efd456b93c45762d26",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "40063081_a4f0a8a9",
         "filename": "dashboard/src/templates/config_bundle/steps/pick_installer.html",
         "patchSetId": 13
@@ -25,6 +76,29 @@
     },
     {
       "key": {
+        "uuid": "16299130_8b923ead",
+        "filename": "dashboard/src/templates/resource/steps/meta_info.html",
+        "patchSetId": 13
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-05-01T01:04:17Z",
+      "side": 1,
+      "message": "Is this a related change?",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 18
+      },
+      "revId": "af24490c37b29918b28280efd456b93c45762d26",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e3a2b350_9662f725",
         "filename": "dashboard/src/workflow/forms.py",
         "patchSetId": 13
@@ -41,6 +115,52 @@
         "startChar": 0,
         "endLine": 488,
         "endChar": 71
+      },
+      "revId": "af24490c37b29918b28280efd456b93c45762d26",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfcd9053_902ae5f9",
+        "filename": "dashboard/src/workflow/models.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 350,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-05-01T01:04:17Z",
+      "side": 1,
+      "message": "I\u0027m not seeing this get populated anywhere (repo at SELECTED_OPNFV_CONFIG doesn\u0027t seem to get set)",
+      "range": {
+        "startLine": 350,
+        "startChar": 0,
+        "endLine": 350,
+        "endChar": 69
+      },
+      "revId": "af24490c37b29918b28280efd456b93c45762d26",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1da5724d_780a5911",
+        "filename": "dashboard/src/workflow/opnfv_workflow.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-05-01T01:04:17Z",
+      "side": 1,
+      "message": "We should probably also figure out what information we want to send to the confirm step as a summary of changes",
+      "range": {
+        "startLine": 48,
+        "startChar": 13,
+        "endLine": 48,
+        "endChar": 107
       },
       "revId": "af24490c37b29918b28280efd456b93c45762d26",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",

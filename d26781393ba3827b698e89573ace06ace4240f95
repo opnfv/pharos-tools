@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a195248a_e14334bd",
+        "filename": "dashboard/src/templates/config_bundle/steps/config_software.html",
+        "patchSetId": 13
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-05-01T01:04:17Z",
+      "side": 0,
+      "message": "we should probably add back in the dependent filtering once we figure out the constraints.",
+      "range": {
+        "startLine": 38,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 59
+      },
+      "revId": "d26781393ba3827b698e89573ace06ace4240f95",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
