@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "73e84c53_1b70fda5",
+        "filename": "dashboard/src/api/models.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 920,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-05-02T19:19:54Z",
+      "side": 1,
+      "message": "this doesn\u0027t seem to handle the case where a booking doesn\u0027t have an OPNFV configuration (a supported use case.) I\u0027m not sure this function is entirely the place to handle that though, perhaps an optional makeOPNFV function? There should probably be some integrity checker somewhere to make sure there is only one \"client software configuration\" type selected and applied, too",
+      "range": {
+        "startLine": 920,
+        "startChar": 4,
+        "endLine": 920,
+        "endChar": 61
+      },
+      "revId": "8e6dd0c1ce3bd0c81382173719e3b61b34724701",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a6b2e0a_b63465f6",
         "filename": "dashboard/src/booking/models.py",
         "patchSetId": 15
