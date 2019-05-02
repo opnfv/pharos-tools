@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a6b2e0a_b63465f6",
+        "filename": "dashboard/src/booking/models.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-05-02T18:05:49Z",
+      "side": 1,
+      "message": "it seems the booking workflow doesn\u0027t have any way of populating this field still. When are we looking at taking care of that, and would it be a part of this change or another one?",
+      "revId": "8e6dd0c1ce3bd0c81382173719e3b61b34724701",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
