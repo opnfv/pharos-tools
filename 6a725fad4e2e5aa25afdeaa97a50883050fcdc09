@@ -22,6 +22,30 @@
       "revId": "6a725fad4e2e5aa25afdeaa97a50883050fcdc09",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8de05e4e_6efbd0c1",
+        "filename": "dashboard/src/resource_inventory/idf_templater.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-05-03T15:02:07Z",
+      "side": 1,
+      "message": "Probably. The only place it is used currently is in the fuel section of the idf but we don\u0027t know if \n1) any other installers will even support the spec and \n2) they will need similar info (I think this is likely)",
+      "parentUuid": "ae10c9e0_24789013",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 5
+      },
+      "revId": "6a725fad4e2e5aa25afdeaa97a50883050fcdc09",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
     }
   ]
 }
