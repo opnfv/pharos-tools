@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "10fe2efa_958a7eba",
+        "filename": "dashboard/src/api/models.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 920,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-05-03T14:57:13Z",
+      "side": 1,
+      "message": "You\u0027re right that this does not handle opnfv_config being null, I\u0027ll fix that.\n\n\u003e There should probably be some integrity checker somewhere to make sure there is only one \"client software configuration\" type selected and applied, too\n\n\nWe can add something like this if it becomes necessary. Right now, there are no mutually exclusive deployments we support. We support OPNFV and will support ONAP, which requires OPNFV.",
+      "parentUuid": "73e84c53_1b70fda5",
+      "range": {
+        "startLine": 920,
+        "startChar": 4,
+        "endLine": 920,
+        "endChar": 61
+      },
+      "revId": "8e6dd0c1ce3bd0c81382173719e3b61b34724701",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a6b2e0a_b63465f6",
         "filename": "dashboard/src/booking/models.py",
         "patchSetId": 15
@@ -36,6 +60,116 @@
       "writtenOn": "2019-05-02T18:05:49Z",
       "side": 1,
       "message": "it seems the booking workflow doesn\u0027t have any way of populating this field still. When are we looking at taking care of that, and would it be a part of this change or another one?",
+      "revId": "8e6dd0c1ce3bd0c81382173719e3b61b34724701",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b474e96f_1b71fa1d",
+        "filename": "dashboard/src/booking/models.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-05-03T14:57:13Z",
+      "side": 1,
+      "message": "I was thinking of putting that in a different commit because this one has grown pretty large. I want to get this through and then we can build on top of it.",
+      "parentUuid": "3a6b2e0a_b63465f6",
+      "revId": "8e6dd0c1ce3bd0c81382173719e3b61b34724701",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1b055914_1dc68e6a",
+        "filename": "dashboard/src/templates/base.html",
+        "patchSetId": 15
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-05-03T14:57:13Z",
+      "side": 1,
+      "message": "I still don\u0027t like this label. Maybe just Configure OPNFV? It needs to be shorter.",
+      "range": {
+        "startLine": 137,
+        "startChar": 82,
+        "endLine": 137,
+        "endChar": 107
+      },
+      "revId": "8e6dd0c1ce3bd0c81382173719e3b61b34724701",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "318c7452_54291939",
+        "filename": "dashboard/src/templates/config_bundle/steps/pick_installer.html",
+        "patchSetId": 15
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-05-03T14:57:13Z",
+      "side": 1,
+      "message": "tabs",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 2
+      },
+      "revId": "8e6dd0c1ce3bd0c81382173719e3b61b34724701",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "55ed474c_77ebcaf1",
+        "filename": "dashboard/src/workflow/forms.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 488,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-05-03T14:57:13Z",
+      "side": 1,
+      "message": "dead",
+      "range": {
+        "startLine": 488,
+        "startChar": 48,
+        "endLine": 488,
+        "endChar": 55
+      },
+      "revId": "8e6dd0c1ce3bd0c81382173719e3b61b34724701",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfc72e52_681f64e3",
+        "filename": "dashboard/src/workflow/sw_bundle_workflow.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-05-03T14:57:13Z",
+      "side": 1,
+      "message": "does nothing",
+      "range": {
+        "startLine": 51,
+        "startChar": 0,
+        "endLine": 51,
+        "endChar": 13
+      },
       "revId": "8e6dd0c1ce3bd0c81382173719e3b61b34724701",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
