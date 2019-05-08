@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6f3b4846_49523ecf",
+        "filename": "dashboard/src/api/models.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 992,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-05-08T17:00:00Z",
+      "side": 1,
+      "message": "variable defined in another scope. Python allows this but I hate it.",
+      "range": {
+        "startLine": 992,
+        "startChar": 21,
+        "endLine": 992,
+        "endChar": 29
+      },
+      "revId": "650c2fc733e01f02e7359166d30be901b7806238",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
