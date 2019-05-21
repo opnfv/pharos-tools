@@ -59,11 +59,11 @@ class Resource_Select(WorkflowStep):
             data = form.cleaned_data['generic_resource_bundle']
             data = data[2:-2]
             if not data:
-                self.metastep.set_invalid("Please select a valid bundle")
+                self.set_invalid("Please select a valid bundle")
                 return render(request, self.template, context)
             selected_bundle = json.loads(data)
             if len(selected_bundle) < 1:
-                self.metastep.set_invalid("Please select a valid bundle")
+                self.set_invalid("Please select a valid bundle")
                 return render(request, self.template, context)
             selected_id = selected_bundle[0]['id']
             gresource_bundle = None
@@ -86,11 +86,11 @@ class Resource_Select(WorkflowStep):
             confirm[self.confirm_key]["resource name"] = gresource_bundle.name
             self.repo_put(self.repo.CONFIRMATION, confirm)
             messages.add_message(request, messages.SUCCESS, 'Form Validated Successfully', fail_silently=True)
-            self.metastep.set_valid("Step Completed")
+            self.set_valid("Step Completed")
             return render(request, self.template, context)
         else:
             messages.add_message(request, messages.ERROR, "Form Didn't Validate", fail_silently=True)
-            self.metastep.set_invalid("Please complete the fields highlighted in red to continue")
+            self.set_invalid("Please complete the fields highlighted in red to continue")
             return render(request, self.template, context)
 
 
@@ -135,11 +135,11 @@ class SWConfig_Select(WorkflowStep):
             bundle_json = form.cleaned_data['software_bundle']
             bundle_json = bundle_json[2:-2]  # Stupid django string bug
             if not bundle_json:
-                self.metastep.set_invalid("Please select a valid config")
+                self.set_invalid("Please select a valid config")
                 return self.render(request)
             bundle_json = json.loads(bundle_json)
             if len(bundle_json) < 1:
-                self.metastep.set_invalid("Please select a valid config")
+                self.set_invalid("Please select a valid config")
                 return self.render(request)
             bundle = None
             id = int(bundle_json[0]['id'])
@@ -148,7 +148,7 @@ class SWConfig_Select(WorkflowStep):
             grb = self.repo_get(self.repo.SELECTED_GRESOURCE_BUNDLE)
 
             if grb and bundle.bundle != grb:
-                self.metastep.set_invalid("Incompatible config selected for resource bundle")
+                self.set_invalid("Incompatible config selected for resource bundle")
                 return self.render(request)
             if not grb:
                 self.repo_set(self.repo.SELECTED_GRESOURCE_BUNDLE, bundle.bundle)
@@ -163,10 +163,10 @@ class SWConfig_Select(WorkflowStep):
                 confirm['booking'] = {}
             confirm['booking']["configuration name"] = bundle.name
             self.repo_put(self.repo.CONFIRMATION, confirm)
-            self.metastep.set_valid("Step Completed")
+            self.set_valid("Step Completed")
             messages.add_message(request, messages.SUCCESS, 'Form Validated Successfully', fail_silently=True)
         else:
-            self.metastep.set_invalid("Please select or create a valid config")
+            self.set_invalid("Please select or create a valid config")
             messages.add_message(request, messages.ERROR, "Form Didn't Validate", fail_silently=True)
 
         return self.render(request)
@@ -190,6 +190,26 @@ class SWConfig_Select(WorkflowStep):
         grb = self.repo_get(self.repo.SELECTED_GRESOURCE_BUNDLE)
         context['form'] = SWConfigSelectorForm(chosen_software=default, bundle=bundle, edit=edit, resource=grb)
         return context
+
+
+class OPNFV_EnablePicker(object):
+    pass
+
+
+class OPNFV_Pick_or_Create(WorkflowStep, OPNFV_EnablePicker):
+    template = 'booking/steps/opnfv_pick_or_create.html'
+    title = "Choose an OPNFV Config"
+    description = "Choose or create a description of how you want to deploy OPNFV"
+    short_title = "opnfv config"
+    enabled = False
+
+    def get_context(self):
+        context = super(OPNFV_Pick_or_Create, self).get_context()
+        initial = {}
+        default = []
+
+    def post_render(self, request):
+        pass
 
 
 class Booking_Meta(WorkflowStep):
@@ -253,6 +273,13 @@ class Booking_Meta(WorkflowStep):
             for key in ['length', 'project', 'purpose']:
                 confirm['booking'][key] = form.cleaned_data[key]
 
+            if form.cleaned_data["deploy_opnfv"] == True:
+                print("enabling opnfv step")
+                self.repo_get(self.repo.SESSION_MANAGER).set_step_statuses(OPNFV_EnablePicker, desired_enabled=True)
+            else:
+                print("disabling opnfv step")
+                self.repo_get(self.repo.SESSION_MANAGER).set_step_statuses(OPNFV_EnablePicker, desired_enabled=False)
+
             user_data = form.cleaned_data['users']
             confirm['booking']['collaborators'] = []
             user_data = user_data[2:-2]  # fixes malformed string from querydict
@@ -270,9 +297,9 @@ class Booking_Meta(WorkflowStep):
             self.repo_put(self.repo.BOOKING_MODELS, models)
             self.repo_put(self.repo.CONFIRMATION, confirm)
             messages.add_message(request, messages.SUCCESS, 'Form Validated', fail_silently=True)
-            self.metastep.set_valid("Step Completed")
+            self.set_valid("Step Completed")
         else:
             messages.add_message(request, messages.ERROR, "Form didn't validate", fail_silently=True)
-            self.metastep.set_invalid("Please complete the fields highlighted in red to continue")
+            self.set_invalid("Please complete the fields highlighted in red to continue")
             context['form'] = form  # TODO: store this form
         return render(request, self.template, context)
