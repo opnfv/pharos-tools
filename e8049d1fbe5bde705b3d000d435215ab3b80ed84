@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a7e35ef1_33f6b228",
+        "filename": "dashboard/src/workflow/booking_workflow.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-05-22T14:25:24Z",
+      "side": 1,
+      "message": "the arg name should just be \u0027enabled\u0027",
+      "range": {
+        "startLine": 278,
+        "startChar": 95,
+        "endLine": 278,
+        "endChar": 103
+      },
+      "revId": "e8049d1fbe5bde705b3d000d435215ab3b80ed84",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2c3e36c8_7f969684",
+        "filename": "dashboard/src/workflow/forms.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-05-22T14:25:24Z",
+      "side": 1,
+      "message": "do we need a default value if it is not required?",
+      "range": {
+        "startLine": 205,
+        "startChar": 38,
+        "endLine": 205,
+        "endChar": 46
+      },
+      "revId": "e8049d1fbe5bde705b3d000d435215ab3b80ed84",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
