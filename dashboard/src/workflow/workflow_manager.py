@@ -84,7 +84,9 @@ class SessionManager():
             responsejson["active"] = self.active_workflow().repository.el['active_step']
             responsejson["workflow_count"] = len(self.workflows)
             return JsonResponse(responsejson, safe=False)
-        except Exception:
+        except Exception as e:
+            print("failed to retrieve status because:")
+            print(e)
             pass
 
     def render(self, request, **kwargs):
