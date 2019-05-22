@@ -117,6 +117,10 @@ class ResourceSelectorForm(forms.Form):
         return attrs
 
 
+class DependentConfigSelectorForm(forms.Form):
+    def __init__(self, *args, **kwargs):
+        chosen
+
 class SWConfigSelectorForm(forms.Form):
 
     def __init__(self, *args, **kwargs):
@@ -202,6 +206,7 @@ class BookingMetaForm(forms.Form):
     purpose = forms.CharField(max_length=1000)
     project = forms.CharField(max_length=400)
     info_file = forms.CharField(max_length=1000, required=False)
+    deploy_opnfv = forms.BooleanField(required=False)
 
     def __init__(self, data=None, *args, **kwargs):
         chosen_users = []

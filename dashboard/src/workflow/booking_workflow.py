@@ -18,7 +18,7 @@ from datetime import timedelta
 from booking.models import Booking
 from workflow.models import WorkflowStep
 from workflow.forms import ResourceSelectorForm, SWConfigSelectorForm, BookingMetaForm
-from resource_inventory.models import GenericResourceBundle, ResourceBundle, ConfigBundle
+from resource_inventory.models import GenericResourceBundle, ResourceBundle, ConfigBundle, OPNFVConfig
 
 
 class Resource_Select(WorkflowStep):
@@ -192,6 +192,49 @@ class SWConfig_Select(WorkflowStep):
         return context
 
 
+class OPNFV_EnablePicker(object):
+    pass
+
+
+class OPNFV_Select(WorkflowStep, OPNFV_EnablePicker):
+    template = 'booking/steps/opnfv_pick_or_create.html'
+    title = "Choose an OPNFV Config"
+    description = "Choose or create a description of how you want to deploy OPNFV"
+    short_title = "opnfv config"
+    enabled = False
+
+    def post_render(self, request):
+        form = OPNFVSelectorForm(request.POST)
+        if form.is_valid():
+            config_json = form.cleaned_data['opnfv_config']
+            config_json = config_json[2:-2]  # Stupid django string bug
+            if not config_json:
+                self.set_invalid("Please select a valid config")
+                return self.render(request)
+            config_json = json.loads(config_json)
+            if len(config_json) < 1:
+                self.set_invalid("Please select a valid config")
+                return self.render(request)
+            config = None
+            id = int(config_json[0]['id'])
+            config = OPNFVConfig.objects.get(id=id)
+
+            config_bundle = self.repo_get(self.repo.SELECTED_CONFIG_BUNDLE)
+            # once user can't advance without completing a step this is an implicit invariant
+            # so no None checks need to be performed on config_bundle
+
+            if config.bundle != config_bundle:
+                self.set_invalid("Incompatible OPNFV config selected for config bundle")
+
+    def get_context(self):
+        context = super(OPNFV_Select, self).get_context()
+        initial = {}
+        default = []
+
+    def post_render(self, request):
+        pass
+
+
 class Booking_Meta(WorkflowStep):
     template = 'booking/steps/booking_meta.html'
     title = "Extra Info"
@@ -252,6 +295,13 @@ class Booking_Meta(WorkflowStep):
             models['booking'].project = form.cleaned_data['project']
             for key in ['length', 'project', 'purpose']:
                 confirm['booking'][key] = form.cleaned_data[key]
+
+            if form.cleaned_data["deploy_opnfv"] == True:
+                print("enabling opnfv step")
+                self.repo_get(self.repo.SESSION_MANAGER).set_step_statuses(OPNFV_EnablePicker, desired_enabled=True)
+            else:
+                print("disabling opnfv step")
+                self.repo_get(self.repo.SESSION_MANAGER).set_step_statuses(OPNFV_EnablePicker, desired_enabled=False)
 
             user_data = form.cleaned_data['users']
             confirm['booking']['collaborators'] = []
