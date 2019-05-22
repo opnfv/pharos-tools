@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8ba941c1_116bbf6d",
+        "filename": "dashboard/src/workflow/models.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-05-22T14:20:13Z",
+      "side": 1,
+      "message": "use class constants",
+      "range": {
+        "startLine": 189,
+        "startChar": 40,
+        "endLine": 189,
+        "endChar": 43
+      },
+      "revId": "aea6838d26c8fb6b19e785565518b0bdb9569b9d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "62d98171_f870e060",
+        "filename": "dashboard/src/workflow/workflow_factory.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-05-22T14:20:13Z",
+      "side": 1,
+      "message": "?",
+      "range": {
+        "startLine": 123,
+        "startChar": 44,
+        "endLine": 123,
+        "endChar": 70
+      },
+      "revId": "aea6838d26c8fb6b19e785565518b0bdb9569b9d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "77911aae_5a47c938",
+        "filename": "dashboard/src/workflow/workflow_manager.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-05-22T14:20:13Z",
+      "side": 1,
+      "message": "need to recheck that we did not go out of bounds",
+      "range": {
+        "startLine": 104,
+        "startChar": 1,
+        "endLine": 105,
+        "endChar": 26
+      },
+      "revId": "aea6838d26c8fb6b19e785565518b0bdb9569b9d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
