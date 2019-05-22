@@ -192,6 +192,26 @@ class SWConfig_Select(WorkflowStep):
         return context
 
 
+class OPNFV_EnablePicker(object):
+    pass
+
+
+class OPNFV_Pick_or_Create(WorkflowStep, OPNFV_EnablePicker):
+    template = 'booking/steps/opnfv_pick_or_create.html'
+    title = "Choose an OPNFV Config"
+    description = "Choose or create a description of how you want to deploy OPNFV"
+    short_title = "opnfv config"
+    enabled = False
+
+    def get_context(self):
+        context = super(OPNFV_Pick_or_Create, self).get_context()
+        initial = {}
+        default = []
+
+    def post_render(self, request):
+        pass
+
+
 class Booking_Meta(WorkflowStep):
     template = 'booking/steps/booking_meta.html'
     title = "Extra Info"
@@ -252,6 +272,13 @@ class Booking_Meta(WorkflowStep):
             models['booking'].project = form.cleaned_data['project']
             for key in ['length', 'project', 'purpose']:
                 confirm['booking'][key] = form.cleaned_data[key]
+
+            if form.cleaned_data["deploy_opnfv"] == True:
+                print("enabling opnfv step")
+                self.repo_get(self.repo.SESSION_MANAGER).set_step_statuses(OPNFV_EnablePicker, desired_enabled=True)
+            else:
+                print("disabling opnfv step")
+                self.repo_get(self.repo.SESSION_MANAGER).set_step_statuses(OPNFV_EnablePicker, desired_enabled=False)
 
             user_data = form.cleaned_data['users']
             confirm['booking']['collaborators'] = []
