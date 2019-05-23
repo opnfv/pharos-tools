@@ -16,11 +16,100 @@ import json
 from datetime import timedelta
 
 from booking.models import Booking
-from workflow.models import WorkflowStep
+from workflow.models import WorkflowStep, AbstractSelectOrCreate
 from workflow.forms import ResourceSelectorForm, SWConfigSelectorForm, BookingMetaForm
 from resource_inventory.models import GenericResourceBundle, ResourceBundle, ConfigBundle
 
 
+"""
+subclassing notes:
+    subclasses have to define the following class attributes:
+        self.repo_key: main output of step, where the selected/created single selector
+            result is placed at the end
+        self.confirm_key:
+"""
+
+
+class Abstract_Resource_Select(AbstractSelectOrCreate):
+    form = ResourceSelectorForm
+    template = 'dashboard/genericselect.html'
+    title = "Select Resource"
+    description = "Select a resource template to use for your deployment"
+    short_title = "pod select"
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.select_repo_key = self.repo.SELECTED_GRESOURCE_BUNDLE
+        self.confirm_key = self.workflow_type
+
+    def alert_bundle_missing(self):
+        self.set_invalid("Please select a valid resource bundle")
+
+    def get_form_queryset(self):
+        user = self.repo_get(self.repo.SESSION_USER)
+        qs = GenericResourceBundle.objects.filter(owner=user)
+        return qs
+
+    def get_page_context(self):
+        return {
+            'select_type': 'resource',
+            'select_type_title': 'Resource Bundle',
+            'description': "Select a resource template to use for your deployment",
+            'title': 'Select Resource',
+            'short_title': 'pod select',
+            'addable_type_num': 1
+        }
+
+    def put_confirm_info(self, bundle):
+        confirm_dict = self.repo_get(self.repo.CONFIRMATION)
+        if self.confirm_key not in confirm_dict:
+            confirm_dict[self.confirm_key] = {}
+        confirm_dict[self.confirm_key]["Resource Template"] = bundle.name
+        self.repo_put(self.repo.CONFIRMATION, confirm_dict)
+
+
+class Booking_Resource_Select(Abstract_Resource_Select):
+    workflow_type = "booking"
+
+
+class SWConfig_Select(AbstractSelectOrCreate):
+    title = "Select Software Configuration"
+    description = "Choose the software and related configurations you want to have used for your deployment"
+    short_title = "pod config"
+    form = SWConfigSelectorForm
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.select_repo_key = self.repo.SELECTED_CONFIG_BUNDLE
+        self.confirm_key = "booking"
+
+    def alert_bundle_missing(self):
+        self.set_invalid("Please select a valid pod config")
+
+    def get_form_queryset(self):
+        user = self.repo_get(self.repo.SESSION_USER)
+        grb = self.repo_get(self.repo.SELECTED_GRESOURCE_BUNDLE)
+        qs = ConfigBundle.objects.filter(owner=user).filter(bundle=grb)
+        return qs
+
+    def put_confirm_info(self, bundle):
+        confirm_dict = self.repo_get(self.repo.CONFIRMATION)
+        if self.confirm_key not in confirm_dict:
+            confirm_dict[self.confirm_key] = {}
+        confirm_dict[self.confirm_key]["Software Configuration"] = bundle.name
+        self.repo_put(self.repo.CONFIRMATION, confirm_dict)
+
+    def get_page_context(self):
+        return {
+            'select_type': 'swconfig',
+            'select_type_title': 'Software Config',
+            'description': "Choose the software and related configurations you want to have used for your deployment",
+            'title': 'Select Software Configuration',
+            'short_title': 'pod config',
+            'addable_type_num': 1
+        }
+
+"""
 class Resource_Select(WorkflowStep):
     template = 'booking/steps/resource_select.html'
     title = "Select Resource"
@@ -70,6 +159,7 @@ class Resource_Select(WorkflowStep):
             try:
                 selected_id = int(selected_id)
                 gresource_bundle = GenericResourceBundle.objects.get(id=selected_id)
+
             except ValueError:
                 # we want the bundle in the repo
                 gresource_bundle = self.repo_get(
@@ -87,6 +177,7 @@ class Resource_Select(WorkflowStep):
             self.repo_put(self.repo.CONFIRMATION, confirm)
             messages.add_message(request, messages.SUCCESS, 'Form Validated Successfully', fail_silently=True)
             self.set_valid("Step Completed")
+
             return render(request, self.template, context)
         else:
             messages.add_message(request, messages.ERROR, "Form Didn't Validate", fail_silently=True)
@@ -190,6 +281,7 @@ class SWConfig_Select(WorkflowStep):
         grb = self.repo_get(self.repo.SELECTED_GRESOURCE_BUNDLE)
         context['form'] = SWConfigSelectorForm(chosen_software=default, bundle=bundle, edit=edit, resource=grb)
         return context
+"""
 
 
 class Booking_Meta(WorkflowStep):
@@ -214,23 +306,18 @@ class Booking_Meta(WorkflowStep):
                 initial['info_file'] = info
             users = models.get("collaborators", [])
             for user in users:
-                default.append(user.id)
+                default.append(user)
         except Exception:
             pass
 
-        default_user = self.repo_get(self.repo.SESSION_USER)
-        if default_user is None:
-            # TODO: error
-            default_user = "you"
-        else:
-            default_user = default_user.username
+        owner = self.repo_get(self.repo.SESSION_USER)
 
-        context['form'] = BookingMetaForm(initial=initial, chosen_users=default, default_user=default_user)
+        context['form'] = BookingMetaForm(initial=initial, user_initial=default, owner=owner)
         return context
 
     def post_render(self, request):
-        form = BookingMetaForm(data=request.POST)
-        context = self.get_context()
+        form = BookingMetaForm(data=request.POST, owner=request.user)
+        #context = self.get_context()
 
         forms = self.repo_get(self.repo.BOOKING_FORMS, {})
 
@@ -238,6 +325,7 @@ class Booking_Meta(WorkflowStep):
         self.repo_put(self.repo.BOOKING_FORMS, forms)
 
         if form.is_valid():
+            print("form was valid")
             models = self.repo_get(self.repo.BOOKING_MODELS, {})
             if "booking" not in models:
                 models['booking'] = Booking()
@@ -272,7 +360,8 @@ class Booking_Meta(WorkflowStep):
             messages.add_message(request, messages.SUCCESS, 'Form Validated', fail_silently=True)
             self.set_valid("Step Completed")
         else:
+            print("form was invalid")
             messages.add_message(request, messages.ERROR, "Form didn't validate", fail_silently=True)
             self.set_invalid("Please complete the fields highlighted in red to continue")
-            context['form'] = form  # TODO: store this form
-        return render(request, self.template, context)
+            # context['form'] = form  # TODO: store this form
+        return self.render(request)
