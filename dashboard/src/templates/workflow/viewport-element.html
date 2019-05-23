@@ -16,13 +16,18 @@
     </div>
     {% block vport_comm %}
              <script type="text/javascript">
+                console.log("entering viewport element stuff")
                 var step_count = {{ step_number|default:0 }};
                 var active_step = {{ active_step|default:0 }};
                 var render_correct = {{ render_correct|default:"false" }};
                 var title = "{{ step_title|default:"Workflow Step" }}";
                 var description = "{{ description|default:"Contact the admins, because this field should have something else filled in here" }}";
                 if(render_correct){
+                    console.log("updating context")
                     parent.update_context();
+                }
+                else{
+                    console.log("render_correct was not true")
                 }
                 parent.update_description(title, description);
             </script>

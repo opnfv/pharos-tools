@@ -169,6 +169,7 @@
 
     function request_leave(to)
     {
+        console.log("request_leave called");
         $.ajax({
             type: "GET",
             url: "/wf/manager/",
@@ -231,6 +232,7 @@
     }
 
     function update_context() {
+        console.log("update context called");
         $.ajax({
             type: "GET",
             url: "/wf/manager/",
@@ -391,6 +393,7 @@
     }
 
     function add_wf_internal(type, itemid){
+        console.log("add_wf_internal called")
         data = {"add": type};
         if(itemid){
             data['target'] = itemid;

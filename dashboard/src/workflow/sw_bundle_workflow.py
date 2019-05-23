@@ -12,11 +12,12 @@ from django.forms import formset_factory
 
 from workflow.models import WorkflowStep
 from workflow.forms import BasicMetaForm, HostSoftwareDefinitionForm
-from workflow.booking_workflow import Resource_Select
+from workflow.booking_workflow import Abstract_Resource_Select
 from resource_inventory.models import Image, GenericHost, ConfigBundle, HostConfiguration
 
 
 # resource selection step is reused from Booking workflow
+"""
 class SWConf_Resource_Select(Resource_Select):
     def __init__(self, *args, **kwargs):
         super(SWConf_Resource_Select, self).__init__(*args, **kwargs)
@@ -31,6 +32,11 @@ class SWConf_Resource_Select(Resource_Select):
         models['bundle'] = bundle
         self.repo_put(self.repo.CONFIG_MODELS, models)
         return response
+"""
+
+
+class SWConf_Resource_Select(Abstract_Resource_Select):
+    resource_select_type = "configuration"
 
 
 class Define_Software(WorkflowStep):
