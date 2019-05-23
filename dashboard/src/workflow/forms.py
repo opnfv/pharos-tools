@@ -13,6 +13,7 @@ from django.forms import widgets
 from django.utils.safestring import mark_safe
 from django.template.loader import render_to_string
 from django.forms.widgets import NumberInput
+from django.core.exceptions import ObjectDoesNotExist
 
 from account.models import Lab
 from account.models import UserProfile
@@ -37,10 +38,7 @@ class SearchableSelectMultipleWidget(widgets.SelectMultiple):
         self.placeholder = attrs['placeholder']
         self.name = attrs['name']
         self.initial = attrs.get("initial", "")
-        self.default_entry = attrs.get("default_entry", "")
-        self.edit = attrs.get("edit", False)
-        self.wf_type = attrs.get("wf_type")
-        self.incompatible = attrs.get("incompatible", "false")
+        # self.default_entry = attrs.get("default_entry", "")
 
         super(SearchableSelectMultipleWidget, self).__init__(attrs)
 
@@ -59,11 +57,109 @@ class SearchableSelectMultipleWidget(widgets.SelectMultiple):
             'selectable_limit': self.selectable_limit,
             'placeholder': self.placeholder,
             'initial': self.initial,
-            'default_entry': self.default_entry,
-            'edit': self.edit,
-            'wf_type': self.wf_type,
-            'incompatible': self.incompatible
+            # 'default_entry': self.default_entry,
         }
+
+
+class SearchableSelectMultipleField(forms.Field):
+    def __init__(self, *, required=True, widget=None, label=None, initial=None,
+                 help_text='', error_messages=None, show_hidden_initial=False,
+                 validators=(), localize=False, disabled=False, label_suffix=None,
+                 items=None, queryset=None, show_from_noentry=True, show_x_results=-1,
+                 results_scrollable=False, selectable_limit=-1, placeholder="search here",
+                 name="searchable_select", initial=[]):
+        """from the documentation:
+        # required -- Boolean that specifies whether the field is required.
+        #             True by default.
+        # widget -- A Widget class, or instance of a Widget class, that should
+        #           be used for this Field when displaying it. Each Field has a
+        #           default Widget that it'll use if you don't specify this. In
+        #           most cases, the default widget is TextInput.
+        # label -- A verbose name for this field, for use in displaying this
+        #          field in a form. By default, Django will use a "pretty"
+        #          version of the form field name, if the Field is part of a
+        #          Form.
+        # initial -- A value to use in this Field's initial display. This value
+        #            is *not* used as a fallback if data isn't given.
+        # help_text -- An optional string to use as "help text" for this Field.
+        # error_messages -- An optional dictionary to override the default
+        #                   messages that the field will raise.
+        # show_hidden_initial -- Boolean that specifies if it is needed to render a
+        #                        hidden widget with initial value after widget.
+        # validators -- List of additional validators to use
+        # localize -- Boolean that specifies if the field should be localized.
+        # disabled -- Boolean that specifies whether the field is disabled, that
+        #             is its widget is shown in the form but not editable.
+        # label_suffix -- Suffix to be added to the label. Overrides
+        #                 form's label_suffix.
+        """
+
+        self.widget = widget
+        if self.widget is None:
+            self.widget = SearchableSelectMultipleWidget(
+                attrs={
+                    'items': items,
+                    'initial': [obj.id for obj in initial],
+                    'show_from_noentry': show_from_noentry,
+                    'show_x_results': show_x_results,
+                    'results_scrollable': results_scrollable,
+                    'selectable_limit': selectable_limit,
+                    'placeholder': placeholder,
+                    'name': name,
+                    'disabled': disabled
+                }
+            )
+        self.disabled = disabled
+        self.queryset = queryset
+        self.selectable_limit = selectable_limit
+
+    def clean(data):
+        print("data before cleaning: " + data)
+        data = data[2:-2]
+        print("data after cleaning: " + data)
+        if not data:
+            raise django.forms.ValidationError("Nothing was selected")
+        data_as_list = json.loads(data)
+        if self.selectable_limit != -1:
+            if len(data_as_list) > self.selectable_limit:
+                raise django.forms.ValidationError("Too many items were selected")
+
+        items = []
+        for elem in data_as_list:
+            items.append(self.queryset.get(id=elem))
+
+        return items
+        
+
+
+
+
+class SearchableSelectGenericForm(forms.Form):
+    def __init__(self, *args, queryset=None, initial=[],  **kwargs):
+        self.queryset = queryset
+        items = self.generate_items(self.queryset)
+        options = self.generate_options()
+
+        super(SearchableSelectGenericForm, self).__init__(*args, **kwargs)
+        self.fields['searchable_select'] = SearchableSelectMultipleField(
+            initial=initial,
+            items=items,
+            queryset=self.queryset,
+            **options
+        )
+
+
+    def get_validated_bundle():
+        bundles = self.cleaned_data['searchable_select']
+        if len(bundles) < 1:  # don't need to check for >1, as field does that for us
+            raise django.forms.ValidationError("No bundle was selected")
+
+    def generate_options(self):
+        
+    
+
+class SWConfigSelectorForm(SearchableSelectGenericForm):
+    def generate_items(
 
 
 class ResourceSelectorForm(forms.Form):

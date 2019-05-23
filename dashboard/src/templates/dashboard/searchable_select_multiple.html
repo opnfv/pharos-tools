@@ -96,16 +96,36 @@
 
 <script type="text/javascript">
     //flags
-    var show_from_noentry = {{show_from_noentry|default:"false"}};
-    var show_x_results = {{show_x_results|default:-1}};
-    var results_scrollable = {{results_scrollable|default:"false"}};
-    var selectable_limit = {{selectable_limit|default:-1}};
-    var field_name  = "{{name|default:"users"}}";
-    var placeholder = "{{placeholder|default:"begin typing"}}";
-    var default_entry = "{{default_entry}}";
+    var show_from_noentry = {{show_from_noentry|default:"false"}}; // whether to show any results before user starts typing
+    var show_x_results = {{show_x_results|default:-1}}; // how many results to show at a time, -1 shows all results
+    var results_scrollable = {{results_scrollable|default:"false"}}; // whether list should be scrollable
+    var selectable_limit = {{selectable_limit|default:-1}}; // how many selections can be made, -1 allows infinitely many
+    //var field_name  = "{{name|default:"users"}}"; // field name, relevant for backend, determines submission characteristics
+        // when submitted, form will contain field data in post with name as the key
+    var placeholder = "{{placeholder|default:"begin typing"}}"; // placeholder that goes in text box
+    var default_entry = "{{default_entry}}"; // preselected entry. Type is a string that is the displayed name of the entry, possibly obsolete
+        // confirmed obsolete, not used anywhere in this repo
 
     //needed info
-    var items = {{items|safe}}
+    var items = {{items|safe}} // items to add to trie. Type is a dictionary of dictionaries with structure:
+        /*
+        {
+            id# : {
+                "id": any, identifiable on backend
+                "small_name": string, displayed first (before separator), searchable (use for e.g. username)
+                "expanded_name": string, displayed second (after separator), searchable (use for e.g. email address)
+                "string": string, not displayed, still searchable
+            }
+        }
+        */
+
+    /* used later:
+    {{ selectable_limit }}: changes what number displays for field
+    {{ name }}: form identifiable name, relevant for backend
+    {{ initial.name }}:
+    {{ placeholder }}:
+    {{ initial }}: in search_field_init(), marked safe, an array of id's each referring to an id from items
+    */
 
     //tries
     var expanded_name_trie = {}
@@ -116,9 +136,6 @@
     string_trie.isComplete = false;
 
     var added_items = [];
-    var initial_log = {{ initial|safe }};
-
-    var added_template = {{ added_list|default:"{}" }};
 
     if( default_entry )
     {
@@ -335,7 +352,7 @@
     function select_item(item_id)
     {
         //TODO make faster
-        var item = items[item_id];
+        var item = items[item_id]['id'];
         if( (selectable_limit > -1 && added_items.length < selectable_limit) || selectable_limit < 0 )
         {
             if( added_items.indexOf(item) == -1 )
@@ -347,7 +364,7 @@
         document.getElementById("user_field").focus();
     }
 
-    function remove_item(item_ref)
+    function remove_item(item_ref) // this function is of questionable legitimacy
     {
         item = Object.values(items)[item_ref];
         var index = added_items.indexOf(item);
@@ -355,11 +372,6 @@
 
         update_selected_list()
         document.getElementById("user_field").focus();
-    }
-
-    function edit_item(item_id){
-        var wf_type = "{{wf_type}}";
-        parent.add_edit_wf(wf_type, item_id);
     }
 
     function update_selected_list()
@@ -391,11 +403,6 @@
                 + '</p><button onclick="remove_item('
                 + Object.values(items).indexOf(item)
                 + ')" class="btn-remove btn">remove</button>';
-            {% if edit %}
-                list_html += '<button onclick="edit_item('
-                + item['id']
-                + ')" class="btn-remove btn">edit</button>';
-            {% endif %}
                 list_html += '</div>';
         }
 
