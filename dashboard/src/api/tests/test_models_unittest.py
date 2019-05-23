@@ -7,10 +7,6 @@
 # http://www.apache.org/licenses/LICENSE-2.0
 ##############################################################################
 
-
-from datetime import timedelta
-from django.utils import timezone
-
 from booking.models import Booking
 from api.models import (
     Job,
@@ -30,42 +26,42 @@ from resource_inventory.models import (
 from django.test import TestCase, Client
 
 from dashboard.testing_utils import (
-    instantiate_host,
-    instantiate_user,
-    instantiate_userprofile,
-    instantiate_lab,
-    instantiate_installer,
-    instantiate_image,
-    instantiate_scenario,
-    instantiate_os,
-    make_hostprofile_set,
-    instantiate_opnfvrole,
-    instantiate_publicnet,
-    instantiate_booking,
+    make_host,
+    make_user,
+    make_user_profile,
+    make_lab,
+    make_installer,
+    make_image,
+    make_scenario,
+    make_os,
+    make_complete_host_profile,
+    make_opnfv_role,
+    make_public_net,
+    make_booking,
 )
 
 
 class ValidBookingCreatesValidJob(TestCase):
     @classmethod
     def setUpTestData(cls):
-        cls.loginuser = instantiate_user(False, username="newtestuser", password="testpassword")
-        cls.userprofile = instantiate_userprofile(cls.loginuser)
+        cls.user = make_user(False, username="newtestuser", password="testpassword")
+        cls.userprofile = make_user_profile(cls.user)
 
-        lab_user = instantiate_user(True)
-        cls.lab = instantiate_lab(lab_user)
+        lab_user = make_user(True)
+        cls.lab = make_lab(lab_user)
 
-        cls.host_profile = make_hostprofile_set(cls.lab)
-        cls.scenario = instantiate_scenario()
-        cls.installer = instantiate_installer([cls.scenario])
-        os = instantiate_os([cls.installer])
-        cls.image = instantiate_image(cls.lab, 1, cls.loginuser, os, cls.host_profile)
+        cls.host_profile = make_complete_host_profile(cls.lab)
+        cls.scenario = make_scenario()
+        cls.installer = make_installer([cls.scenario])
+        os = make_os([cls.installer])
+        cls.image = make_image(cls.lab, 1, cls.user, os, cls.host_profile)
         for i in range(30):
-            instantiate_host(cls.host_profile, cls.lab, name="host" + str(i), labid="host" + str(i))
-        cls.role = instantiate_opnfvrole("Jumphost")
-        cls.computerole = instantiate_opnfvrole("Compute")
-        instantiate_publicnet(10, cls.lab)
-        instantiate_publicnet(12, cls.lab)
-        instantiate_publicnet(14, cls.lab)
+            make_host(cls.host_profile, cls.lab, name="host" + str(i), labid="host" + str(i))
+        cls.role = make_opnfv_role("Jumphost")
+        cls.computerole = make_opnfv_role("Compute")
+        make_public_net(10, cls.lab)
+        make_public_net(12, cls.lab)
+        make_public_net(14, cls.lab)
 
         cls.lab_selected = 'lab_' + str(cls.lab.lab_user.id) + '_selected'
         cls.host_selected = 'host_' + str(cls.host_profile.id) + '_selected'
@@ -76,7 +72,7 @@ class ValidBookingCreatesValidJob(TestCase):
 
     def setUp(self):
         self.client.login(
-            username=self.loginuser.username, password="testpassword")
+            username=self.user.username, password="testpassword")
         self.booking, self.compute_hostnames, self.jump_hostname = self.create_multinode_generic_booking()
 
     @classmethod
@@ -248,14 +244,13 @@ class ValidBookingCreatesValidJob(TestCase):
             host_info["image"] = self.image
             topology[hostname] = host_info
 
-        booking = instantiate_booking(self.loginuser,
-                                      timezone.now(),
-                                      timezone.now() + timedelta(days=1),
-                                      "demobooking",
-                                      self.lab,
-                                      topology=topology,
-                                      installer=self.installer,
-                                      scenario=self.scenario)
+        booking = make_booking(
+            owner=self.user,
+            lab=self.lab,
+            topology=topology,
+            installer=self.installer,
+            scenario=self.scenario
+        )
 
         if not booking.resource:
             raise Exception("Booking does not have a resource when trying to pass to makeCompleteJob")
