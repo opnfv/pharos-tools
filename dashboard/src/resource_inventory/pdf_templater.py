@@ -66,16 +66,20 @@ class PDFTemplater:
     def get_jumphost(cls, booking):
         jumphost = None
         if booking.opnfv_config:
+            print("there is opnfv config")
             jumphost_opnfv_config = booking.opnfv_config.host_opnfv_config.get(
                 role__name__iexact="jumphost"
             )
             jumphost = booking.resource.hosts.get(config=jumphost_opnfv_config.host_config)
         else:  # if there is no opnfv config, use headnode
+            print("there is no opnfv config")
+            print("booking resource: " + str(booking.resource))
             jumphost = Host.objects.filter(
                 bundle=booking.resource,
                 config__is_head_node=True
             ).first()
 
+        print("returning jumphost val: " + str(jumphost))
         return jumphost
 
     @classmethod
