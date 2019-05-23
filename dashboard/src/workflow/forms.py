@@ -37,10 +37,7 @@ class SearchableSelectMultipleWidget(widgets.SelectMultiple):
         self.placeholder = attrs['placeholder']
         self.name = attrs['name']
         self.initial = attrs.get("initial", "")
-        self.default_entry = attrs.get("default_entry", "")
-        self.edit = attrs.get("edit", False)
-        self.wf_type = attrs.get("wf_type")
-        self.incompatible = attrs.get("incompatible", "false")
+        # self.default_entry = attrs.get("default_entry", "")
 
         super(SearchableSelectMultipleWidget, self).__init__(attrs)
 
@@ -59,11 +56,18 @@ class SearchableSelectMultipleWidget(widgets.SelectMultiple):
             'selectable_limit': self.selectable_limit,
             'placeholder': self.placeholder,
             'initial': self.initial,
-            'default_entry': self.default_entry,
-            'edit': self.edit,
-            'wf_type': self.wf_type,
-            'incompatible': self.incompatible
+            # 'default_entry': self.default_entry,
         }
+
+
+class SearchableSelectGenericForm(forms.Form):
+    def __init__(self, itemConstraints, **kwargs):
+        items = None
+        self.generate_items(param)
+    
+
+class SWConfigSelectorForm(SearchableSelectGenericForm):
+    def generate_items(
 
 
 class ResourceSelectorForm(forms.Form):

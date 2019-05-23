@@ -21,6 +21,21 @@ from workflow.forms import ResourceSelectorForm, SWConfigSelectorForm, BookingMe
 from resource_inventory.models import GenericResourceBundle, ResourceBundle, ConfigBundle
 
 
+"""
+subclassing notes:
+    subclasses have to define the following class attributes:
+        self.repo_key: main output of step, where the selected/created single selector
+            result is placed at the end
+        self.confirm_key: 
+"""
+class GenericSelectOrCreate(WorkflowStep):
+    template = 'dashboard/steps/genericselect.html'
+    short_title = "select"
+    description = "Generic bundle selector step"
+    def post_render(self, request):
+    def get_context(self):
+
+
 class Resource_Select(WorkflowStep):
     template = 'booking/steps/resource_select.html'
     title = "Select Resource"
