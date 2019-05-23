@@ -240,6 +240,37 @@ class WorkflowStep(object):
         return self.repo.put(key, value, self.id)
 
 
+"""
+subclassing notes:
+    subclasses have to define the following class attributes:
+        self.repo_key: main output of step, where the selected/created single selector
+            result is placed at the end
+        self.confirm_key:
+"""
+
+
+class GenericSelectOrCreate(WorkflowStep):
+    template = 'dashboard/steps/genericselect.html'
+    title = "Select a Bundle"
+    short_title = "select"
+    description = "Generic bundle selector step"
+
+    def alert_bundle_missing(self):  # override in subclasses to change message if field isn't filled out
+        self.set_invalid("Please select a valid bundle")
+
+    def post_render(self, request):
+        context = self.get_context()
+        form = self.form(request.POST, queryset=self.get_form_queryset())
+        if form.is_valid():
+            bundle = form.get_validated_bundle()
+            if not bundle:
+                self.alert_bundle_missing()
+                return render(request, self.template, context)
+
+    def get_context(self):
+        form = self.form(self.get_form_queryset())
+
+
 class Confirmation_Step(WorkflowStep):
     template = 'workflow/confirm.html'
     title = "Confirm Changes"

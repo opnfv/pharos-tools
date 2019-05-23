@@ -13,6 +13,7 @@ from django.forms import widgets
 from django.utils.safestring import mark_safe
 from django.template.loader import render_to_string
 from django.forms.widgets import NumberInput
+from django.core.exceptions import ObjectDoesNotExist
 
 from account.models import Lab
 from account.models import UserProfile
@@ -37,10 +38,7 @@ class SearchableSelectMultipleWidget(widgets.SelectMultiple):
         self.placeholder = attrs['placeholder']
         self.name = attrs['name']
         self.initial = attrs.get("initial", "")
-        self.default_entry = attrs.get("default_entry", "")
-        self.edit = attrs.get("edit", False)
-        self.wf_type = attrs.get("wf_type")
-        self.incompatible = attrs.get("incompatible", "false")
+        # self.default_entry = attrs.get("default_entry", "")
 
         super(SearchableSelectMultipleWidget, self).__init__(attrs)
 
@@ -59,11 +57,41 @@ class SearchableSelectMultipleWidget(widgets.SelectMultiple):
             'selectable_limit': self.selectable_limit,
             'placeholder': self.placeholder,
             'initial': self.initial,
-            'default_entry': self.default_entry,
-            'edit': self.edit,
-            'wf_type': self.wf_type,
-            'incompatible': self.incompatible
+            # 'default_entry': self.default_entry,
         }
+
+
+class SearchableSelectGenericForm(forms.Form):
+    def __init__(self, *args, queryset=None, **kwargs):
+        self.queryset = queryset
+        items = self.generate_items(self.queryset)
+        flags = self.generate_flags()
+        attrs = {'items': items, 'flags': flags}
+
+        super(SearchableSelectGenericForm, self).__init__(*args, **kwargs)
+        self.fields['searchable_select'] = forms.CharField(
+            widget=SearchableSelectMultipleWidget(attrs=attrs)
+        )
+
+    def get_validated_bundle():
+        data = self.cleaned_data['searchable_select']
+        data = data[2:-2]
+        if not data:
+            return None
+        selected_dict = json.loads(data)
+        if len(selected_dict) != 1:
+            return None
+        if not selected_dict['id']:
+            return None
+        try:
+            item = self.queryset.get(selected_dict[0]['id'])
+            return item
+        except ObjectDoesNotExist:
+            return None
+    
+
+class SWConfigSelectorForm(SearchableSelectGenericForm):
+    def generate_items(
 
 
 class ResourceSelectorForm(forms.Form):
