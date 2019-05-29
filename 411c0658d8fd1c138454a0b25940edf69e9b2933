@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3f54def5_d84feda2",
+        "filename": "dashboard/src/templates/dashboard/genericselect.html",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-05-29T19:24:04Z",
+      "side": 1,
+      "message": "Yeah I guess we could, initially this helped with differentiating the steps semantically but I can see it interfering with testing quite a bit.",
+      "parentUuid": "ff259851_be0c9a32",
+      "range": {
+        "startLine": 9,
+        "startChar": 2,
+        "endLine": 9,
+        "endChar": 16
+      },
+      "revId": "411c0658d8fd1c138454a0b25940edf69e9b2933",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "08489542_21550fe2",
         "filename": "dashboard/src/templates/dashboard/genericselect.html",
         "patchSetId": 5
@@ -94,6 +118,30 @@
     },
     {
       "key": {
+        "uuid": "3c13fd28_6e052282",
+        "filename": "dashboard/src/templates/dashboard/genericselect.html",
+        "patchSetId": 5
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-05-29T19:24:04Z",
+      "side": 1,
+      "message": "Yes, the widget defines this.",
+      "parentUuid": "1bc8a30a_cf289d51",
+      "range": {
+        "startLine": 59,
+        "startChar": 4,
+        "endLine": 59,
+        "endChar": 14
+      },
+      "revId": "411c0658d8fd1c138454a0b25940edf69e9b2933",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "24924bf8_f68333f8",
         "filename": "dashboard/src/templates/dashboard/searchable_select_multiple.html",
         "patchSetId": 5
@@ -105,6 +153,30 @@
       "writtenOn": "2019-05-29T18:54:37Z",
       "side": 1,
       "message": "?",
+      "range": {
+        "startLine": 107,
+        "startChar": 8,
+        "endLine": 107,
+        "endChar": 61
+      },
+      "revId": "411c0658d8fd1c138454a0b25940edf69e9b2933",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0626dff6_82027d77",
+        "filename": "dashboard/src/templates/dashboard/searchable_select_multiple.html",
+        "patchSetId": 5
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-05-29T19:24:04Z",
+      "side": 1,
+      "message": "Note to self, cleaning up after doing initial refactoring",
+      "parentUuid": "24924bf8_f68333f8",
       "range": {
         "startLine": 107,
         "startChar": 8,
@@ -140,6 +212,30 @@
     },
     {
       "key": {
+        "uuid": "d827e626_108e9764",
+        "filename": "dashboard/src/templates/dashboard/searchable_select_multiple.html",
+        "patchSetId": 5
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-05-29T19:24:04Z",
+      "side": 1,
+      "message": "This was written as a documentation-oriented comment, a couple of the variables are missing any comment on utility however",
+      "parentUuid": "fc01ed06_e02619a9",
+      "range": {
+        "startLine": 122,
+        "startChar": 0,
+        "endLine": 128,
+        "endChar": 6
+      },
+      "revId": "411c0658d8fd1c138454a0b25940edf69e9b2933",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "02a5ab7b_ca49f2cf",
         "filename": "dashboard/src/templates/dashboard/searchable_select_multiple.html",
         "patchSetId": 5
@@ -151,6 +247,30 @@
       "writtenOn": "2019-05-29T18:54:37Z",
       "side": 1,
       "message": "?",
+      "range": {
+        "startLine": 367,
+        "startChar": 35,
+        "endLine": 367,
+        "endChar": 81
+      },
+      "revId": "411c0658d8fd1c138454a0b25940edf69e9b2933",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1061940c_335d3638",
+        "filename": "dashboard/src/templates/dashboard/searchable_select_multiple.html",
+        "patchSetId": 5
+      },
+      "lineNbr": 367,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-05-29T19:24:04Z",
+      "side": 1,
+      "message": "It may not work any more, I have yet to test it",
+      "parentUuid": "02a5ab7b_ca49f2cf",
       "range": {
         "startLine": 367,
         "startChar": 35,
@@ -272,6 +392,30 @@
     },
     {
       "key": {
+        "uuid": "1c3c6e12_bc439515",
+        "filename": "dashboard/src/workflow/booking_workflow.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-05-29T19:24:04Z",
+      "side": 1,
+      "message": "We\u0027ll go with Abstract",
+      "parentUuid": "b06d8fb3_c0aab97d",
+      "range": {
+        "startLine": 33,
+        "startChar": 6,
+        "endLine": 33,
+        "endChar": 38
+      },
+      "revId": "411c0658d8fd1c138454a0b25940edf69e9b2933",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "162bddc7_2fca89be",
         "filename": "dashboard/src/workflow/booking_workflow.py",
         "patchSetId": 5
@@ -283,6 +427,30 @@
       "writtenOn": "2019-05-29T18:54:37Z",
       "side": 1,
       "message": "I think the parent class can do this with a \"please make a valid selection\" message.",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 46,
+        "endChar": 65
+      },
+      "revId": "411c0658d8fd1c138454a0b25940edf69e9b2933",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a580019b_fbfb641e",
+        "filename": "dashboard/src/workflow/booking_workflow.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-05-29T19:24:04Z",
+      "side": 1,
+      "message": "Are you suggesting we don\u0027t have a more specific message in the children or just that we change the wording here?",
+      "parentUuid": "162bddc7_2fca89be",
       "range": {
         "startLine": 45,
         "startChar": 0,
@@ -318,6 +486,30 @@
     },
     {
       "key": {
+        "uuid": "d75f34d1_e7f81334",
+        "filename": "dashboard/src/workflow/booking_workflow.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-05-29T19:24:04Z",
+      "side": 1,
+      "message": "yes",
+      "parentUuid": "0c26b300_25726e5f",
+      "range": {
+        "startLine": 58,
+        "startChar": 0,
+        "endLine": 59,
+        "endChar": 40
+      },
+      "revId": "411c0658d8fd1c138454a0b25940edf69e9b2933",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bc284f22_3690f807",
         "filename": "dashboard/src/workflow/booking_workflow.py",
         "patchSetId": 5
@@ -329,6 +521,30 @@
       "writtenOn": "2019-05-29T18:54:37Z",
       "side": 1,
       "message": "If this is all that is needed in the child class, it would be better to make the parent a \"real\" step and configure this variable somehow",
+      "range": {
+        "startLine": 65,
+        "startChar": 4,
+        "endLine": 65,
+        "endChar": 36
+      },
+      "revId": "411c0658d8fd1c138454a0b25940edf69e9b2933",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e1e0f7bf_b6ea41a8",
+        "filename": "dashboard/src/workflow/booking_workflow.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-05-29T19:24:04Z",
+      "side": 1,
+      "message": "I think it should still be marked as abstract as using it directly doesn\u0027t make sense: what workflow type should it assume it is a part of if it isn\u0027t defined?",
+      "parentUuid": "bc284f22_3690f807",
       "range": {
         "startLine": 65,
         "startChar": 4,
@@ -456,6 +672,30 @@
     },
     {
       "key": {
+        "uuid": "da86640a_eebfe6ba",
+        "filename": "dashboard/src/workflow/forms.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-05-29T19:24:04Z",
+      "side": 1,
+      "message": "Forgot to remove comment, was ```kwargs\u003dkwargs``` before",
+      "parentUuid": "a16239d3_8b2c007c",
+      "range": {
+        "startLine": 116,
+        "startChar": 54,
+        "endLine": 116,
+        "endChar": 101
+      },
+      "revId": "411c0658d8fd1c138454a0b25940edf69e9b2933",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9cf7ea4f_e6340484",
         "filename": "dashboard/src/workflow/forms.py",
         "patchSetId": 5
@@ -559,6 +799,30 @@
       "writtenOn": "2019-05-29T18:54:37Z",
       "side": 1,
       "message": "this method is identical to the class above. Could this be abstracted up?",
+      "range": {
+        "startLine": 194,
+        "startChar": 8,
+        "endLine": 194,
+        "endChar": 31
+      },
+      "revId": "411c0658d8fd1c138454a0b25940edf69e9b2933",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e5acf2d_bd10ce0d",
+        "filename": "dashboard/src/workflow/forms.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-05-29T19:24:04Z",
+      "side": 1,
+      "message": "I had it implemented here because it\u0027s only by chance that the field names line up, and they won\u0027t for Opnfvconfigs or collaborator selection, so it made sense to do this on a case by case basis rather than assuming the models are structured in a particular way in the abstract implementation",
+      "parentUuid": "36c3d681_85e796aa",
       "range": {
         "startLine": 194,
         "startChar": 8,
