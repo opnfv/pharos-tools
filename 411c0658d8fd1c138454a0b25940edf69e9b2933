@@ -463,6 +463,30 @@
     },
     {
       "key": {
+        "uuid": "609628d5_0f7354b5",
+        "filename": "dashboard/src/workflow/booking_workflow.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-05-30T16:19:23Z",
+      "side": 1,
+      "message": "I don\u0027t think the children need to define their own message. \"make a valid selection\" is plenty clear. \"valid resource bundle\" might be too specific anyway.",
+      "parentUuid": "a580019b_fbfb641e",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 46,
+        "endChar": 65
+      },
+      "revId": "411c0658d8fd1c138454a0b25940edf69e9b2933",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0c26b300_25726e5f",
         "filename": "dashboard/src/workflow/booking_workflow.py",
         "patchSetId": 5
@@ -545,6 +569,30 @@
       "side": 1,
       "message": "I think it should still be marked as abstract as using it directly doesn\u0027t make sense: what workflow type should it assume it is a part of if it isn\u0027t defined?",
       "parentUuid": "bc284f22_3690f807",
+      "range": {
+        "startLine": 65,
+        "startChar": 4,
+        "endLine": 65,
+        "endChar": 36
+      },
+      "revId": "411c0658d8fd1c138454a0b25940edf69e9b2933",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "299dd9c8_41b90185",
+        "filename": "dashboard/src/workflow/booking_workflow.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-05-30T16:19:23Z",
+      "side": 1,
+      "message": "We should come up with a solution so that the one ResourceSelect class can be used everywhere and configured with e.g. init parameters. We can do this in another commit",
+      "parentUuid": "e1e0f7bf_b6ea41a8",
       "range": {
         "startLine": 65,
         "startChar": 4,
@@ -823,6 +871,30 @@
       "side": 1,
       "message": "I had it implemented here because it\u0027s only by chance that the field names line up, and they won\u0027t for Opnfvconfigs or collaborator selection, so it made sense to do this on a case by case basis rather than assuming the models are structured in a particular way in the abstract implementation",
       "parentUuid": "36c3d681_85e796aa",
+      "range": {
+        "startLine": 194,
+        "startChar": 8,
+        "endLine": 194,
+        "endChar": 31
+      },
+      "revId": "411c0658d8fd1c138454a0b25940edf69e9b2933",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "97194bbc_782a1900",
+        "filename": "dashboard/src/workflow/forms.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-05-30T16:19:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6e5acf2d_bd10ce0d",
       "range": {
         "startLine": 194,
         "startChar": 8,
