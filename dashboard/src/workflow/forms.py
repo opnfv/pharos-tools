@@ -182,6 +182,21 @@ class SWConfigSelectorForm(SearchableSelectAbstractForm):
         return items
 
 
+class OPNFVSelectForm(SearchableSelectAbstractForm):
+    def generate_items(self, queryset):
+        items = {}
+
+        for config in queryset:
+            item = {}
+            item['small_name'] = config.name
+            item['expanded_name'] = config.bundle.owner.username
+            item['string'] = config.description
+            item['id'] = config.id
+            items[config.id] = item
+
+        return items
+
+
 class ResourceSelectorForm(SearchableSelectAbstractForm):
     def generate_items(self, queryset):
         items = {}
@@ -212,6 +227,7 @@ class BookingMetaForm(forms.Form):
     purpose = forms.CharField(max_length=1000)
     project = forms.CharField(max_length=400)
     info_file = forms.CharField(max_length=1000, required=False)
+    deploy_opnfv = forms.BooleanField(required=False)
 
     def __init__(self, *args, user_initial=[], owner=None, **kwargs):
         super(BookingMetaForm, self).__init__(**kwargs)
