@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5436be65_ac6ff19c",
+        "filename": "dashboard/src/workflow/booking_workflow.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-05-31T19:29:22Z",
+      "side": 1,
+      "message": "This method does not need to exist",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 46,
+        "endChar": 65
+      },
+      "revId": "a2f233878baa27ccb65fb95da0df63e45b20fa5a",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c769c99d_b86581e4",
+        "filename": "dashboard/src/workflow/booking_workflow.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-05-31T19:29:22Z",
+      "side": 1,
+      "message": "dead",
+      "range": {
+        "startLine": 122,
+        "startChar": 35,
+        "endLine": 171,
+        "endChar": 32
+      },
+      "revId": "a2f233878baa27ccb65fb95da0df63e45b20fa5a",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e89b8fea_1afe59e7",
+        "filename": "dashboard/src/workflow/booking_workflow.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 320,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-05-31T19:29:22Z",
+      "side": 1,
+      "message": "dead",
+      "range": {
+        "startLine": 320,
+        "startChar": 0,
+        "endLine": 320,
+        "endChar": 37
+      },
+      "revId": "a2f233878baa27ccb65fb95da0df63e45b20fa5a",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "616e970f_a2e95f3a",
+        "filename": "dashboard/src/workflow/booking_workflow.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 328,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-05-31T19:29:22Z",
+      "side": 1,
+      "message": "print",
+      "range": {
+        "startLine": 328,
+        "startChar": 0,
+        "endLine": 328,
+        "endChar": 35
+      },
+      "revId": "a2f233878baa27ccb65fb95da0df63e45b20fa5a",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ca92ee2d_529abed8",
+        "filename": "dashboard/src/workflow/booking_workflow.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-05-31T19:29:22Z",
+      "side": 1,
+      "message": "print and dead",
+      "range": {
+        "startLine": 359,
+        "startChar": 0,
+        "endLine": 361,
+        "endChar": 64
+      },
+      "revId": "a2f233878baa27ccb65fb95da0df63e45b20fa5a",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
