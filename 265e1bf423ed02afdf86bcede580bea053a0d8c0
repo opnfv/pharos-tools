@@ -1,0 +1,406 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "06eac578_c8efe80c",
+        "filename": "dashboard/src/booking/fmt_helpers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-05-31T19:29:22Z",
+      "side": 1,
+      "message": "make this a more general booking/lib.py",
+      "revId": "265e1bf423ed02afdf86bcede580bea053a0d8c0",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c8ff064f_eea4fb13",
+        "filename": "dashboard/src/booking/forms.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-05-31T19:29:22Z",
+      "side": 1,
+      "message": "do we not need this?",
+      "range": {
+        "startLine": 37,
+        "startChar": 0,
+        "endLine": 37,
+        "endChar": 38
+      },
+      "revId": "265e1bf423ed02afdf86bcede580bea053a0d8c0",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8bff7ae0_177c19a5",
+        "filename": "dashboard/src/templates/dashboard/searchable_select_multiple.html",
+        "patchSetId": 9
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-05-31T19:29:22Z",
+      "side": 1,
+      "message": "two inputs open and only one closed",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 12
+      },
+      "revId": "265e1bf423ed02afdf86bcede580bea053a0d8c0",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "14bc9db8_f913dd1e",
+        "filename": "dashboard/src/templates/dashboard/searchable_select_multiple.html",
+        "patchSetId": 9
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-05-31T19:29:22Z",
+      "side": 1,
+      "message": "dead",
+      "range": {
+        "startLine": 95,
+        "startChar": 0,
+        "endLine": 96,
+        "endChar": 84
+      },
+      "revId": "265e1bf423ed02afdf86bcede580bea053a0d8c0",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b9c4584f_368713f9",
+        "filename": "dashboard/src/templates/dashboard/searchable_select_multiple.html",
+        "patchSetId": 9
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-05-31T19:29:22Z",
+      "side": 1,
+      "message": "dead",
+      "range": {
+        "startLine": 113,
+        "startChar": 0,
+        "endLine": 117,
+        "endChar": 6
+      },
+      "revId": "265e1bf423ed02afdf86bcede580bea053a0d8c0",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "610730e8_47af2507",
+        "filename": "dashboard/src/templates/dashboard/searchable_select_multiple.html",
+        "patchSetId": 9
+      },
+      "lineNbr": 347,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-05-31T19:29:22Z",
+      "side": 1,
+      "message": "then fix it",
+      "range": {
+        "startLine": 347,
+        "startChar": 34,
+        "endLine": 347,
+        "endChar": 81
+      },
+      "revId": "265e1bf423ed02afdf86bcede580bea053a0d8c0",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfbd6257_be59ce80",
+        "filename": "dashboard/src/workflow/forms.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-05-31T19:29:22Z",
+      "side": 1,
+      "message": "dead",
+      "range": {
+        "startLine": 41,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 61
+      },
+      "revId": "265e1bf423ed02afdf86bcede580bea053a0d8c0",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "407e6aa2_fde6dcad",
+        "filename": "dashboard/src/workflow/forms.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-05-31T19:29:22Z",
+      "side": 1,
+      "message": "dead",
+      "range": {
+        "startLine": 60,
+        "startChar": 15,
+        "endLine": 60,
+        "endChar": 28
+      },
+      "revId": "265e1bf423ed02afdf86bcede580bea053a0d8c0",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ab1e065_36b78f58",
+        "filename": "dashboard/src/workflow/forms.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-05-31T19:29:22Z",
+      "side": 1,
+      "message": "It looks like this is unused, can be included in **kwargs",
+      "range": {
+        "startLine": 65,
+        "startChar": 58,
+        "endLine": 65,
+        "endChar": 68
+      },
+      "revId": "265e1bf423ed02afdf86bcede580bea053a0d8c0",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fd0f055_26794322",
+        "filename": "dashboard/src/workflow/forms.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-05-31T19:29:22Z",
+      "side": 1,
+      "message": "can be one list comprehension statement",
+      "range": {
+        "startLine": 130,
+        "startChar": 1,
+        "endLine": 134,
+        "endChar": 20
+      },
+      "revId": "265e1bf423ed02afdf86bcede580bea053a0d8c0",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c4ca830f_ddc037ec",
+        "filename": "dashboard/src/workflow/forms.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-05-31T19:29:22Z",
+      "side": 1,
+      "message": "define dictionaries like this in one statement",
+      "range": {
+        "startLine": 177,
+        "startChar": 2,
+        "endLine": 182,
+        "endChar": 35
+      },
+      "revId": "265e1bf423ed02afdf86bcede580bea053a0d8c0",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f6751019_dfe19dc0",
+        "filename": "dashboard/src/workflow/forms.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-05-31T19:29:22Z",
+      "side": 1,
+      "message": "same here",
+      "range": {
+        "startLine": 192,
+        "startChar": 3,
+        "endLine": 197,
+        "endChar": 35
+      },
+      "revId": "265e1bf423ed02afdf86bcede580bea053a0d8c0",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "80b6aa77_9c9674d5",
+        "filename": "dashboard/src/workflow/forms.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 280,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-05-31T19:29:22Z",
+      "side": 1,
+      "message": "dead",
+      "range": {
+        "startLine": 208,
+        "startChar": 10,
+        "endLine": 280,
+        "endChar": 20
+      },
+      "revId": "265e1bf423ed02afdf86bcede580bea053a0d8c0",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ed621bbe_7d9c9eac",
+        "filename": "dashboard/src/workflow/forms.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 387,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-05-31T19:29:22Z",
+      "side": 1,
+      "message": "?",
+      "range": {
+        "startLine": 387,
+        "startChar": 57,
+        "endLine": 387,
+        "endChar": 58
+      },
+      "revId": "265e1bf423ed02afdf86bcede580bea053a0d8c0",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ed6ab5da_c7bbe80c",
+        "filename": "dashboard/src/workflow/models.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-05-31T19:29:22Z",
+      "side": 1,
+      "message": "this method does not need to exist",
+      "range": {
+        "startLine": 263,
+        "startChar": 0,
+        "endLine": 264,
+        "endChar": 56
+      },
+      "revId": "265e1bf423ed02afdf86bcede580bea053a0d8c0",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "959a143b_89da6eed",
+        "filename": "dashboard/src/workflow/models.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-05-31T19:29:22Z",
+      "side": 1,
+      "message": "should be self.render(request). Then we can also avoid get_context() in this method",
+      "range": {
+        "startLine": 273,
+        "startChar": 23,
+        "endLine": 273,
+        "endChar": 29
+      },
+      "revId": "265e1bf423ed02afdf86bcede580bea053a0d8c0",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dc6f7049_9f43b2c2",
+        "filename": "dashboard/src/workflow/models.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-05-31T19:29:22Z",
+      "side": 1,
+      "message": "The update should go the other way. This would let super potentially overwrite our form, etc",
+      "range": {
+        "startLine": 293,
+        "startChar": 0,
+        "endLine": 293,
+        "endChar": 45
+      },
+      "revId": "265e1bf423ed02afdf86bcede580bea053a0d8c0",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "464cbb4a_8d44c89d",
+        "filename": "dashboard/src/workflow/models.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 399,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-05-31T19:29:22Z",
+      "side": 1,
+      "message": "Why the line here?",
+      "revId": "265e1bf423ed02afdf86bcede580bea053a0d8c0",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
