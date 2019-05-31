@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "70484452_1e38f74b",
+        "filename": "dashboard/src/booking/fmt_helpers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-05-31T19:57:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4f223127_f2460b5e",
+      "revId": "da060af52c3b5ddc6a18c4840e4e28cbd9e661e8",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "52a0e26d_abdf7c35",
         "filename": "dashboard/src/booking/forms.py",
         "patchSetId": 8
@@ -30,6 +48,30 @@
       "writtenOn": "2019-05-31T19:29:22Z",
       "side": 1,
       "message": "Do we not need this?",
+      "range": {
+        "startLine": 37,
+        "startChar": 0,
+        "endLine": 37,
+        "endChar": 38
+      },
+      "revId": "da060af52c3b5ddc6a18c4840e4e28cbd9e661e8",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d313650d_c64208b7",
+        "filename": "dashboard/src/booking/forms.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-05-31T19:57:05Z",
+      "side": 1,
+      "message": "nope, it wasn\u0027t working because we never saved enough about the form to return a bad one if quick deploy failed saying what to fix. In post, we already deal with it by placing the old form back into context if it wasn\u0027t valid, so any refilling of the contents of the field are the responsibility of the field.",
+      "parentUuid": "52a0e26d_abdf7c35",
       "range": {
         "startLine": 37,
         "startChar": 0,
@@ -65,6 +107,30 @@
     },
     {
       "key": {
+        "uuid": "d7f91bae_e8d871e9",
+        "filename": "dashboard/src/templates/dashboard/searchable_select_multiple.html",
+        "patchSetId": 8
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-05-31T19:57:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d26b9006_1535dfee",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 12
+      },
+      "revId": "da060af52c3b5ddc6a18c4840e4e28cbd9e661e8",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6ca4a757_884a2ae5",
         "filename": "dashboard/src/templates/dashboard/searchable_select_multiple.html",
         "patchSetId": 8
@@ -76,6 +142,30 @@
       "writtenOn": "2019-05-31T19:29:22Z",
       "side": 1,
       "message": "dead",
+      "range": {
+        "startLine": 95,
+        "startChar": 0,
+        "endLine": 96,
+        "endChar": 84
+      },
+      "revId": "da060af52c3b5ddc6a18c4840e4e28cbd9e661e8",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cf67a6f3_5c341477",
+        "filename": "dashboard/src/templates/dashboard/searchable_select_multiple.html",
+        "patchSetId": 8
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-05-31T19:57:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6ca4a757_884a2ae5",
       "range": {
         "startLine": 95,
         "startChar": 0,
@@ -111,6 +201,30 @@
     },
     {
       "key": {
+        "uuid": "7dbdb765_22ee2e48",
+        "filename": "dashboard/src/templates/dashboard/searchable_select_multiple.html",
+        "patchSetId": 8
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-05-31T19:57:05Z",
+      "side": 1,
+      "message": "Intended as documentation rather than code",
+      "parentUuid": "31d0f63b_5295d54c",
+      "range": {
+        "startLine": 111,
+        "startChar": 0,
+        "endLine": 117,
+        "endChar": 6
+      },
+      "revId": "da060af52c3b5ddc6a18c4840e4e28cbd9e661e8",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ec6bff7d_90f10488",
         "filename": "dashboard/src/templates/dashboard/searchable_select_multiple.html",
         "patchSetId": 8
@@ -122,6 +236,30 @@
       "writtenOn": "2019-05-31T19:29:22Z",
       "side": 1,
       "message": "fix the function or the comment",
+      "range": {
+        "startLine": 347,
+        "startChar": 35,
+        "endLine": 347,
+        "endChar": 81
+      },
+      "revId": "da060af52c3b5ddc6a18c4840e4e28cbd9e661e8",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f78683f6_75ef7c6d",
+        "filename": "dashboard/src/templates/dashboard/searchable_select_multiple.html",
+        "patchSetId": 8
+      },
+      "lineNbr": 347,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-05-31T19:57:05Z",
+      "side": 1,
+      "message": "Appears to work still as it uses an actual item rather than id indexing",
+      "parentUuid": "ec6bff7d_90f10488",
       "range": {
         "startLine": 347,
         "startChar": 35,
@@ -157,6 +295,30 @@
     },
     {
       "key": {
+        "uuid": "a11e6b43_708455e7",
+        "filename": "dashboard/src/workflow/booking_workflow.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-05-31T19:57:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bb358465_d4d8239c",
+      "range": {
+        "startLine": 54,
+        "startChar": 0,
+        "endLine": 56,
+        "endChar": 40
+      },
+      "revId": "da060af52c3b5ddc6a18c4840e4e28cbd9e661e8",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4ffe391f_215510f7",
         "filename": "dashboard/src/workflow/forms.py",
         "patchSetId": 8
@@ -168,6 +330,30 @@
       "writtenOn": "2019-05-31T19:29:22Z",
       "side": 1,
       "message": "dead",
+      "range": {
+        "startLine": 41,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 61
+      },
+      "revId": "da060af52c3b5ddc6a18c4840e4e28cbd9e661e8",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5e10bf85_e550a5b7",
+        "filename": "dashboard/src/workflow/forms.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-05-31T19:57:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4ffe391f_215510f7",
       "range": {
         "startLine": 41,
         "startChar": 0,
@@ -203,6 +389,30 @@
     },
     {
       "key": {
+        "uuid": "9b2795d4_307942d1",
+        "filename": "dashboard/src/workflow/forms.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-05-31T19:57:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c9a719e2_8979d5d9",
+      "range": {
+        "startLine": 43,
+        "startChar": 60,
+        "endLine": 43,
+        "endChar": 67
+      },
+      "revId": "da060af52c3b5ddc6a18c4840e4e28cbd9e661e8",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f0a5ac5a_100d7f45",
         "filename": "dashboard/src/workflow/forms.py",
         "patchSetId": 8
@@ -214,6 +424,30 @@
       "writtenOn": "2019-05-31T19:29:22Z",
       "side": 1,
       "message": "dead",
+      "range": {
+        "startLine": 60,
+        "startChar": 0,
+        "endLine": 60,
+        "endChar": 50
+      },
+      "revId": "da060af52c3b5ddc6a18c4840e4e28cbd9e661e8",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4ba22727_7aac7716",
+        "filename": "dashboard/src/workflow/forms.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-05-31T19:57:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f0a5ac5a_100d7f45",
       "range": {
         "startLine": 60,
         "startChar": 0,
