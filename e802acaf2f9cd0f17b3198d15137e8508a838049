@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "81c5405c_99f6f971",
+        "filename": "dashboard/src/notifier/manager.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-06-05T17:10:40Z",
+      "side": 1,
+      "message": "This means that users would not get an email if they e.g. requested one of their machines to be reimaged. Are we okay with that?",
+      "range": {
+        "startLine": 144,
+        "startChar": 0,
+        "endLine": 145,
+        "endChar": 26
+      },
+      "revId": "e802acaf2f9cd0f17b3198d15137e8508a838049",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
