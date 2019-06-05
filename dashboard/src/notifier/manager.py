@@ -91,7 +91,7 @@ class NotificationHandler(object):
 
             # finally, send the email
             send_mail(
-                "Your Booking is Ready",
+                "Your Booking (" + str(job.booking.id) + ") is Ready",
                 message,
                 os.environ.get("DEFAULT_FROM_EMAIL", "opnfv@pharos-dashboard"),
                 [user.userprofile.email_addr],
@@ -115,7 +115,7 @@ class NotificationHandler(object):
             message = render_to_string(template_name, context)
 
             send_mail(
-                "Your Booking has Expired",
+                "Your Booking (" + str(booking.id) + ") has Expired",
                 message,
                 os.environ.get("DEFAULT_FROM_EMAIL", "opnfv@pharos-dashboard"),
                 user.userprofile.email_addr,
