@@ -64,15 +64,17 @@ class SessionManager():
         )
 
     def pop_workflow(self):
-        if(len(self.workflows) <= 1):
-            return False
+        if(len(self.workflows) <= 1):  # current workflow is only remaining one, should still populate RESULT
+            current_repo = self.workflows[-1].repository
+            return (False, current_repo.el[current_repo.RESULT])
 
-        if self.workflows[-1].repository.el[self.workflows[-1].repository.HAS_RESULT]:
+        if self.workflows[-1].repository.el[self.workflows[-1].repository.RESULT]:
             key = self.workflows[-1].repository.el[self.workflows[-1].repository.RESULT_KEY]
             result = self.workflows[-1].repository.el[self.workflows[-1].repository.RESULT]
             self.workflows[-2].repository.el[key] = result
         self.workflows.pop()
-        return True
+        current_repo = self.workflows[-1].repository
+        return (True, current_repo.el[current_repo.RESULT])
 
     def status(self, request):
         try:
