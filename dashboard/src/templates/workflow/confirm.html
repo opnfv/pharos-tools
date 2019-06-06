@@ -67,6 +67,7 @@
         req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         req.onerror = function() { alert("problem with cleaning up session"); }
         req.onreadystatechange = function() { if(req.readyState === 4 ) {
+                eval(req.responseText);
                 window.top.refresh_iframe();
                 }}
         req.send(formData);
