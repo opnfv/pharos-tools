@@ -10,10 +10,12 @@
 
 from django.http import HttpResponse, HttpResponseGone
 from django.shortcuts import render
+from django.urls import reverse
 
 import uuid
 
 from workflow.workflow_manager import ManagerTracker, SessionManager
+from booking.models import Booking
 
 import logging
 logger = logging.getLogger(__name__)
@@ -29,17 +31,30 @@ def attempt_auth(request):
         return None
 
 
+def get_redirect_context(result):
+    # need to get type of result, and switch on the type
+    if isinstance(result, Booking):
+        return {
+            'redir_url': reverse('booking_detail', args=result.id)
+        }
+    else:
+        print("bad result")
+
+
 def delete_session(request):
     manager = attempt_auth(request)
 
     if not manager:
         return HttpResponseGone("No session found that relates to current request")
 
-    if manager.pop_workflow():
+    success, result = manager.pop_workflow()
+
+    if success:
         return HttpResponse('')
     else:
         del ManagerTracker.managers[request.session['manager_session']]
-        return render(request, 'workflow/exit_redirect.html')
+        redirect_context = get_redirect_context(result)
+        return render(request, 'workflow/exit_redirect.html', redirect_context)
 
     try:
         del ManagerTracker.managers[request.session['manager_session']]

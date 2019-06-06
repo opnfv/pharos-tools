@@ -667,6 +667,8 @@ class Repository():
         except Exception as e:
             return "BOOK, saving booking generated exception: " + str(e) + " CODE:0x0016"
 
+        self.el[self.RESULT] = booking
+
     def make_opnfv_config(self):
         opnfv_models = self.el[self.OPNFV_MODELS]
         config_bundle = self.el[self.SELECTED_CONFIG_BUNDLE]
