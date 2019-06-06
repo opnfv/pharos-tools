@@ -8,12 +8,14 @@
 ##############################################################################
 
 
-from django.http import HttpResponse, HttpResponseGone
+from django.http import HttpResponse, HttpResponseGone, JsonResponse
 from django.shortcuts import render
+from django.urls import reverse
 
 import uuid
 
 from workflow.workflow_manager import ManagerTracker, SessionManager
+from booking.models import Booking
 
 import logging
 logger = logging.getLogger(__name__)
@@ -29,23 +31,34 @@ def attempt_auth(request):
         return None
 
 
+def get_redirect_context(result, has_result):
+    if not has_result:
+        return {}
+
+    # need to get type of result, and switch on the type
+    # since has_result, result must be populated with a valid object
+    if isinstance(result, Booking):
+        return {
+            'redir_url': reverse('booking:booking_detail', kwargs={'booking_id': result.id})
+        }
+    else:
+        return {}
+
+
 def delete_session(request):
     manager = attempt_auth(request)
 
     if not manager:
         return HttpResponseGone("No session found that relates to current request")
 
-    if manager.pop_workflow():
-        return HttpResponse('')
+    success, has_result, result = manager.pop_workflow()
+
+    if success:
+        return JsonResponse({})
     else:
         del ManagerTracker.managers[request.session['manager_session']]
-        return render(request, 'workflow/exit_redirect.html')
-
-    try:
-        del ManagerTracker.managers[request.session['manager_session']]
-        return HttpResponse('')
-    except Exception:
-        return None
+        redirect_context = get_redirect_context(result, has_result)
+        return JsonResponse(redirect_context)
 
 
 def step_view(request):
