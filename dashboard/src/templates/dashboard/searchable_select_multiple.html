@@ -76,11 +76,7 @@
             background-color: #ffffff;
         }
 
-        .small_name {
-            display: inline-block;
-        }
-
-        .full_name {
+        .added_entry_text {
             display: inline-block;
         }
 
@@ -295,6 +291,22 @@
         return results;
     }
 
+    function generate_element_text(obj)
+    {
+        console.log(obj);
+        var optional_lparen = obj['expanded_name'] == '' ? '' : '(';
+        var optional_rparen = obj['expanded_name'] == '' ? '' : ')';
+        var elem_content_strings = [
+            obj['expanded_name'],
+            (obj['small_name'] == '' ? '' : optional_lparen + obj['small_name'] + optional_rparen)
+        ];
+        console.log(obj['expanded_name']);
+        console.log(obj['small_name']);
+        var result = elem_content_strings.filter(Boolean).join(" ");
+        console.log(result);
+        return result;
+    }
+
     function dropdown(ids)
     {
         /*
@@ -312,8 +324,8 @@
             var result_entry = document.createElement("li");
             var result_button = document.createElement("a");
             var obj = items[id];
-            var result_text = document.createTextNode(obj['small_name'] + " : " + obj['expanded_name']);
-            result_button.appendChild(result_text);
+            var result_text = generate_element_text(obj);
+            result_button.appendChild(document.createTextNode(result_text));
             result_button.setAttribute('onclick', 'select_item("' + obj['id'] + '")');
             result_entry.appendChild(result_button);
             drop.appendChild(result_entry);
@@ -377,11 +389,13 @@
             item_id = added_items[key];
             item = items[item_id];
 
-            list_html += '<div class="list_entry"><p class="full_name">'
-                + item["expanded_name"]
-                + '</p><p class="small_name">, '
-                + item["small_name"]
-                + '</p><button onclick="remove_item('
+            var element_entry_text = generate_element_text(item);
+
+            list_html += '<div class="list_entry">'
+                + '<p class="added_entry_text">'
+                + element_entry_text
+                + '</p>'
+                + '<button onclick="remove_item('
                 + Object.values(items).indexOf(item)
                 + ')" class="btn-remove btn">remove</button>';
                 list_html += '</div>';
@@ -391,11 +405,3 @@
     }
 
 </script>
-<style>
-    .full_name {
-        display: inline-block;
-    }
-    .small_name {
-        display: inline-block;
-    }
-</style>
