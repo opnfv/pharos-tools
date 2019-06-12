@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "c2f06fdd_29f09a51",
+        "filename": "dashboard/src/workflow/views.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-06-12T14:32:33Z",
+      "side": 1,
+      "message": "1) is resolved",
+      "parentUuid": "e5234428_b109dc39",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 34,
+        "endChar": 45
+      },
+      "revId": "1275ca4ac94a24d31e84d9b918cf7ff5486eaf19",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d84d1352_7902042d",
         "filename": "dashboard/src/workflow/views.py",
         "patchSetId": 5
