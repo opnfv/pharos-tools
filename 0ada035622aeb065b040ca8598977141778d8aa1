@@ -72,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "1d84dc75_fee8f897",
+        "filename": "dashboard/src/templates/dashboard/genericselect.html",
+        "patchSetId": 2
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-06-14T14:07:17Z",
+      "side": 1,
+      "message": "OK, we can do that, but it\u0027s probably a separate change as all the different genericselect instances use their own name here",
+      "parentUuid": "9ebacf67_dc11d41b",
+      "range": {
+        "startLine": 59,
+        "startChar": 0,
+        "endLine": 86,
+        "endChar": 20
+      },
+      "revId": "0ada035622aeb065b040ca8598977141778d8aa1",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f49b93bd_6b79827f",
         "filename": "dashboard/src/templates/dashboard/genericselect.html",
         "patchSetId": 2
@@ -83,6 +107,30 @@
       "writtenOn": "2019-06-14T13:56:21Z",
       "side": 1,
       "message": "whitespace",
+      "range": {
+        "startLine": 121,
+        "startChar": 45,
+        "endLine": 121,
+        "endChar": 46
+      },
+      "revId": "0ada035622aeb065b040ca8598977141778d8aa1",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "01274c83_35dd3589",
+        "filename": "dashboard/src/templates/dashboard/genericselect.html",
+        "patchSetId": 2
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-06-14T14:07:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f49b93bd_6b79827f",
       "range": {
         "startLine": 121,
         "startChar": 45,
