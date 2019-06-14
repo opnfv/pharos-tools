@@ -22,6 +22,30 @@
       "revId": "2f54370bec0c81ecdc51bfbdd95dac24fbbeeaec",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "38ead5e6_112bea6e",
+        "filename": "dashboard/src/booking/views.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-06-14T14:11:51Z",
+      "side": 1,
+      "message": "Any errors that happen here are because of resource availability changes or backend errors, and I don\u0027t think sending back the form works with our custom widgets as they exist now, so we could send it back but I don\u0027t think that would substantially improve the experience",
+      "parentUuid": "406b5189_d8b1d6f4",
+      "range": {
+        "startLine": 69,
+        "startChar": 0,
+        "endLine": 70,
+        "endChar": 36
+      },
+      "revId": "2f54370bec0c81ecdc51bfbdd95dac24fbbeeaec",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
     }
   ]
 }
