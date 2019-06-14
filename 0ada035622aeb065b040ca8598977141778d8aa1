@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "4b506e93_94f16143",
+        "filename": "dashboard/src/templates/dashboard/genericselect.html",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-06-14T13:56:42Z",
+      "side": 1,
+      "message": "resolved",
+      "parentUuid": "3a7d1e4c_aea730c3",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 52,
+        "endChar": 6
+      },
+      "revId": "0ada035622aeb065b040ca8598977141778d8aa1",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9ebacf67_dc11d41b",
         "filename": "dashboard/src/templates/dashboard/genericselect.html",
         "patchSetId": 2
