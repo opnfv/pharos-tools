@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a7d1e4c_aea730c3",
+        "filename": "dashboard/src/templates/dashboard/genericselect.html",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-06-14T13:56:21Z",
+      "side": 1,
+      "message": "dead",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 52,
+        "endChar": 6
+      },
+      "revId": "0ada035622aeb065b040ca8598977141778d8aa1",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ebacf67_dc11d41b",
+        "filename": "dashboard/src/templates/dashboard/genericselect.html",
+        "patchSetId": 2
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-06-14T13:56:21Z",
+      "side": 1,
+      "message": "I don\u0027t see any reason to have these class names generated based on the select type. They could just be name e.g. select_form_div",
+      "range": {
+        "startLine": 59,
+        "startChar": 0,
+        "endLine": 86,
+        "endChar": 20
+      },
+      "revId": "0ada035622aeb065b040ca8598977141778d8aa1",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f49b93bd_6b79827f",
+        "filename": "dashboard/src/templates/dashboard/genericselect.html",
+        "patchSetId": 2
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-06-14T13:56:21Z",
+      "side": 1,
+      "message": "whitespace",
+      "range": {
+        "startLine": 121,
+        "startChar": 45,
+        "endLine": 121,
+        "endChar": 46
+      },
+      "revId": "0ada035622aeb065b040ca8598977141778d8aa1",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "29e00fb8_2add09f0",
+        "filename": "dashboard/src/templates/dashboard/searchable_select_multiple.html",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-06-14T13:56:21Z",
+      "side": 1,
+      "message": "dead",
+      "range": {
+        "startLine": 57,
+        "startChar": 0,
+        "endLine": 57,
+        "endChar": 30
+      },
+      "revId": "0ada035622aeb065b040ca8598977141778d8aa1",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eac884fd_24ab4882",
+        "filename": "dashboard/src/templates/dashboard/searchable_select_multiple.html",
+        "patchSetId": 2
+      },
+      "lineNbr": 403,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-06-14T13:56:21Z",
+      "side": 1,
+      "message": "dead",
+      "range": {
+        "startLine": 403,
+        "startChar": 0,
+        "endLine": 403,
+        "endChar": 42
+      },
+      "revId": "0ada035622aeb065b040ca8598977141778d8aa1",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
