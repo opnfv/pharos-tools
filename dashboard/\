@@ -1,6 +1,6 @@
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 
-<div id="search_select_outer" class="autocomplete">
+<div class="autocomplete">
     <div id="warning_pane" style="background: #FFFFFF; color: #CC0000;">
         {% if incompatible == "true" %}
         <h3>Warning: Incompatible Configuration</h3>
@@ -161,6 +161,8 @@
 </div>
 
 <script type="text/javascript">
+    // setup and listeners
+    document.getElementById("user_field").addEventListener('selectionchange', showHideDropdown());
     //flags
     var show_from_noentry = {{show_from_noentry|yesno:"true,false"}}; // whether to show any results before user starts typing
     var show_x_results = {{show_x_results|default:-1}}; // how many results to show at a time, -1 shows all results
@@ -423,7 +425,6 @@
 
     function select_item(item_id)
     {
-        // clear search bar contents
         //TODO make faster
         var item = items[item_id]['id'];
         if( (selectable_limit > -1 && added_items.length < selectable_limit) || selectable_limit < 0 )
@@ -434,9 +435,7 @@
             }
         }
         update_selected_list();
-        document.getElementById("user_field").value = "";
         document.getElementById("user_field").focus();
-        search("");
     }
 
     function remove_item(item_ref)
@@ -486,4 +485,5 @@
 
         added_list.innerHTML = list_html;
     }
+
 </script>
