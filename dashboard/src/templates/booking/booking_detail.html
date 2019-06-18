@@ -10,11 +10,10 @@
 {% block content %}
 
 <style>
-#modal_warning {
+#modal_warning, #modal_snapshot_warning {
     transition: max-height 0.5s ease-out;
     overflow: hidden;
 }
-
 </style>
 
 <div class="container-fluid">
@@ -89,12 +88,20 @@
                                             <td id="host_image_{{host.id}}">
                                                 {{host.config.image}}
                                                 <button
-                                                    style="margin-left:10px;"
+                                                    style="display: inline-block; margin: 5px;"
                                                     class="btn btn-primary"
                                                     data-toggle="modal"
                                                     data-target="#imageModal"
-                                                    onclick="set_image_dropdown('{{host.profile.name}}', {{host.id}});"
-                                                >Change/Reset</button></td>
+                                                    onclick="set_image_dropdown('{{host.profile.name}}', {{host.id}});">Change/Reset
+                                                </button>
+                                                <button
+                                                    style="display: inline-block; margin: 5px;"
+                                                    class="btn btn-primary"
+                                                    data-toggle="modal"
+                                                    data-target="#snapshotModal"
+                                                    onclick="set_snapshot_dropdown('{{host.profile.name}}', {{host.id}});">Create a Snapshot
+                                                </button>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>RAM:</td>
@@ -287,6 +294,83 @@
     </div>
 </div>
 
+<script>
+    var image_mapping = {{image_mapping|safe}};
+    var current_host_id = 0;
+
+    function set_image_dropdown(profile_name, host_id) {
+        document.getElementById("host_id_input").value = host_id;
+        current_host_id = host_id;
+        var dropdown = document.getElementById("image_select");
+        var length = dropdown.length;
+        //clear dropdown
+        for(var i=length-1; i>=0; i--){
+            dropdown.options.remove(i);
+        }
+        var images = image_mapping[profile_name];
+        var image_length = images.length;
+        for(var i=0; i<image_length; i++){
+            var opt = document.createElement("OPTION");
+            opt.value = images[i].value;
+            opt.appendChild(document.createTextNode(images[i].name));
+            dropdown.options.add(opt);
+        }
+
+        document.getElementById("modal_warning").style['max-height'] = '0px';
+    }
+
+    function set_snapshot_dropdown(profile_name, host_id) {
+        document.getElementById("snapshot_host_id_input").value = host_id;
+        current_host_id = host_id;
+        document.getElementById("modal_snapshot_warning").style['max-height'] = '0px';
+    }
+
+
+    function submit_image_form() {
+        var ajaxForm = $("#image_host_form");
+        var formData = ajaxForm.serialize();
+        req = new XMLHttpRequest();
+        req.open("POST", "/booking/modify/{{booking.id}}/image/", true);
+        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        req.onerror = function() { alert("problem submitting form"); }
+        req.onreadystatechange = function() {
+            if(req.readyState === 4) {
+                node = document.getElementById("host_image_" + current_host_id);
+                text = document.createTextNode(req.responseText);
+                node.replaceChild(text, node.firstChild);
+            }
+        }
+        req.send(formData);
+    }
+
+    function submit_snapshot_form() {
+        var ajaxForm = $("#snapshot_host_form");
+        var formData = ajaxForm.serialize();
+        req = new XMLHttpRequest();
+        req.open("POST", "/booking/modify/{{booking.id}}/snapshot/", true);
+        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        req.onerror = function() { alert("problem submitting form"); }
+        req.onreadystatechange = function() {
+            if(req.readyState === 4) {
+                if( req.responseText == "unauthorized" )
+                {
+                    alert("You're only allowed to make snapshots of hosts in bookings you own");
+                }
+                else if( req.responseText == "error" )
+                {
+                    alert("Whoops, looks like something went wrong.");
+                }
+                else
+                {
+                    node = document.getElementById("host_image_" + current_host_id);
+                    text = document.createTextNode(req.responseText);
+                    node.replaceChild(text, node.firstChild);
+                }
+            }
+        }
+        req.send(formData);
+    }
+</script>
 
 <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" style="width: 450px;" role="document">
@@ -317,49 +401,47 @@
                     <button class="btn" onclick="document.getElementById('modal_warning').style['max-height'] = '0px';">Nevermind</button>
                     <button class="btn btn-danger" data-dismiss="modal" onclick="submit_image_form();">I'm Sure</button>
                 </div>
+            </div>
         </div>
     </div>
 </div>
 
-<script>
-    var image_mapping = {{image_mapping|safe}};
-    var current_host_id = 0;
-    function set_image_dropdown(profile_name, host_id) {
-        document.getElementById("host_id_input").value = host_id;
-        current_host_id = host_id;
-        var dropdown = document.getElementById("image_select");
-        var length = dropdown.length;
-        //clear dropdown
-        for(i=length-1; i>=0; i--){
-            dropdown.options.remove(i);
-        }
-        var images = image_mapping[profile_name];
-        var image_length = images.length;
-        for(i=0; i<image_length; i++){
-            var opt = document.createElement("OPTION");
-            opt.value = images[i].value;
-            opt.appendChild(document.createTextNode(images[i].name));
-            dropdown.options.add(opt);
-        }
-
-        document.getElementById("modal_warning").style['max-height'] = '0px';
-    }
-
-    function submit_image_form() {
-        var ajaxForm = $("#image_host_form");
-        var formData = ajaxForm.serialize();
-        req = new XMLHttpRequest();
-        req.open("POST", "/booking/modify/{{booking.id}}/image/", true);
-        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-        req.onerror = function() { alert("problem submitting form"); }
-        req.onreadystatechange = function() {
-            if(req.readyState === 4) {
-                node = document.getElementById("host_image_" + current_host_id);
-                text = document.createTextNode(req.responseText);
-                node.replaceChild(text, node.firstChild);
-            }
-        }
-        req.send(formData);
-    }
-</script>
+<div class="modal fade" id="snapshotModal" tabindex="-1" role="dialog" aria-labelledby="exampleSnapshotModalLabel" aria-hidden="true">
+    <div class="modal-dialog" style="width: 450px;" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="exampleSnapshotModalLabel" style="display: inline; float: left;">Host Image</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="snapshot_host_form">
+                    {% csrf_token %}
+                    <div style="display: flex; flex-direction: column;">
+                        <div style="flex: 1; display: flex; flex-direction: row; margin: 10px;">
+                            <p style="flex: 1;">Name your snapshot:</p><input style="float: right;" id="snapshot_name_input" type="text" name="snapshot_name">
+                        </div>
+                        <div style="flex: 1; display: flex; flex-direction: row; margin: 10px;">
+                            <p style="flex: 1;">Add a description:</p><input style="float: right;" id="snapshot_description_input" type="text" name="snapshot_description">
+                        </div>
+                        <input id="snapshot_host_id_input" type="hidden" name="host_id">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="document.getElementById('modal_snapshot_warning').style['max-height'] = '500px';">Capture</button>
+            </div>
+            <div id="modal_snapshot_warning" class="modal-footer" style="max-height:0px;" >
+                <div style="text-align:center; margin: 5px">
+                    <h3>Are You Sure?</h3>
+                    <p></p>
+                    <button class="btn" onclick="document.getElementById('modal_snapshot_warning').style['max-height'] = '0px';">Cancel</button>
+                    <button class="btn btn-danger" data-dismiss="modal" onclick="submit_snapshot_form();">I'm Sure</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock content %}
