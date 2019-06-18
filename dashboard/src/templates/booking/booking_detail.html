@@ -93,8 +93,15 @@
                                                     class="btn btn-primary"
                                                     data-toggle="modal"
                                                     data-target="#imageModal"
-                                                    onclick="set_image_dropdown('{{host.profile.name}}', {{host.id}});"
-                                                >Change/Reset</button></td>
+                                                    onclick="set_image_dropdown('{{host.profile.name}}', {{host.id}});">Change/Reset
+                                                </button>
+                                                <button
+                                                    style="margin-left: 10px;"
+                                                    class="btn btn-primary"
+                                                    data-toggle="modal"
+                                                    data-target="#snapshotModal"
+                                                    onclick="set_snapshot_dropdown('{{host.profile.name}}', {{host.id}});">Create a Snapshot
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>RAM:</td>
@@ -321,6 +328,38 @@
     </div>
 </div>
 
+<div class="modal fade" id="snapshotModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" style="width: 450px;" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="exampleSnapshotModalLabel" style="display: inline; float: left;">Host Image</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="snapshot_host_form">
+                    {% csrf_token %}
+                    Name your snapshot: <input id="snapshot_name_input" type="text">
+                    Add a description: <input id="snapshot_description_input" type="text">
+                    <input id="host_id_input" type="hidden" name="host_id">
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="document.getElementById('modal_warning').style['max-height'] = '500px';">Reset Host</button>
+            </div>
+            <div id="modal_snapshot_warning" class="modal-footer" style="max-height:0px;" >
+                <div style="text-align:center; margin: 5px">
+                    <h3>Are You Sure?</h3>
+                    <p></p>
+                    <button class="btn" onclick="document.getElementById('modal_snapshot_warning').style['max-height'] = '0px';">Nevermind</button>
+                    <button class="btn btn-danger" data-dismiss="modal" onclick="submit_snapshot_form();">I'm Sure</button>
+                </div>
+        </div>
+    </div>
+</div>
+
 <script>
     var image_mapping = {{image_mapping|safe}};
     var current_host_id = 0;
@@ -360,6 +399,10 @@
             }
         }
         req.send(formData);
+    }
+
+    function submit_snapshot_form() {
+        var ajaxForm = $(#snapshot_host_form");
     }
 </script>
 {% endblock content %}

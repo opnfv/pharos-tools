@@ -22,7 +22,7 @@ from resource_inventory.resource_manager import ResourceManager
 from account.models import Lab
 from booking.models import Booking
 from booking.stats import StatisticsManager
-from booking.forms import HostReImageForm
+from booking.forms import HostReImageForm, HostSnapshotForm
 from api.models import JobFactory
 from workflow.views import login
 from booking.forms import QuickBookingForm
@@ -183,6 +183,38 @@ def booking_modify_image(request, booking_id):
         JobFactory.reimageHost(new_image, booking, host)
         return HttpResponse(new_image.name)
     return HttpResponse("error")
+
+
+def booking_make_snapshot(request, booking_id):
+    form = HostSnapshotForm(request.POST)
+    if form.is_valid():
+        booking = Booking.objects.get(id=booking_id)
+        host = Host.objects.get(id=form.cleaned_data['host_id'])
+        if request.user != booking.owner:
+            return HttpResponse("unauthorized")
+        if timezone.now() > booking.end:
+            return HttpResponse("unauthorized")
+        image = Image()
+        image.from_lab = booking.lab
+        image.name = form.cleaned_data['image_name']
+        image.description = form.cleaned_data['image_description']
+        image.public = False
+        image.lab_id = -1
+        image.owner = booking.owner
+        image.host_type = host.profile
+        image.save()
+        try:
+            current_image = host.config.image
+            image.os = current_image.os
+            image.save()
+        except Exception:
+            pass
+
+        JobFactory.makeSnapshotTask(image, booking, host)
+
+        return HttpResponse(image.name)
+    else:
+        return HttpResponse("error")
 
 
 def booking_stats_view(request):
