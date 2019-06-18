@@ -185,6 +185,19 @@ def booking_modify_image(request, booking_id):
     return HttpResponse("error")
 
 
+def booking_make_snapshot(request, booking_id):
+    form = HostSnapshotForm(request.POST)
+    if form.is_valid():
+        booking = Booking.objects.get(id=booking_id)
+        if request.user != booking.owner:
+            return HttpResponse("unauthorized")
+        if timezone.now() > booking.end:
+            return HttpResponse("unauthorized")
+        image = Image(
+            name=form.cleaned_data['image_name'],
+            description=form.cleaned_data['image_description'])
+
+
 def booking_stats_view(request):
     return render(
         request,
