@@ -1,0 +1,188 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "04520944_0f3af90e",
+        "filename": "dashboard/src/templates/dashboard/multiple_select_filter_widget.html",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-06-18T19:10:58Z",
+      "side": 1,
+      "message": "dead",
+      "range": {
+        "startLine": 44,
+        "startChar": 2,
+        "endLine": 44,
+        "endChar": 31
+      },
+      "revId": "8b401fab09861b69d509146540285a1d5560eafd",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5eab6804_661bd021",
+        "filename": "dashboard/src/templates/dashboard/multiple_select_filter_widget.html",
+        "patchSetId": 1
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-06-18T19:10:58Z",
+      "side": 1,
+      "message": "lots of logs",
+      "range": {
+        "startLine": 126,
+        "startChar": 0,
+        "endLine": 126,
+        "endChar": 37
+      },
+      "revId": "8b401fab09861b69d509146540285a1d5560eafd",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a81ab259_de4903e5",
+        "filename": "dashboard/src/templates/dashboard/multiple_select_filter_widget.html",
+        "patchSetId": 1
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-06-18T19:10:58Z",
+      "side": 1,
+      "message": "can be prettier",
+      "range": {
+        "startLine": 146,
+        "startChar": 0,
+        "endLine": 156,
+        "endChar": 14
+      },
+      "revId": "8b401fab09861b69d509146540285a1d5560eafd",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2a720844_b76a5990",
+        "filename": "dashboard/src/templates/dashboard/multiple_select_filter_widget.html",
+        "patchSetId": 1
+      },
+      "lineNbr": 363,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-06-18T19:10:58Z",
+      "side": 1,
+      "message": "comment on wrong line",
+      "range": {
+        "startLine": 363,
+        "startChar": 0,
+        "endLine": 363,
+        "endChar": 50
+      },
+      "revId": "8b401fab09861b69d509146540285a1d5560eafd",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "28cc8e05_1dc041e7",
+        "filename": "dashboard/src/templates/dashboard/multiple_select_filter_widget.html",
+        "patchSetId": 1
+      },
+      "lineNbr": 390,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-06-18T19:10:58Z",
+      "side": 1,
+      "message": "unused",
+      "range": {
+        "startLine": 390,
+        "startChar": 0,
+        "endLine": 390,
+        "endChar": 54
+      },
+      "revId": "8b401fab09861b69d509146540285a1d5560eafd",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5b85ec97_9f4dbf47",
+        "filename": "dashboard/src/templates/resource/steps/define_hardware.html",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-06-18T19:10:58Z",
+      "side": 1,
+      "message": "dead and log",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 18
+      },
+      "revId": "8b401fab09861b69d509146540285a1d5560eafd",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df40a85c_7a2e9e7e",
+        "filename": "dashboard/src/workflow/forms.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-06-18T19:10:58Z",
+      "side": 1,
+      "message": "unnecesary",
+      "range": {
+        "startLine": 272,
+        "startChar": 0,
+        "endLine": 275,
+        "endChar": 20
+      },
+      "revId": "8b401fab09861b69d509146540285a1d5560eafd",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5c23ca71_21c14011",
+        "filename": "dashboard/src/workflow/forms.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-06-18T19:10:58Z",
+      "side": 1,
+      "message": "unused. init not needed",
+      "range": {
+        "startLine": 281,
+        "startChar": 13,
+        "endLine": 281,
+        "endChar": 20
+      },
+      "revId": "8b401fab09861b69d509146540285a1d5560eafd",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
