@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ed4505d0_36209890",
+        "filename": "dashboard/src/booking/views.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-06-19T16:02:24Z",
+      "side": 1,
+      "message": "should be get_or_404",
+      "range": {
+        "startLine": 191,
+        "startChar": 19,
+        "endLine": 191,
+        "endChar": 37
+      },
+      "revId": "92f4f4a02ac6bea5f898a12ef2292e7844838449",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "898c776e_fb24c4c2",
+        "filename": "dashboard/src/booking/views.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-06-19T16:02:24Z",
+      "side": 1,
+      "message": "should be actual 403 unauthorized responses",
+      "range": {
+        "startLine": 194,
+        "startChar": 11,
+        "endLine": 194,
+        "endChar": 47
+      },
+      "revId": "92f4f4a02ac6bea5f898a12ef2292e7844838449",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f4a1c7bd_232e6d31",
+        "filename": "dashboard/src/booking/views.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-06-19T16:02:24Z",
+      "side": 1,
+      "message": "It is better to use Image.objects.create() when possible",
+      "range": {
+        "startLine": 197,
+        "startChar": 1,
+        "endLine": 204,
+        "endChar": 20
+      },
+      "revId": "92f4f4a02ac6bea5f898a12ef2292e7844838449",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "297f75df_8a4b6d38",
+        "filename": "dashboard/src/templates/booking/booking_detail.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-06-19T16:02:24Z",
+      "side": 1,
+      "message": "debug",
+      "range": {
+        "startLine": 301,
+        "startChar": 0,
+        "endLine": 301,
+        "endChar": 33
+      },
+      "revId": "92f4f4a02ac6bea5f898a12ef2292e7844838449",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a1978930_7272ee7e",
+        "filename": "dashboard/src/templates/booking/booking_detail.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 323,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-06-19T16:02:24Z",
+      "side": 1,
+      "message": "debug",
+      "range": {
+        "startLine": 323,
+        "startChar": 6,
+        "endLine": 323,
+        "endChar": 34
+      },
+      "revId": "92f4f4a02ac6bea5f898a12ef2292e7844838449",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "db2d66a4_4af08270",
+        "filename": "dashboard/src/templates/booking/booking_detail.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 357,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-06-19T16:02:24Z",
+      "side": 1,
+      "message": "There should be something here to alert the user to success or failure.",
+      "range": {
+        "startLine": 354,
+        "startChar": 0,
+        "endLine": 357,
+        "endChar": 9
+      },
+      "revId": "92f4f4a02ac6bea5f898a12ef2292e7844838449",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
