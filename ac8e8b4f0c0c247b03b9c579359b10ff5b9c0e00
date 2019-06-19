@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "6eddf042_0ca0c186",
+        "filename": "dashboard/src/templates/dashboard/multiple_select_filter_widget.html",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-06-19T13:46:34Z",
+      "side": 1,
+      "message": "needs to be done for active item as well so shadow fades in",
+      "range": {
+        "startLine": 32,
+        "startChar": 27,
+        "endLine": 32,
+        "endChar": 46
+      },
+      "revId": "ac8e8b4f0c0c247b03b9c579359b10ff5b9c0e00",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "79db3100_7df5f4e6",
+        "filename": "dashboard/src/templates/dashboard/multiple_select_filter_widget.html",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-06-19T13:46:34Z",
+      "side": 1,
+      "message": "don\u0027t make inset here",
+      "range": {
+        "startLine": 33,
+        "startChar": 15,
+        "endLine": 33,
+        "endChar": 24
+      },
+      "revId": "ac8e8b4f0c0c247b03b9c579359b10ff5b9c0e00",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e78cd72a_723120c1",
         "filename": "dashboard/src/templates/dashboard/multiple_select_filter_widget.html",
         "patchSetId": 2
@@ -13,6 +59,75 @@
       "writtenOn": "2019-06-18T20:53:18Z",
       "side": 1,
       "message": "This can probably be removed",
+      "revId": "ac8e8b4f0c0c247b03b9c579359b10ff5b9c0e00",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5bc7342a_ab6cd6c0",
+        "filename": "dashboard/src/templates/dashboard/multiple_select_filter_widget.html",
+        "patchSetId": 2
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-06-19T13:46:34Z",
+      "side": 1,
+      "message": "needs to be updated",
+      "range": {
+        "startLine": 282,
+        "startChar": 29,
+        "endLine": 282,
+        "endChar": 65
+      },
+      "revId": "ac8e8b4f0c0c247b03b9c579359b10ff5b9c0e00",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dcc99435_0cc79e8b",
+        "filename": "dashboard/src/workflow/forms.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-06-19T13:46:34Z",
+      "side": 1,
+      "message": "what format do we expect initial to be in? Is it just a json blob?",
+      "range": {
+        "startLine": 269,
+        "startChar": 7,
+        "endLine": 269,
+        "endChar": 44
+      },
+      "revId": "ac8e8b4f0c0c247b03b9c579359b10ff5b9c0e00",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f7f97c4a_e1288082",
+        "filename": "dashboard/src/workflow/resource_bundle_workflow.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-06-19T13:46:34Z",
+      "side": 1,
+      "message": "UX: should not reference a random RFC# as sole recommendation of how to format hostname",
+      "range": {
+        "startLine": 79,
+        "startChar": 50,
+        "endLine": 79,
+        "endChar": 127
+      },
       "revId": "ac8e8b4f0c0c247b03b9c579359b10ff5b9c0e00",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
