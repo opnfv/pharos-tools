@@ -71,6 +71,40 @@
     },
     {
       "key": {
+        "uuid": "4c2fd38a_f317c31e",
+        "filename": "dashboard/src/templates/booking/booking_detail.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-19T16:20:35Z",
+      "side": 1,
+      "message": "could use a class, since there are two places with the same style.",
+      "revId": "92f4f4a02ac6bea5f898a12ef2292e7844838449",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7175becf_866ca1c3",
+        "filename": "dashboard/src/templates/booking/booking_detail.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-19T16:20:35Z",
+      "side": 1,
+      "message": "end button tag",
+      "revId": "92f4f4a02ac6bea5f898a12ef2292e7844838449",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "297f75df_8a4b6d38",
         "filename": "dashboard/src/templates/booking/booking_detail.html",
         "patchSetId": 3
@@ -88,6 +122,40 @@
         "endLine": 301,
         "endChar": 33
       },
+      "revId": "92f4f4a02ac6bea5f898a12ef2292e7844838449",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d261b169_864d406c",
+        "filename": "dashboard/src/templates/booking/booking_detail.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-19T16:20:35Z",
+      "side": 1,
+      "message": "var i",
+      "revId": "92f4f4a02ac6bea5f898a12ef2292e7844838449",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d001b8e0_842c1852",
+        "filename": "dashboard/src/templates/booking/booking_detail.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-19T16:20:35Z",
+      "side": 1,
+      "message": "var i (avoid making i a global variable)",
       "revId": "92f4f4a02ac6bea5f898a12ef2292e7844838449",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
@@ -134,6 +202,23 @@
         "endLine": 357,
         "endChar": 9
       },
+      "revId": "92f4f4a02ac6bea5f898a12ef2292e7844838449",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b69423d5_d187a8e1",
+        "filename": "dashboard/src/templates/booking/booking_detail.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 409,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-19T16:20:35Z",
+      "side": 1,
+      "message": "should utilize bootstrap\u0027s \"form-group\" and use labels.",
       "revId": "92f4f4a02ac6bea5f898a12ef2292e7844838449",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
