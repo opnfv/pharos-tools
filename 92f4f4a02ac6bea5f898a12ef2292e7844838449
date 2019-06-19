@@ -88,6 +88,24 @@
     },
     {
       "key": {
+        "uuid": "9467d1dd_7a3ae166",
+        "filename": "dashboard/src/templates/booking/booking_detail.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-06-19T16:41:49Z",
+      "side": 1,
+      "message": "I don\u0027t think that\u0027s a particularly good idea as it would actually increase verbosity, and since these styles are very specific to these two buttons it doesn\u0027t make a ton of semantic sense to separate it out into an entire class.",
+      "parentUuid": "4c2fd38a_f317c31e",
+      "revId": "92f4f4a02ac6bea5f898a12ef2292e7844838449",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7175becf_866ca1c3",
         "filename": "dashboard/src/templates/booking/booking_detail.html",
         "patchSetId": 3
