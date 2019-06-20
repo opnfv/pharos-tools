@@ -1,0 +1,274 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "311ddf19_4988c07d",
+        "filename": "dashboard/requirements.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-06-20T20:30:55Z",
+      "side": 1,
+      "message": "Needs a version lock",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 4,
+        "endChar": 17
+      },
+      "revId": "7b65f6132b43f7b0c8fd79a240a600757d13b799",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4ce8ca8f_5c9a641d",
+        "filename": "dashboard/src/static/css/base.css",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-06-20T20:30:55Z",
+      "side": 1,
+      "message": "whitespace",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 4
+      },
+      "revId": "7b65f6132b43f7b0c8fd79a240a600757d13b799",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b2c811ee_0e6f93d9",
+        "filename": "dashboard/src/templates/base.html",
+        "patchSetId": 2
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-06-20T20:30:55Z",
+      "side": 1,
+      "message": "whitespace",
+      "range": {
+        "startLine": 48,
+        "startChar": 0,
+        "endLine": 48,
+        "endChar": 4
+      },
+      "revId": "7b65f6132b43f7b0c8fd79a240a600757d13b799",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cb155dec_c68c1e2e",
+        "filename": "dashboard/src/templates/base.html",
+        "patchSetId": 2
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-06-20T20:30:55Z",
+      "side": 1,
+      "message": "indentation is wrong here",
+      "range": {
+        "startLine": 121,
+        "startChar": 26,
+        "endLine": 124,
+        "endChar": 25
+      },
+      "revId": "7b65f6132b43f7b0c8fd79a240a600757d13b799",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f4a98255_c25e2b92",
+        "filename": "dashboard/src/templates/booking/booking_list.html",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-06-20T20:30:55Z",
+      "side": 1,
+      "message": "Delete dead code",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 31
+      },
+      "revId": "7b65f6132b43f7b0c8fd79a240a600757d13b799",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e3f9705d_91c09700",
+        "filename": "dashboard/src/templates/booking/booking_list.html",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-06-20T20:30:55Z",
+      "side": 1,
+      "message": "Are both of these needed?",
+      "range": {
+        "startLine": 38,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 108
+      },
+      "revId": "7b65f6132b43f7b0c8fd79a240a600757d13b799",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3af40312_9a7d1588",
+        "filename": "dashboard/src/templates/dashboard/multiple_select_filter_widget.html",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-06-20T20:30:55Z",
+      "side": 1,
+      "message": "This conflicts with my change to this file. Please remove this file from the commit and we can decide on the final style for this widget later.",
+      "revId": "7b65f6132b43f7b0c8fd79a240a600757d13b799",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "92e19345_3e25cab1",
+        "filename": "dashboard/src/templates/dashboard/table.html",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-06-20T20:30:55Z",
+      "side": 1,
+      "message": "copy paste error?",
+      "range": {
+        "startLine": 6,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 27
+      },
+      "revId": "7b65f6132b43f7b0c8fd79a240a600757d13b799",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cf89a87a_773df234",
+        "filename": "dashboard/src/templates/notifier/inbox.html",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-06-20T20:30:55Z",
+      "side": 1,
+      "message": "whitespace",
+      "range": {
+        "startLine": 57,
+        "startChar": 3,
+        "endLine": 57,
+        "endChar": 5
+      },
+      "revId": "7b65f6132b43f7b0c8fd79a240a600757d13b799",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8d5c0a8a_be9457fb",
+        "filename": "dashboard/src/templates/notifier/inbox.html",
+        "patchSetId": 2
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-06-20T20:30:55Z",
+      "side": 1,
+      "message": "dead code",
+      "range": {
+        "startLine": 103,
+        "startChar": 0,
+        "endLine": 129,
+        "endChar": 10
+      },
+      "revId": "7b65f6132b43f7b0c8fd79a240a600757d13b799",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "06c618f0_6ef1281c",
+        "filename": "dashboard/src/templates/workflow/viewport-base.html",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-06-20T20:30:55Z",
+      "side": 1,
+      "message": "linting error? It should be {% endif %}",
+      "range": {
+        "startLine": 40,
+        "startChar": 0,
+        "endLine": 50,
+        "endChar": 17
+      },
+      "revId": "7b65f6132b43f7b0c8fd79a240a600757d13b799",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ed8d1b96_e0dc752c",
+        "filename": "dashboard/src/templates/workflow/viewport-base.html",
+        "patchSetId": 2
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-06-20T20:30:55Z",
+      "side": 1,
+      "message": "dead",
+      "range": {
+        "startLine": 195,
+        "startChar": 0,
+        "endLine": 218,
+        "endChar": 24
+      },
+      "revId": "7b65f6132b43f7b0c8fd79a240a600757d13b799",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
