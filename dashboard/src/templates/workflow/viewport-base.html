@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 
-{% load bootstrap3 %}
+{% load bootstrap4 %}
 
 {% block content %}
 
@@ -42,14 +42,6 @@
         position: absolute;
     }
     {% endif %}
-
-
-
-    .options{
-        position: absolute;
-        top: 60px;
-        right: 20px;
-    }
 
     #breadcrumbs {
         margin-bottom: 0;
@@ -140,16 +132,85 @@
         padding: 0;
     }
 </style>
-
-<button id="gof" onclick="go('next')" class="btn go_btn go_forward">Go Forward</button>
-<button id="gob" onclick="go('prev')" class="btn go_btn go_back">Go Back</button>
-
-<div class="options">
-    <button id="cancel_btn" class="btn btn-primary" onclick="cancel_wf()">Cancel</button>
+<!-- Breadcrumbs -->
+<div class="row">
+    <div class="col">
+        <ol id="breadcrumbs" class="btn-group breadcrumb">
+        </ol>
+    </div>
+</div>
+<!-- Top header -->
+<div class="row px-4">
+    <div class="col">
+        <div id="iframe_header" class="row view-header">
+            <div class="col-lg-12 step_header">
+                <h1 class="step_title d-inline-block" id="view_title"></h1>
+                <span class="description text-muted" id="view_desc"></span>
+                <p class="step_message" id="view_message"></p>
+            </div>
+            <!-- <style>
+                #view_desc{
+                    margin-left: 30px;
+                    display: inline;
+                }
+                #view_title{
+                    display: inline;
+                }
+                #view_message{
+                    margin-top: 10px;
+                    margin-bottom: 5px;
+                    float: right;
+                }
+                .message_invalid{
+                    color: #ff4400;
+                }
+                .message_valid{
+                    color: #44cc00;
+                }
+                .step_header{
+                    border-bottom: 1px solid #eee;
+                    border-top: 1px solid #eee;
+                }
+            </style> -->
+            <script>
+                function update_description(title, desc){
+                    document.getElementById("view_title").innerText = title;
+                    document.getElementById("view_desc").innerText = desc;
+                }
+                function update_message(message, stepstatus){
+                    document.getElementById("view_message").innerText = message;
+                    document.getElementById("view_message").className = "step_message";
+                    document.getElementById("view_message").classList.add("message_" + stepstatus);
+                }
+        
+            </script>
+            <!-- /.col-lg-12 -->
+        </div>
+    </div>
+    <div class="col align-self-center d-flex">
+        <button id="cancel_btn" class="btn btn-danger ml-auto" onclick="cancel_wf()">Cancel</button>
+    </div>
+</div>
+<!-- Content here -->
+<div class="row d-flex flex-column flex-grow-1">
+    <div class="container-fluid d-flex flex-column h-100">
+        <!-- Control buttons -->
+    <div class="row d-flex flex-shrink-1 px-4">
+            <div class="col mt-2 d-flex">
+                <button id="gob" onclick="go('prev')" class="btn btn-secondary ml-auto">Back</button>
+                <button id="gof" onclick="go('next')" class="btn btn-primary ml-2">Next</button>
+            </div>
+        </div>
+        <div class="row d-flex flex-grow-1 p-4">
+            <!-- iframe workflow -->
+            <div class="col-12 d-flex border flex-grow-1">
+                <!-- This was where the iframe went -->
+                CONTENT HERE
+            </div>
+        </div>
+    </div>
 </div>
 <div class="btn_wrapper">
-<ol id="breadcrumbs" class="btn-group breadcrumb">
-</ol>
 </div>
 {% csrf_token %}
 
@@ -411,63 +472,9 @@
         window.location=window.location;
     }
 </script>
-<div id="iframe_header" class="row view-header">
-    <div class="col-lg-12 step_header">
-        <h1 class="step_title" id="view_title"></h1>
-        <p class="description" id="view_desc"></p>
-        <p class="step_message" id="view_message"></p>
-    </div>
-    <style>
-        #view_desc{
-            margin-bottom: 15px;
-            margin-top: 5px;
-            margin-left: 30px;
-            display: inline;
-        }
-        #view_title{
-            margin-top: 5px;
-            margin-bottom: 0px;
-            display: inline;
-        }
-        #view_message{
-            margin-top: 10px;
-            margin-bottom: 5px;
-            float: right;
-        }
-        .message_invalid{
-            color: #ff4400;
-        }
-        .message_valid{
-            color: #44cc00;
-        }
-        .step_header{
-            border-bottom: 1px solid #eee;
-            border-top: 1px solid #eee;
-            left: 101px;
-            width: calc(100% - 202px);
-        }
-    </style>
-    <script>
-        function update_description(title, desc){
-            document.getElementById("view_title").innerText = title;
-            document.getElementById("view_desc").innerText = desc;
-        }
-        function update_message(message, stepstatus){
-            document.getElementById("view_message").innerText = message;
-            document.getElementById("view_message").className = "step_message";
-            document.getElementById("view_message").classList.add("message_" + stepstatus);
-        }
-
-    </script>
-    <!-- /.col-lg-12 -->
-</div>
 <div style="display: none;" id="workflow_pop_form_div">
 <form id="workflow_pop_form" action="/wf/workflow/finish/" method="post">
     {% csrf_token %}
 </form>
-</div>
-
-<div class="iframe_div">
-        <iframe src="/wf/workflow" class="iframe_elem" scrolling="yes" id="viewport-iframe"></iframe>
 </div>
 {% endblock content %}
