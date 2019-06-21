@@ -22,6 +22,30 @@
       "revId": "bf7986421192be9018c662e016fabb02d2dad0da",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "04996bd7_116b375d",
+        "filename": "dashboard/src/booking/stats.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-06-21T13:58:15Z",
+      "side": 1,
+      "message": "Unfortunately, Django does not allow a select_related for ManyToMany fields",
+      "parentUuid": "027435e1_98c28870",
+      "range": {
+        "startLine": 35,
+        "startChar": 31,
+        "endLine": 35,
+        "endChar": 45
+      },
+      "revId": "bf7986421192be9018c662e016fabb02d2dad0da",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
     }
   ]
 }
