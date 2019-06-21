@@ -15,18 +15,7 @@ with your current configuration will become unavailable.</p>
 </form>
 {% endblock content %}
 {% block onleave %}
-var normalize = function(data){
-    //converts the top level keys in data to map to lists
-    var normalized = {}
-    for( var key in data ){
-        normalized[key] = [];
-        for( var subkey in data[key] ){
-            normalized[key].push(data[key][subkey]);
-        }
-    }
-    return normalized;
-}
-var data = result;
+var data = multi_filter_widget.result;
 data = JSON.stringify(data);
 document.getElementById("filter_field").value = data;
 var formData = $("#define_hardware_form").serialize();
