@@ -1,0 +1,480 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f75e3da4_7e117742",
+        "filename": "dashboard/src/templates/base.html",
+        "patchSetId": 5
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-21T20:08:03Z",
+      "side": 1,
+      "message": "remove?",
+      "revId": "5bcbb9310d14bcef3afa11315abd2251fe4e4fc6",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5984fe4f_ddcbe723",
+        "filename": "dashboard/src/templates/base.html",
+        "patchSetId": 5
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-21T20:08:03Z",
+      "side": 1,
+      "message": "remove?",
+      "revId": "5bcbb9310d14bcef3afa11315abd2251fe4e4fc6",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a3858147_00ac466c",
+        "filename": "dashboard/src/templates/base.html",
+        "patchSetId": 5
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-21T20:08:03Z",
+      "side": 1,
+      "message": "remove?",
+      "revId": "5bcbb9310d14bcef3afa11315abd2251fe4e4fc6",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "658b5d4f_470917f4",
+        "filename": "dashboard/src/templates/base.html",
+        "patchSetId": 5
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-21T20:08:03Z",
+      "side": 1,
+      "message": "not useful",
+      "revId": "5bcbb9310d14bcef3afa11315abd2251fe4e4fc6",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b8f3db47_1011db02",
+        "filename": "dashboard/src/templates/base.html",
+        "patchSetId": 5
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-21T20:08:03Z",
+      "side": 1,
+      "message": "remove?",
+      "revId": "5bcbb9310d14bcef3afa11315abd2251fe4e4fc6",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "948b2ca6_72a871ea",
+        "filename": "dashboard/src/templates/booking/booking_detail.html",
+        "patchSetId": 5
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-21T20:08:03Z",
+      "side": 1,
+      "message": "I wonder if this style can be removed. I think there is also a \"d-inline\" class or something, if you still need it.",
+      "revId": "5bcbb9310d14bcef3afa11315abd2251fe4e4fc6",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d35007f9_555b4abf",
+        "filename": "dashboard/src/templates/booking/booking_detail.html",
+        "patchSetId": 5
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-21T20:08:03Z",
+      "side": 1,
+      "message": "same here",
+      "revId": "5bcbb9310d14bcef3afa11315abd2251fe4e4fc6",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4ec131cb_81b3fbf5",
+        "filename": "dashboard/src/templates/booking/booking_detail.html",
+        "patchSetId": 5
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-21T20:08:03Z",
+      "side": 1,
+      "message": "same here for previous 2 lines. the margin can be replaced with a \"ml-X\" class",
+      "revId": "5bcbb9310d14bcef3afa11315abd2251fe4e4fc6",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7455383e_8ed2d4ad",
+        "filename": "dashboard/src/templates/booking/booking_detail.html",
+        "patchSetId": 5
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-21T20:08:03Z",
+      "side": 1,
+      "message": "same here",
+      "revId": "5bcbb9310d14bcef3afa11315abd2251fe4e4fc6",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "10e88532_fd940518",
+        "filename": "dashboard/src/templates/booking/booking_detail.html",
+        "patchSetId": 5
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-21T20:08:03Z",
+      "side": 1,
+      "message": "same here. \u0027m-0, p-X\u0027 and I think there is a class to remove borders. but i thought pre didn\u0027t have borders in bootstrap 4? i\u0027m guessing the other classes are adding them",
+      "revId": "5bcbb9310d14bcef3afa11315abd2251fe4e4fc6",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e11b514_c787d782",
+        "filename": "dashboard/src/templates/booking/booking_list.html",
+        "patchSetId": 5
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-21T20:08:03Z",
+      "side": 1,
+      "message": "bootstrap4 has the ability to change table sizes to be smaller, i wonder if that would work?",
+      "revId": "5bcbb9310d14bcef3afa11315abd2251fe4e4fc6",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a61f2bd2_1df830af",
+        "filename": "dashboard/src/templates/booking/booking_list.html",
+        "patchSetId": 5
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-21T20:08:03Z",
+      "side": 1,
+      "message": "w-100",
+      "revId": "5bcbb9310d14bcef3afa11315abd2251fe4e4fc6",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "37e15d79_82b8f691",
+        "filename": "dashboard/src/templates/booking/stats.html",
+        "patchSetId": 5
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-21T20:08:03Z",
+      "side": 1,
+      "message": "i think there is too much indents below?",
+      "revId": "5bcbb9310d14bcef3afa11315abd2251fe4e4fc6",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a709d0b9_d5834432",
+        "filename": "dashboard/src/templates/booking/stats.html",
+        "patchSetId": 5
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-21T20:08:03Z",
+      "side": 1,
+      "message": "are the styles in the two elements below needed?",
+      "revId": "5bcbb9310d14bcef3afa11315abd2251fe4e4fc6",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ab051fac_149adfd5",
+        "filename": "dashboard/src/templates/dashboard/lab_detail.html",
+        "patchSetId": 5
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-21T20:08:03Z",
+      "side": 1,
+      "message": "\u0027rounded-circle\u0027 class",
+      "revId": "5bcbb9310d14bcef3afa11315abd2251fe4e4fc6",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "242fe1cb_c0c9d235",
+        "filename": "dashboard/src/templates/dashboard/lab_detail.html",
+        "patchSetId": 5
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-21T20:08:03Z",
+      "side": 1,
+      "message": "is the line height needed?",
+      "revId": "5bcbb9310d14bcef3afa11315abd2251fe4e4fc6",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "610cb1b0_b6842d0a",
+        "filename": "dashboard/src/templates/dashboard/lab_detail.html",
+        "patchSetId": 5
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-21T20:08:03Z",
+      "side": 1,
+      "message": "same here?",
+      "revId": "5bcbb9310d14bcef3afa11315abd2251fe4e4fc6",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9d74d75e_68036494",
+        "filename": "dashboard/src/templates/dashboard/landing.html",
+        "patchSetId": 5
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-21T20:08:03Z",
+      "side": 1,
+      "message": "theres a lot of styles that can be removed, like padding, margin, border, text-alignment, and display styles, and instead add the relevant classes to the elements.",
+      "revId": "5bcbb9310d14bcef3afa11315abd2251fe4e4fc6",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eeae8271_c2e5331c",
+        "filename": "dashboard/src/templates/dashboard/landing.html",
+        "patchSetId": 5
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-21T20:08:03Z",
+      "side": 1,
+      "message": "use bootstrap classes",
+      "revId": "5bcbb9310d14bcef3afa11315abd2251fe4e4fc6",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "21c13054_6c543973",
+        "filename": "dashboard/src/templates/dashboard/landing.html",
+        "patchSetId": 5
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-21T20:08:03Z",
+      "side": 1,
+      "message": "oh man",
+      "revId": "5bcbb9310d14bcef3afa11315abd2251fe4e4fc6",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3134b436_64e3738b",
+        "filename": "dashboard/src/templates/dashboard/resource.html",
+        "patchSetId": 5
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-21T20:08:03Z",
+      "side": 1,
+      "message": "too much indent",
+      "revId": "5bcbb9310d14bcef3afa11315abd2251fe4e4fc6",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "23a11aec_1970d261",
+        "filename": "dashboard/src/templates/dashboard/resource_all.html",
+        "patchSetId": 5
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-21T20:08:03Z",
+      "side": 1,
+      "message": "too much indent",
+      "revId": "5bcbb9310d14bcef3afa11315abd2251fe4e4fc6",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfb2ecf5_8378e19d",
+        "filename": "dashboard/src/templates/notifier/inbox.html",
+        "patchSetId": 5
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-21T20:08:03Z",
+      "side": 1,
+      "message": "same thing here.",
+      "revId": "5bcbb9310d14bcef3afa11315abd2251fe4e4fc6",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1b990019_af73be54",
+        "filename": "dashboard/src/templates/resource/hostprofile_detail.html",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-21T20:08:03Z",
+      "side": 1,
+      "message": ".",
+      "revId": "5bcbb9310d14bcef3afa11315abd2251fe4e4fc6",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "778d534f_ed63a5ac",
+        "filename": "dashboard/src/templates/resource/hostprofile_detail.html",
+        "patchSetId": 5
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-21T20:08:03Z",
+      "side": 1,
+      "message": ".",
+      "revId": "5bcbb9310d14bcef3afa11315abd2251fe4e4fc6",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "33e3b845_fcd8df56",
+        "filename": "dashboard/src/templates/resource/hostprofile_detail.html",
+        "patchSetId": 5
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-21T20:08:03Z",
+      "side": 1,
+      "message": ".",
+      "revId": "5bcbb9310d14bcef3afa11315abd2251fe4e4fc6",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7e27f9f5_aadaf44b",
+        "filename": "dashboard/src/templates/workflow/viewport-base.html",
+        "patchSetId": 5
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-21T20:08:03Z",
+      "side": 1,
+      "message": "same here",
+      "revId": "5bcbb9310d14bcef3afa11315abd2251fe4e4fc6",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f5a43ea_007b0416",
+        "filename": "dashboard/src/templates/workflow/viewport-base.html",
+        "patchSetId": 5
+      },
+      "lineNbr": 310,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-21T20:08:03Z",
+      "side": 1,
+      "message": "just return the if",
+      "revId": "5bcbb9310d14bcef3afa11315abd2251fe4e4fc6",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
