@@ -164,6 +164,30 @@
     },
     {
       "key": {
+        "uuid": "a6f203d5_527342f0",
+        "filename": "dashboard/src/templates/booking/booking_list.html",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-06-21T15:11:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f098c53d_fd192bf2",
+      "range": {
+        "startLine": 38,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 108
+      },
+      "revId": "7b65f6132b43f7b0c8fd79a240a600757d13b799",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3af40312_9a7d1588",
         "filename": "dashboard/src/templates/dashboard/multiple_select_filter_widget.html",
         "patchSetId": 2
