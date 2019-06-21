@@ -88,6 +88,30 @@
     },
     {
       "key": {
+        "uuid": "92b324a6_f0c6094c",
+        "filename": "dashboard/src/templates/dashboard/multiple_select_filter_widget.html",
+        "patchSetId": 2
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-06-21T14:56:28Z",
+      "side": 1,
+      "message": "Yup, this needs to change everywhere. I have a seperate patch that works on this.",
+      "parentUuid": "5bc7342a_ab6cd6c0",
+      "range": {
+        "startLine": 282,
+        "startChar": 29,
+        "endLine": 282,
+        "endChar": 65
+      },
+      "revId": "ac8e8b4f0c0c247b03b9c579359b10ff5b9c0e00",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dcc99435_0cc79e8b",
         "filename": "dashboard/src/workflow/forms.py",
         "patchSetId": 2
@@ -111,6 +135,30 @@
     },
     {
       "key": {
+        "uuid": "2d05d7a8_d20050fd",
+        "filename": "dashboard/src/workflow/forms.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-06-21T14:56:28Z",
+      "side": 1,
+      "message": "I don\u0027t do anything special with intial. Django passes in whatever value this field created.",
+      "parentUuid": "dcc99435_0cc79e8b",
+      "range": {
+        "startLine": 269,
+        "startChar": 7,
+        "endLine": 269,
+        "endChar": 44
+      },
+      "revId": "ac8e8b4f0c0c247b03b9c579359b10ff5b9c0e00",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f7f97c4a_e1288082",
         "filename": "dashboard/src/workflow/resource_bundle_workflow.py",
         "patchSetId": 2
@@ -122,6 +170,30 @@
       "writtenOn": "2019-06-19T13:46:34Z",
       "side": 1,
       "message": "UX: should not reference a random RFC# as sole recommendation of how to format hostname",
+      "range": {
+        "startLine": 79,
+        "startChar": 50,
+        "endLine": 79,
+        "endChar": 127
+      },
+      "revId": "ac8e8b4f0c0c247b03b9c579359b10ff5b9c0e00",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da648b1f_52d11e56",
+        "filename": "dashboard/src/workflow/resource_bundle_workflow.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-06-21T14:56:28Z",
+      "side": 1,
+      "message": "Yup, working on it in a different change.",
+      "parentUuid": "f7f97c4a_e1288082",
       "range": {
         "startLine": 79,
         "startChar": 50,
