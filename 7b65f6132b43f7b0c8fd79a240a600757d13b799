@@ -140,6 +140,30 @@
     },
     {
       "key": {
+        "uuid": "f098c53d_fd192bf2",
+        "filename": "dashboard/src/templates/booking/booking_list.html",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 7515
+      },
+      "writtenOn": "2019-06-21T14:03:24Z",
+      "side": 1,
+      "message": "jquery.dataTables.min.js is for the actual sorting and functionality of datatables\n\ndataTables.bootstrap4.min.js is for styling datatable elements dynamically from bootstrap4 integration",
+      "parentUuid": "e3f9705d_91c09700",
+      "range": {
+        "startLine": 38,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 108
+      },
+      "revId": "7b65f6132b43f7b0c8fd79a240a600757d13b799",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3af40312_9a7d1588",
         "filename": "dashboard/src/templates/dashboard/multiple_select_filter_widget.html",
         "patchSetId": 2
