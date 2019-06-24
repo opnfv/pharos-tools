@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "038c9ad4_747b4c5d",
+        "filename": "dashboard/src/static/js/dashboard.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-24T18:45:57Z",
+      "side": 1,
+      "message": "whitespace",
+      "revId": "f7097f0d0aead302a20ee82646577643e58721f6",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8034b3d4_68bb8ba6",
+        "filename": "dashboard/src/static/js/dashboard.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-24T18:45:57Z",
+      "side": 1,
+      "message": "whitespace",
+      "revId": "f7097f0d0aead302a20ee82646577643e58721f6",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "05a12ee3_14350e0d",
+        "filename": "dashboard/src/static/js/dashboard.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 286,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-24T18:45:57Z",
+      "side": 1,
+      "message": "comment",
+      "revId": "f7097f0d0aead302a20ee82646577643e58721f6",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "930d4af9_3ecb381b",
+        "filename": "dashboard/src/static/js/dashboard.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-24T18:45:57Z",
+      "side": 1,
+      "message": "comment",
+      "revId": "f7097f0d0aead302a20ee82646577643e58721f6",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "089d5fb4_8f6b769f",
+        "filename": "dashboard/src/static/js/dashboard.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-24T18:45:57Z",
+      "side": 1,
+      "message": "Using `in` would be better here, since you won\u0027t need to call `Object.entries()`",
+      "revId": "f7097f0d0aead302a20ee82646577643e58721f6",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1feed680_c1a909ce",
+        "filename": "dashboard/src/static/js/dashboard.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 379,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-24T18:45:57Z",
+      "side": 1,
+      "message": "indent",
+      "revId": "f7097f0d0aead302a20ee82646577643e58721f6",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0849a8ca_627df3d0",
+        "filename": "dashboard/src/static/js/dashboard.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 429,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-24T18:45:57Z",
+      "side": 1,
+      "message": "defining itemID seems redundant",
+      "revId": "f7097f0d0aead302a20ee82646577643e58721f6",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a7c7d4d_eaf88e36",
+        "filename": "dashboard/src/static/js/dashboard.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 440,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-24T18:45:57Z",
+      "side": 1,
+      "message": "new line plz",
+      "revId": "f7097f0d0aead302a20ee82646577643e58721f6",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6fd7a34d_1e36537d",
+        "filename": "dashboard/src/static/js/dashboard.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 531,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-24T18:45:57Z",
+      "side": 1,
+      "message": "comment",
+      "revId": "f7097f0d0aead302a20ee82646577643e58721f6",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "05618a1b_c1492b63",
+        "filename": "dashboard/src/static/js/dashboard.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 533,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-24T18:45:57Z",
+      "side": 1,
+      "message": "comment",
+      "revId": "f7097f0d0aead302a20ee82646577643e58721f6",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
