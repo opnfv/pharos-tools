@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "66a38810_cbeb7193",
+        "filename": "dashboard/src/static/js/dashboard.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-24T15:49:01Z",
+      "side": 1,
+      "message": "can use for...of instead of for...in",
+      "revId": "2aee83feccb8d76fe7491a2c4413672381e05978",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f7e62b5c_e63a6482",
+        "filename": "dashboard/src/static/js/dashboard.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-24T15:49:01Z",
+      "side": 1,
+      "message": "same here",
+      "revId": "2aee83feccb8d76fe7491a2c4413672381e05978",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "74fd4cf2_2bf3f96d",
+        "filename": "dashboard/src/static/js/dashboard.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-24T15:49:01Z",
+      "side": 1,
+      "message": "same here",
+      "revId": "2aee83feccb8d76fe7491a2c4413672381e05978",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6af65ddf_87ec17b2",
+        "filename": "dashboard/src/static/js/dashboard.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-24T15:49:01Z",
+      "side": 1,
+      "message": "same here",
+      "revId": "2aee83feccb8d76fe7491a2c4413672381e05978",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b4fba6a1_8ec855fe",
+        "filename": "dashboard/src/static/js/dashboard.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-24T15:49:01Z",
+      "side": 1,
+      "message": "same here",
+      "revId": "2aee83feccb8d76fe7491a2c4413672381e05978",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d3b0a4ee_773485ab",
+        "filename": "dashboard/src/static/js/dashboard.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-24T15:49:01Z",
+      "side": 1,
+      "message": "same here",
+      "revId": "2aee83feccb8d76fe7491a2c4413672381e05978",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "208721fb_d30e3b6e",
+        "filename": "dashboard/src/static/js/dashboard.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-24T15:49:01Z",
+      "side": 1,
+      "message": "same here, i think",
+      "revId": "2aee83feccb8d76fe7491a2c4413672381e05978",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "57de31a5_bf8eb7f8",
+        "filename": "dashboard/src/static/js/dashboard.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-24T15:49:01Z",
+      "side": 1,
+      "message": "same here",
+      "revId": "2aee83feccb8d76fe7491a2c4413672381e05978",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a9c6fc96_c4675648",
+        "filename": "dashboard/src/static/js/dashboard.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-24T15:49:01Z",
+      "side": 1,
+      "message": "using the variable name `that` instead of `me` is the typical convention. Also does `bind(this)` not work? (If so, apply that trick to the other uses of `me`.)",
+      "revId": "2aee83feccb8d76fe7491a2c4413672381e05978",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
