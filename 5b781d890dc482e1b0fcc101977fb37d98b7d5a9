@@ -1,0 +1,418 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "46d87a65_4af3f5ec",
+        "filename": "dashboard/src/static/js/dashboard.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-06-25T17:04:21Z",
+      "side": 1,
+      "message": "does this actually do anything/return anything? Is there any reason to do a `new` on it?",
+      "range": {
+        "startLine": 278,
+        "startChar": 8,
+        "endLine": 278,
+        "endChar": 53
+      },
+      "revId": "5b781d890dc482e1b0fcc101977fb37d98b7d5a9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cd27a8f2_ab092b46",
+        "filename": "dashboard/src/static/js/dashboard.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 417,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-06-25T17:04:21Z",
+      "side": 1,
+      "message": "can we do a for(const i of styles) here?",
+      "range": {
+        "startLine": 417,
+        "startChar": 12,
+        "endLine": 417,
+        "endChar": 47
+      },
+      "revId": "5b781d890dc482e1b0fcc101977fb37d98b7d5a9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5fb4ecd2_6a845ec4",
+        "filename": "dashboard/src/static/js/dashboard.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 446,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-06-25T17:04:21Z",
+      "side": 1,
+      "message": "is there any way to get an iterable from this rather than a count and indexing in?",
+      "range": {
+        "startLine": 446,
+        "startChar": 23,
+        "endLine": 446,
+        "endChar": 46
+      },
+      "revId": "5b781d890dc482e1b0fcc101977fb37d98b7d5a9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6547e253_499561bf",
+        "filename": "dashboard/src/static/js/dashboard.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 450,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-06-25T17:04:21Z",
+      "side": 1,
+      "message": "block scope and not-reassigned so could be `const` rather than `var`",
+      "range": {
+        "startLine": 449,
+        "startChar": 16,
+        "endLine": 450,
+        "endChar": 40
+      },
+      "revId": "5b781d890dc482e1b0fcc101977fb37d98b7d5a9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ed6fc2d_8b77c07f",
+        "filename": "dashboard/src/static/js/dashboard.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 591,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-06-25T17:04:21Z",
+      "side": 1,
+      "message": "weird indentation + brace spacing",
+      "range": {
+        "startLine": 591,
+        "startChar": 20,
+        "endLine": 591,
+        "endChar": 43
+      },
+      "revId": "5b781d890dc482e1b0fcc101977fb37d98b7d5a9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "16b18f0d_b84c2b65",
+        "filename": "dashboard/src/static/js/dashboard.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 595,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-06-25T17:04:21Z",
+      "side": 1,
+      "message": "indentation",
+      "range": {
+        "startLine": 595,
+        "startChar": 17,
+        "endLine": 595,
+        "endChar": 31
+      },
+      "revId": "5b781d890dc482e1b0fcc101977fb37d98b7d5a9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f2d830f1_bec56b8b",
+        "filename": "dashboard/src/static/js/dashboard.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 614,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-06-25T17:04:21Z",
+      "side": 1,
+      "message": "x, y aren\u0027t mutated so could be const",
+      "range": {
+        "startLine": 612,
+        "startChar": 7,
+        "endLine": 614,
+        "endChar": 73
+      },
+      "revId": "5b781d890dc482e1b0fcc101977fb37d98b7d5a9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6284420c_c47964ea",
+        "filename": "dashboard/src/static/js/dashboard.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 676,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-06-25T17:04:21Z",
+      "side": 1,
+      "message": "do we want to use unstyled alerts or a different format?",
+      "range": {
+        "startLine": 676,
+        "startChar": 23,
+        "endLine": 676,
+        "endChar": 41
+      },
+      "revId": "5b781d890dc482e1b0fcc101977fb37d98b7d5a9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ac5db4e8_1c81c51e",
+        "filename": "dashboard/src/static/js/dashboard.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 700,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-06-25T17:04:21Z",
+      "side": 1,
+      "message": "const",
+      "range": {
+        "startLine": 700,
+        "startChar": 8,
+        "endLine": 700,
+        "endChar": 23
+      },
+      "revId": "5b781d890dc482e1b0fcc101977fb37d98b7d5a9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a8ae42bc_abe8350b",
+        "filename": "dashboard/src/static/js/dashboard.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 712,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-06-25T17:04:21Z",
+      "side": 1,
+      "message": "const",
+      "range": {
+        "startLine": 712,
+        "startChar": 9,
+        "endLine": 712,
+        "endChar": 19
+      },
+      "revId": "5b781d890dc482e1b0fcc101977fb37d98b7d5a9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3dc9e1aa_031b90fb",
+        "filename": "dashboard/src/static/js/dashboard.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 743,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-06-25T17:04:21Z",
+      "side": 1,
+      "message": "const, could probably just unpack ret into makeSidebarNetwork params with ...ret if it doesn\u0027t contain anything else",
+      "range": {
+        "startLine": 741,
+        "startChar": 8,
+        "endLine": 743,
+        "endChar": 39
+      },
+      "revId": "5b781d890dc482e1b0fcc101977fb37d98b7d5a9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3b572f86_ac23b97d",
+        "filename": "dashboard/src/static/js/dashboard.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 748,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-06-25T17:04:21Z",
+      "side": 1,
+      "message": "const",
+      "range": {
+        "startLine": 748,
+        "startChar": 7,
+        "endLine": 748,
+        "endChar": 22
+      },
+      "revId": "5b781d890dc482e1b0fcc101977fb37d98b7d5a9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5df59a87_520893e7",
+        "filename": "dashboard/src/static/js/dashboard.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 755,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-06-25T17:04:21Z",
+      "side": 1,
+      "message": "const",
+      "range": {
+        "startLine": 754,
+        "startChar": 7,
+        "endLine": 755,
+        "endChar": 13
+      },
+      "revId": "5b781d890dc482e1b0fcc101977fb37d98b7d5a9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4208ce88_37287141",
+        "filename": "dashboard/src/static/js/dashboard.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 759,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-06-25T17:04:21Z",
+      "side": 1,
+      "message": "const",
+      "range": {
+        "startLine": 759,
+        "startChar": 16,
+        "endLine": 759,
+        "endChar": 27
+      },
+      "revId": "5b781d890dc482e1b0fcc101977fb37d98b7d5a9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "963526a9_a447a938",
+        "filename": "dashboard/src/static/js/dashboard.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 768,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-06-25T17:04:21Z",
+      "side": 1,
+      "message": "a bunch of these could be const (or let)",
+      "range": {
+        "startLine": 768,
+        "startChar": 8,
+        "endLine": 768,
+        "endChar": 11
+      },
+      "revId": "5b781d890dc482e1b0fcc101977fb37d98b7d5a9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f04d293_90afd34d",
+        "filename": "dashboard/src/static/js/dashboard.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 814,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-06-25T17:04:21Z",
+      "side": 1,
+      "message": "for..of",
+      "range": {
+        "startLine": 814,
+        "startChar": 10,
+        "endLine": 814,
+        "endChar": 44
+      },
+      "revId": "5b781d890dc482e1b0fcc101977fb37d98b7d5a9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ef1abeb7_a771c8b4",
+        "filename": "dashboard/src/static/js/dashboard.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 833,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-06-25T17:04:21Z",
+      "side": 1,
+      "message": "const",
+      "range": {
+        "startLine": 833,
+        "startChar": 7,
+        "endLine": 833,
+        "endChar": 12
+      },
+      "revId": "5b781d890dc482e1b0fcc101977fb37d98b7d5a9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e5af18d2_2445e045",
+        "filename": "dashboard/src/workflow/resource_bundle_workflow.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-06-25T17:04:21Z",
+      "side": 1,
+      "message": "we should probably do this more often:\n\ncontext \u003d {**super(Define_Nets, self).get_context(),\n     \u0027debug\u0027:...\n}",
+      "range": {
+        "startLine": 175,
+        "startChar": 8,
+        "endLine": 175,
+        "endChar": 14
+      },
+      "revId": "5b781d890dc482e1b0fcc101977fb37d98b7d5a9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
