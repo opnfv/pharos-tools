@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dde64a1b_0e4b9bcf",
+        "filename": "dashboard/src/static/js/dashboard.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-06-25T16:48:20Z",
+      "side": 1,
+      "message": "Please avoid using JS magic. This makes it harder to debug and understand",
+      "range": {
+        "startLine": 260,
+        "startChar": 0,
+        "endLine": 261,
+        "endChar": 41
+      },
+      "revId": "c022dc26b47078ce0f2332a5f2f44490a2f0f445",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
