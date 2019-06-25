@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b6a1127e_55a953af",
+        "filename": "dashboard/src/static/js/dashboard.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-25T16:10:12Z",
+      "side": 1,
+      "message": "for(const key in dict)\n        {\n            this.add_item(dict[key]);\n        }",
+      "range": {
+        "startLine": 302,
+        "startChar": 8,
+        "endLine": 305,
+        "endChar": 9
+      },
+      "revId": "9fba5b887ed84674759653974b9f15889016ca82",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
