@@ -330,6 +330,30 @@
       "revId": "f7097f0d0aead302a20ee82646577643e58721f6",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a6ccb124_ebd9e502",
+        "filename": "dashboard/src/templates/dashboard/searchable_select_multiple.html",
+        "patchSetId": 1
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-06-25T12:30:13Z",
+      "side": 1,
+      "message": "This is all left as documentation for the widget, we can reformat it though for sure",
+      "parentUuid": "7d0ecc1c_22c1a3f2",
+      "range": {
+        "startLine": 185,
+        "startChar": 0,
+        "endLine": 208,
+        "endChar": 6
+      },
+      "revId": "f7097f0d0aead302a20ee82646577643e58721f6",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
     }
   ]
 }
