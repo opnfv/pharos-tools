@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f77e81a4_c5f3b7f2",
+        "filename": "dashboard/src/templates/dashboard/multiple_select_filter_widget.html",
+        "patchSetId": 1
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-25T20:23:09Z",
+      "side": 1,
+      "message": "while this is being changed, can the end tag be put on a new line? I think it looks better that way.",
+      "revId": "170152ac92a498378baad5b12feadee1d2015110",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
