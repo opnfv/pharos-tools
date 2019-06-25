@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "21c414ab_c0973d95",
+        "filename": "dashboard/src/static/js/dashboard.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-06-25T17:44:54Z",
+      "side": 1,
+      "message": "It created an MxOutline for the graph. The outline is needed but I don\u0027t need a reference to it after its created.",
+      "parentUuid": "46d87a65_4af3f5ec",
+      "range": {
+        "startLine": 278,
+        "startChar": 8,
+        "endLine": 278,
+        "endChar": 53
+      },
+      "revId": "5b781d890dc482e1b0fcc101977fb37d98b7d5a9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "11993ccf_140518cc",
         "filename": "dashboard/src/static/js/dashboard.js",
         "patchSetId": 2
@@ -70,6 +94,24 @@
       "writtenOn": "2019-06-25T17:19:44Z",
       "side": 1,
       "message": "can this function be removed, or is this a TODO?",
+      "revId": "5b781d890dc482e1b0fcc101977fb37d98b7d5a9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "878aa397_d27bbb5d",
+        "filename": "dashboard/src/static/js/dashboard.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-06-25T17:44:54Z",
+      "side": 1,
+      "message": "I moved all the code in the body elsewhere but did not delete the definition.",
+      "parentUuid": "1e6d75de_65c988eb",
       "revId": "5b781d890dc482e1b0fcc101977fb37d98b7d5a9",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
@@ -443,6 +485,30 @@
       "writtenOn": "2019-06-25T17:04:21Z",
       "side": 1,
       "message": "for..of",
+      "range": {
+        "startLine": 814,
+        "startChar": 10,
+        "endLine": 814,
+        "endChar": 44
+      },
+      "revId": "5b781d890dc482e1b0fcc101977fb37d98b7d5a9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "945b02c9_5cdd37d0",
+        "filename": "dashboard/src/static/js/dashboard.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 814,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-06-25T17:44:54Z",
+      "side": 1,
+      "message": "I need the value of `i` as I iterate.",
+      "parentUuid": "5f04d293_90afd34d",
       "range": {
         "startLine": 814,
         "startChar": 10,
