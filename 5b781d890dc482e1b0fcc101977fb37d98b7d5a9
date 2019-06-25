@@ -521,6 +521,30 @@
     },
     {
       "key": {
+        "uuid": "b75d7168_f1247613",
+        "filename": "dashboard/src/static/js/dashboard.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 814,
+      "author": {
+        "id": 7081
+      },
+      "writtenOn": "2019-06-25T18:23:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "945b02c9_5cdd37d0",
+      "range": {
+        "startLine": 814,
+        "startChar": 10,
+        "endLine": 814,
+        "endChar": 44
+      },
+      "revId": "5b781d890dc482e1b0fcc101977fb37d98b7d5a9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ef1abeb7_a771c8b4",
         "filename": "dashboard/src/static/js/dashboard.js",
         "patchSetId": 2
