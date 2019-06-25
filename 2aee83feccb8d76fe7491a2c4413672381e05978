@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "451ccd77_9f99f25e",
+        "filename": "dashboard/src/static/js/dashboard.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-06-25T17:45:17Z",
+      "side": 1,
+      "message": "Most of these are actually objects, which are not iterable. I have made this change where possible.",
+      "parentUuid": "66a38810_cbeb7193",
+      "revId": "2aee83feccb8d76fe7491a2c4413672381e05978",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f7e62b5c_e63a6482",
         "filename": "dashboard/src/static/js/dashboard.js",
         "patchSetId": 5
@@ -149,6 +167,24 @@
       "writtenOn": "2019-06-24T15:49:01Z",
       "side": 1,
       "message": "using the variable name `that` instead of `me` is the typical convention. Also does `bind(this)` not work? (If so, apply that trick to the other uses of `me`.)",
+      "revId": "2aee83feccb8d76fe7491a2c4413672381e05978",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a9f2c974_2df4bd4c",
+        "filename": "dashboard/src/static/js/dashboard.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2019-06-25T17:45:17Z",
+      "side": 1,
+      "message": "In some other places, the value of `this` and `that` are both needed. Plus, I prefer an explicit variable name over some magic",
+      "parentUuid": "a9c6fc96_c4675648",
       "revId": "2aee83feccb8d76fe7491a2c4413672381e05978",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
