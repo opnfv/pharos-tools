@@ -25,6 +25,57 @@
     },
     {
       "key": {
+        "uuid": "11993ccf_140518cc",
+        "filename": "dashboard/src/static/js/dashboard.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-25T17:19:44Z",
+      "side": 1,
+      "message": "const",
+      "revId": "5b781d890dc482e1b0fcc101977fb37d98b7d5a9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "12897fa3_f47889e2",
+        "filename": "dashboard/src/static/js/dashboard.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-25T17:19:44Z",
+      "side": 1,
+      "message": "const",
+      "revId": "5b781d890dc482e1b0fcc101977fb37d98b7d5a9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1e6d75de_65c988eb",
+        "filename": "dashboard/src/static/js/dashboard.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-25T17:19:44Z",
+      "side": 1,
+      "message": "can this function be removed, or is this a TODO?",
+      "revId": "5b781d890dc482e1b0fcc101977fb37d98b7d5a9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "cd27a8f2_ab092b46",
         "filename": "dashboard/src/static/js/dashboard.js",
         "patchSetId": 2
@@ -88,6 +139,23 @@
         "endLine": 450,
         "endChar": 40
       },
+      "revId": "5b781d890dc482e1b0fcc101977fb37d98b7d5a9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9bce7e80_2bfa754c",
+        "filename": "dashboard/src/static/js/dashboard.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 454,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-25T17:19:44Z",
+      "side": 1,
+      "message": "const",
       "revId": "5b781d890dc482e1b0fcc101977fb37d98b7d5a9",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
@@ -272,6 +340,23 @@
         "endLine": 748,
         "endChar": 22
       },
+      "revId": "5b781d890dc482e1b0fcc101977fb37d98b7d5a9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ef49c751_81a8466e",
+        "filename": "dashboard/src/static/js/dashboard.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 749,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-25T17:19:44Z",
+      "side": 1,
+      "message": "const",
       "revId": "5b781d890dc482e1b0fcc101977fb37d98b7d5a9",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
