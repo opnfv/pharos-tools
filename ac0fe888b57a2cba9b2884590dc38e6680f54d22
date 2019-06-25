@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "33a42ada_1bb68000",
+        "filename": "dashboard/src/templates/booking/quick_deploy.html",
+        "patchSetId": 7
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 7515
+      },
+      "writtenOn": "2019-06-25T18:46:45Z",
+      "side": 1,
+      "message": "What does this do?",
+      "range": {
+        "startLine": 108,
+        "startChar": 12,
+        "endLine": 108,
+        "endChar": 30
+      },
+      "revId": "ac0fe888b57a2cba9b2884590dc38e6680f54d22",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
