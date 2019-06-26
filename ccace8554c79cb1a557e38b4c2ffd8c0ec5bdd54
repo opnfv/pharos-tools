@@ -1,0 +1,203 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d8f42842_11eaa329",
+        "filename": "dashboard/src/static/js/dashboard.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 763,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-26T18:45:03Z",
+      "side": 1,
+      "message": "these spaces should be removed (there are few more of these, see the red background)",
+      "range": {
+        "startLine": 763,
+        "startChar": 0,
+        "endLine": 763,
+        "endChar": 8
+      },
+      "revId": "ccace8554c79cb1a557e38b4c2ffd8c0ec5bdd54",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "13571226_c80589dc",
+        "filename": "dashboard/src/static/js/dashboard.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 866,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-26T18:45:03Z",
+      "side": 1,
+      "message": "the new line that was removed should be put back",
+      "revId": "ccace8554c79cb1a557e38b4c2ffd8c0ec5bdd54",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "141383e7_9343a0eb",
+        "filename": "dashboard/src/templates/account/booking_list.html",
+        "patchSetId": 2
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-26T18:45:03Z",
+      "side": 1,
+      "message": "is the id being using? can it be removed? or at least the name changed to something more descriptive?",
+      "revId": "ccace8554c79cb1a557e38b4c2ffd8c0ec5bdd54",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ce25d5a2_c019b4e4",
+        "filename": "dashboard/src/templates/account/configuration_list.html",
+        "patchSetId": 2
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-26T18:45:03Z",
+      "side": 1,
+      "message": "same here",
+      "revId": "ccace8554c79cb1a557e38b4c2ffd8c0ec5bdd54",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "48393c8d_404aa05d",
+        "filename": "dashboard/src/templates/account/image_list.html",
+        "patchSetId": 2
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-26T18:45:03Z",
+      "side": 1,
+      "message": "same here",
+      "revId": "ccace8554c79cb1a557e38b4c2ffd8c0ec5bdd54",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3e9bb5e2_5976c4cf",
+        "filename": "dashboard/src/templates/account/resource_list.html",
+        "patchSetId": 2
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-26T18:45:03Z",
+      "side": 1,
+      "message": "same here .... actually, just check if there are more of these.\n\nI also noticed that this seems like a modals that are the same. Maybe a new template that could be included would be nice?",
+      "revId": "ccace8554c79cb1a557e38b4c2ffd8c0ec5bdd54",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f37b99f0_8d267768",
+        "filename": "dashboard/src/templates/booking/booking_detail.html",
+        "patchSetId": 2
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-26T18:45:03Z",
+      "side": 1,
+      "message": "https://getbootstrap.com/docs/4.3/content/tables/#borderless-table ?",
+      "revId": "ccace8554c79cb1a557e38b4c2ffd8c0ec5bdd54",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1c35a813_5ad430bc",
+        "filename": "dashboard/src/templates/dashboard/landing.html",
+        "patchSetId": 2
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-26T18:45:03Z",
+      "side": 1,
+      "message": "odd indentation below (70-78)",
+      "revId": "ccace8554c79cb1a557e38b4c2ffd8c0ec5bdd54",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "307ec9ab_e8fa8d8a",
+        "filename": "dashboard/src/templates/resource/steps/pod_definition.html",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-26T18:45:03Z",
+      "side": 1,
+      "message": "debug",
+      "revId": "ccace8554c79cb1a557e38b4c2ffd8c0ec5bdd54",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "368a980f_25c109d3",
+        "filename": "dashboard/src/templates/workflow/confirm.html",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-26T18:45:03Z",
+      "side": 1,
+      "message": "delete line",
+      "range": {
+        "startLine": 35,
+        "startChar": 1,
+        "endLine": 35,
+        "endChar": 16
+      },
+      "revId": "ccace8554c79cb1a557e38b4c2ffd8c0ec5bdd54",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df229f36_7ee1229e",
+        "filename": "dashboard/src/templates/workflow/confirm.html",
+        "patchSetId": 2
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 7509
+      },
+      "writtenOn": "2019-06-26T18:45:03Z",
+      "side": 1,
+      "message": "indent",
+      "revId": "ccace8554c79cb1a557e38b4c2ffd8c0ec5bdd54",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
