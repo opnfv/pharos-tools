@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7c3d4a15_f292340a",
+        "filename": "dashboard/src/templates/dashboard/searchable_select_multiple.html",
+        "patchSetId": 1
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 7515
+      },
+      "writtenOn": "2019-06-26T15:04:23Z",
+      "side": 1,
+      "message": "Can we just use bootstrap classes?\nIf we are going to implement my CSS changes then this is most likely going to be removed anyway since a lot of this stuff can just be bootstrap classes\n\nThis is the same as h-100 class",
+      "range": {
+        "startLine": 112,
+        "startChar": 12,
+        "endLine": 112,
+        "endChar": 25
+      },
+      "revId": "7cc41384e35b53600f8b4bb2f654bed3e4615110",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
