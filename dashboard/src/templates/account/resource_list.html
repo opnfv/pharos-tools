@@ -63,7 +63,6 @@
 
         warning_title.appendChild(title);
         warning_text.appendChild(text);
-        document.getElementById('modal_warning').style['max-height'] = '0px';
     }
 
     function list_configs(configs) {
@@ -87,11 +86,11 @@
         req.send(formData);
     }
 </script>
-<div class="modal fade" id="resModal" tabindex="-1" role="dialog" aria-labelledby="my_modal" aria-hidden="true">
-    <div class="modal-dialog" style="width: 450px;" role="document">
+<div class="modal fade" id="resModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="my_modal" style="display: inline; float: left;">Delete Resource?</h4>
+                <h4 class="modal-title d-inline float-left">Delete Resource?</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -99,18 +98,19 @@
             <form id="res_delete_form">
                 {% csrf_token %}
             </form>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" onclick="document.getElementById('modal_warning').style['max-height'] = '500px';">Delete</button>
-            </div>
-            <div id="modal_warning" class="modal-footer" style="max-height:0px;" >
-                <div style="text-align:center; margin: 5px">
+            <div class="modal-footer d-flex flex-column">
+                <div>
+                    <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger" data-toggle="collapse" data-target="#warning">Delete</button>
+                </div>
+                <div class="border-top collapse mt-4 w-100 text-center p-4" id="warning">
                     <h3 id="config_warning">Are You Sure?</h3>
                     <p id="warning_subtext">This cannot be undone</p>
                     <ul id="config_list"></ul>
-                    <button class="btn" onclick="document.getElementById('modal_warning').style['max-height'] = '0px';">Nevermind</button>
+                    <button class="btn btn-outline-secondary" data-dismiss="modal">Nevermind</button>
                     <button class="btn btn-danger" id="confirm_delete_button" data-dismiss="modal" onclick="submit_delete_form();">I'm Sure</button>
                 </div>
+            </div>
         </div>
     </div>
 </div>
