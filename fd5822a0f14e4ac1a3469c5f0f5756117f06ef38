@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8dd03de4_22d24e13",
+        "filename": "dashboard/src/static/js/dashboard.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 1065,
+      "author": {
+        "id": 7515
+      },
+      "writtenOn": "2019-06-27T17:16:03Z",
+      "side": 1,
+      "message": "removing",
+      "range": {
+        "startLine": 1064,
+        "startChar": 0,
+        "endLine": 1065,
+        "endChar": 79
+      },
+      "revId": "fd5822a0f14e4ac1a3469c5f0f5756117f06ef38",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
